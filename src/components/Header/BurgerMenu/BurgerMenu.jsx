@@ -7,7 +7,7 @@ import CloseModalImg from 'images/headerImges/x.png'
 
 export const BurgerMenu = () => {
 
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = (modalContent) => {
     setModalOpen(true);

@@ -10,12 +10,15 @@ export const BurgerMenuDiv = styled.div`
     right: 0;
    
     background: url(${bgImgS}) rgb(235,243,212);
-    background-position: center;
+    background-position: bottom 0px right 0px;
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media ${props => props.theme.media.desktop} {
+    @media ${props => props.theme.media.tablet} {
         background: url(${bgImgM}) rgb(235,243,212);
+    }
+    @media ${props => props.theme.media.desktop} {
+        background: transparent;
     }
 `;
 
