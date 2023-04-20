@@ -1,27 +1,28 @@
 import styled from '@emotion/styled';
 import bgImgS from 'images/headerImges/burger-bg-s.png'
 import bgImgM from 'images/headerImges/burger-bg-m.png'
+import {flexBox} from 'styles/mixins';
 
 export const BurgerMenuDiv = styled.div`
     width: 100vw;
     height: 100vh;
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
    
-    background: url(${bgImgS}) rgb(235,243,212);
-    background-position: bottom 0px right 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: rgb(235,243,212) url(${bgImgS}) no-repeat right bottom;
 
     @media ${props => props.theme.media.tablet} {
-        background: url(${bgImgM}) rgb(235,243,212);
+        background: rgb(235,243,212) url(${bgImgM}) no-repeat right bottom;
     }
     @media ${props => props.theme.media.desktop} {
         background: transparent;
     }
 `;
-
+export const ModalDiv = styled.div`
+    max-width: 100%;
+    position: relative;
+`;
 export const BtnCloseModal = styled.button`
     width: 32px;
     height: 32px;
@@ -31,3 +32,15 @@ export const BtnCloseModal = styled.button`
     font-size: 16px;
     cursor: pointer;
 `
+
+export const BurgerNavigationNav = styled.nav`
+    display: none;
+    ${flexBox};
+    flex-direction: column;
+    row-gap: 32px;
+
+    @media ${props => props.theme.media.desktop} {
+        display: none;
+    }
+`;
+
