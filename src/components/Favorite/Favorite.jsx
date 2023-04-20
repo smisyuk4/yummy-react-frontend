@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react';
 import {
+	FavoriteArticle,
+	FavoriteDeleteBtn,
+	FavoriteImg,
 	FavoriteItem,
 	FavoriteList,
+	FavoriteRecipeBox,
+	FavoriteRecipeTitle,
+	FavoriteSeeBtn,
 	FavoriteStyled,
+	FavoriteTime,
 	FavoriteTitle,
 } from './Favorite.styled';
 
@@ -20,7 +27,18 @@ export const Favorite = () => {
 			<FavoriteTitle>Favorites</FavoriteTitle>
 			<FavoriteList>
 				{favoriteRecipes.map(recipe => {
-					<FavoriteItem>{recipe.name}</FavoriteItem>;
+					<FavoriteItem>
+						<FavoriteImg />
+						<FavoriteRecipeBox>
+							<FavoriteRecipeTitle>
+								{recipe.name}
+							</FavoriteRecipeTitle>
+							<FavoriteDeleteBtn>icon</FavoriteDeleteBtn>
+							<FavoriteArticle>{recipe.text}</FavoriteArticle>
+							<FavoriteTime>{recipe.timeToCook}</FavoriteTime>
+							<FavoriteSeeBtn>See pecipe</FavoriteSeeBtn>
+						</FavoriteRecipeBox>
+					</FavoriteItem>;
 				})}
 			</FavoriteList>
 		</FavoriteStyled>
