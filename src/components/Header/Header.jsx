@@ -1,5 +1,5 @@
 import { HeaderStyled } from './Header.styled';
-import {HeaderNavigation} from './HeaderNavigation/HeaderNavigation'
+import { BurgerMenu } from './BurgerMenu';
 export const Header = () => {
-  return <HeaderStyled><HeaderNavigation /></HeaderStyled>;
+  return <HeaderStyled><BurgerMenu /></HeaderStyled>;
 };

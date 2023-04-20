@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import {createPortal} from "react-dom";
 import { ModalDiv } from './Modal.styled';
 
+
+const modalRoot = document.getElementById('modal-root');
+
 export const Modal = ({close, children}) => {
 
   useEffect(() => {

@@ -1,4 +1,6 @@
 import styled from '@emotion/styled';
+import bgImgS from 'images/headerImges/burger-bg-s.png'
+// import bgImgM from 'images/headerImges/burger-bg-m.png'
 
 export const BurgerMenuDiv = styled.div`
     width: 100vw;
@@ -7,7 +9,12 @@ export const BurgerMenuDiv = styled.div`
     top: 0;
     right: 0;
     z-index: 99;
-    background-image: linear-gradient(150deg, #FFA500, #5B42F3 50%, #d6d3c9);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background: url(${bgImgS});
 `;
 
 export const BtnCloseModal = styled.button`

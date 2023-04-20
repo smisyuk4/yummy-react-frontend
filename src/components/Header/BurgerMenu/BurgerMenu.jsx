@@ -3,12 +3,11 @@ import { Modal } from 'components/Modal';
 import { BurgerMenuDiv, BtnCloseModal } from './BurgerMenu.styled';
 import { HeaderNavigation } from '../HeaderNavigation';
 import CloseModalImg from 'images/headerImges/x.png'
-const modalRoot = document.getElementById('modal-root');
 
 
 export const BurgerMenu = () => {
 
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(true);
 
   const openModal = (modalContent) => {
     setModalOpen(true);
@@ -20,8 +19,9 @@ export const BurgerMenu = () => {
   return (
     <BurgerMenuDiv>
       {modalOpen && (<Modal close={closeModal}>
-        <BtnCloseModal onClick={closeModal} className={styles.close}>
-          <CloseModalImg src={searchImg} alt='cross'></CloseModalImg>
+        <BtnCloseModal onClick={closeModal}>
+          <span>X</span>
+          {/* <CloseModalImg src={CloseModalImg} alt='cross'></CloseModalImg> */}
         </BtnCloseModal>
       <HeaderNavigation />
       </Modal>)}
