@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import bgImgS from 'images/headerImges/burger-bg-s.png'
-// import bgImgM from 'images/headerImges/burger-bg-m.png'
+import bgImgM from 'images/headerImges/burger-bg-m.png'
 
 export const BurgerMenuDiv = styled.div`
     width: 100vw;
@@ -8,13 +8,15 @@ export const BurgerMenuDiv = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 99;
-    
+   
+    background: url(${bgImgS}) rgb(235,243,212);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
-    background: url(${bgImgS});
+    @media ${props => props.theme.media.desktop} {
+        background: url(${bgImgM}) rgb(235,243,212);
+    }
 `;
 
 export const BtnCloseModal = styled.button`
