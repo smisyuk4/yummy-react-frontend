@@ -3,11 +3,10 @@ import { NavLink } from 'react-router-dom';
 import {flexBox} from 'styles/mixins';
 
 export const HeaderNavigationNav = styled.nav`
-    ${flexBox};
-    flex-direction: column;
-    row-gap: 32px;
-
+    display: none;
+    
     @media ${props => props.theme.media.desktop} {
+        ${flexBox};
         flex-direction: row;
         column-gap: 30px;
     }
