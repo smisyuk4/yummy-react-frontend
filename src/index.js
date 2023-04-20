@@ -12,6 +12,11 @@ const LightTheme = {
   colors: {
     primary: 'tomato',
   },
+  media: {
+    mobile: "(max-width: 480px)",
+    tablet: "(max-width: 768px) and (min-width: 480px)",
+    desktop: "(max-width: 1440px) and (min-width: 768px)"
+  }
 };
 
 const baseUrl =
