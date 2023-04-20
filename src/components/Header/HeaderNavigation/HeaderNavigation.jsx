@@ -1,5 +1,5 @@
 import { HeaderNavigationNav, HeaderNavlink, SearchImg } from './HeaderNavigation.styled';
-import searchImg from '../../../images/search.png';
+import searchImg from 'images/headerImges/search.png';
 
 export const HeaderNavigation = () => {
   return <HeaderNavigationNav>
