@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/yummy-react-frontend/static/css/main.ab326dce.css",
-    "main.js": "/yummy-react-frontend/static/js/main.c3b8d31c.js",
+    "main.js": "/yummy-react-frontend/static/js/main.ea011010.js",
+    "static/media/img-1.png": "/yummy-react-frontend/static/media/img-1.32c5fe597073afb18b3a.png",
+    "static/media/bg-2.png": "/yummy-react-frontend/static/media/bg-2.2dc44f6b8a06d4fb8285.png",
     "static/media/burger-bg-m.png": "/yummy-react-frontend/static/media/burger-bg-m.d1a9f96ee3bac9fe1904.png",
     "static/media/burger-bg-s.png": "/yummy-react-frontend/static/media/burger-bg-s.99dd17218cc05626f3b2.png",
     "index.html": "/yummy-react-frontend/index.html",
     "main.ab326dce.css.map": "/yummy-react-frontend/static/css/main.ab326dce.css.map",
-    "main.c3b8d31c.js.map": "/yummy-react-frontend/static/js/main.c3b8d31c.js.map"
+    "main.ea011010.js.map": "/yummy-react-frontend/static/js/main.ea011010.js.map"
   },
   "entrypoints": [
     "static/css/main.ab326dce.css",
-    "static/js/main.c3b8d31c.js"
+    "static/js/main.ea011010.js"
   ]
 }
