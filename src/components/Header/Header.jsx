@@ -4,6 +4,7 @@ import { HeaderLogo } from './HeaderLogo';
 import { HeaderNavigation } from './HeaderNavigation';
 import {UserLogo} from './UserLogo/UserLogo';
 import { BurgerMenu } from './BurgerMenu';
+import { BtnOval } from 'components/share/BtnOval';
 
 
 export const Header = () => {
@@ -24,3 +25,4 @@ export const Header = () => {
     <UserLogo onOpenModal={openModal} />
   </HeaderStyled>;
 };
+
