@@ -10,9 +10,13 @@ export const Test = () => {
 			.then(({ data }) => setrecipes(data))
 			.catch(error => error);
 	}, []);
+
+	if (recipes) {
+		console.log('recepies = ', recipes);
+	}
 };
 
 export const MainRecipes = () => {
-	// Test();
+	Test();
 	return <SectionStyled>Test</SectionStyled>;
 };
