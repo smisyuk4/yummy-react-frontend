@@ -9,31 +9,35 @@ import { App } from 'components/App/App';
 import './index.css';
 
 const LightTheme = {
-  colors: {
-    primary: 'tomato',
-  },
+	colors: {
+		primary: '#8BAA36',
+		fontColor: '#fafafa',
+		buttonLightBG: '#fafafa',
+		buttonDarkBG: '#22252A',
+		buttonPrimaryBG: '#8BAA36',
+		darkBG: '#2a2c36',
+	},
   media: {
-    mobile: "(max-width: 480px)",
-    tablet: "(max-width: 768px) and (min-width: 480px)",
-    desktop: "(max-width: 1440px) and (min-width: 768px)"
+    tablet: "(min-width: 768px)",
+    desktop: "(min-width: 1440px)"
   }
 };
 
 const baseUrl =
-  window.location.host === 'localhost:3000'
-    ? `/yummy-react-frontend`
-    : '/yummy-react-frontend';
+	window.location.host === 'localhost:3000'
+		? `/yummy-react-frontend`
+		: '/yummy-react-frontend';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ThemeProvider theme={LightTheme}>
-          <BrowserRouter basename={baseUrl}>
-            <App />
-          </BrowserRouter>
-        </ThemeProvider>
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>
+	<React.StrictMode>
+		<Provider store={store}>
+			<PersistGate loading={null} persistor={persistor}>
+				<ThemeProvider theme={LightTheme}>
+					<BrowserRouter basename={baseUrl}>
+						<App />
+					</BrowserRouter>
+				</ThemeProvider>
+			</PersistGate>
+		</Provider>
+	</React.StrictMode>
 );
