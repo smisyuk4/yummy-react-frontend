@@ -4,7 +4,7 @@ import { registerUser, loginUser, logOut } from './operations';
 const initialState = {
 	user: { name: null, email: null },
 	token: null,
-	isLoggedIn: true,
+	isLoggedIn: false,
 };
 
 const authSlice = createSlice({

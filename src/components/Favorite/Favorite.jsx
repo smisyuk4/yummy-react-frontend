@@ -17,7 +17,7 @@ export const Favorite = () => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState;
 
 	useEffect(() => {
-		fetch('https://yummy-rest-api.onrender.com/favorite')
+		fetch('https://yummy-rest-api.onrender.com/recipes/favorite')
 			.then(response => response.json())
 			.then(data => setFavoriteRecipes(data));
 	}, []);
