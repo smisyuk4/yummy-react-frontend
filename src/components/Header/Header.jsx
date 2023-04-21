@@ -7,7 +7,6 @@ import { BurgerMenu } from './BurgerMenu';
 
 
 export const Header = () => {
-  
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
