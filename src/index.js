@@ -9,26 +9,30 @@ import { App } from 'components/App/App';
 import './index.css';
 
 const LightTheme = {
-  colors: {
-    primary: 'tomato',
-  },
+	colors: {
+		primary: 'tomato',
+		fontColor: '#fafafa',
+		buttonLightBG: '#fafafa',
+		buttonDarkBG: '#22252A',
+		buttonPrimaryBG: '#8BAA36',
+	},
 };
 
 const baseUrl =
-  window.location.host === 'localhost:3000'
-    ? `/yummy-react-frontend`
-    : '/yummy-react-frontend';
+	window.location.host === 'localhost:3000'
+		? `/yummy-react-frontend`
+		: '/yummy-react-frontend';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ThemeProvider theme={LightTheme}>
-          <BrowserRouter basename={baseUrl}>
-            <App />
-          </BrowserRouter>
-        </ThemeProvider>
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>
+	<React.StrictMode>
+		<Provider store={store}>
+			<PersistGate loading={null} persistor={persistor}>
+				<ThemeProvider theme={LightTheme}>
+					<BrowserRouter basename={baseUrl}>
+						<App />
+					</BrowserRouter>
+				</ThemeProvider>
+			</PersistGate>
+		</Provider>
+	</React.StrictMode>
 );
