@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/yummy-react-frontend/static/css/main.ab326dce.css",
-    "main.js": "/yummy-react-frontend/static/js/main.ea011010.js",
+    "main.css": "/yummy-react-frontend/static/css/main.aa8eaa59.css",
+    "main.js": "/yummy-react-frontend/static/js/main.f10ab131.js",
+    "static/media/heroDeck1.png": "/yummy-react-frontend/static/media/heroDeck1.b81c65e30a48320519de.png",
+    "static/media/flat-Tab-1-lay-assortment-vegetables.png": "/yummy-react-frontend/static/media/flat-Tab-1-lay-assortment-vegetables.7db3438702f476349905.png",
+    "static/media/flat-Mob-1-lay-assortment-vegetables.png": "/yummy-react-frontend/static/media/flat-Mob-1-lay-assortment-vegetables.93b553179e95ea506941.png",
     "static/media/img-1.png": "/yummy-react-frontend/static/media/img-1.32c5fe597073afb18b3a.png",
     "static/media/bg-2.png": "/yummy-react-frontend/static/media/bg-2.2dc44f6b8a06d4fb8285.png",
     "static/media/burger-bg-m.png": "/yummy-react-frontend/static/media/burger-bg-m.d1a9f96ee3bac9fe1904.png",
+    "static/media/poppins-all-400-normal.woff": "/yummy-react-frontend/static/media/poppins-all-400-normal.6fbfdac99c274b77fe96.woff",
     "static/media/burger-bg-s.png": "/yummy-react-frontend/static/media/burger-bg-s.99dd17218cc05626f3b2.png",
+    "static/media/poppins-devanagari-400-normal.woff2": "/yummy-react-frontend/static/media/poppins-devanagari-400-normal.64d5f06ee726edd58ca3.woff2",
+    "static/media/bm.png": "/yummy-react-frontend/static/media/bm.e0cc66b5a0cb5108d49b.png",
+    "static/media/poppins-latin-400-normal.woff2": "/yummy-react-frontend/static/media/poppins-latin-400-normal.405055dd680fa1dcdfa2.woff2",
+    "static/media/poppins-latin-ext-400-normal.woff2": "/yummy-react-frontend/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/yummy-react-frontend/index.html",
-    "main.ab326dce.css.map": "/yummy-react-frontend/static/css/main.ab326dce.css.map",
-    "main.ea011010.js.map": "/yummy-react-frontend/static/js/main.ea011010.js.map"
+    "main.aa8eaa59.css.map": "/yummy-react-frontend/static/css/main.aa8eaa59.css.map",
+    "main.f10ab131.js.map": "/yummy-react-frontend/static/js/main.f10ab131.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab326dce.css",
-    "static/js/main.ea011010.js"
+    "static/css/main.aa8eaa59.css",
+    "static/js/main.f10ab131.js"
   ]
 }
