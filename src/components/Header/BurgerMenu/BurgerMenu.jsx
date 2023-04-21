@@ -1,30 +1,48 @@
-import { useState } from 'react';
-import { Modal } from 'components/Modal';
+import { useEffect } from "react";
+import {createPortal} from "react-dom";
 import { BurgerMenuDiv, BtnCloseModal } from './BurgerMenu.styled';
-import { HeaderNavigation } from '../HeaderNavigation';
-import CloseModalImg from 'images/headerImges/x.png'
+import {BurgerNavigationNav, ModalDiv} from './BurgerMenu.styled'
+import { HeaderNavlink, SearchImg } from '../HeaderNavigation/HeaderNavigation.styled';
+import searchImg from 'images/headerImges/search.png';
 
 
-export const BurgerMenu = () => {
+const modalRoot = document.getElementById('modal-root');
 
-  const [modalOpen, setModalOpen] = useState(false);
 
-  const openModal = (modalContent) => {
-    setModalOpen(true);
-  }
-  const closeModal = ()=> {
-      setModalOpen(false);
-  }
+export const BurgerMenu = ({onCloseModal}) => {
 
-  return (
-    <BurgerMenuDiv>
-      {modalOpen && (<Modal close={closeModal}>
+  useEffect(() => {
+    document.addEventListener("keydown", closeModal);
+    
+    return () => document.removeEventListener("keydown", closeModal)
+});
+
+  const closeModal = ({target, currentTarget, code}) => {
+      if(target === currentTarget || code === "Escape") {
+        onCloseModal()
+      }
+  };
+
+
+  return createPortal(
+    <BurgerMenuDiv onClick={closeModal}>
+      <ModalDiv close={closeModal}>
         <BtnCloseModal onClick={closeModal}>
           <span>X</span>
           {/* <CloseModalImg src={CloseModalImg} alt='cross'></CloseModalImg> */}
         </BtnCloseModal>
-      <HeaderNavigation />
-      </Modal>)}
-    </BurgerMenuDiv>
-  ) 
+        <BurgerNavigationNav>
+            <HeaderNavlink to="/categories/:categoryName">Categories</HeaderNavlink>
+            <HeaderNavlink to="/add">Add recipes</HeaderNavlink>
+            <HeaderNavlink to="/my">My recipes</HeaderNavlink>
+            <HeaderNavlink to="/favorite ">Favorites</HeaderNavlink>
+            <HeaderNavlink to="/shopping-list">Shopping list</HeaderNavlink>
+            <HeaderNavlink to="/search">
+              <SearchImg src={searchImg} alt='search'></SearchImg>
+            </HeaderNavlink>  
+        </BurgerNavigationNav>
+      </ModalDiv>
+    </BurgerMenuDiv>,
+     modalRoot
+     );
 };
