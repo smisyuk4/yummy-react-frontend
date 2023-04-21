@@ -10,13 +10,17 @@ import './index.css';
 
 const LightTheme = {
 	colors: {
-		primary: 'tomato',
+		primary: '#8BAA36',
 		fontColor: '#fafafa',
 		buttonLightBG: '#fafafa',
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		darkBG: '#2a2c36',
 	},
+  media: {
+    tablet: "(min-width: 768px)",
+    desktop: "(min-width: 1440px)"
+  }
 };
 
 const baseUrl =
