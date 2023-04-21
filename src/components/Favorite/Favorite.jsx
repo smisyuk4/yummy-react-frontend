@@ -17,7 +17,7 @@ export const Favorite = () => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState;
 
 	useEffect(() => {
-		fetch('http://localhost:3000/recipes/favorite')
+		fetch('https://yummy-rest-api.onrender.com/recipes/favorite')
 			.then(response => response.json())
 			.then(data => setFavoriteRecipes(data));
 	}, []);
@@ -31,11 +31,13 @@ export const Favorite = () => {
 						<FavoriteImg />
 						<FavoriteRecipeBox>
 							<FavoriteRecipeTitle>
-								{recipe.name}
+								{recipe.title}
 							</FavoriteRecipeTitle>
 							<FavoriteDeleteBtn>icon</FavoriteDeleteBtn>
-							<FavoriteArticle>{recipe.text}</FavoriteArticle>
-							<FavoriteTime>{recipe.timeToCook}</FavoriteTime>
+							<FavoriteArticle>
+								{recipe.instructions}
+							</FavoriteArticle>
+							<FavoriteTime>{recipe.time}</FavoriteTime>
 							<FavoriteSeeBtn>See pecipe</FavoriteSeeBtn>
 						</FavoriteRecipeBox>
 					</FavoriteItem>;
