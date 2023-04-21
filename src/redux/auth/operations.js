@@ -9,7 +9,9 @@ const auth = {
     axios.defaults.headers.common.Authorization = '';
   },
 };
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+
+axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
+
 
 export const registerUser = createAsyncThunk(
   'signup',
