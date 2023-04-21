@@ -10,12 +10,15 @@ import * as Yup from 'yup';
 import { FormButton } from 'components/ButtonNav/ButtonNav.styled';
 
 const RegisterSchema = Yup.object().shape({
-	name: Yup.string().min(2).max(20).required(),
-	number: Yup.string().required(),
+	name: Yup.string().min(1).max(16).required(),
+	password: Yup.string().min(6).max(16).required(),
+	email: Yup.string().email().required(),
 });
 
 export const RegisterForm = () => {
-	const sendRegister = ({ name, number }, { resetForm }) => {};
+	const sendRegister = ({ name, password, email }, { resetForm }) => {
+		resetForm();
+	};
 	return (
 		<Formik
 			initialValues={{ name: '', number: '' }}

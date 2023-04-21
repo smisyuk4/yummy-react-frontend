@@ -7,20 +7,24 @@ export const H1Styled = styled.h1`
 	font-size: 24px;
 	line-height: 28px;
 	letter-spacing: -0.02em;
-	color: #fafafa;
+	color: ${({ theme }) => theme.colors.fontColor};
 	font-feature-settings: 'liga' off;
 `;
 
 export const FormStyled = styled(Form)`
-	background: #2a2c36;
+	background: ${({ theme }) => theme.colors.darkBG};
 	box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
 	border-radius: 30px;
 	display: flex;
+	max-width: 500px;
 	flex-direction: column;
 	padding: 32px 28px 40px;
 	margin: 20px;
 	position: relative;
 	z-index: 1;
+	@media screen and (min-width: 600px) {
+		margin: 20px auto;
+	}
 `;
 
 export const LabelForm = styled.label`
@@ -32,8 +36,8 @@ export const LabelForm = styled.label`
 
 export const InputForm = styled(Field)`
 	width: 100%;
-	border: 1px solid #fafafa;
-	color: #fafafa;
+	border: 1px solid ${({ theme }) => theme.colors.fontColor};
+	color: ${({ theme }) => theme.colors.fontColor};
 	padding: 12px;
 	padding-left: 40px;
 	font-size: 14px;

@@ -15,6 +15,7 @@ const LightTheme = {
 		buttonLightBG: '#fafafa',
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
+		darkBG: '#2a2c36',
 	},
 };
 

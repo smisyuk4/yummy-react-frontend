@@ -1,5 +1,4 @@
-import { DivStyled } from './RegisterPage.styled';
-import { NavLink } from 'react-router-dom';
+import { DivStyled, NavLinkStyled } from './RegisterPage.styled';
 import { RegisterForm } from 'components/Auth/RegisterForm';
 import { Image } from 'components/Auth/Image';
 import { BackGround } from 'components/Auth/BackGround';
@@ -9,7 +8,7 @@ export const RegisterPage = () => {
 		<DivStyled>
 			<Image />
 			<RegisterForm />
-			<NavLink to="/login">Login</NavLink>
+			<NavLinkStyled to="/login">Login</NavLinkStyled>
 			<BackGround />
 		</DivStyled>
 	);
