@@ -4,6 +4,7 @@ import banner1 from '../../../images/MainPageImg/bg-2.png';
 import banner2 from '../../../images/MainPageImg/img-1.png';
 
 export const WrapperStyled = styled.div`
+	background-color: #fafafa;
 	position: relative;
 	overflow-x: hidden;
 	margin: 0;
@@ -32,7 +33,7 @@ export const DivStyled = styled.div`
 	background-size: contain;
 	background: url(${banner1}) no-repeat top right;
 	position: absolute;
-    top: 0px;
+	top: 0px;
 	z-index: 2;
 `;
 export const DishStyled = styled.div`
@@ -41,8 +42,8 @@ export const DishStyled = styled.div`
 	background-size: contain;
 	background: url(${banner2}) no-repeat top right;
 	position: absolute;
-    top: 280px;
-    left: -17px;
+	top: 280px;
+	left: -17px;
 	z-index: 3;
 `;
 export const InformFieldStyled = styled.div`
@@ -57,7 +58,7 @@ export const TitleStyled = styled.div`
 	font-size: 60px;
 	font-weight: 700;
 	text-align: center;
-    margin-right: 25px;
+	margin-right: 25px;
 	margin-top: 71px;
 	color: #22252a;
 	z-index: 4;
@@ -78,7 +79,9 @@ export const ParagrafStyled = styled.div`
 	z-index: 4;
 `;
 export const BoxStyled = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
 `;
+
+

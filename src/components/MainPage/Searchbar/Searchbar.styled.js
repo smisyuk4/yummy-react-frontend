@@ -37,7 +37,6 @@ export const Input = styled(Field)`
   }
 `;
 
-
 export const SearchFormBtn = styled.button`
 background-color: transparent; 
 border-radius: 24px 44px; 
