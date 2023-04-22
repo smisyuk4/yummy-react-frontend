@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkyummy_react_frontend=self.webpackChunkyummy_react_frontend||[]).push([[724],{4724:function(e,n,r){r.r(n);var t=r(3329);n.default=function(){return(0,t.jsx)("div",{children:"CategoriesPage"})}}}]);
-//# sourceMappingURL=724.10b4642b.chunk.js.map

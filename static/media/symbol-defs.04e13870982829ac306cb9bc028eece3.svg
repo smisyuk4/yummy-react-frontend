@@ -148,7 +148,10 @@
             <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M7.372 9.482v-8.148"></path>
             <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M30.667 3.047c0-0.9-0.773-1.63-1.725-1.63h-1.726c-2.859 0-5.176 2.189-5.176 4.889v9.778c0 2.125 1.444 3.916 3.451 4.589v7.549c0 1.349 1.16 2.445 2.588 2.445s2.588-1.095 2.588-2.445v-25.175z"></path>
         </symbol>
+
+         <!-- change color - stroke -->
+        <symbol id="icon-burger" viewBox="0 0 48 32">
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M3 16h42M3 2h42M3 30h28"></path>
+        </symbol>
     </defs>
 </svg>
-
-<!-- style="stroke: var(--color2, #fafafa)" -->
