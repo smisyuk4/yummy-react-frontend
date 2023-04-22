@@ -5,12 +5,15 @@ import banner2 from '../../../images/MainPageImg/img-1.png';
 
 export const WrapperStyled = styled.div`
 	position: relative;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 	width: 100%;
 `;
 export const SectionStyled = styled.div`
 	position: relative;
 	top: -132px;
-	transform: translateX(58%) rotate(39deg);
+	transform: translateX(61%) rotate(39deg);
 	width: 100%px;
 	height: 542px;
 	background-color: #ebf3d4;
@@ -50,7 +53,7 @@ export const InformFieldStyled = styled.div`
 	z-index: 5;
 `;
 export const TitleStyled = styled.div`
-	font-family: 'Poppins', sans-serif;
+	font-family: Poppins, sans-serif;
 	font-size: 60px;
 	font-weight: 700;
 	text-align: center;
@@ -60,7 +63,7 @@ export const TitleStyled = styled.div`
 	z-index: 4;
 `;
 export const ParagrafStyled = styled.div`
-	font-family: 'Poppins', sans-serif;
+	font-family: Poppins, sans-serif;
 	font-size: 14px;
 	line-height: 18px;
 	letter-spacing: -0.02em;
