@@ -29,10 +29,12 @@ export const RecipePage = () => {
 	// const currentRecipe = useSelector(selectRecipes);
 	const { recipeId } = useParams();
 	const [recipe, setRecipe] = useState([]);
+
 	// const dispatch = useDispatch();
 	// useEffect(() => {
     //     dispatch(fetchRecipes());
     // }, [dispatch]);
+    
 	useEffect(() => {
     async function getRecipe() {
       try {
