@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkyummy_react_frontend=self.webpackChunkyummy_react_frontend||[]).push([[707],{7707:function(e,n,t){t.r(n);var r=t(3329);n.default=function(){return(0,r.jsx)("div",{children:"ShoppingListPage"})}}}]);
-//# sourceMappingURL=707.3b81f0b0.chunk.js.map
