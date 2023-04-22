@@ -35,7 +35,7 @@ const handleChangeName = (e) => {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault()
-    // const formEl = document.getElementById('form-user-change')
+    const formEl = document.getElementById('form-user-change')
     // let formData = new FormData(formEl)
   
     // let response = await fetch('https://yummy-rest-api.onrender.com/user/update', {
@@ -43,7 +43,7 @@ const handleChangeName = (e) => {
     //   body: new FormData(formEl)
     // });
     // let result = await response.json();
-     // console.log(result.message);
+    //  console.log(result.message);
 
        let formData = new FormData();
       formData.append("name", {nameUser});
