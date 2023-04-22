@@ -11,11 +11,13 @@ import './index.css';
 const LightTheme = {
 	colors: {
 		primary: '#8BAA36',
+		primarySoft: '#EBF3D4',
 		fontColor: '#fafafa',
 		buttonLightBG: '#fafafa',
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		darkBG: '#2a2c36',
+		lightBG: '#ECECEC',	
 	},
   media: {
     tablet: "(min-width: 768px)",
