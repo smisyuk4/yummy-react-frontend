@@ -21,6 +21,6 @@ export const TitleH = styled.h1`
 	color: #001833;
 `;
 
-// font-family: 'Poppins';
-// 	font-style: normal;
-// 	font-weight: 600;
+/* font-family: 'Poppins'; */
+	/* font-style: normal; */
+	/* font-weight: 600; */

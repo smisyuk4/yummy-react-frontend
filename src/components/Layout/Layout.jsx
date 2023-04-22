@@ -26,7 +26,16 @@ export const Layout = () => {
   return (
     <DivStyled>
       <Header />
-      <Suspense fallback={null}>
+      <Suspense
+        fallback={
+          <ColorRing
+            visible={true}
+            ariaLabel="blocks-loading"
+            wrapperClass="blocks-wrapper"
+            colors={['#2a2c36', '#f47e60', '#f8b26a', '#8BAA36', '#EBF3D4']}
+          />
+        }
+      >
         <Outlet />
       </Suspense>
       <Footer />

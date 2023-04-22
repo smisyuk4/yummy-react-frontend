@@ -7,11 +7,11 @@ import {
 	InputWrapper,
 	LabelForm,
 	// RecipeImg,
-} from './RecipeDescription.styled';
+} from './RecipeDescriptionFields.styled';
 import { useState } from 'react';
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 
-export const RecipeDescription = ({ onSubmit }) => {
+export const RecipeDescriptionFields = ({ onSubmit }) => {
 	const [title, setTitle] = useState('');
 	const [about, setAbout] = useState('');
 	const [categori, setCategori] = useState('');
@@ -62,7 +62,7 @@ export const RecipeDescription = ({ onSubmit }) => {
 		about,
 		categori,
 	};
-	// console.log('data---', data);
+	console.log('data---', data);
 	return (
 		<DescriptionDiv>
 			<Formik
@@ -113,6 +113,16 @@ export const RecipeDescription = ({ onSubmit }) => {
 	);
 };
 
-RecipeDescription.propTypes = {
-	onSubmit: PropTypes.func.isRequired,
-};
+// RecipeDescriptionFields.propTypes = {
+// 	onSubmit: PropTypes.func.isRequired,
+// };
+
+
+// "Компонент рендерить поля для вводу користувачем:
+//  - файлу з фото рецепту
+//  - назви рецепту
+//  - опису рецепту
+//  - категорії рецепту - обирається з випадаючого списку, який приходить з бекенду
+//  - часу приготування рецепту - обирається з випадаючого списку в діапазоні від 5хв до 120хв з кроком 5
+// Випадаючі списки повинні показувати 6 рядків даних, всі інші повинні скролитись в межах даного списку.
+// Компонент пропсами отримує значення для інпутів, а також хендлер для опрацювання цих значень"
