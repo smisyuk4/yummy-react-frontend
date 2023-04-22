@@ -7,21 +7,20 @@ import { HeroSection } from './RecipePageHero.styled';
 
 
 
-export const RecipePageHero = () => {
-
+export const RecipePageHero = ({title, description}) => {
+// const dispatch = useDispatch();
 // const isLoading = useSelector(selectIsLoading);
 //     const error = useSelector(selectError);
-    // const dispatch = useDispatch();
+//     const dispatch = useDispatch();
   // const currentRecipe = useSelector(selectRecipes);
 	// const dispatch = useDispatch();
 
   return (
     <HeroSection>
-      <div>
-        
-				{/* <h1>{currentRecipe.title}</h1>
-				<p>{currentRecipe.description}</p> */}
-			</div>
+      {/* <div> */}
+				<h1>{title}</h1>
+				<p>{description}</p>
+			{/* </div> */}
     </HeroSection>
   ) 
 };
