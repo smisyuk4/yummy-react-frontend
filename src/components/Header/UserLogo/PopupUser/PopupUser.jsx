@@ -1,4 +1,6 @@
-import { DivStyled, OverlayDiv, ModalDiv, WrapperEdit, LogOutBtn } from './PopupUser.styled';
+import { 
+  // DivStyled, 
+  OverlayDiv, ModalDiv, WrapperEdit, LogOutBtn } from './PopupUser.styled';
 import {IditIcon} from './edit-01'
 import { useState, useEffect } from 'react';
 import { ModalUserProfil } from '../ModalUserProfil';

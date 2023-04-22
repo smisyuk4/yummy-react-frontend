@@ -1,6 +1,9 @@
-import { DivStyled, ModalProfil, LabelAvatar, InputAvatar, ImgAvatar, OvarlayImg, Figure, Figcaption, ImgDefault } from './ModalUserProfil.styled';
+import { DivStyled, ModalProfil, LabelAvatar, InputAvatar, ImgAvatar, OvarlayImg, Figure, 
+  // Figcaption, 
+  // ImgDefault 
+} from './ModalUserProfil.styled';
 import { useState, useEffect } from 'react';
-import {LogoIcon} from '../../HeaderLogo/LogoIcon'
+// import {LogoIcon} from '../../HeaderLogo/LogoIcon'
 
 export const ModalUserProfil = ({open, close}) => {
   const [nameUser, setNameUser] = useState('')
@@ -35,7 +38,7 @@ const handleChangeName = (e) => {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault()
-    const formEl = document.getElementById('form-user-change')
+    // const formEl = document.getElementById('form-user-change')
     // let formData = new FormData(formEl)
   
     // let response = await fetch('https://yummy-rest-api.onrender.com/user/update', {
