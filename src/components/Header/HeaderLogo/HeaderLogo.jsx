@@ -11,5 +11,6 @@ export const HeaderLogo = () => {
               <Icon id="icon-knife-btn" height="50" width="50"/>
             </div>
             {/* delete */}
+            
         </HeaderLogoStyled>;
 };
