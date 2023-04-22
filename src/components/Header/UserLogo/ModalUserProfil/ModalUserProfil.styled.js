@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const DivStyled = styled.div`
 width: 100%;
     height: 100%;
-    background-color: gray;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
