@@ -10,7 +10,7 @@ export const Cross = styled.span`
     width: 12px;
     height: 12px;
 `
-export const BtnLogOut = styled.div`
+export const BtnLogOut = styled(NavLinkStyled)`
 `
-export const BtnCancel = styled.div`
+export const BtnCancel = styled(NavLinkStyled)`
 `

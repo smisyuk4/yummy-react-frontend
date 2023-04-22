@@ -2,23 +2,34 @@ import styled from '@emotion/styled';
 import {flexBox} from 'styles/mixins';
 
 export const OverlayDiv = styled.div`
-    z-index: 1000;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+   width: 100%;
+    height: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+`
+export const ModalDiv = styled.div`
+     max-width: 50%;
+    border-radius: 10px;
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 25px 15px 15px;
+    background-color: #fff;
 `
 export const DivStyled = styled.div`
-position: fixed;
-top: 50px;
-right: 50px;
     padding: 15px;
     border: 1px solid #8BAA36;
     border-radius: 18px;
     width: 161px;
     height: 130px;
     text-align: center;
+    z-index: 100;
 `;
 
 export const WrapperEdit = styled.div`

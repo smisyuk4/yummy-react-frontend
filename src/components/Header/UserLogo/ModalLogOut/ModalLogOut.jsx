@@ -9,6 +9,6 @@ export const ModalLogOut = () => {
     </BtnLogOut>
     <BtnCancel>
         Cancel
-    </BtnLogOut>
-  </BtnCancel>;
+    </BtnCancel>
+  </DivStyled>;
 };

@@ -9,9 +9,10 @@ export const UserLogo = ({ onOpenModal }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const onClose = () => {
+    console.log('edit modal open')
     setIsOpen(false)
   }
-  return <UserLogoDiv>
+  return <UserLogoDiv onClick={() => setIsOpen(true)}>
           <WrapperImg onClick={() => setIsOpen(true)}>
             <UserAvatarImg src={userImg} alt="avatar"></UserAvatarImg>      
           </WrapperImg>

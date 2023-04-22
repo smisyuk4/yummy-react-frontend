@@ -1,13 +1,16 @@
 import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
-z-index: 1000;
-position: fixed;
-top: 0;
-left: 0;
 width: 100%;
-height: 100%;
-background-color: rgba(144, 144, 144, 0.5);
+    height: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
 `;
 
 export const ModalProfil = styled.div`
@@ -53,7 +56,7 @@ export const Figcaption = styled.figcaption`
   background-color: rgba(0, 0, 0, .5);
   }
 `
-export const ImgAvatar = styled.input`
+export const ImgAvatar = styled.img`
 display: block;
    cursor: pointer;
   width: 88px;
@@ -72,4 +75,3 @@ margin-top: 15px;
   width: 50px;
   height: 50px;
 `
-
