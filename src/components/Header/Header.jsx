@@ -8,7 +8,6 @@ import { BtnOval } from 'components/share/BtnOval';
 
 
 export const Header = () => {
-  
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {

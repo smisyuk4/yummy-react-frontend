@@ -3,7 +3,6 @@ import {createPortal} from "react-dom";
 import { BurgerMenuDiv, BtnCloseModal } from './BurgerMenu.styled';
 import {BurgerNavigationNav, ModalDiv} from './BurgerMenu.styled'
 import { HeaderNavlink, SearchImg } from '../HeaderNavigation/HeaderNavigation.styled';
-import CloseModalImg from 'images/headerImges/x.png'
 import searchImg from 'images/headerImges/search.png';
 
 
@@ -16,7 +15,7 @@ export const BurgerMenu = ({onCloseModal}) => {
     document.addEventListener("keydown", closeModal);
     
     return () => document.removeEventListener("keydown", closeModal)
-}, []);
+});
 
   const closeModal = ({target, currentTarget, code}) => {
       if(target === currentTarget || code === "Escape") {
@@ -26,9 +25,9 @@ export const BurgerMenu = ({onCloseModal}) => {
 
 
   return createPortal(
-    <BurgerMenuDiv onClick={onCloseModal}>
-      <ModalDiv close={onCloseModal}>
-        <BtnCloseModal onClick={onCloseModal}>
+    <BurgerMenuDiv onClick={closeModal}>
+      <ModalDiv close={closeModal}>
+        <BtnCloseModal onClick={closeModal}>
           <span>X</span>
           {/* <CloseModalImg src={CloseModalImg} alt='cross'></CloseModalImg> */}
         </BtnCloseModal>
