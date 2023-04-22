@@ -1,4 +1,16 @@
-import { WrapperStyled, TopImgStyled, SectionStyled, DivStyled, InformFieldStyled, DishStyled, TitleStyled, ParagrafStyled, BoxStyled } from './Hero.styled';
+import { Searchbar } from '../Searchbar';
+import { InformMenu } from './InformMenu';
+import { WrapperStyled, 
+	TopImgStyled, 
+	SectionStyled, 
+	DivStyled, 
+	InformFieldStyled, 
+	DishStyled, 
+	TitleStyled, 
+	ParagrafStyled, 
+	BoxStyled,
+	
+ } from './Hero.styled';
 
 export const Hero = () => {
 	return <WrapperStyled>
@@ -10,6 +22,8 @@ export const Hero = () => {
 		<SectionStyled />
 		<DivStyled />
 		<DishStyled />
-		<InformFieldStyled/>
+		<InformFieldStyled />
+		<Searchbar />
+		<InformMenu/>
 	</WrapperStyled>;
 };
