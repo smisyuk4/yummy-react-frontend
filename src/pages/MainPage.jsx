@@ -1,7 +1,7 @@
 import { Hero } from 'components/MainPage/Hero';
 import { MainRecipes } from 'components/MainPage/MainRecipes';
 
-export const MainPage = () => {
+const MainPage = () => {
 	return (
 		<main>
 			<Hero />
@@ -9,3 +9,5 @@ export const MainPage = () => {
 		</main>
 	);
 };
+
+export default MainPage

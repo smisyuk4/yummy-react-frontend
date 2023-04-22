@@ -1,3 +1,4 @@
+
 import { CategorySelection } from 'components/CategoriesPage/CategorySelection';
 
 export const CategoriesPage = () => {
@@ -6,4 +7,10 @@ export const CategoriesPage = () => {
 			<CategorySelection />
 		</>
 	);
+
+const CategoriesPage = () => {
+	return <div>CategoriesPage</div>;
+
 };
+
+export default CategoriesPage

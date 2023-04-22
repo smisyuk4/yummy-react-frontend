@@ -4,12 +4,13 @@ import bgImgM from 'images/headerImges/burger-bg-m.png'
 import {flexBox} from 'styles/mixins';
 
 export const BurgerMenuDiv = styled.div`
+    padding: 16px;
     width: 100vw;
     height: 100vh;
     position: absolute;
     bottom: 0;
     right: 0;
-   
+   z-index: 90;
     background: rgb(235,243,212) url(${bgImgS}) no-repeat right bottom;
 
     @media ${props => props.theme.media.tablet} {
@@ -23,12 +24,16 @@ export const ModalDiv = styled.div`
     max-width: 100%;
     position: relative;
 `;
+
+export const HeaderLogoDiv = styled.div`
+    ${flexBox};
+    justify-content: space-between;
+`
+
 export const BtnCloseModal = styled.button`
     width: 32px;
     height: 32px;
-    position: fixed;
-    top: 32px;
-    right: 16px;
+    
     font-size: 16px;
     cursor: pointer;
 `
