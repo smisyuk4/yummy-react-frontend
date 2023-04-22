@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkyummy_react_frontend=self.webpackChunkyummy_react_frontend||[]).push([[233],{1233:function(n,t,e){e.r(t),e.d(t,{default:function(){return c}});var r=e(3329),u=function(){return(0,r.jsx)(r.Fragment,{})},c=function(){return(0,r.jsx)(u,{})}}}]);
+//# sourceMappingURL=233.a4fcb608.chunk.js.map

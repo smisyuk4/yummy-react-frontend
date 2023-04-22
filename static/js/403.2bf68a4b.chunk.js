@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkyummy_react_frontend=self.webpackChunkyummy_react_frontend||[]).push([[403],{9403:function(e,n,r){r.r(n);var t=r(3329);n.default=function(){return(0,t.jsx)("div",{children:"MyRecipesPage"})}}}]);
+//# sourceMappingURL=403.2bf68a4b.chunk.js.map
