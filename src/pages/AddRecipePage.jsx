@@ -23,7 +23,7 @@ const fetchRecipes = async () => {
 	return responce;
 };
 
-export const AddRecipePage = () => {
+const AddRecipePage = () => {
 	const [popRecipes, setPopRecipes] = useState([]);
 	useEffect(() => {
 		fetchRecipes()
@@ -38,3 +38,5 @@ export const AddRecipePage = () => {
 		</div>
 	);
 };
+
+export default AddRecipePage

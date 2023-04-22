@@ -4,13 +4,17 @@ import banner1 from '../../../images/MainPageImg/bg-2.png';
 import banner2 from '../../../images/MainPageImg/img-1.png';
 
 export const WrapperStyled = styled.div`
+	background-color: #fafafa;
 	position: relative;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 	width: 100%;
 `;
 export const SectionStyled = styled.div`
 	position: relative;
 	top: -132px;
-	transform: translateX(58%) rotate(39deg);
+	transform: translateX(61%) rotate(39deg);
 	width: 100%px;
 	height: 542px;
 	background-color: #ebf3d4;
@@ -29,7 +33,7 @@ export const DivStyled = styled.div`
 	background-size: contain;
 	background: url(${banner1}) no-repeat top right;
 	position: absolute;
-    top: 0px;
+	top: 0px;
 	z-index: 2;
 `;
 export const DishStyled = styled.div`
@@ -38,8 +42,8 @@ export const DishStyled = styled.div`
 	background-size: contain;
 	background: url(${banner2}) no-repeat top right;
 	position: absolute;
-    top: 280px;
-    left: -17px;
+	top: 280px;
+	left: -17px;
 	z-index: 3;
 `;
 export const InformFieldStyled = styled.div`
@@ -50,17 +54,17 @@ export const InformFieldStyled = styled.div`
 	z-index: 5;
 `;
 export const TitleStyled = styled.div`
-	font-family: 'Poppins', sans-serif;
+	font-family: Poppins, sans-serif;
 	font-size: 60px;
 	font-weight: 700;
 	text-align: center;
-    margin-right: 25px;
+	margin-right: 25px;
 	margin-top: 71px;
 	color: #22252a;
 	z-index: 4;
 `;
 export const ParagrafStyled = styled.div`
-	font-family: 'Poppins', sans-serif;
+	font-family: Poppins, sans-serif;
 	font-size: 14px;
 	line-height: 18px;
 	letter-spacing: -0.02em;
@@ -75,7 +79,9 @@ export const ParagrafStyled = styled.div`
 	z-index: 4;
 `;
 export const BoxStyled = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
 `;
+
+
