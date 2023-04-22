@@ -1,5 +1,7 @@
 import { Favorite } from '../components/Favorite';
 
-export const FavoritePage = () => {
+const FavoritePage = () => {
 	return <Favorite></Favorite>;
 };
+
+export default FavoritePage

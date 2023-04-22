@@ -23,7 +23,7 @@ export const fetchRecipes = async (id) => {
 };
 
 
-export const RecipePage = () => {
+const RecipePage = () => {
 	// const isLoading = useSelector(selectIsLoading);
 	// const error = useSelector(selectError);
 	// const currentRecipe = useSelector(selectRecipes);
@@ -64,3 +64,5 @@ export const RecipePage = () => {
 		
 		</>);
 };
+
+export default RecipePage
