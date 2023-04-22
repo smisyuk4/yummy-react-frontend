@@ -4,11 +4,11 @@ export const ModalLogOut = () => {
   return <DivStyled>
     <span>x</span>
     <p>Are you sure you want to log out?</p>
-    <BtnLogOut>
+    {/* <BtnLogOut> */}
         Log out
-    </BtnLogOut>
-    <BtnCancel>
+    {/* </BtnLogOut> */}
+    {/* <BtnCancel> */}
         Cancel
-    </BtnCancel>
+    {/* </BtnCancel> */}
   </DivStyled>;
 };
