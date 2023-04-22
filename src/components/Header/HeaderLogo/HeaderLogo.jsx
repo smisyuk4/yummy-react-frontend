@@ -1,8 +1,8 @@
 import { HeaderLogoStyled } from './HeaderLogo.styled';
-import logoImg from '../../../images/logo.png'
+import {LogoIcon} from './LogoIcon'
 
 export const HeaderLogo = () => {
   return <HeaderLogoStyled to="/" >
-            <img src={logoImg} alt='logo'></img>
+            <LogoIcon />
         </HeaderLogoStyled>;
 };
