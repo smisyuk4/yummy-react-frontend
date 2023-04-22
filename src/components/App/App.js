@@ -12,6 +12,7 @@ import { RecipePage } from 'pages/RecipePage';
 import { MyRecipesPage } from 'pages/MyRecipesPage';
 import { SearchPage } from 'pages/SearchPage';
 import { ShoppingListPage } from 'pages/ShoppingListPage';
+import { AddRecipePage } from 'pages/AddRecipePage';
 
 export const App = () => {
 	return (
@@ -67,7 +68,7 @@ export const App = () => {
 					element={
 						<PrivateRoute
 							redirectTo="/login"
-							component={<FavoritePage />}
+							component={<AddRecipePage />}
 						/>
 					}
 				/>
