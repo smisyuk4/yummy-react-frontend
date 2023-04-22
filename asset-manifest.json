@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/yummy-react-frontend/static/css/main.726f2a28.css",
-    "main.js": "/yummy-react-frontend/static/js/main.0238372a.js",
+    "main.js": "/yummy-react-frontend/static/js/main.7fdb5126.js",
     "static/js/7.9d7a1265.chunk.js": "/yummy-react-frontend/static/js/7.9d7a1265.chunk.js",
     "static/js/702.60284926.chunk.js": "/yummy-react-frontend/static/js/702.60284926.chunk.js",
     "static/js/663.a83011ab.chunk.js": "/yummy-react-frontend/static/js/663.a83011ab.chunk.js",
     "static/js/266.237bfefb.chunk.js": "/yummy-react-frontend/static/js/266.237bfefb.chunk.js",
     "static/js/819.0e8ddb64.chunk.js": "/yummy-react-frontend/static/js/819.0e8ddb64.chunk.js",
+    "static/js/346.bc60b922.chunk.js": "/yummy-react-frontend/static/js/346.bc60b922.chunk.js",
     "static/js/233.a4fcb608.chunk.js": "/yummy-react-frontend/static/js/233.a4fcb608.chunk.js",
     "static/js/46.fd3f15c4.chunk.js": "/yummy-react-frontend/static/js/46.fd3f15c4.chunk.js",
     "static/js/403.2bf68a4b.chunk.js": "/yummy-react-frontend/static/js/403.2bf68a4b.chunk.js",
@@ -14,7 +15,7 @@
     "static/js/956.ef9b1387.chunk.js": "/yummy-react-frontend/static/js/956.ef9b1387.chunk.js",
     "static/js/982.180d3b9b.chunk.js": "/yummy-react-frontend/static/js/982.180d3b9b.chunk.js",
     "static/js/739.b59308d3.chunk.js": "/yummy-react-frontend/static/js/739.b59308d3.chunk.js",
-    "static/js/285.c5766048.chunk.js": "/yummy-react-frontend/static/js/285.c5766048.chunk.js",
+    "static/js/285.0a1eadf5.chunk.js": "/yummy-react-frontend/static/js/285.0a1eadf5.chunk.js",
     "static/js/998.938d51f2.chunk.js": "/yummy-react-frontend/static/js/998.938d51f2.chunk.js",
     "static/js/727.3e081906.chunk.js": "/yummy-react-frontend/static/js/727.3e081906.chunk.js",
     "static/js/795.889b48d5.chunk.js": "/yummy-react-frontend/static/js/795.889b48d5.chunk.js",
@@ -33,12 +34,13 @@
     "static/media/poppins-latin-ext-400-normal.woff2": "/yummy-react-frontend/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/yummy-react-frontend/index.html",
     "main.726f2a28.css.map": "/yummy-react-frontend/static/css/main.726f2a28.css.map",
-    "main.0238372a.js.map": "/yummy-react-frontend/static/js/main.0238372a.js.map",
+    "main.7fdb5126.js.map": "/yummy-react-frontend/static/js/main.7fdb5126.js.map",
     "7.9d7a1265.chunk.js.map": "/yummy-react-frontend/static/js/7.9d7a1265.chunk.js.map",
     "702.60284926.chunk.js.map": "/yummy-react-frontend/static/js/702.60284926.chunk.js.map",
     "663.a83011ab.chunk.js.map": "/yummy-react-frontend/static/js/663.a83011ab.chunk.js.map",
     "266.237bfefb.chunk.js.map": "/yummy-react-frontend/static/js/266.237bfefb.chunk.js.map",
     "819.0e8ddb64.chunk.js.map": "/yummy-react-frontend/static/js/819.0e8ddb64.chunk.js.map",
+    "346.bc60b922.chunk.js.map": "/yummy-react-frontend/static/js/346.bc60b922.chunk.js.map",
     "233.a4fcb608.chunk.js.map": "/yummy-react-frontend/static/js/233.a4fcb608.chunk.js.map",
     "46.fd3f15c4.chunk.js.map": "/yummy-react-frontend/static/js/46.fd3f15c4.chunk.js.map",
     "403.2bf68a4b.chunk.js.map": "/yummy-react-frontend/static/js/403.2bf68a4b.chunk.js.map",
@@ -46,13 +48,13 @@
     "956.ef9b1387.chunk.js.map": "/yummy-react-frontend/static/js/956.ef9b1387.chunk.js.map",
     "982.180d3b9b.chunk.js.map": "/yummy-react-frontend/static/js/982.180d3b9b.chunk.js.map",
     "739.b59308d3.chunk.js.map": "/yummy-react-frontend/static/js/739.b59308d3.chunk.js.map",
-    "285.c5766048.chunk.js.map": "/yummy-react-frontend/static/js/285.c5766048.chunk.js.map",
+    "285.0a1eadf5.chunk.js.map": "/yummy-react-frontend/static/js/285.0a1eadf5.chunk.js.map",
     "998.938d51f2.chunk.js.map": "/yummy-react-frontend/static/js/998.938d51f2.chunk.js.map",
     "727.3e081906.chunk.js.map": "/yummy-react-frontend/static/js/727.3e081906.chunk.js.map",
     "795.889b48d5.chunk.js.map": "/yummy-react-frontend/static/js/795.889b48d5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.726f2a28.css",
-    "static/js/main.0238372a.js"
+    "static/js/main.7fdb5126.js"
   ]
 }
