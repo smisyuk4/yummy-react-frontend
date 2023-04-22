@@ -1,42 +1,39 @@
+import { Title } from '../components/Title';
 import { AddRecipeForm } from 'components/AddRecipePage/AddRecipeForm';
-// import { RecipeDescription } from 'components/AddRecipePage/RecipeDescription';
-
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-
-//! FETCH RECIPES TO MAIN PAGE
-axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
-const TOKEN =
-	'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NDE5OTNjODYzZWFmOWJiYTQ2YzY2NSIsImlhdCI6MTY4MjAyMDY2OCwiZXhwIjoxNjg0NjEyNjY4fQ.cc5YEHIsXZ2ZkIFUGCySz5LtjnoU7kjVbeYXtQpyCIw';
-
-const config = {
-	headers: {
-		auth: `${TOKEN}`,
-	},
-};
-
-const fetchRecipes = async () => {
-	const responce = await axios.get(
-		`recipes/popular-recipes?auth=${TOKEN}`,
-		config
-	);
-	return responce;
-};
+import { FollowUs } from 'components/FollowUs';
+import { PopularRecipe } from 'components/AddRecipePage/PopularRecipe';
+// // import { AddRecipeDivStyled } from './AddRecipePage.styled';
 
 const AddRecipePage = () => {
-	const [popRecipes, setPopRecipes] = useState([]);
-	useEffect(() => {
-		fetchRecipes()
-			.then(({ data }) => setPopRecipes(data))
-			.catch(error => error);
-	}, []);
-	console.log('popular-recipes', popRecipes.data.recipesByPopular);
-	return (
-		<div>
-			{/* <RecipeDescription /> */}
-			<AddRecipeForm />
-		</div>
-	);
-};
+  return (
+//   <AddRecipeDivStyled>
+		<>
+			<Title title="Add recipe"/>
+			<AddRecipeForm/>
+			<FollowUs title="Follow us"/>
+			<PopularRecipe title="Popular recipe"/>
+		</>
+
+//   </AddRecipeDivStyled>;
+)};
 
 export default AddRecipePage
+
+// "Зверстати компоненти що знаходяться на сторінці AddRecipePage (мобільна, планшет та десктопна версії):
+// 1. MainTitle - універсальний компонент, що відмальовує заголовок і використовується на різних сторінках застосунку
+// 2. AddRecipeForm
+// 3. FollowUs
+// 4. PopularRecipe"
+
+// export const AddRecipeDivStyled = styled.AddRecipeDiv`
+// // 	width: 100vw;
+// // 	height: 100vh;
+// // 	position: absolute;
+// // 	bottom: 0;
+// // 	right: 0;
+
+// // 	@media ${props => props.theme.media.tablet} {
+// // 	}
+// // 	@media ${props => props.theme.media.desktop} {
+// // 	}
+// // `;
