@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import {createPortal} from "react-dom";
-import { BurgerMenuDiv, BtnCloseModal } from './BurgerMenu.styled';
-import {BurgerNavigationNav, ModalDiv} from './BurgerMenu.styled'
+import { BurgerMenuDiv, BtnCloseModal, HeaderLogoDiv, BurgerNavigationNav, ModalDiv } from './BurgerMenu.styled';
 import { HeaderNavlink, SearchImg } from '../HeaderNavigation/HeaderNavigation.styled';
 import searchImg from 'images/headerImges/search.png';
-
+import { Icon } from 'components/Icon';
 
 const modalRoot = document.getElementById('modal-root');
 
@@ -17,8 +16,10 @@ export const BurgerMenu = ({onCloseModal}) => {
     return () => document.removeEventListener("keydown", closeModal)
 });
 
+
   const closeModal = ({target, currentTarget, code}) => {
       if(target === currentTarget || code === "Escape") {
+        console.log(code)
         onCloseModal()
       }
   };
@@ -27,10 +28,15 @@ export const BurgerMenu = ({onCloseModal}) => {
   return createPortal(
     <BurgerMenuDiv onClick={closeModal}>
       <ModalDiv close={closeModal}>
-        <BtnCloseModal onClick={closeModal}>
-          <span>X</span>
-          {/* <CloseModalImg src={CloseModalImg} alt='cross'></CloseModalImg> */}
-        </BtnCloseModal>
+        <HeaderLogoDiv>
+          <div style={{backgroundColor: "grey"}}>
+              <Icon id="icon-knife-btn" height="50" width="50" />
+          </div>  
+          <BtnCloseModal onClick={closeModal}>
+            <span>X</span>
+          </BtnCloseModal>
+        </HeaderLogoDiv>
+        
         <BurgerNavigationNav>
             <HeaderNavlink to="/categories/:categoryName">Categories</HeaderNavlink>
             <HeaderNavlink to="/add">Add recipes</HeaderNavlink>
