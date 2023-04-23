@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-export const IngredientsLi = ({
+export const RecipeingredientsListItem = ({
 	allIngredientsList,
 	onButtonDeleteClick,
 	item,
@@ -82,7 +82,7 @@ export const IngredientsLi = ({
 				<input
 					name="ingredientName"
 					onChange={onIgredientChange}
-					value={ingredientFilter}
+					value={item.ttl}
 					autoComplete="false"></input>
 				<button type="button" onClick={openIngredientHelpList}>
 					d
@@ -115,7 +115,7 @@ export const IngredientsLi = ({
 				<input
 					name="measure"
 					onChange={onMeasureChange}
-					value={measure}
+					value={item.measure}
 					autoComplete="false"></input>
 				<button type="button" onClick={openMeasureHelpList}>
 					d
