@@ -18,7 +18,7 @@ import { registerUser } from 'redux/auth/operations';
 const passwordRegex = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 const nameRegex = /^[a-zA-Zа-яА-ЯґҐєЄїЇіІ0-9\s]{6,}$/;
 const emailRegex =
-	/^[\w!#$%^&*\-=/{}[\]_|`~?\\+][\w!#$%^&*\+\-?=/{}[\]_|`~\\.]{1,62}[\w!#$%^&*\-=/{}+[\]_|`~?\\]@([\w]+\.){1,20}[\w]{1,4}$/;
+	/^[\w!#$%^&*\-=/{}[\]_|`~?\\+][\w!#$%^&*\\+\-?=/{}[\]_|`~\\.]{1,62}[\w!#$%^&*\-=/{}+[\]_|`~?\\]@([\w]+\.){1,20}[\w]{1,4}$/;
 
 const RegisterSchema = Yup.object().shape({
 	name: Yup.string()
