@@ -17,13 +17,13 @@ import { registerUser } from 'redux/auth/operations';
 
 const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z])([a-zA-Z0-9]+)$/;
 const nameRegex = /^[a-zA-Zа-яА-ЯґҐєЄїЇіІ0-9\s]{6,}$/;
-const emailRegex = /^[\w]+@([\w]+\.)+[\w]{1,4}$/;
+const emailRegex = /^[\w]{1,64}@([\w]+\.)+[\w]{1,4}$/;
 
 const RegisterSchema = Yup.object().shape({
 	name: Yup.string()
 		.matches(
 			nameRegex,
-			'Name may contain letters and numbers. For example Jacob Mercer.'
+			'Name can include numbers and letters (Latin, Cyrillic), the minimum number of characters in the field is 1 (inclusive), the maximum is 16 (inclusive)'
 		)
 		.min(1)
 		.max(16)
@@ -31,7 +31,7 @@ const RegisterSchema = Yup.object().shape({
 	password: Yup.string()
 		.matches(
 			passwordRegex,
-			'Password must contain upper and lower case letters, numbers and minimum 6 characters.'
+			'The password must include numbers and letters - the minimum number of characters in the field - 6 (inclusive), the maximum - 16 (inclusive)'
 		)
 		.min(6)
 		.max(16)
@@ -39,7 +39,7 @@ const RegisterSchema = Yup.object().shape({
 	passwordConfirm: Yup.string()
 		.matches(
 			passwordRegex,
-			'Password must contain upper and lower case letters, numbers and minimum 6 characters.'
+			'The password must include numbers and letters - the minimum number of characters in the field - 6 (inclusive), the maximum - 16 (inclusive)'
 		)
 		.min(6)
 		.max(16)
@@ -49,7 +49,7 @@ const RegisterSchema = Yup.object().shape({
 		.max(64)
 		.matches(
 			emailRegex,
-			'Email may only latin letters, numbers and _ @ . symbols.'
+			'The local part of the mail can contain capital and small Latin letters (A-Z, a-z), numbers (from 0 to 9), but no more than 64 characters'
 		)
 		.email()
 		.required(),
