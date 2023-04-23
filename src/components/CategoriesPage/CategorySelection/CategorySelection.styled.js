@@ -59,7 +59,7 @@ export const CategoryList = styled.ul`
 	display: flex;
 	flex-direction: row;
 
-	width: 100%;
+	width: calc(100% - 32px);
 	margin: 0;
 	margin-top: 50px;
 	overflow-x: scroll;
@@ -83,10 +83,17 @@ export const CategoryItem = styled.li`
 	font-size: 14px;
 	line-height: 14px;
 
-	color: ${({ theme }) => theme.colors.fontColorPassive};
 	padding: 10px;
 
-	&.isActive {
+	.nav-link {
+		color: ${({ theme }) => theme.colors.fontColorPassive};
+	}
+
+	.nav-link:hover {
+		color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	}
+
+	.isActive {
 		color: ${({ theme }) => theme.colors.buttonPrimaryBG};
 	}
 `;
@@ -101,6 +108,8 @@ export const CardList = styled.ul`
 
 export const CardItem = styled.li`
 	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
 `;
 
 export const Image = styled.img`
