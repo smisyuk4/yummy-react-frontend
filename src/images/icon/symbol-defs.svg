@@ -153,5 +153,15 @@
         <symbol id="icon-burger" viewBox="0 0 48 32">
             <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M3 16h42M3 2h42M3 30h28"></path>
         </symbol>
+
+        <!-- change color - stroke -->
+        <symbol id="icon-arrow-up" viewBox="0 0 48 32">
+            <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 26l20-20 20 20"></path>
+        </symbol>
+
+        <!-- change color - stroke -->
+        <symbol id="icon-arrow-down" viewBox="0 0 48 32">
+            <path fill="none" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 6l20 20 20-20"></path>
+        </symbol>
     </defs>
 </svg>
