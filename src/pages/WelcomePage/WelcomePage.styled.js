@@ -1,8 +1,11 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
-import BG1 from 'images/welcomepage/mobile.png';
-import BG2 from 'images/welcomepage/tablet.png';
-import BG3 from 'images/welcomepage/desktop.png';
+import MBG1 from 'images/welcomepage/mobile.png';
+import MBG2 from 'images/welcomepage/mobile@2x.png';
+import TBG1 from 'images/welcomepage/tablet.png';
+import TBG2 from 'images/welcomepage/tablet@2x.png';
+import DBG1 from 'images/welcomepage/desktop.png';
+import DBG2 from 'images/welcomepage/desktop@2x.png';
 
 export const DivStyled = styled.div`
 	display: flex;
@@ -18,7 +21,7 @@ export const DivStyled = styled.div`
 			rgba(0, 0, 0, 0.345172) 78.98%,
 			rgba(0, 0, 0, 0) 100%
 		),
-		url(${BG1});
+		image-set(url(${MBG1}) 1x, url(${MBG2}) 2x);
 	color: ${props => props.theme.colors.fontColor};
 	@media (min-width: 768px) {
 		padding: 0 35px;
@@ -28,7 +31,7 @@ export const DivStyled = styled.div`
 				rgba(0, 0, 0, 0.345172) 78.98%,
 				rgba(0, 0, 0, 0) 100%
 			),
-			url(${BG2});
+			image-set(url(${TBG1}) 1x, url(${TBG2}) 2x);
 	}
 	@media (min-width: 1024px) {
 		padding: 0 35px;
@@ -38,7 +41,7 @@ export const DivStyled = styled.div`
 				rgba(0, 0, 0, 0.345172) 78.98%,
 				rgba(0, 0, 0, 0) 100%
 			),
-			url(${BG3});
+			image-set(url(${DBG1}) 1x, url(${DBG2}) 2x);
 	}
 	background-size: cover;
 `;
