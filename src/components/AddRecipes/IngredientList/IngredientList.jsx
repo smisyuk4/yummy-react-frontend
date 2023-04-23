@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import { IngredientCounter } from '../IngredientCounter';
-import { IngredientsUl } from '../IngredientsUl';
+import { IngredientsLi } from '../IngredientsLi';
 import { getAllIngredients } from '../fetchIngredients';
 import { v4 as uuidv4 } from 'uuid';
 
 export const IngredientsList = () => {
 	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
 	const [allIngredientsList, setAllIngredientsList] = useState([]);
-
-	const [addedIngredientsArray, setIngredientsArray] = useState([]);
+	const [addedIngredientsArray, setAddedIngredientsArray] = useState([]);
 
 	const fetchIngredients = async () => {
 		const fetchedIngredientsList = await getAllIngredients();
@@ -22,14 +21,14 @@ export const IngredientsList = () => {
 	};
 
 	useEffect(() => {
-		fetchIngredients();
+			fetchIngredients();
 	}, []);
 
 	const onIncrement = () => {
 		setIgredientsQuantity(ingredientsQuantity + 1);
-		setIngredientsArray(prevState => [
+		setAddedIngredientsArray(prevState => [
 			...prevState,
-			{ id: uuidv4(), ttl: '' },
+			{ id: uuidv4(), ttl: '', measure: '' },
 		]);
 		console.log(addedIngredientsArray);
 	};
@@ -37,7 +36,7 @@ export const IngredientsList = () => {
 	const onDecrement = () => {
 		if (ingredientsQuantity !== 0) {
 			setIgredientsQuantity(ingredientsQuantity - 1);
-			setIngredientsArray(prevState => {
+			setAddedIngredientsArray(prevState => {
 				const filteredArray = prevState.filter(
 					element => prevState[prevState.length - 1].id !== element.id
 				);
@@ -47,18 +46,52 @@ export const IngredientsList = () => {
 		}
 	};
 
-	const onButtonDeleteClick = e => {
-		const id = e.currentTarget.value;
-
-		setIgredientsQuantity(ingredientsQuantity - 1);
-		setIngredientsArray(prevState => {
-			const filteredArray = prevState.filter(
-				element => id !== element.id
-			);
-			return filteredArray;
+	const getIngredientName = (id, data) => {
+		console.log(2, id, data);
+		const requstedIngredient = allIngredientsList.find(ingredient => ingredient.ttl === data.ttl)
+		const updatedArray = addedIngredientsArray.map(ingredient => {
+			if (id === ingredient.id) {
+				return (ingredient = {
+					id: id,
+					ingredientId: requstedIngredient ? requstedIngredient.id : '',
+					ttl: data.ttl,
+					measure: ingredient.measure
+					
+			})
+			}
+			return ingredient;
 		});
+		setAddedIngredientsArray(updatedArray);
 	};
 
+	const getIngredientMeasure = (id, data) => {
+		const updatedArray = addedIngredientsArray.map(ingredient => {
+			if (id === ingredient.id) {
+				return (ingredient = {
+					id: id,
+					ingredientId: ingredient.ingredientId,
+					ttl: ingredient.ttl,
+					measure: data.measure,
+				});
+			}
+			return ingredient;
+		});
+		setAddedIngredientsArray(updatedArray);
+	};
+	console.log(addedIngredientsArray);
+
+	const onButtonDeleteClick = e => {
+		const id = e.currentTarget.id;
+		console.log(1,id);
+		
+		const reworkedArray = addedIngredientsArray.filter(
+			element => element.id !== id
+		);
+		console.log(reworkedArray);
+		
+		setAddedIngredientsArray(reworkedArray);
+		setIgredientsQuantity(ingredientsQuantity - 1);
+	};
 
 	return (
 		<div>
@@ -68,11 +101,22 @@ export const IngredientsList = () => {
 				onIncrementClick={onIncrement}
 				count={ingredientsQuantity}></IngredientCounter>
 			{ingredientsQuantity !== 0 && (
-				<IngredientsUl
-					allIngredientsList={allIngredientsList}
-					addedIngredientsArray={addedIngredientsArray}
-					onButtonDeleteClick={onButtonDeleteClick}
-				></IngredientsUl>
+				<ul>
+					{addedIngredientsArray.map(item => {
+						return (
+							<IngredientsLi
+								key={item.id}
+								item={item}
+								allIngredientsList={allIngredientsList}
+								addedIngredientsArray={addedIngredientsArray}
+								onButtonDeleteClick={onButtonDeleteClick}
+								getIngredientName={getIngredientName}
+								getIngredientMeasure={
+									getIngredientMeasure
+								}></IngredientsLi>
+						);
+					})}
+				</ul>
 			)}
 		</div>
 	);
