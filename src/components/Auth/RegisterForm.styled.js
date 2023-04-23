@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
+import { Icon } from 'components/Icon';
 
 export const H1Styled = styled.h1`
 	margin: 0;
@@ -27,7 +28,7 @@ export const FormStyled = styled(Form)`
 	}
 `;
 
-export const LabelForm = styled.label`
+export const LabelStyled = styled.label`
 	display: flex;
 	flex-direction: column;
 	position: relative;
@@ -47,6 +48,58 @@ export const InputForm = styled(Field)`
 	box-sizing: border-box;
 	background-color: transparent;
 	opacity: 0.8;
+	&:focus {
+		outline: 1px solid ${({ theme }) => theme.colors.fontColor};
+		border-color: ${({ theme }) => theme.colors.fontColor};
+	}
+	&:hover {
+		border: 1px solid #ffffff;
+		outline: 1px solid ${({ theme }) => theme.colors.fontColor};
+		color: #ffffff;
+		opacity: 1;
+	}
+	.error & {
+		border: 1px solid #e74a3b;
+		outline: none;
+	}
+	.valid & {
+		border: 1px solid #3cbc81;
+		outline: none;
+	}
 `;
 
-export const InputError = styled.span``;
+export const InputError = styled.span`
+	color: #e74a3b;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+`;
+
+export const IconStyled = styled(Icon)`
+	position: absolute;
+	stroke: ${({ theme }) => theme.colors.fontColor};
+	width: 18px;
+	height: 18px;
+	top: 14px;
+	left: 14px;
+	.error & {
+		--color3: #e74a3b;
+		--color2: #e74a3b;
+	}
+	.valid & {
+		--color3: #3cbc81;
+		--color2: #3cbc81;
+	}
+`;
+
+export const IconStatusStyled = styled(IconStyled)`
+	right: 14px;
+	left: unset;
+	stroke: none;
+	.error & {
+		--color1: #e74a3b;
+	}
+	.valid & {
+		--color1: #3cbc81;
+	}
+`;

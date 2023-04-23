@@ -9,9 +9,11 @@ export const Layout = () => {
 	const { isLoggedIn } = useAuth();
 	if (!isLoggedIn)
 		return (
-			<Suspense fallback={null}>
-				<Outlet />
-			</Suspense>
+			<DivStyled>
+				<Suspense fallback={null}>
+					<Outlet />
+				</Suspense>
+			</DivStyled>
 		);
 	return (
 		<DivStyled>

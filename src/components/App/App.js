@@ -13,7 +13,16 @@ import { MyRecipesPage } from 'pages/MyRecipesPage';
 import { SearchPage } from 'pages/SearchPage';
 import { ShoppingListPage } from 'pages/ShoppingListPage';
 
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { syncUser } from 'redux/auth/operations';
+
 export const App = () => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(syncUser());
+	}, [dispatch]);
+
 	return (
 		<Routes>
 			<Route path="/" element={<Layout />}>
