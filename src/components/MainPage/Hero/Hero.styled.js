@@ -18,7 +18,6 @@ export const SectionStyled = styled.div`
 	width: 100%px;
 	height: 542px;
 	background-color: #ebf3d4;
-	overflow: hidden;
 `;
 export const TopImgStyled = styled.div`
 	width: 100%;
@@ -52,12 +51,12 @@ export const InformFieldStyled = styled.div`
 	left: -20px;
 	z-index: 5;
 `;
-export const TitleStyled = styled.div`
+export const TitleStyled = styled.h1`
 	font-family: Poppins, sans-serif;
 	font-size: 60px;
 	font-weight: 700;
 	text-align: center;
-	margin-right: 25px;
+	position: absolute;
 	margin-top: 71px;
 	color: #22252a;
 	z-index: 4;
@@ -79,8 +78,8 @@ export const ParagrafStyled = styled.div`
 `;
 export const BoxStyled = styled.div`
 	display: flex;
-	flex-direction: row;
-	align-items: stretch;
+	align-items: center;
+    justify-content: center;
 `;
 
 
