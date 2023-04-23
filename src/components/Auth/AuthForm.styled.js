@@ -76,6 +76,10 @@ export const InputForm = styled(Field)`
 		border: 1px solid #3cbc81;
 		outline: none;
 	}
+	@media screen and (min-width: 768px) {
+		font-size: 18px;
+		line-height: 27px;
+	}
 `;
 
 export const InputError = styled.span`
@@ -116,4 +120,10 @@ export const NavLinkStyled = styled(NavLink)`
 	color: ${({ theme }) => theme.colors.fontColor};
 	text-align: center;
 	display: block;
+	font-size: 14px;
+	line-height: 21px;
+	@media screen and (min-width: 768px) {
+		font-size: 16px;
+		line-height: 24px;
+	}
 `;
