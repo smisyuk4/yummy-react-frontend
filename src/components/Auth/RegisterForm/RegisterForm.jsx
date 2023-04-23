@@ -15,9 +15,10 @@ import { FormButton } from 'components/ButtonNav/ButtonNav.styled';
 import { useDispatch } from 'react-redux';
 import { registerUser } from 'redux/auth/operations';
 
-const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z])([a-zA-Z0-9]+)$/;
+const passwordRegex = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 const nameRegex = /^[a-zA-Zа-яА-ЯґҐєЄїЇіІ0-9\s]{6,}$/;
-const emailRegex = /^[\w]{1,64}@([\w]+\.)+[\w]{1,4}$/;
+const emailRegex =
+	/^[\w!#$%^&*\-=/{}[\]_|`~?\\+][\w!#$%^&*\+\-?=/{}[\]_|`~\\.]{1,62}[\w!#$%^&*\-=/{}+[\]_|`~?\\]@([\w]+\.){1,20}[\w]{1,4}$/;
 
 const RegisterSchema = Yup.object().shape({
 	name: Yup.string()
@@ -49,7 +50,7 @@ const RegisterSchema = Yup.object().shape({
 		.max(64)
 		.matches(
 			emailRegex,
-			'The local part of the mail can contain capital and small Latin letters (A-Z, a-z), numbers (from 0 to 9), but no more than 64 characters'
+			'The local part of the mail can contain capital and small Latin letters (A-Z, a-z), numbers (from 0 to 9) and special symbols !#$%^&*_-=*/?+ but no more than 64 characters'
 		)
 		.email()
 		.required(),
