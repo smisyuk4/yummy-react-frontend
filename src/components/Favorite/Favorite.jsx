@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { fetchFavorite } from './FetchFavorite'
 import {
-
 	FavoriteArticle,
 	FavoriteDeleteBtn,
 	FavoriteImg,
@@ -19,10 +19,10 @@ export const Favorite = () => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState();
 
 	useEffect(() => {
-		fetch('https://yummy-rest-api.onrender.com/recipes/favorite/')
-			.then(response => response.json())
-			.then(data => setFavoriteRecipes(data));
-	}, [setFavoriteRecipes]);
+		fetchFavorite()
+			.then(({ data }) => setFavoriteRecipes(data))
+			.catch(error => error);
+	}, []);
 
 	return (
 		<FavoriteStyled>
