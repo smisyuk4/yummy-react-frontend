@@ -16,12 +16,14 @@ import { ShoppingListPage } from 'pages/ShoppingListPage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { syncUser } from 'redux/auth/operations';
+import { useAuth } from 'hooks/useAuth';
 
 export const App = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(syncUser());
 	}, [dispatch]);
+	if (useAuth().isRefreshing) return <h1>Refreshing...</h1>;
 
 	return (
 		<Routes>

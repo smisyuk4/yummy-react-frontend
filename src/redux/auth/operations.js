@@ -20,7 +20,7 @@ export const registerUser = createAsyncThunk(
 			auth.set(response.data.token);
 			return response.data;
 		} catch (e) {
-			return thunkAPI.rejectWithValue(e.message);
+			return thunkAPI.rejectWithValue(e.response.data);
 		}
 	}
 );
@@ -32,7 +32,7 @@ export const loginUser = createAsyncThunk(
 			auth.set(response.data.token);
 			return response.data;
 		} catch (e) {
-			return thunkAPI.rejectWithValue(e.message);
+			return thunkAPI.rejectWithValue(e.response.data);
 		}
 	}
 );
@@ -55,7 +55,6 @@ export const syncUser = createAsyncThunk('sync', async (_, thunkAPI) => {
 	try {
 		auth.set(persistedToken);
 		const response = await axios.get('/user/current');
-		console.log(response);
 		return response.data;
 	} catch (e) {
 		return thunkAPI.rejectWithValue(e.message);

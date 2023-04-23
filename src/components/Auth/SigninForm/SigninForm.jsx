@@ -6,7 +6,9 @@ import {
 	H1Styled,
 	IconStyled,
 	IconStatusStyled,
-} from 'components/Auth/RegisterForm.styled';
+	NavLinkStyled,
+	DivStyled,
+} from 'components/Auth/AuthForm.styled';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FormButton } from 'components/ButtonNav/ButtonNav.styled';
@@ -41,68 +43,71 @@ export const SigninForm = () => {
 		resetForm();
 	};
 	return (
-		<Formik
-			initialValues={{ name: '', password: '', email: '' }}
-			onSubmit={sendSignin}
-			validationSchema={SigninSchema}>
-			{formik => {
-				const { errors, touched } = formik;
-				return (
-					<FormStyled autoComplete="off">
-						<H1Styled>Sign In</H1Styled>
+		<DivStyled>
+			<Formik
+				initialValues={{ name: '', password: '', email: '' }}
+				onSubmit={sendSignin}
+				validationSchema={SigninSchema}>
+				{formik => {
+					const { errors, touched } = formik;
+					return (
+						<FormStyled autoComplete="off">
+							<H1Styled>Sign In</H1Styled>
 
-						<LabelStyled
-							className={
-								touched.password &&
-								(errors.password ? 'error' : 'valid')
-							}>
-							<IconStyled id="icon-lock" />
-							<InputForm
-								type="password"
-								name="password"
-								placeholder="Password"
-							/>
-							{touched.password &&
-								(errors.password ? (
-									<>
-										<ErrorMessage
-											name="password"
-											component={InputError}
-										/>
-										<IconStatusStyled id="icon-validation-error" />
-									</>
-								) : (
-									<IconStatusStyled id="icon-validation-success" />
-								))}
-						</LabelStyled>
-						<LabelStyled
-							className={
-								touched.email &&
-								(errors.email ? 'error' : 'valid')
-							}>
-							<IconStyled id="icon-letter" />
-							<InputForm
-								type="email"
-								name="email"
-								placeholder="Email"
-							/>
-							{touched.email &&
-								(errors.email ? (
-									<>
-										<ErrorMessage
-											name="email"
-											component={InputError}
-										/>
-										<IconStatusStyled id="icon-validation-error" />
-									</>
-								) : (
-									<IconStatusStyled id="icon-validation-success" />
-								))}
-						</LabelStyled>
-						<FormButton type="submit">Sign In</FormButton>
-					</FormStyled>
-				);
-			}}
-		</Formik>
+							<LabelStyled
+								className={
+									touched.password &&
+									(errors.password ? 'error' : 'valid')
+								}>
+								<IconStyled id="icon-lock" />
+								<InputForm
+									type="password"
+									name="password"
+									placeholder="Password"
+								/>
+								{touched.password &&
+									(errors.password ? (
+										<>
+											<ErrorMessage
+												name="password"
+												component={InputError}
+											/>
+											<IconStatusStyled id="icon-validation-error" />
+										</>
+									) : (
+										<IconStatusStyled id="icon-validation-success" />
+									))}
+							</LabelStyled>
+							<LabelStyled
+								className={
+									touched.email &&
+									(errors.email ? 'error' : 'valid')
+								}>
+								<IconStyled id="icon-letter" />
+								<InputForm
+									type="email"
+									name="email"
+									placeholder="Email"
+								/>
+								{touched.email &&
+									(errors.email ? (
+										<>
+											<ErrorMessage
+												name="email"
+												component={InputError}
+											/>
+											<IconStatusStyled id="icon-validation-error" />
+										</>
+									) : (
+										<IconStatusStyled id="icon-validation-success" />
+									))}
+							</LabelStyled>
+							<FormButton type="submit">Sign In</FormButton>
+						</FormStyled>
+					);
+				}}
+			</Formik>
+			<NavLinkStyled to="/register">Registration</NavLinkStyled>
+		</DivStyled>
 	);
 };

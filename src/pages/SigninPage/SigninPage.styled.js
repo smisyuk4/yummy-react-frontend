@@ -5,10 +5,7 @@ export const DivStyled = styled.div`
 	padding-bottom: 60px;
 	overflow: clip;
 	position: relative;
-`;
-
-export const NavLinkStyled = styled(NavLink)`
-	color: ${({ theme }) => theme.colors.fontColor};
-	text-align: center;
-	display: block;
+	min-height: calc(100vh - 60px);
+	display: flex;
+	flex-direction: column;
 `;

@@ -1,6 +1,15 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
 import { Icon } from 'components/Icon';
+import { NavLink } from 'react-router-dom';
+
+export const DivStyled = styled.div`
+	@media screen and (min-width: 1440px) {
+		position: absolute;
+		top: 122px;
+		right: 180px;
+	}
+`;
 
 export const H1Styled = styled.h1`
 	margin: 0;
@@ -24,6 +33,7 @@ export const FormStyled = styled(Form)`
 	position: relative;
 	z-index: 1;
 	@media screen and (min-width: 600px) {
+		width: 500px;
 		margin: 20px auto;
 	}
 `;
@@ -102,4 +112,10 @@ export const IconStatusStyled = styled(IconStyled)`
 	.valid & {
 		--color1: #3cbc81;
 	}
+`;
+
+export const NavLinkStyled = styled(NavLink)`
+	color: ${({ theme }) => theme.colors.fontColor};
+	text-align: center;
+	display: block;
 `;
