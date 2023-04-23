@@ -78,9 +78,10 @@ export const BtnBox = styled.div`
     margin-bottom: 100px;
 `;
 
-/* export const ImgStyled = styled.div`
-	width: 100%;
-	height: 184px;
-	background-size: contain;
-	background: url(${banner}) no-repeat top left;
-	position: relative; */
+// export const ImgStyled = styled.img`
+//     width: 100%;
+//     height: 392px;
+// 	background-size: contain;
+// 	background: url(${banner}) no-repeat top left;
+// 	position: absolute;
+// `;
