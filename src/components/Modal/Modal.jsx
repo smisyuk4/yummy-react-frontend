@@ -11,7 +11,7 @@ export const Modal = ({close, children}) => {
     document.addEventListener("keydown", closeModal);
     
     return () => document.removeEventListener("keydown", closeModal)
-}, []);
+}, );
 
   const closeModal = ({target, currentTarget, code}) => {
       if(target === currentTarget || code === "Escape") {
