@@ -93,12 +93,10 @@ export const IconStyled = styled(Icon)`
 	top: 14px;
 	left: 14px;
 	.error & {
-		--color3: #e74a3b;
-		--color2: #e74a3b;
+		stroke: #e74a3b;
 	}
 	.valid & {
-		--color3: #3cbc81;
-		--color2: #3cbc81;
+		stroke: #3cbc81;
 	}
 `;
 
@@ -107,10 +105,10 @@ export const IconStatusStyled = styled(IconStyled)`
 	left: unset;
 	stroke: none;
 	.error & {
-		--color1: #e74a3b;
+		fill: #e74a3b;
 	}
 	.valid & {
-		--color1: #3cbc81;
+		fill: #3cbc81;
 	}
 `;
 
