@@ -8,6 +8,11 @@ export const UserLogoDiv = styled.div`
 `;
 export const UserNameP = styled.p`
     margin-left: 14px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.7;
 `
 export const WrapperImg = styled.div`
     width: 34px;

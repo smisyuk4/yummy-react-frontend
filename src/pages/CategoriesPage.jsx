@@ -1,3 +1,11 @@
+import { CategorySelection } from 'components/CategoriesPage/CategorySelection';
+
 export const CategoriesPage = () => {
-	return <div>CategoriesPage</div>;
+	return (
+		<>
+			<CategorySelection />
+		</>
+	);
 };
+
+export default CategoriesPage;

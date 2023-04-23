@@ -23,3 +23,4 @@ export const Header = () => {
     <UserLogo onOpenModal={openModal} />
   </HeaderStyled>;
 };
+

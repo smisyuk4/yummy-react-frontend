@@ -12,6 +12,6 @@ const config = {
 };
 
 export const fetchRecipes = async () => {
-	const responce = await axios.get(`recipes/main-page?auth=${TOKEN}`, config);
+	const responce = await axios.get(`recipes/main-page`, config);
 	return responce;
 };
