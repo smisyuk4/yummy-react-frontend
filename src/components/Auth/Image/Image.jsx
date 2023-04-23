@@ -1,7 +1,6 @@
 import { ImgStyled } from './Image.styled';
+import image from 'images/formpage/form.svg';
 
 export const Image = () => {
-	return (
-		<ImgStyled src="/yummy-react-frontend/assets/registerpage/mobile.png"></ImgStyled>
-	);
+	return <ImgStyled src={image}></ImgStyled>;
 };

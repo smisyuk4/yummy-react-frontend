@@ -11,16 +11,21 @@ import './index.css';
 const LightTheme = {
 	colors: {
 		primary: '#8BAA36',
+		primarySoft: '#EBF3D4',
 		fontColor: '#fafafa',
+		fontColorDark: '#3e4462',
+		fontColorPassive: '#E0E0E0',
+		titleColor: '#001833',
 		buttonLightBG: '#fafafa',
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		darkBG: '#2a2c36',
+		lightBG: '#ECECEC',
 	},
-  media: {
-    tablet: "(min-width: 768px)",
-    desktop: "(min-width: 1440px)"
-  }
+	media: {
+		tablet: '(min-width: 768px)',
+		desktop: '(min-width: 1440px)',
+	},
 };
 
 const baseUrl =
