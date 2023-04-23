@@ -3,7 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { Icon } from 'components/Icon';
 import {flexBox} from 'styles/mixins';
 
-export const FooterStyled = styled.footer`
+export const WrapperFooter = styled.footer`
+    ${flexBox};
+    flex-direction: column;
+`
+export const FooterStyled = styled.div`
+    width: 100%;
     padding-top: 28px;
     padding-bottom: 20px;
     background-color: ${props => props.theme.colors.buttonDarkBG};
@@ -59,3 +64,20 @@ export const FooterNavlink = styled(NavLink)`
 
     color: ${props => props.theme.colors.fontColor};
 `;
+
+export const FooterTeam = styled.div`
+    width: 100%;
+    ${flexBox};
+    flex-direction: row;
+    gap: 14px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: ${props => props.theme.colors.buttonDarkBG};
+    opacity: 0.5;
+
+`

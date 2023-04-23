@@ -1,10 +1,11 @@
-import { FooterStyled, WrapperTitle, IconFooter, IconDiv, Title, FooterNav, FooterNavlink } from './Footer.styled';
+import {WrapperFooter, FooterStyled, WrapperTitle, IconFooter, IconDiv, Title, FooterNav, FooterNavlink, FooterTeam } from './Footer.styled';
 import { SubscriptionForm } from './SubscriptionForm';
 import { SonetLinks } from './SonetLinks';
 
 
 export const Footer = () => {
-  return <FooterStyled>
+  return <WrapperFooter>
+  <FooterStyled>
     <WrapperTitle>
       <IconDiv>
         <IconFooter id="icon-knife-btn" color="#8BAA36" />
@@ -22,5 +23,10 @@ export const Footer = () => {
 
     <SubscriptionForm />
     <SonetLinks />
-  </FooterStyled>;
+  </FooterStyled>
+  <FooterTeam>
+    <p>	&copy; 2023 All Rights Reserved.</p>
+    <p>Terms of Service</p>
+  </FooterTeam>
+  </WrapperFooter>
 };
