@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/yummy-react-frontend/static/css/main.ab0c715b.css",
-    "main.js": "/yummy-react-frontend/static/js/main.5ee73bb4.js",
+    "main.js": "/yummy-react-frontend/static/js/main.aaf5cf95.js",
     "static/js/759.e63dc075.chunk.js": "/yummy-react-frontend/static/js/759.e63dc075.chunk.js",
     "static/js/702.6be97162.chunk.js": "/yummy-react-frontend/static/js/702.6be97162.chunk.js",
     "static/js/663.beb45fcf.chunk.js": "/yummy-react-frontend/static/js/663.beb45fcf.chunk.js",
-    "static/js/394.f4fa74b0.chunk.js": "/yummy-react-frontend/static/js/394.f4fa74b0.chunk.js",
+    "static/js/5.d559d808.chunk.js": "/yummy-react-frontend/static/js/5.d559d808.chunk.js",
     "static/js/819.d5883aa6.chunk.js": "/yummy-react-frontend/static/js/819.d5883aa6.chunk.js",
     "static/js/346.b27ac149.chunk.js": "/yummy-react-frontend/static/js/346.b27ac149.chunk.js",
     "static/js/233.a4fcb608.chunk.js": "/yummy-react-frontend/static/js/233.a4fcb608.chunk.js",
@@ -43,11 +43,11 @@
     "static/media/poppins-latin-ext-400-normal.woff2": "/yummy-react-frontend/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "index.html": "/yummy-react-frontend/index.html",
     "main.ab0c715b.css.map": "/yummy-react-frontend/static/css/main.ab0c715b.css.map",
-    "main.5ee73bb4.js.map": "/yummy-react-frontend/static/js/main.5ee73bb4.js.map",
+    "main.aaf5cf95.js.map": "/yummy-react-frontend/static/js/main.aaf5cf95.js.map",
     "759.e63dc075.chunk.js.map": "/yummy-react-frontend/static/js/759.e63dc075.chunk.js.map",
     "702.6be97162.chunk.js.map": "/yummy-react-frontend/static/js/702.6be97162.chunk.js.map",
     "663.beb45fcf.chunk.js.map": "/yummy-react-frontend/static/js/663.beb45fcf.chunk.js.map",
-    "394.f4fa74b0.chunk.js.map": "/yummy-react-frontend/static/js/394.f4fa74b0.chunk.js.map",
+    "5.d559d808.chunk.js.map": "/yummy-react-frontend/static/js/5.d559d808.chunk.js.map",
     "819.d5883aa6.chunk.js.map": "/yummy-react-frontend/static/js/819.d5883aa6.chunk.js.map",
     "346.b27ac149.chunk.js.map": "/yummy-react-frontend/static/js/346.b27ac149.chunk.js.map",
     "233.a4fcb608.chunk.js.map": "/yummy-react-frontend/static/js/233.a4fcb608.chunk.js.map",
@@ -66,6 +66,6 @@
   },
   "entrypoints": [
     "static/css/main.ab0c715b.css",
-    "static/js/main.5ee73bb4.js"
+    "static/js/main.aaf5cf95.js"
   ]
 }
