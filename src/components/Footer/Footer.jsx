@@ -1,4 +1,6 @@
-import {WrapperFooter, WrapDiscrSubscrForm, FooterStyled, FotterUpDiv, WrapperDiscr, WrapperTitle, IconFooter, IconDiv, Title, FooterNav, FooterNavlink, FooterTeam } from './Footer.styled';
+import {WrapperFooter, WrapDiscrSubscrForm, FooterStyled, FotterUpDiv, WrapperDiscr, WrapperTitle, 
+  // IconFooter, IconDiv,
+   Title, FooterNav, FooterNavlink, FooterTeam } from './Footer.styled';
 import { SubscriptionForm } from './SubscriptionForm';
 import { FooterDescription } from './FooterDescription';
 import { FollowUs } from 'components/FollowUs';
