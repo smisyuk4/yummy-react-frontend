@@ -1,5 +1,19 @@
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import {
+	StyledIngredientInput,
+	StyledMeasureInput,
+	StyledHelpListShowButton,
+	StyledIngredientLabel,
+	StyledMeasureLabel,
+	StyledCloseButton,
+	DropdownMeasureContainer,
+	DropdownIngredientContainer,
+	DropdownIngredientUl,
+	DropdownHideButton,
+	DropdownListPosition,
+} from './RecipeIngredientListItem.styled';
+import { Icon } from 'components/Icon';
 
 export const RecipeingredientsListItem = ({
 	allIngredientsList,
@@ -78,72 +92,80 @@ export const RecipeingredientsListItem = ({
 
 	return (
 		<li key={item.id}>
-			<label htmlFor="ingredientName">
-				<input
+			<StyledIngredientLabel htmlFor="ingredientName">
+				<StyledIngredientInput
 					name="ingredientName"
 					onChange={onIgredientChange}
 					value={item.ttl}
-					autoComplete="false"></input>
-				<button type="button" onClick={openIngredientHelpList}>
+					autoComplete="false"></StyledIngredientInput>
+				<StyledHelpListShowButton
+					type="button"
+					onClick={openIngredientHelpList}>
 					d
-				</button>
+				</StyledHelpListShowButton>
 				{ingredientHelpListState && (
-					<div>
-						<button type="button" onClick={closeIngredientHelpList}>
+					<DropdownIngredientContainer>
+						<DropdownHideButton type="button" onClick={closeIngredientHelpList}>
 							^
-						</button>
-						<ul>
+						</DropdownHideButton>
+						<DropdownIngredientUl>
 							{filteredIngredients.map(({ _id, ttl }) => {
 								return (
 									<li key={uuidv4()}>
-										<button
+										<DropdownListPosition
 											id={_id}
 											type="button"
 											onClick={
 												onIngredientsHelpListSelect
 											}>
 											{ttl}
-										</button>
+										</DropdownListPosition>
 									</li>
 								);
 							})}
-						</ul>
-					</div>
+						</DropdownIngredientUl>
+					</DropdownIngredientContainer>
 				)}
-			</label>
-			<label htmlFor="measure">
-				<input
+			</StyledIngredientLabel>
+			<StyledMeasureLabel htmlFor="measure">
+				<StyledMeasureInput
 					name="measure"
 					onChange={onMeasureChange}
 					value={item.measure}
-					autoComplete="false"></input>
-				<button type="button" onClick={openMeasureHelpList}>
+					autoComplete="false"></StyledMeasureInput>
+				<StyledHelpListShowButton
+					type="button"
+					onClick={openMeasureHelpList}>
 					d
-				</button>
+				</StyledHelpListShowButton>
 				{measureHelpListState && (
-					<div>
-						<button type="button" onClick={closeMeasureHelpList}>
+					<DropdownMeasureContainer>
+						<DropdownHideButton type="button" onClick={closeMeasureHelpList}>
 							^
-						</button>
-						<ul>
+						</DropdownHideButton>
+						<DropdownIngredientUl>
 							{measureOptions.map(optionValue => {
 								return (
 									<li key={uuidv4()}>
-										<button
+										<DropdownListPosition
 											type="button"
 											onClick={onMeasureHelpListSelect}>
 											{optionValue}
-										</button>
+										</DropdownListPosition>
 									</li>
 								);
 							})}
-						</ul>
-					</div>
+						</DropdownIngredientUl>
+					</DropdownMeasureContainer>
 				)}
-			</label>
-			<button onClick={onButtonDeleteClick} id={item.id}>
-				del
-			</button>
+			</StyledMeasureLabel>
+			<StyledCloseButton onClick={onButtonDeleteClick} id={item.id} type="button">
+				<Icon
+					id="icon-close"
+					width={12}
+					height={12}
+					stroke="#333333"></Icon>
+			</StyledCloseButton>
 		</li>
 	);
 };

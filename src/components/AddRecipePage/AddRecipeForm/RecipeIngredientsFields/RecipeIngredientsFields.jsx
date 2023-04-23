@@ -3,6 +3,7 @@ import { RecipeIngredientsFieldsCounter } from '../RecipeIngredientsFieldsCounte
 import { RecipeingredientsListItem } from '../RecipeIngredientsListItem';
 import { getAllIngredients } from '../fetchIngredients';
 import { v4 as uuidv4 } from 'uuid';
+import { HeadingStyledContainer, RecipeIngredientsHeading, RecipeIngredientsSection, RecipeIngredientsUl } from './RecipeIngredientsFields.styled';
 
 export const RecipeIngredientsFields = () => {
 	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
@@ -97,14 +98,18 @@ export const RecipeIngredientsFields = () => {
 	};
 
 	return (
-		<div>
-			<h2>Ingredients</h2>
-			<RecipeIngredientsFieldsCounter
-				onDecrementClick={onDecrement}
-				onIncrementClick={onIncrement}
-				count={ingredientsQuantity}></RecipeIngredientsFieldsCounter>
+		<RecipeIngredientsSection>
+			<HeadingStyledContainer>
+				<RecipeIngredientsHeading>Ingredients</RecipeIngredientsHeading>
+				<RecipeIngredientsFieldsCounter
+					onDecrementClick={onDecrement}
+					onIncrementClick={onIncrement}
+					count={
+						ingredientsQuantity
+					}></RecipeIngredientsFieldsCounter>
+			</HeadingStyledContainer>
 			{ingredientsQuantity !== 0 && (
-				<ul>
+				<RecipeIngredientsUl>
 					{addedIngredientsArray.map(item => {
 						return (
 							<RecipeingredientsListItem
@@ -119,8 +124,8 @@ export const RecipeIngredientsFields = () => {
 								}></RecipeingredientsListItem>
 						);
 					})}
-				</ul>
+				</RecipeIngredientsUl>
 			)}
-		</div>
+		</RecipeIngredientsSection>
 	);
 };
