@@ -1,4 +1,6 @@
 import { Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Outlet } from 'react-router-dom';
 import { DivStyled } from './Layout.styled';
 import { Header } from 'components/Header';
@@ -9,7 +11,19 @@ import { ColorRing } from 'react-loader-spinner';
 export const Layout = () => {
   const { isLoggedIn } = useAuth();
   if (!isLoggedIn)
-    return (
+    return (<DivStyled>
+				<ToastContainer
+					position="top-right"
+					autoClose={2000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme="colored"
+				/>
       <Suspense
         fallback={
           <ColorRing
@@ -21,7 +35,7 @@ export const Layout = () => {
         }
       >
         <Outlet />
-      </Suspense>
+      </Suspense></DivStyled>
     );
   return (
     <DivStyled>

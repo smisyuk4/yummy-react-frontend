@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
 
 export const DivStyled = styled.div`
 	display: flex;
@@ -63,5 +64,17 @@ export const PStyled = styled.p`
 	}
 	@media (min-width: 1024px) {
 		max-width: 540px;
+	}
+`;
+
+export const IconStyled = styled(Icon)`
+	width: 54px;
+	height: 54px;
+	background-color: ${props => props.theme.colors.primary};
+	border-radius: 12px;
+	padding: 13px;
+	@media (min-width: 768px) {
+		width: 68px;
+		height: 68px;
 	}
 `;

@@ -20,7 +20,23 @@ const RestrictedRoute = lazy(() =>
 const PrivateRoute = lazy(() => import('components/subRoutes/PrivateRoute'));
 const Layout = lazy(() => import('components/Layout'));
 
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { syncUser } from 'redux/auth/operations';
+import { useAuth } from 'hooks/useAuth';
+
 export const App = () => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(syncUser());
+	}, [dispatch]);
+	if (useAuth().isRefreshing) return <ColorRing
+          visible={true}
+          ariaLabel="blocks-loading"
+          wrapperClass="blocks-wrapper"
+          colors={['#2a2c36', '#f47e60', '#f8b26a', '#8BAA36', '#EBF3D4']}
+        />;
+
   return (
     <Suspense
       fallback={
