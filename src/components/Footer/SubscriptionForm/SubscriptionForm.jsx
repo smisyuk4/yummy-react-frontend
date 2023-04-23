@@ -34,7 +34,7 @@ export const SubscriptionForm = () => {
 		onSubmit={sendSubscription}
 		validationSchema={SubscribeSchema}>
 		{formik => {
-			const { errors, touched, values } = formik;
+			const { errors, touched } = formik;
 
 			return (
 				<FormStyled autoComplete="on">
