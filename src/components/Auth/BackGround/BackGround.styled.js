@@ -8,4 +8,10 @@ export const DivStyled = styled.div`
 	top: 322px;
 	z-index: -1;
 	clip-path: polygon(33% 6%, 61% 6%, 100% 0, 100% 100%, 0 100%, 0 0);
+	@media (min-width: 768px) {
+		top: 418px;
+	}
+	@media (min-width: 1440px) {
+		top: 444px;
+	}
 `;
