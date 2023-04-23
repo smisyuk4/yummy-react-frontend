@@ -4,8 +4,8 @@ const ShoppingBar = () => {
 	return (
 		<DivContainer>
 			<ListBar>
-				<ItemBar>Prodacts</ItemBar>
-				<ItemBar>Number</ItemBar>
+				<ItemBar style={{ marginRight: "167px" }}>Prodacts</ItemBar>
+				<ItemBar style={{ marginRight: "24px" }}>Number</ItemBar>
 				<ItemBar>Remove</ItemBar>
 			</ListBar>
 		</DivContainer>
