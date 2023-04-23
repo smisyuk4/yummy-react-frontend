@@ -22,7 +22,7 @@ const SigninSchema = Yup.object().shape({
 	password: Yup.string()
 		.matches(
 			passwordRegex,
-			'Password must contain upper and lower case letters, numbers and minimum 6 characters.'
+			'The password must include numbers and letters - the minimum number of characters in the field - 6 (inclusive), the maximum - 16 (inclusive)'
 		)
 		.min(3)
 		.max(64)
@@ -30,7 +30,7 @@ const SigninSchema = Yup.object().shape({
 	email: Yup.string()
 		.matches(
 			emailRegex,
-			'Email may only latin letters, numbers and _ @ . symbols.'
+			'The local part of the mail can contain capital and small Latin letters (A-Z, a-z), numbers (from 0 to 9), but no more than 64 characters'
 		)
 		.email()
 		.required(),
