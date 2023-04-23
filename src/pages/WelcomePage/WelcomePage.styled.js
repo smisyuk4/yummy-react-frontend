@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
+import BG1 from 'images/welcomepage/mobile.png';
+import BG2 from 'images/welcomepage/tablet.png';
+import BG3 from 'images/welcomepage/desktop.png';
 
 export const DivStyled = styled.div`
 	display: flex;
@@ -15,7 +18,7 @@ export const DivStyled = styled.div`
 			rgba(0, 0, 0, 0.345172) 78.98%,
 			rgba(0, 0, 0, 0) 100%
 		),
-		url('yummy-react-frontend/assets/welcomepage/mobile.png');
+		url(${BG1});
 	color: ${props => props.theme.colors.fontColor};
 	@media (min-width: 768px) {
 		padding: 0 35px;
@@ -25,7 +28,7 @@ export const DivStyled = styled.div`
 				rgba(0, 0, 0, 0.345172) 78.98%,
 				rgba(0, 0, 0, 0) 100%
 			),
-			url('yummy-react-frontend/assets/welcomepage/tablet.png');
+			url(${BG2});
 	}
 	@media (min-width: 1024px) {
 		padding: 0 35px;
@@ -35,7 +38,7 @@ export const DivStyled = styled.div`
 				rgba(0, 0, 0, 0.345172) 78.98%,
 				rgba(0, 0, 0, 0) 100%
 			),
-			url('yummy-react-frontend/assets/welcomepage/desktop.png');
+			url(${BG3});
 	}
 	background-size: cover;
 `;
