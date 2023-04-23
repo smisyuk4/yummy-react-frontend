@@ -1,17 +1,17 @@
-// import { useEffect, useState } from 'react';
-// import {
-//   FavoriteArticle,
-//   FavoriteDeleteBtn,
-//   FavoriteImg,
-//   FavoriteItem,
-//   FavoriteList,
-//   FavoriteRecipeBox,
-//   FavoriteRecipeTitle,
-//   FavoriteSeeBtn,
-//   FavoriteStyled,
-//   FavoriteTime,
-//   FavoriteTitle,
-// } from './Favorite.styled';
+import { useEffect, useState } from 'react';
+import {
+	FavoriteArticle,
+	FavoriteDeleteBtn,
+	FavoriteImg,
+	FavoriteItem,
+	FavoriteList,
+	FavoriteRecipeBox,
+	FavoriteRecipeTitle,
+	FavoriteSeeBtn,
+	FavoriteStyled,
+	FavoriteTime,
+	FavoriteTitle,
+} from './Favorite.styled';
 
 export const Favorite = () => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState();
