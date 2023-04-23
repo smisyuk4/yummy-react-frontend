@@ -18,8 +18,8 @@ const config = {
 
 
 export const fetchRecipes = async (id) => {
-	const { result } = await axios.get(`recipes/${id = '640cd5ac2d9fecf12e8897f5'}?auth=${TOKEN}`, config);
-	return result;
+	const  result  = await axios.get(`recipes/${id = '640cd5ac2d9fecf12e8897f5'}?auth=${TOKEN}`, config);
+	return result.data.result;
 };
 
 
@@ -30,19 +30,17 @@ const RecipePage = () => {
 	const { recipeId } = useParams();
 	const [recipe, setRecipe] = useState([]);
 
-	// const dispatch = useDispatch();
-	// useEffect(() => {
-    //     dispatch(fetchRecipes());
-    // }, [dispatch]);
     
 	useEffect(() => {
-    async function getRecipe() {
+		async function getRecipe() {
+		// console.log(RecipePage)
       try {
-        const { recipe } = await fetchRecipes(recipeId);
-        if (!recipe) {
+		 const getrecipe = await fetchRecipes(recipeId);
+		 console.log(getrecipe);
+        if (!getrecipe) {
           return;
         }
-        setRecipe(recipe);
+        setRecipe(getrecipe);
         
       } catch (error) {
 		  console.log(error);
@@ -50,11 +48,8 @@ const RecipePage = () => {
     }
     getRecipe();
 	}, [recipeId]);
-	const {
-    _id,
-    title,
-    description,
-  } = recipe;
+	const { _id, title, description} = recipe;
+	console.log('test', recipe)
 	return (<>
 		<RecipePageHero>
 			title={title},
