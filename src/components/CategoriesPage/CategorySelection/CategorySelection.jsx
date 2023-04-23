@@ -73,13 +73,19 @@ export const CategorySelection = () => {
 				})}
 			</CategoryList>
 			<CardList>
-				{oneCategory.map(({ title, thumb }) => {
+				{oneCategory.map(({ _id, title, thumb }) => {
+					// console.log(oneCategory);
 					return (
 						<CardItem key={title}>
-							<Image src={thumb} alt={title} />
-							<CardBox>
-								<CardTitle>{title}</CardTitle>
-							</CardBox>
+							<NavLink
+								className="card-link"
+								to={`/recipe/${_id}`}
+								replace={true}>
+								<Image src={thumb} alt={title} />
+								<CardBox>
+									<CardTitle>{title}</CardTitle>
+								</CardBox>
+							</NavLink>
 						</CardItem>
 					);
 				})}

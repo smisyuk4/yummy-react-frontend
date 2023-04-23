@@ -89,7 +89,8 @@ export const CategoryItem = styled.li`
 		color: ${({ theme }) => theme.colors.fontColorPassive};
 	}
 
-	.nav-link:hover {
+	.nav-link:hover,
+	.nav-link:active {
 		color: ${({ theme }) => theme.colors.buttonPrimaryBG};
 	}
 
@@ -110,6 +111,10 @@ export const CardItem = styled.li`
 	position: relative;
 	border-radius: 8px;
 	overflow: hidden;
+
+	.card-link {
+		color: ${({ theme }) => theme.colors.fontColorDark};
+	}
 `;
 
 export const Image = styled.img`
