@@ -13,6 +13,7 @@ const LightTheme = {
 		primary: '#8BAA36',
 		primarySoft: '#EBF3D4',
 		fontColor: '#fafafa',
+		fontColorDark: '#3e4462',
 		fontColorPassive: '#E0E0E0',
 		titleColor: '#001833',
 		buttonLightBG: '#fafafa',
