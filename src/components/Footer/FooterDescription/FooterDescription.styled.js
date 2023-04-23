@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import {flexBox} from 'styles/mixins';
 
 
 export const UlStyled = styled.ul`

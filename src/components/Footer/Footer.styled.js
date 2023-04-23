@@ -21,7 +21,6 @@ export const FooterStyled = styled.div`
 
     @media screen and (min-width: 768px) {
         gap: 0px;
-        /* margin-bottom: 40px; */
 	}
     @media screen and (min-width: 1140px) {
         padding-left: 100px;
@@ -34,8 +33,6 @@ export const WrapperDiscr = styled.div`
 
     @media screen and (min-width: 768px) {
         margin: 0px;
-        /* margin-left: 32px;
-        margin-bottom: 72px; */
         align-items: left;
 	}
 `
@@ -84,8 +81,6 @@ export const IconDiv = styled.div`
     ${flexBox};
 `
 export const IconFooter = styled(Icon)`
-    /* width: 22px;
-    height: 22px; */
     stroke: ${({color}) => color};
 `
 
