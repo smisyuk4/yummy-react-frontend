@@ -14,15 +14,11 @@ export const FavoriteRecipeBox = styled.div``;
 
 export const FavoriteRecipeTitle = styled.h3``;
 
-
 export const FavoriteDeleteBtn = styled.button``;
-
-
-
 
 export const FavoriteArticle = styled.p``;
 
-export const FavoriteTime = styled.p``;
 
+export const FavoriteTime = styled.p``;
 
 export const FavoriteSeeBtn = styled.button``;
