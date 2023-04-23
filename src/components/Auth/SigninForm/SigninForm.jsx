@@ -16,7 +16,7 @@ import { useDispatch } from 'react-redux';
 import { loginUser } from 'redux/auth/operations';
 
 const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z])([a-zA-Z0-9]+)$/;
-const emailRegex = /^[\w\.]+@([\w]+\.)+[\w]{1,4}$/;
+const emailRegex = /^[\w]+@([\w]+\.)+[\w]{1,4}$/;
 
 const SigninSchema = Yup.object().shape({
 	password: Yup.string()

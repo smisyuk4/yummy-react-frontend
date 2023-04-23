@@ -9,9 +9,10 @@ import { useAuth } from 'hooks/useAuth';
 import { ColorRing } from 'react-loader-spinner';
 
 export const Layout = () => {
-  const { isLoggedIn } = useAuth();
-  if (!isLoggedIn)
-    return (<DivStyled>
+	const { isLoggedIn } = useAuth();
+	if (!isLoggedIn)
+		return (
+			<DivStyled>
 				<ToastContainer
 					position="top-right"
 					autoClose={2000}
@@ -24,35 +25,48 @@ export const Layout = () => {
 					pauseOnHover
 					theme="colored"
 				/>
-      <Suspense
-        fallback={
-          <ColorRing
-            visible={true}
-            ariaLabel="blocks-loading"
-            wrapperClass="blocks-wrapper"
-            colors={['#2a2c36', '#f47e60', '#f8b26a', '#8BAA36', '#EBF3D4']}
-          />
-        }
-      >
-        <Outlet />
-      </Suspense></DivStyled>
-    );
-  return (
-    <DivStyled>
-      <Header />
-      <Suspense
-        fallback={
-          <ColorRing
-            visible={true}
-            ariaLabel="blocks-loading"
-            wrapperClass="blocks-wrapper"
-            colors={['#2a2c36', '#f47e60', '#f8b26a', '#8BAA36', '#EBF3D4']}
-          />
-        }
-      >
-        <Outlet />
-      </Suspense>
-      <Footer />
-    </DivStyled>
-  );
+				<Suspense
+					fallback={
+						<ColorRing
+							visible={true}
+							ariaLabel="blocks-loading"
+							wrapperClass="blocks-wrapper"
+							colors={[
+								'#2a2c36',
+								'#f47e60',
+								'#f8b26a',
+								'#8BAA36',
+								'#EBF3D4',
+							]}
+						/>
+					}>
+					<Outlet />
+				</Suspense>
+			</DivStyled>
+		);
+	return (
+		<>
+			<Header />
+			<DivStyled>
+				<Suspense
+					fallback={
+						<ColorRing
+							visible={true}
+							ariaLabel="blocks-loading"
+							wrapperClass="blocks-wrapper"
+							colors={[
+								'#2a2c36',
+								'#f47e60',
+								'#f8b26a',
+								'#8BAA36',
+								'#EBF3D4',
+							]}
+						/>
+					}>
+					<Outlet />
+				</Suspense>
+			</DivStyled>
+			<Footer />
+		</>
+	);
 };

@@ -73,6 +73,7 @@ export const IconStyled = styled(Icon)`
 	background-color: ${props => props.theme.colors.primary};
 	border-radius: 12px;
 	padding: 13px;
+	stroke: ${props => props.theme.colors.fontColor};
 	@media (min-width: 768px) {
 		width: 68px;
 		height: 68px;
