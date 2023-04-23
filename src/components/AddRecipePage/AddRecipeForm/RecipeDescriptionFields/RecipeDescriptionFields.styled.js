@@ -32,7 +32,6 @@ export const LabelForm = styled.label`
 
 	color: #000000;
 
-	opacity: 0.5;
 	@media ${props => props.theme.media.tablet} {
 		font-size: 18px;
 		width: 100%;
@@ -45,12 +44,29 @@ export const InputForm = styled(Field)`
 `;
 
 export const InputFile = styled(Field)`
+	width: 100%;
+	height: 100%;
+`;
+
+export const OverlayPicture = styled.div`
+	position: relative;
 	width: 279px;
 	height: 268px;
 	border-radius: 8px;
 	background-color: ${props => props.theme.colors.buttonPrimaryBG};
 `;
+export const ThumbImege = styled.div`
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+`;
 
 export const RecipeImg = styled.img`
+	height: 100%;
 	width: 100%;
+	object-fit: contain;
+	object-position: center;
 `;
