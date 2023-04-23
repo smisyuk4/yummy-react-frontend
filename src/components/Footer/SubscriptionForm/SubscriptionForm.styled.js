@@ -30,10 +30,11 @@ export const InputForm = styled(Field)`
     width: 100%;
     padding: 12px;
     padding-left: 42px;
+    padding-right: 25px;
     background-color: transparent;
     border: 1.2px solid rgba(250, 250, 250, 0.16);
     border-radius: 6px;
-
+    text-overflow: clip;
     &::placeholder {
         font-size: 10px;
         line-height: 1,5;
@@ -90,7 +91,7 @@ export const IconStyled = styled(Icon)`
 `;
 
 export const IconStatusStyled = styled(IconStyled)`
-	right: 14px;
+	right: 5px;
 	left: unset;
 	stroke: none;
 	.error & {
@@ -101,16 +102,31 @@ export const IconStatusStyled = styled(IconStyled)`
 	}
 `;
 
-export const BtnSybscribe = styled(FormButton)`
-    width: 100%;
+export const BtnSybscribe = styled.button`
+    ${flexBox};
+    width: 204px;
+    height: 38px;
 	margin-top: 8px;
     font-size: 14px;
 	line-height: 1.14px;
+    padding: 11px, 71px;
+
+	border-radius: 6px;
+	border: 1px solid ${({ theme }) => theme.colors.buttonPrimaryBG};
+	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	color: ${({ theme }) => theme.colors.buttonLightBG};
+	font-size: 14px;
+    line-height: 1.14;
+	transition: color 0.3s ease-in-out;
+
+	&:hover {
+		transition: color 0.3s ease-in-out;
+		color: ${({ theme }) => theme.colors.buttonDarkBG};
+	}
 `
 
 export const ErrorSpan = styled(ErrorMessage)`
     position: absolute;
-    top: 50%;
-    left: 30px;
-    transform: translateY(-50%);
+    top: -15px;
+    left: 0;
 `
