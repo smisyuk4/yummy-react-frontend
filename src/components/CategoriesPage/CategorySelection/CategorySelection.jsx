@@ -5,10 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 import {
 	DivStyled,
-	TitleStyled,
-	JewelryBox,
-	JewelryBoxBig,
-	JewelryBoxSmall,
 	CategoryList,
 	CategoryItem,
 	CardList,
@@ -19,6 +15,7 @@ import {
 	DivPositionen,
 	ImageBG,
 } from './CategorySelection.styled';
+import { ReusableComponentTitleWithJewelry } from '../../ReusableComponentTitleWithJewelry';
 import { fetchAllCategory, fetchOneCategory } from '../FetchWithCategory';
 
 export const CategorySelection = () => {
@@ -50,12 +47,7 @@ export const CategorySelection = () => {
 
 	return (
 		<DivStyled>
-			<TitleStyled>Categories</TitleStyled>
-			<JewelryBox>
-				<JewelryBoxBig className="left" />
-				<JewelryBoxBig className="right" />
-				<JewelryBoxSmall />
-			</JewelryBox>
+			<ReusableComponentTitleWithJewelry title="Categories" />
 			<CategoryList>
 				{category.map(categ => {
 					return (
