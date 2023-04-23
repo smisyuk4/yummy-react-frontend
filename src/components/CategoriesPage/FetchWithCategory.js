@@ -14,3 +14,8 @@ export const fetchAllCategory = async () => {
 	const responce = await axios.get(`/recipes/category-list`, config);
 	return responce;
 };
+
+export const fetchOneCategory = async categ => {
+	const responce = await axios.get(`/recipes/category/${categ}`, config);
+	return responce;
+};
