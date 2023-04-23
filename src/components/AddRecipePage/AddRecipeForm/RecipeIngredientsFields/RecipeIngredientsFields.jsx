@@ -1,25 +1,131 @@
-import { FormStyled } from './RecipeIngredientsFields.styled';
+import { useEffect, useState } from 'react';
+import { RecipeIngredientsFieldsCounter } from '../RecipeIngredientsFieldsCounter';
+import { RecipeingredientsListItem } from '../RecipeIngredientsListItem';
+import { getAllIngredients } from '../fetchIngredients';
+import { v4 as uuidv4 } from 'uuid';
+import { HeadingStyledContainer, RecipeIngredientsHeading, RecipeIngredientsSection, RecipeIngredientsUl } from './RecipeIngredientsFields.styled';
 
 export const RecipeIngredientsFields = () => {
-  return <FormStyled>
-    Компонент для додавання інгрідієнтів містить
-    <label>
-      <input/>
-    </label>
+	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
+	const [allIngredientsList, setAllIngredientsList] = useState([]);
+	const [addedIngredientsArray, setAddedIngredientsArray] = useState([]);
 
-    <label>
-      <input/>
-    </label>
-    
-    <label>
-      <input/>
-    </label>
-  </FormStyled>;
+	const fetchIngredients = async () => {
+		const fetchedIngredientsList = await getAllIngredients();
+
+		const reworkedList = fetchedIngredientsList.data.data.ingretients.map(
+			ingredient => {
+				return { id: ingredient._id, ttl: ingredient.ttl };
+			}
+		);
+		setAllIngredientsList(reworkedList);
+	};
+
+	useEffect(() => {
+		fetchIngredients();
+	}, []);
+
+	const onIncrement = () => {
+		setIgredientsQuantity(ingredientsQuantity + 1);
+		setAddedIngredientsArray(prevState => [
+			...prevState,
+			{ id: uuidv4(),ingredientId:'', ttl: '', measure: '' },
+		]);
+		console.log(addedIngredientsArray);
+	};
+
+	const onDecrement = () => {
+		if (ingredientsQuantity !== 0) {
+			setIgredientsQuantity(ingredientsQuantity - 1);
+			setAddedIngredientsArray(prevState => {
+				const filteredArray = prevState.filter(
+					element => prevState[prevState.length - 1].id !== element.id
+				);
+				return filteredArray;
+			});
+			console.log(addedIngredientsArray);
+		}
+	};
+
+	const getIngredientName = (id, data) => {
+		console.log(2, id, data);
+		const requstedIngredient = allIngredientsList.find(
+			ingredient => ingredient.ttl === data.ttl
+		);
+		const updatedArray = addedIngredientsArray.map(ingredient => {
+			if (id === ingredient.id) {
+				return (ingredient = {
+					id: id,
+					ingredientId: requstedIngredient
+						? requstedIngredient.id
+						: '',
+					ttl: data.ttl,
+					measure: ingredient.measure,
+				});
+			}
+			return ingredient;
+		});
+		setAddedIngredientsArray(updatedArray);
+	};
+
+	const getIngredientMeasure = (id, data) => {
+		const updatedArray = addedIngredientsArray.map(ingredient => {
+			if (id === ingredient.id) {
+				return (ingredient = {
+					id: id,
+					ingredientId: ingredient.ingredientId,
+					ttl: ingredient.ttl,
+					measure: data.measure,
+				});
+			}
+			return ingredient;
+		});
+		setAddedIngredientsArray(updatedArray);
+	};
+	console.log(addedIngredientsArray);
+
+	const onButtonDeleteClick = e => {
+		const id = e.currentTarget.id;
+		console.log(1, id);
+
+		const reworkedArray = addedIngredientsArray.filter(
+			element => element.id !== id
+		);
+		console.log(reworkedArray);
+
+		setAddedIngredientsArray(reworkedArray);
+		setIgredientsQuantity(ingredientsQuantity - 1);
+	};
+
+	return (
+		<RecipeIngredientsSection>
+			<HeadingStyledContainer>
+				<RecipeIngredientsHeading>Ingredients</RecipeIngredientsHeading>
+				<RecipeIngredientsFieldsCounter
+					onDecrementClick={onDecrement}
+					onIncrementClick={onIncrement}
+					count={
+						ingredientsQuantity
+					}></RecipeIngredientsFieldsCounter>
+			</HeadingStyledContainer>
+			{ingredientsQuantity !== 0 && (
+				<RecipeIngredientsUl>
+					{addedIngredientsArray.map(item => {
+						return (
+							<RecipeingredientsListItem
+								key={item.id}
+								item={item}
+								allIngredientsList={allIngredientsList}
+								addedIngredientsArray={addedIngredientsArray}
+								onButtonDeleteClick={onButtonDeleteClick}
+								getIngredientName={getIngredientName}
+								getIngredientMeasure={
+									getIngredientMeasure
+								}></RecipeingredientsListItem>
+						);
+					})}
+				</RecipeIngredientsUl>
+			)}
+		</RecipeIngredientsSection>
+	);
 };
-
-// "Компонент для додавання інгрідієнтів містить:                                                                                                                                        - підзаголовок.                                                                                                                               
-//  - лічильник к-сті зазначених інгрідієнтів у рецепті. Кнопки +/- або додають нове поле для воду наприкінці переліку, або видаляють останнє поле. 
-//  - поле для внесення даних про інгрідієнти, складається з: 
-//      * назва інгрідієнта(обирається з випадаючого списку, який приходить з бекенду) 
-//      * к-сть інгрідієнта + міра к-сті (обирається з випадаючого списку)
-//      * кнопка видалення, по кліку на яку воно видаляється зі стейту і сторінки."

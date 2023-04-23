@@ -24,6 +24,7 @@ const RestrictedRoute = lazy(() =>
 const PrivateRoute = lazy(() => import('components/subRoutes/PrivateRoute'));
 const Layout = lazy(() => import('components/Layout'));
 
+
 export const App = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
