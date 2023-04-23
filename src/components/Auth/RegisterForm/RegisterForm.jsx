@@ -31,7 +31,7 @@ const RegisterSchema = Yup.object().shape({
 	password: Yup.string()
 		.matches(
 			passwordRegex,
-			'Password must contain upper and lower case letters, numbers and minimum 6 characters.'
+			'The password must include numbers and letters - the minimum number of characters in the field - 6 (inclusive), the maximum - 16 (inclusive)'
 		)
 		.min(6)
 		.max(16)
