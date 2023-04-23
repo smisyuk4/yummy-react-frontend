@@ -12,11 +12,14 @@ import {
 	FavoriteStyled,
 	FavoriteTime,
 	FavoriteTitle,
-
 } from './Favorite.styled';
+
 
 export const Favorite = () => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState();
+
+	console.log(favoriteRecipes);
+	console.log();
 
 	useEffect(() => {
 		fetchFavorite()
@@ -29,23 +32,24 @@ export const Favorite = () => {
 			<FavoriteTitle>Favorites</FavoriteTitle>
 			<FavoriteList>
 				{favoriteRecipes !== null ??
-					favoriteRecipes.map(recipe => (
+					favoriteRecipes.map(favoriteRecipe => (
 						<FavoriteItem>
 							<FavoriteImg />
 							<FavoriteRecipeBox>
 								<FavoriteRecipeTitle>
-									{recipe.title}
+									{favoriteRecipe.title}
 								</FavoriteRecipeTitle>
 								<FavoriteDeleteBtn>icon</FavoriteDeleteBtn>
 								<FavoriteArticle>
-									{recipe.instructions}
+									{favoriteRecipe.instructions}
 								</FavoriteArticle>
-								<FavoriteTime>{recipe.time}</FavoriteTime>
+								<FavoriteTime>
+									{favoriteRecipe.time}
+								</FavoriteTime>
 								<FavoriteSeeBtn>See pecipe</FavoriteSeeBtn>
 							</FavoriteRecipeBox>
 						</FavoriteItem>
 					))}
-				;
 			</FavoriteList>
 		</FavoriteStyled>
 	);
