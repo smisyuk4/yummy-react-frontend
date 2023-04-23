@@ -74,7 +74,6 @@ export const CategorySelection = () => {
 			</CategoryList>
 			<CardList>
 				{oneCategory.map(({ _id, title, thumb }) => {
-					// console.log(oneCategory);
 					return (
 						<CardItem key={title}>
 							<NavLink
