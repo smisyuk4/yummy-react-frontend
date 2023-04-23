@@ -1,7 +1,9 @@
 import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled } from './SubscriptionForm.styled';
-import { Formik, ErrorMessage } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
+import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
+
 
 const emailRegex = /^[\w]+@([\w]+\.)+[\w]{1,4}$/;
 
@@ -23,8 +25,9 @@ export const SubscriptionForm = () => {
 		resetForm();
 	};
 
-  return (
-    <Formik
+  return (<div>
+  <DiscrSubscribeForm />
+  <Formik
 		initialValues={{
 		email: '',
 		}}
@@ -65,6 +68,8 @@ export const SubscriptionForm = () => {
 				}}
 	</Formik>
 
+  </div>
+    
   )
 
 };

@@ -12,10 +12,27 @@ export const FormStyled = styled(Form)`
     column-gap: 8px;
 	background: transparent;
     padding: 0px;
-	/* @media screen and (min-width: 600px) {
-		width: 500px;
-		margin: 20px auto;
-	} */
+
+	margin-top: 32px;
+
+	@media screen and (min-width: 768px) and (max-width: 1140px) {
+		width: 100%;
+		height: 50px;
+		flex-direction: row;
+    	column-gap: 12px;
+		margin-bottom: 15px;
+	}
+
+	@media screen and (min-width: 1140px) {
+		width: 204px;
+		${flexBox};
+		flex-direction: column;
+		column-gap: 8px;
+		background: transparent;
+		padding: 0px;
+		margin: 0px;
+
+	}
 `;
 
 export const LabelStyled = styled.label`
@@ -41,6 +58,11 @@ export const InputForm = styled(Field)`
         letter-spacing: -0.02em;
         color: ${({ theme }) => theme.colors.fontColor};
     }
+
+	@media screen and (min-width: 768px) {
+		width: 100%;
+		height: 100%;
+	}
 
     &:focus {
 		outline: 1px solid ${({ theme }) => theme.colors.fontColor};

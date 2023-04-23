@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 import {flexBox} from 'styles/mixins';
 import { Icon } from 'components/Icon';
-
+import { FollowUs } from 'components/FollowUs';
 
 
 export const DivStyled = styled.div`

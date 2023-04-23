@@ -6,6 +6,8 @@ import {flexBox} from 'styles/mixins';
 export const WrapperFooter = styled.footer`
     ${flexBox};
     flex-direction: column;
+    text-align: center;
+
 `
 export const FooterStyled = styled.div`
     width: 100%;
@@ -15,11 +17,62 @@ export const FooterStyled = styled.div`
     ${flexBox};
     flex-direction: column;
     gap: 32px;
+    align-items: center;
+
+    @media screen and (min-width: 768px) {
+        gap: 0px;
+        /* margin-bottom: 40px; */
+	}
+    @media screen and (min-width: 1140px) {
+        padding-left: 100px;
+        padding-right: 100px;
+	}
+  
+`
+export const WrapperDiscr = styled.div`
+        margin-bottom: 32px;
+
+    @media screen and (min-width: 768px) {
+        margin: 0px;
+        /* margin-left: 32px;
+        margin-bottom: 72px; */
+        align-items: left;
+	}
+`
+export const WrapDiscrSubscrForm = styled.div`
+    @media screen and (min-width: 1140px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 200px;
+}
 `
 
+export const FotterUpDiv = styled.div`
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: start;
+        flex-direction: row;
+        gap: 175px;
+        margin-bottom: 72px;
+	    }
+
+    @media screen and (min-width: 1140px) {
+        width: 66%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 120px;
+	    }
+`
 export const WrapperTitle = styled.div`
     ${flexBox};
     gap: 8px;
+    @media screen and (min-width: 768px) {
+        justify-content: left;
+        margin-bottom: 24px;
+	}
 
 `
 export const IconDiv = styled.div`
@@ -69,6 +122,7 @@ export const FooterTeam = styled.div`
     width: 100%;
     ${flexBox};
     flex-direction: row;
+    text-align: center;
     gap: 14px;
 
     font-family: 'Poppins';
