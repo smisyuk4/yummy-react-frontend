@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { ModalUserProfil } from '../ModalUserProfil';
 import { ModalLogOut } from '../ModalLogOut';
 
-export const PopupUser = ({close}) => {
+export const PopupUser = ({openPopUp, closePopUp, close}) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [isLogOutModal, setIsLogOutModal] = useState(false)
 
@@ -17,7 +17,9 @@ export const PopupUser = ({close}) => {
     setIsLogOutModal(false)
   }
 
-  return <OverlayDiv>
+  return <OverlayDiv onClick={closePopUp} className={
+    (openPopUp ? 'open' : 'close')
+ }>
     {/* <ModalDiv> */}
       {/* <DivStyled> */}
       <WrapperEdit onClick={() => setIsOpenModal(true)}>

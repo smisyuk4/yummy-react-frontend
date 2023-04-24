@@ -80,9 +80,15 @@ display: block;
   border: 2px solid transparent;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   transition: all ease-in-out .3s;
+  object-fit: cover;
   &:hover {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
   }
+`
+export const FigureAvatar = styled.figure`
+  position: relative;
+  width: 88px;
+  height: 88px;
 `
 export const ImgDefault = styled.img`
 margin-top: 15px;

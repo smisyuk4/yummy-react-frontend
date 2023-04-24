@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
-import { PopupUser } from './PopupUser';
+
 
 export const UserLogoDiv = styled.div`
     display: flex;

@@ -13,16 +13,16 @@ export const OverlayDiv = styled.div`
     width: 160px;
     height: 130px;
     background-color: ${props => props.theme.colors.buttonLightBG};
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-     */
-    transform: translateY(150px);
-    transition: transform 2s ease-in;
+
+    transform: translateY(-300px);
+    transition: transform 1s ease-in;
     z-index: 999;
 
-    &:hover {
-        transform: translateY(-50px);
+    &.open {
+        transform: translateY(60px);
+    }
+    &.close {
+        transform: translateY(-300px);
     }
 `
 export const ModalDiv = styled.div`

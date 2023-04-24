@@ -7,7 +7,7 @@ export const WrapperFooter = styled.footer`
     ${flexBox};
     flex-direction: column;
     text-align: center;
-
+    margin-top: auto;
 `
 export const FooterStyled = styled.div`
     width: 100%;

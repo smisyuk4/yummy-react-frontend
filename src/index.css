@@ -36,3 +36,9 @@ code {
   height: 150px;
   width: 150px;
 }
+#root {
+  min-height: 100vh;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}

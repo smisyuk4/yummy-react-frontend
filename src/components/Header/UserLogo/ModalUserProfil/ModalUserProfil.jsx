@@ -1,16 +1,19 @@
 import {createPortal} from "react-dom";
-import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayImg, Figure, ImgDefault, IconPerson, IconPlus, Input, FormUpdateUser, LabelInput, IconEdit, IconPersonInput, BtnModalUser, IconCross
-  // Figcaption, 
-  // ImgDefault 
+import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayImg, Figure, ImgDefault, IconPerson, IconPlus, Input, FormUpdateUser, LabelInput, IconEdit, IconPersonInput, BtnModalUser, IconCross, FigureAvatar
 } from './ModalUserProfil.styled';
 import { useState, useEffect } from 'react';
-// import {LogoIcon} from '../../HeaderLogo/LogoIcon'
+import { useSelector } from 'react-redux';
 
 const modalRoot = document.getElementById('modal-root');
 
 
 export const ModalUserProfil = ({isOpen, close}) => {
+  const auth = useSelector(state => state.auth)
+  const user = auth.user
 
+  console.log(user)
+  const isGravatar = user.avatarURL.includes('gravatar')
+  console.log(isGravatar)
   const [nameUser, setNameUser] = useState('')
   const [userImage, setUserImage] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
@@ -41,20 +44,18 @@ const handleChangeName = (e) => {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault()
-    // const formEl = document.getElementById('form-user-change')
-    // let formData = new FormData(formEl)
+    const formEl = document.getElementById('form-user-change')
+    let formData = new FormData();
+    formData.append("name", {nameUser});
+    formData.append("avatarURL", {imageUrl});
   
-    // let response = await fetch('https://yummy-rest-api.onrender.com/user/update', {
-    //   method: 'PATCH',
-    //   body: new FormData(formEl)
-    // });
-    // let result = await response.json();
-    //  console.log(result.message);
-
-       let formData = new FormData();
-      formData.append("name", {nameUser});
-      formData.append("avatarURL", {imageUrl});
-
+    let response = await fetch('https://yummy-rest-api.onrender.com/user/update', {
+      method: 'PATCH',
+      body: formData
+    });
+    let result = await response.json();
+    console.log(result)
+    console.log(result.message);
     console.log(formData)
 }
 
@@ -67,12 +68,17 @@ if(!isOpen) return null;
  
             <LabelAvatar htmlFor="22" onChange={e => setUserImage(e.target.files[0])} > 
             <InputAvatar name="avatar" id="22" type="file" onChange={e => setUserImage(e.target.files[0])} multiple />
-            <OvarlayImg>
-            {/* <Figcaption> */}
-            <IconPerson id="icon-person" />
-            <IconPlus id="icon-plus" />
-            {/* </Figcaption> */}
-            </OvarlayImg>
+            {/* <FigureAvatar> */}
+                
+                <OvarlayImg>
+                  {isGravatar && <IconPerson id="icon-person" />}
+                  {imageUrl && <ImgAvatar src={imageUrl} alt="avatar"/>}
+                {/* <Figcaption> */}
+                <IconPlus id="icon-plus" />
+                {/* </Figcaption> */}
+                </OvarlayImg>
+            {/* </FigureAvatar> */}
+            
             </LabelAvatar>
             <LabelInput>
               <Input name="name" value={nameUser} type="text" placeholder="name" onChange={handleChangeName} />
