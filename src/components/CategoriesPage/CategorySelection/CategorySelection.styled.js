@@ -2,14 +2,9 @@ import styled from '@emotion/styled';
 // import imageBG from '../../../images/MainPageImg/bg-2.png';
 
 export const DivStyled = styled.div`
-	/* position: relative; */
-	font-family: 'Poppins';
-	font-style: normal;
-	/* overflow: hidden; */
 	background-color: ${({ theme }) => theme.colors.buttonLightBG};
 	margin-top: 50px;
 	margin-bottom: 100px;
-	/* min-width: 320px; */
 
 	@media screen and (min-width: 768px) {
 		margin-top: 72px;
