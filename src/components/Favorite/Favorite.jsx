@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { fetchFavorite } from './FetchFavorite'
 import {
-
 	FavoriteArticle,
 	FavoriteDeleteBtn,
 	FavoriteImg,
@@ -12,40 +12,44 @@ import {
 	FavoriteStyled,
 	FavoriteTime,
 	FavoriteTitle,
-
 } from './Favorite.styled';
+
 
 export const Favorite = () => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState();
 
+	console.log(favoriteRecipes);
+	console.log();
+
 	useEffect(() => {
-		fetch('https://yummy-rest-api.onrender.com/recipes/favorite/')
-			.then(response => response.json())
-			.then(data => setFavoriteRecipes(data));
-	}, [setFavoriteRecipes]);
+		fetchFavorite()
+			.then(({ data }) => setFavoriteRecipes(data))
+			.catch(error => error);
+	}, []);
 
 	return (
 		<FavoriteStyled>
 			<FavoriteTitle>Favorites</FavoriteTitle>
 			<FavoriteList>
 				{favoriteRecipes !== null ??
-					favoriteRecipes.map(recipe => (
+					favoriteRecipes.map(favoriteRecipe => (
 						<FavoriteItem>
 							<FavoriteImg />
 							<FavoriteRecipeBox>
 								<FavoriteRecipeTitle>
-									{recipe.title}
+									{favoriteRecipe.title}
 								</FavoriteRecipeTitle>
 								<FavoriteDeleteBtn>icon</FavoriteDeleteBtn>
 								<FavoriteArticle>
-									{recipe.instructions}
+									{favoriteRecipe.instructions}
 								</FavoriteArticle>
-								<FavoriteTime>{recipe.time}</FavoriteTime>
+								<FavoriteTime>
+									{favoriteRecipe.time}
+								</FavoriteTime>
 								<FavoriteSeeBtn>See pecipe</FavoriteSeeBtn>
 							</FavoriteRecipeBox>
 						</FavoriteItem>
 					))}
-				;
 			</FavoriteList>
 		</FavoriteStyled>
 	);
