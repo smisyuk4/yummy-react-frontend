@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 
 export const FavoriteStyled = styled.div``;
 
-export const FavoriteTitle = styled.h2``;
-
 export const FavoriteList = styled.ul``;
 
 export const FavoriteItem = styled.li``;
