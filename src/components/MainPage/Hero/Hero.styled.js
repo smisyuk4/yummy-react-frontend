@@ -2,25 +2,28 @@ import styled from '@emotion/styled';
 import banner from '../../../images/MainPageImg/bm.png';
 import banner1 from '../../../images/MainPageImg/bg-2.png';
 import banner2 from '../../../images/MainPageImg/img-1.png';
+import bannerT from '../../../images/MainPageImg/img-2.png';
 
 export const WrapperStyled = styled.div`
-	background-color: #fafafa;
+	/* background-color: #fafafa; */
 	position: relative;
-	overflow-x: hidden;
-	margin: 0;
+	overflow: hidden;
+	margin-right: -16px;
+	margin-left: -16px;
 	padding: 0;
-	width: 100%;
+	max-width: 100%;
 `;
 export const SectionStyled = styled.div`
 	position: relative;
 	top: -132px;
 	transform: translateX(61%) rotate(39deg);
-	width: 100%px;
+	max-width: 100%px;
 	height: 542px;
 	background-color: #ebf3d4;
+	overflow-x: hidden;
 `;
 export const TopImgStyled = styled.div`
-	width: 100%;
+	max-width: 100%;
 	height: 184px;
 	background-size: contain;
 	background: url(${banner}) no-repeat top left;
@@ -44,6 +47,10 @@ export const DishStyled = styled.div`
 	top: 280px;
 	left: -17px;
 	z-index: 3;
+	border: none;
+	@media screen and (min-width: 768px) {
+		background: url(${bannerT}) no-repeat top right;
+	}
 `;
 export const InformFieldStyled = styled.div`
 	width: 100%;
@@ -67,7 +74,6 @@ export const ParagrafStyled = styled.div`
 	line-height: 18px;
 	letter-spacing: -0.02em;
 	text-align: center;
-	vertical-align: top;
 	letter-spacing: -2%;
 	margin-top: -15px;
 	padding-left: 64px;

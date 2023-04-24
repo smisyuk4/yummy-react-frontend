@@ -9,15 +9,52 @@ export const Section = styled.section`
 
 export const CardList = styled.ul`
 	padding: 0;
-	display: grid;
+	display: flex;
+	flex-wrap: wrap;
 	gap: 28px;
 	margin-top: 0;
     margin-bottom: 40px;
+
+	@media screen and (min-width: 768px) {
+		margin-top: 50px;
+		gap: 32px;
+		flex-direction: row;
+	}
+	@media screen and (min-width: 1440px) {
+		gap: 14px;
+		grid-row-gap: 100px;
+		CardItem:first-child {
+		padding-top: 5px;
+	}
+	}
+`;
+export const CardItem = styled.li`
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 32px) / 2);
+
+    &:nth-of-type(2n) {
+      padding-top: 56px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: calc((100% - 42px) / 4);
+	/* align-items: stretch;
+	&:last-child {
+	align-items: flex-end;
+      padding-top: 0;
+    } */
+	/* &:nth-of-type(2n) {
+      padding-top: 0;
+    }; */
+	/* &:first-child {
+		padding-top: 5px;
+	} */
+  }
 `;
 
-export const CardItem = styled.li`
-	position: relative;
-`;
 
 export const TitleCategory = styled.h3`
 	font-family: 'Poppins';
@@ -32,6 +69,7 @@ export const TitleCategory = styled.h3`
 export const Image = styled.img`
 	object-fit: cover;
 	border-radius: 8px;
+
 `;
 
 export const CardBox = styled.div`
