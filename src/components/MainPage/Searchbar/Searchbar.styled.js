@@ -3,8 +3,9 @@ import { Field, Form } from 'formik';
 
 export const SearchStyled = styled.header`
     position: relative;
-    top: -462px;
-    left: -5px;
+    top: -159px;
+    left: -22px;
+    transform: translate( 7px, -7px);
     z-index: 6;
 `;
 
@@ -22,7 +23,7 @@ export const Input = styled(Field)`
   border: 1px solid #F0F0F0;
   width: 295px;
   height: 52px;
-  padding-y: 17px;
+
   padding-left: 32px;
   position: absolute;
   font-family: 'Poppins';

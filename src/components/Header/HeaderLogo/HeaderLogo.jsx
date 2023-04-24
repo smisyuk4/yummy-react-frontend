@@ -1,8 +1,9 @@
-import { HeaderLogoStyled } from './HeaderLogo.styled';
-import logoImg from '../../../images/logo.png'
+import { HeaderLogoStyled, IconDiv, IconFooter } from './HeaderLogo.styled';
 
 export const HeaderLogo = () => {
   return <HeaderLogoStyled to="/" >
-            <img src={logoImg} alt='logo'></img>
+            <IconDiv>
+              <IconFooter id="icon-knife-btn" color="#8BAA36" />
+            </IconDiv>
         </HeaderLogoStyled>;
 };
