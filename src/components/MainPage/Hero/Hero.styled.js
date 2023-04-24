@@ -7,7 +7,7 @@ import bannerT from '../../../images/MainPageImg/img-2.png';
 export const WrapperStyled = styled.div`
 	/* background-color: #fafafa; */
 	position: relative;
-	/* overflow-x: hidden; */
+	overflow: hidden;
 	margin-right: -16px;
 	margin-left: -16px;
 	padding: 0;
