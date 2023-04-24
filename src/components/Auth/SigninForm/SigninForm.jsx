@@ -17,7 +17,7 @@ import { loginUser } from 'redux/auth/operations';
 
 const passwordRegex = /^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/;
 const emailRegex =
-	/^[\w!#$%^&*\-=/{}[\]_|`~?\\+][\w!#$%^&*\+\-?=/{}[\]_|`~\\.]{1,62}[\w!#$%^&*\-=/{}+[\]_|`~?\\]@([\w]+\.){1,20}[\w]{1,4}$/;
+	/^[\w!#$%^&*\-=/{}[\]_|`~?\\+][\w!#$%^&*+\-?=/{}[\]_|`~\\.]{1,62}[\w!#$%^&*\-=/{}+[\]_|`~?\\]@([\w]+\.){1,20}[\w]{1,4}$/;
 
 const SigninSchema = Yup.object().shape({
 	password: Yup.string()
