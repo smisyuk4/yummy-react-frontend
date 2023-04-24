@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, BurgerMuneBtn, BurgerMenuImg } from './UserLogo.styled';
+import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, AvatarUser, BurgerMuneBtn, BurgerMenuImg } from './UserLogo.styled';
 import { PopupUser } from './PopupUser/PopupUser'
 import { useSelector } from 'react-redux';
 
@@ -13,12 +13,13 @@ export const UserLogo = ({ onOpenModal }) => {
 
   const auth = useSelector(state => state.auth)
   const user = auth.user
+  const isGravatar = user.avatarURL.includes('gravatar')
   console.log(auth.isLoggedIn)
 
   return <UserLogoDiv >
-          <WrapperImg >
-            <UserAvatarImg onClick={() => setOpenPopUp(true)} src={user.avatarURL} alt="avatar"></UserAvatarImg>
-            {/* <UserIcon id="icon-person"/>       */}
+          <WrapperImg onClick={() => setOpenPopUp(true)} >
+            {isGravatar && <AvatarUser  id="icon-person" />}
+            {!isGravatar && <UserAvatarImg src={user.avatarURL} />}
           </WrapperImg>
           <UserNameP>{user.name}</UserNameP>
           <BurgerMuneBtn onClick={onOpenModal}>

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
-
+import { IconPerson } from './ModalUserProfil/ModalUserProfil.styled';
 
 export const UserLogoDiv = styled.div`
     display: flex;
@@ -9,6 +9,12 @@ export const UserLogoDiv = styled.div`
     flex-direction: row;
 
 `;
+export const AvatarUser = styled(IconPerson)`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    stroke: #C4C4C4;
+`
 export const UserNameP = styled.p`
     margin-left: 14px;
     font-family: 'Poppins';
