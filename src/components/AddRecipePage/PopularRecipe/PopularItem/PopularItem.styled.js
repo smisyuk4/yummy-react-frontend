@@ -1,0 +1,32 @@
+import styled from '@emotion/styled';
+
+export const LiStyled = styled.li`
+  border-bottom: 1px solid #707070;
+`;
+
+export const AStyled = styled.a`
+  display: flex;
+  padding-bottom: 13px;
+  padding-right: 14px;
+`;
+
+export const ImgStyled = styled.img`
+  margin-right: 12px;
+  border-radius: 8px;
+`;
+
+export const HStyled = styled.h3`
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.24px;
+  color: #3e4462;
+`;
+
+export const PStyled = styled.p`
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -0.24px;
+  color: #7e7e7e;
+`;
