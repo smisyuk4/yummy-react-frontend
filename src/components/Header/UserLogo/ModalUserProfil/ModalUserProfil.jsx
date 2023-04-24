@@ -1,5 +1,5 @@
 import {createPortal} from "react-dom";
-import { DivStyled, ModalProfil, LabelAvatar, InputAvatar, ImgAvatar, OvarlayImg, Figure, ImgDefault, IconPerson, IconPlus, Input, FormUpdateUser,
+import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayImg, Figure, ImgDefault, IconPerson, IconPlus, Input, FormUpdateUser, LabelInput, IconEdit, IconPersonInput, BtnModalUser, IconCross
   // Figcaption, 
   // ImgDefault 
 } from './ModalUserProfil.styled';
@@ -17,7 +17,6 @@ export const ModalUserProfil = ({isOpen, close}) => {
 
 useEffect(() => {
   document.addEventListener("keydown", closeModal);
-  
   return () => document.removeEventListener("keydown", closeModal)
 });
 
@@ -71,14 +70,19 @@ if(!isOpen) return null;
             <OvarlayImg>
             {/* <Figcaption> */}
             <IconPerson id="icon-person" />
-            <IconPlus id="icon-add" />
+            <IconPlus id="icon-plus" />
             {/* </Figcaption> */}
             </OvarlayImg>
             </LabelAvatar>
-   
-            <Input name="name" value={nameUser} type="text" placeholder="name" onChange={handleChangeName} />
-            <button type="submit">Save changes</button>
+            <LabelInput>
+              <Input name="name" value={nameUser} type="text" placeholder="name" onChange={handleChangeName} />
+              <IconPersonInput id="icon-person" />
+              <IconEdit id="icon-edit" />
+            </LabelInput>
+            
+            <BtnModalUser type="submit">Save changes</BtnModalUser>
             </FormUpdateUser>
+            <IconCross id="icon-close" />
     </ModalProfil>
   </DivStyled>,
      modalRoot

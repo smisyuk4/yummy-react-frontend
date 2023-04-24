@@ -1,23 +1,24 @@
 import styled from '@emotion/styled';
 import {flexBox} from 'styles/mixins';
-import { Link } from 'react-router-dom';
 
 
 export const OverlayDiv = styled.div`
-    display: block;
+    ${flexBox};
+    flex-direction: column;
+    justify-content: space-between;
     position: absolute;
+    padding: 18px;
     top: 72px;
     right: 60px;
     width: 160px;
     height: 130px;
     background-color: ${props => props.theme.colors.buttonLightBG};
-    padding: 25px 15px 15px;
     /* display: flex;
     justify-content: center;
     align-items: center;
      */
     transform: translateY(150px);
-    transition: transform 2s ease-in-out;
+    transition: transform 2s ease-in;
     z-index: 999;
 
     &:hover {
@@ -44,13 +45,17 @@ export const DivStyled = styled.div`
 `;
 
 export const WrapperEdit = styled.div`
+width: 100%;
     ${flexBox};
     justify-content: space-between;
     flex-direction: row;
+    
 `
 
 export const LogOutBtn = styled.button`
+
     width: 125px;
+    width: 100%;
     height: 43px;
     text-align: center;
     cursor: pointer;

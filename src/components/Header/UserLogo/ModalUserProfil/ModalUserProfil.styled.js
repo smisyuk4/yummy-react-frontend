@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
 import {flexBox} from 'styles/mixins';
+import { BtnSybscribe } from 'components/Footer/SubscriptionForm/SubscriptionForm.styled';
+
 
 export const DivStyled = styled.div`
     width: 100%;
@@ -18,9 +20,9 @@ export const DivStyled = styled.div`
 
 export const ModalProfil = styled.div`
     position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 32px 24px;
     border: 1px solid #8BAA36;
     border-radius: 18px;
@@ -100,26 +102,80 @@ right: 13px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  fill: #8BAA36;
+  stroke: #fff;
+  background: #8BAA36;
+  padding: 5px;
 `
 export const Input = styled.input`
-height: 48px;
-margin-bottom: 24px;
-border: 1px solid #23262A; 
-border-radius: 6px;
+  height: 48px;
+  width: inherit;
+  box-sizing: border-box;
+  border: 1px solid #23262A; 
+  border-radius: 6px;
+  
+  padding-left: 40px;
+
+  &::placeholder {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #23262A;
+      opacity: 0.8;
+    }
 `
 export const FormUpdateUser = styled.form`
   ${flexBox};
   flex-direction: column;
-
 `
 export const IconPersonInput = styled(IconPerson)`
-  width: 15px;
-  height: 15px;
-
+  width: 18px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  stroke: #23262A;
 `
 export const IconEdit = styled(Icon)`
 width: 15px;
   height: 15px;
   fill: #23262A;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+`
+
+export const LabelInput = styled.label`
+  position: relative;
+  margin-bottom: 24px;
+  width: 100%;
+`
+
+export const BtnModalUser = styled(BtnSybscribe)`
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #FAFAFA;
+`
+export const IconCross = styled(Icon)`
+  width: 13px;
+  height: 13px;
+  stroke: #23262A;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  transform: translateY(-50%);
 `
