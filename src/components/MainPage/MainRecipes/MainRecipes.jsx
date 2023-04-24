@@ -10,7 +10,8 @@ import { Section,
   CardTitle, 
   NavBox, 
   NavToCategory, 
-  BtnBox, //ImgStyled 
+  BtnBox, 
+  //ImgStyled 
   } from './MainRecipes.styled';
 
 export const MainRecipes = () => {
@@ -44,7 +45,7 @@ export const MainRecipes = () => {
   return (
     
     <Section>
-      {/* <CardList>
+      <CardList>
         {recipes.slice(0, displayedRecipesCount).map((oneRes) => {
           const { title, thumb, category } = oneRes[0];
 
@@ -61,8 +62,8 @@ export const MainRecipes = () => {
             </CardItem>
           );
         })}
-      </CardList> */}
-<CardList>
+      </CardList>
+{/* <CardList>
   {recipes.slice(0, displayedRecipesCount).map((oneRes) => {
 const categoryOnScreen = []; //И тут я закипел!!!!!!!!!! создал масив для проверки - включает ли он два одинаковых названия категорий 
     return oneRes.slice(0, 2).map(({ title, thumb, category }) => {
@@ -92,11 +93,10 @@ const categoryOnScreen = []; //И тут я закипел!!!!!!!!!! созда�
       }
     });
   })}
-</CardList>
+</CardList> */}
       {displayedRecipesCount < recipes.length && (
         <BtnBox><Button loadMore={loadMore}>Load More</Button></BtnBox>
       )}
-      {/* <ImgStyled/> */}
     </Section>
   );
 };
