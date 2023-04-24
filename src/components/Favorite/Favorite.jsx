@@ -1,56 +1,60 @@
 import { useEffect, useState } from 'react';
-import { fetchFavorite } from './FetchFavorite'
+import { fetchFavorite } from './FetchFavorite';
 import {
-	FavoriteArticle,
-	FavoriteDeleteBtn,
-	FavoriteImg,
-	FavoriteItem,
-	FavoriteList,
-	FavoriteRecipeBox,
-	FavoriteRecipeTitle,
-	FavoriteSeeBtn,
-	FavoriteStyled,
-	FavoriteTime,
-	FavoriteTitle,
+  FavoriteArticle,
+  FavoriteDeleteBtn,
+  FavoriteImg,
+  FavoriteItem,
+  FavoriteList,
+  FavoriteRecipeBox,
+  FavoriteRecipeTitle,
+  FavoriteSeeBtn,
+  FavoriteStyled,
+  FavoriteTime,
 } from './Favorite.styled';
 
+import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 
 export const Favorite = () => {
-	const [favoriteRecipes, setFavoriteRecipes] = useState();
+  const [favoriteRecipes, setFavoriteRecipes] = useState();
 
-	console.log(favoriteRecipes);
-	console.log();
+  useEffect(() => {
+    async function fetch() {
+      try {
+        const favorit = await fetchFavorite();
 
-	useEffect(() => {
-		fetchFavorite()
-			.then(({ data }) => setFavoriteRecipes(data))
-			.catch(error => error);
-	}, []);
+        // 		if (filmsByName.results.length === 0){
+        // 		  toast('Sorry film not found')
 
-	return (
-		<FavoriteStyled>
-			<FavoriteTitle>Favorites</FavoriteTitle>
-			<FavoriteList>
-				{favoriteRecipes !== null ??
-					favoriteRecipes.map(favoriteRecipe => (
-						<FavoriteItem>
-							<FavoriteImg />
-							<FavoriteRecipeBox>
-								<FavoriteRecipeTitle>
-									{favoriteRecipe.title}
-								</FavoriteRecipeTitle>
-								<FavoriteDeleteBtn>icon</FavoriteDeleteBtn>
-								<FavoriteArticle>
-									{favoriteRecipe.instructions}
-								</FavoriteArticle>
-								<FavoriteTime>
-									{favoriteRecipe.time}
-								</FavoriteTime>
-								<FavoriteSeeBtn>See pecipe</FavoriteSeeBtn>
-							</FavoriteRecipeBox>
-						</FavoriteItem>
-					))}
-			</FavoriteList>
-		</FavoriteStyled>
-	);
+        setFavoriteRecipes(prev => favorit.data.data.recipes);
+      } catch (error) {
+        console.log(error);
+      } finally {
+      }
+    }
+
+    fetch();
+  }, []);
+
+  return (
+    <FavoriteStyled>
+      <ReusableComponentTitleWithJewelry title="Favorites" />
+
+      <FavoriteList>
+        {favoriteRecipes?.length > 0 &&
+          favoriteRecipes.map(({ _id, title, instructions, time }) => (
+            <FavoriteItem key={_id}>
+              <FavoriteImg />
+              <FavoriteRecipeBox>
+                <FavoriteRecipeTitle>{title}</FavoriteRecipeTitle>
+                <FavoriteDeleteBtn>icon</FavoriteDeleteBtn>
+                <FavoriteArticle>{instructions}</FavoriteArticle>
+                <FavoriteTime>{time}</FavoriteTime>
+                <FavoriteSeeBtn>See pecipe</FavoriteSeeBtn>
+              </FavoriteRecipeBox>
+            </FavoriteItem>
+          ))}
+      </FavoriteList>
+    </FavoriteStyled>
+  );
 };
