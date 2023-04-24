@@ -7,11 +7,11 @@ export const RecipePageHero = ({title, description, time}) => {
 
   return (
     <HeroSection>
-      <div>
+      
 				<TitleStyled>{title}</TitleStyled>
         <PStyled>{description}</PStyled>
         
-      </div>
+      
       <ButtonStyled>Add to favorite recipe</ButtonStyled>
       {time !== '' && (
       <ClockDivStyled>
