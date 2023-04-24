@@ -11,10 +11,21 @@ export const Tegline = styled.h1`
 	letter-spacing: -0.02em;
 	font-feature-settings: 'liga' off;
 
-	color: #001833;
+	color: ${({ theme }) => theme.colors.titleColor};
 	padding-left: 8px;
 	margin: 50px 0 50px 0;
-`
+
+	@media ${props => props.theme.media.tablet} {
+		margin: 72px 0 72px 0;
+		padding-left: 0;
+		font-size: 32px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		margin: 100px 0 72px 0;
+		font-size: 44px;
+		min-width: 281px;
+	}
+`;
 export const DivCenter = styled.div`
 	z-index: -1;
 	position: absolute;
@@ -22,21 +33,20 @@ export const DivCenter = styled.div`
 	height: 6px;
 	left: 247px;
 
-	background: #22252a;
+	background-color: ${({ theme }) => theme.colors.buttonDarkBG};
 	border-radius: 3px;
 	transform: rotate(-25deg);
 	@media ${props => props.theme.media.tablet} {
-    width: 12px;
-    height: 12px;
-    left: 437px;
-    top: 160.07px;
-}
+		width: 12px;
+		height: 12px;
+		left: 437px;
+	}
 
-@media ${props => props.theme.media.desktop} {
-    left: 807px;
-    top: 204.07px;
-}
-`
+	@media ${props => props.theme.media.desktop} {
+		left: 707px;
+		top: 44px;
+	}
+`;
 
 export const DivRight = styled.div`
 	z-index: -1;
@@ -46,23 +56,22 @@ export const DivRight = styled.div`
 	left: 349px;
 	top: 0;
 
-	background: #8baa36;
+	background-color:${({ theme }) => theme.colors.primary};
 	border-radius: 3px;
 	transform: rotate(-25deg);
 
 	@media ${props => props.theme.media.tablet} {
 		width: 14px;
 		height: 14px;
-		left: 726px;
-		top: 103.92px;
+		left: 694px;
+		top: -19px;
 	}
 
 	@media ${props => props.theme.media.desktop} {
-		left: 1250px;
-		top: 134.92px;
+		left: 1150px;
+		top: -16.4px;
 	}
-`
-
+`;
 
 export const DivLeft = styled.div`
 	z-index: -1;
@@ -72,19 +81,19 @@ export const DivLeft = styled.div`
 	left: 120px;
 	top: -27.37px;
 
-	background: #8baa36;
+	background: ${({ theme }) => theme.colors.primary};
 	border-radius: 3px;
 	transform: rotate(-25deg);
 
 	@media ${props => props.theme.media.tablet} {
 		width: 14px;
 		height: 14px;
-		left: 219px;
-		top: 90.92px;
+		left: 200px;
+		top: -32.4px;
 	}
-	
+
 	@media ${props => props.theme.media.desktop} {
-		left: 328px;
-		top: 121.92px;
+		left: 221px;
+		top: -29.4px;
 	}
-`
+`;

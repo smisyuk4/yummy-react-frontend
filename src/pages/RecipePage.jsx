@@ -1,17 +1,8 @@
-// import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
+import { fetchRecipes } from 'components/Recipe/FetchRecipe';
 import { RecipePageHero } from "components/Hero/RecipeHero/RecipePageHero";
-import axios from 'axios';
-
-
-
-// axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
-
-export const fetchRecipes = async (id) => {
-	const  result  = await axios.get(`recipes/${id = '640cd5ac2d9fecf12e8897f5'}`);
-	return result.data.result;
-};
+import { IngredientsList } from 'components/Recipe/IngredientsList/RecipeIngredientsList';
 
 
 const RecipePage = () => {
@@ -42,9 +33,8 @@ const RecipePage = () => {
 		title={title}
 		description={description}
 		id={_id}
-		time= {time}>
-			
-		</RecipePageHero>
+		time= {time}/>
+		<IngredientsList/>
 		
 		</>);
 };
