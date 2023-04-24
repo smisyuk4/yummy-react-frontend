@@ -1,10 +1,13 @@
 import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
+
 
 export const UserLogoDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+
 `;
 export const UserNameP = styled.p`
     margin-left: 14px;
@@ -26,6 +29,13 @@ export const UserAvatarImg = styled.img`
     height: 100%;
     object-fit: cover;
 `
+export const UserIcon = styled(Icon)`
+    width: 100%;
+    height: 100%;
+    stroke: #C4C4C4;
+    object-fit: cover;
+`
+
 export const BurgerMuneBtn = styled.button`
     width: 28px;
     height: 28px;
@@ -41,9 +51,9 @@ export const BurgerMuneBtn = styled.button`
         display: none;
     }
 `
-export const BurgerMenuImg = styled.img`
+export const BurgerMenuImg = styled(Icon)`
     width: 28px;
     height: 28px;
-    margin: 0;
-    padding: 0;
+    stroke: ${props => props.theme.colors.buttonDarkBG};
+
 `

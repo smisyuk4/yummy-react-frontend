@@ -1,17 +1,28 @@
 import styled from '@emotion/styled';
 import {flexBox} from 'styles/mixins';
+import { Link } from 'react-router-dom';
+
 
 export const OverlayDiv = styled.div`
-   width: 100%;
-    height: 100%;
-    background-color: gray;
-    display: flex;
+    display: block;
+    position: absolute;
+    top: 72px;
+    right: 60px;
+    width: 160px;
+    height: 130px;
+    background-color: ${props => props.theme.colors.buttonLightBG};
+    padding: 25px 15px 15px;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
+     */
+    transform: translateY(150px);
+    transition: transform 2s ease-in-out;
     z-index: 999;
+
+    &:hover {
+        transform: translateY(-50px);
+    }
 `
 export const ModalDiv = styled.div`
      max-width: 50%;
@@ -19,7 +30,7 @@ export const ModalDiv = styled.div`
     position: relative;
     top: 0;
     right: 0;
-    padding: 25px 15px 15px;
+    
     background-color: #fff;
 `
 export const DivStyled = styled.div`

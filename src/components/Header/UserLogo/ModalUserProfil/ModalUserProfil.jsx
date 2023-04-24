@@ -1,13 +1,17 @@
-import { DivStyled, ModalProfil, LabelAvatar, InputAvatar, ImgAvatar, OvarlayImg, Figure, 
+import {createPortal} from "react-dom";
+import { DivStyled, ModalProfil, LabelAvatar, InputAvatar, ImgAvatar, OvarlayImg, Figure, ImgDefault, IconPerson, IconPlus, Input, FormUpdateUser,
   // Figcaption, 
   // ImgDefault 
 } from './ModalUserProfil.styled';
 import { useState, useEffect } from 'react';
 // import {LogoIcon} from '../../HeaderLogo/LogoIcon'
 
-export const ModalUserProfil = ({open, close}) => {
-  const [nameUser, setNameUser] = useState('')
+const modalRoot = document.getElementById('modal-root');
 
+
+export const ModalUserProfil = ({isOpen, close}) => {
+
+  const [nameUser, setNameUser] = useState('')
   const [userImage, setUserImage] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
 
@@ -55,25 +59,28 @@ const handleChangeName = (e) => {
     console.log(formData)
 }
 
-if(!open) return null;
+if(!isOpen) return null;
 
-  return <DivStyled onClick={closeModal}>
-    <ModalProfil>
-      <form id="form-user-change" encType="multipart/data" onSubmit={handleSubmitForm}>
-      <OvarlayImg>
-        <LabelAvatar htmlFor="22" onChange={e => setUserImage(e.target.files[0])} > 
-        <InputAvatar name="avatar" id="22" type="file" onChange={e => setUserImage(e.target.files[0])} multiple />
-        <Figure>
-        <ImgAvatar src={imageUrl} alt="avatar" />
-          {/* <Figcaption>
-            <ImgDefault src={LogoIcon} />
-      </Figcaption> */}
-    </Figure>
-  </LabelAvatar>
-</OvarlayImg>
-        <input name="name" value={nameUser} type="text" onChange={handleChangeName} />
-        <button type="submit">Save changes</button>
-      </form>
+  return createPortal(
+    <DivStyled onClick={closeModal}>
+            <ModalProfil>
+            <FormUpdateUser id="form-user-change" encType="multipart/data" onSubmit={handleSubmitForm}>
+ 
+            <LabelAvatar htmlFor="22" onChange={e => setUserImage(e.target.files[0])} > 
+            <InputAvatar name="avatar" id="22" type="file" onChange={e => setUserImage(e.target.files[0])} multiple />
+            <OvarlayImg>
+            {/* <Figcaption> */}
+            <IconPerson id="icon-person" />
+            <IconPlus id="icon-add" />
+            {/* </Figcaption> */}
+            </OvarlayImg>
+            </LabelAvatar>
+   
+            <Input name="name" value={nameUser} type="text" placeholder="name" onChange={handleChangeName} />
+            <button type="submit">Save changes</button>
+            </FormUpdateUser>
     </ModalProfil>
-  </DivStyled>
+  </DivStyled>,
+     modalRoot
+     );
 };
