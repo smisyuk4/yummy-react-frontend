@@ -1,11 +1,10 @@
-import ShoppingBar from "components/Shopping/ShoppingBar/ShoppingBar";
-// import ShoppingList from "components/Shopping/ShoppingList/ShoppingList";
-import ShoppingTegline from "components/Shopping/ShoppingTegline/ShoppingTegline";
+
+import MainPageTitle from "components/Shopping/MainPageTitle/MainPageTitle";
+import IngredientsShoppingList from "components/Shopping/IngredientsShoppingList/IngredientsShoppingList";
 const ShoppingListPage = () => {
 	return <div>
-		<ShoppingTegline/>
-		<ShoppingBar/>
-		{/* <ShoppingList/> */}
+		<MainPageTitle/>
+		<IngredientsShoppingList/>
 	</div>
 };
 
