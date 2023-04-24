@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import imageBG from '../../../images/MainPageImg/bg-2.png';
+// import imageBG from '../../../images/MainPageImg/bg-2.png';
 
 export const DivStyled = styled.div`
 	/* position: relative; */
@@ -16,7 +16,7 @@ export const DivStyled = styled.div`
 	}
 	@media screen and (min-width: 1440px) {
 		margin-top: 100px;
-		/* margin-bottom: 200px; */
+		margin-bottom: 200px;
 	}
 `;
 
@@ -130,19 +130,19 @@ export const CardTitle = styled.p`
 	margin: 0;
 `;
 
-export const DivPositionen = styled.div`
-	position: relative;
-`;
+// export const DivPositionen = styled.div`
+// 	position: relative;
+// `;
 
-export const ImageBG = styled.div`
-	width: 375px;
-	height: 814px;
-	background-size: cover;
-	background: url(${imageBG}) no-repeat bottom left;
-	position: absolute;
-	top: -426px;
-	left: -34px;
-	transform: rotate(90deg);
-	filter: blur(4.5px);
-	z-index: -5;
-`;
+// export const ImageBG = styled.div`
+// 	width: 375px;
+// 	height: 814px;
+// 	background-size: cover;
+// 	background: url(${imageBG}) no-repeat bottom left;
+// 	position: absolute;
+// 	top: -426px;
+// 	left: -34px;
+// 	transform: rotate(90deg);
+// 	filter: blur(4.5px);
+// 	z-index: -5;
+// `;
