@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
-
+import { PopupUser } from './PopupUser';
 
 export const UserLogoDiv = styled.div`
     display: flex;
@@ -23,6 +23,7 @@ export const WrapperImg = styled.div`
     border: 1px solid grey;
     border-radius: 50%;
     overflow: hidden;
+
 `
 export const UserAvatarImg = styled.img`
     width: 100%;
