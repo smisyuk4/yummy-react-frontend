@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
-export const RecipeIngredientsSection = styled.section`
+export const RecipeIngredientsFieldset = styled.fieldset`
 	padding-bottom: 100px;
 	width: 100%;
-
+	border: none;
 	@media ${props => props.theme.media.tablet} {
 		width: 704px;
 	}

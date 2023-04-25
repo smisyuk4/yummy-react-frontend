@@ -21,6 +21,8 @@ const LightTheme = {
 		buttonPrimaryBG: '#8BAA36',
 		darkBG: '#2a2c36',
 		lightBG: '#ECECEC',
+		BGCintoButton: 'FFFFF',
+		borderColorLight: '#f0f0f0',
 		textSecondary: '#7E7E7E',
 	},
 	media: {

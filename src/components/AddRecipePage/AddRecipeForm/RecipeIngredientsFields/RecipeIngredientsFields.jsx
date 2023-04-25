@@ -3,9 +3,14 @@ import { RecipeIngredientsFieldsCounter } from '../RecipeIngredientsFieldsCounte
 import { RecipeingredientsListItem } from '../RecipeIngredientsListItem';
 import { getAllIngredients } from '../fetchIngredients';
 import { v4 as uuidv4 } from 'uuid';
-import { HeadingStyledContainer, RecipeIngredientsHeading, RecipeIngredientsSection, RecipeIngredientsUl } from './RecipeIngredientsFields.styled';
+import {
+	HeadingStyledContainer,
+	RecipeIngredientsHeading,
+	RecipeIngredientsFieldset,
+	RecipeIngredientsUl,
+} from './RecipeIngredientsFields.styled';
 
-export const RecipeIngredientsFields = () => {
+export const RecipeIngredientsFields = ({ onChange }) => {
 	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
 	const [allIngredientsList, setAllIngredientsList] = useState([]);
 	const [addedIngredientsArray, setAddedIngredientsArray] = useState([]);
@@ -29,7 +34,7 @@ export const RecipeIngredientsFields = () => {
 		setIgredientsQuantity(ingredientsQuantity + 1);
 		setAddedIngredientsArray(prevState => [
 			...prevState,
-			{ id: uuidv4(),ingredientId:'', ttl: '', measure: '' },
+			{ id: uuidv4(), ingredientId: '', ttl: '', measure: '' },
 		]);
 		// console.log(addedIngredientsArray);
 	};
@@ -98,7 +103,7 @@ export const RecipeIngredientsFields = () => {
 	};
 
 	return (
-		<RecipeIngredientsSection>
+		<RecipeIngredientsFieldset>
 			<HeadingStyledContainer>
 				<RecipeIngredientsHeading>Ingredients</RecipeIngredientsHeading>
 				<RecipeIngredientsFieldsCounter
@@ -109,7 +114,7 @@ export const RecipeIngredientsFields = () => {
 					}></RecipeIngredientsFieldsCounter>
 			</HeadingStyledContainer>
 			{ingredientsQuantity !== 0 && (
-				<RecipeIngredientsUl>
+				<RecipeIngredientsUl onChange={onChange(addedIngredientsArray)}>
 					{addedIngredientsArray.map(item => {
 						return (
 							<RecipeingredientsListItem
@@ -126,6 +131,6 @@ export const RecipeIngredientsFields = () => {
 					})}
 				</RecipeIngredientsUl>
 			)}
-		</RecipeIngredientsSection>
+		</RecipeIngredientsFieldset>
 	);
 };
