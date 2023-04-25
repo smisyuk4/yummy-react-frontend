@@ -15,22 +15,44 @@ import {
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 import { SearchingBar } from './Searchingbar';
 import { fetchByTitle } from './FetchWithCategory';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const SearchingPage = () => {
 	const [type, settype] = useState('Title');
 	const [cards, setcards] = useState([]);
+	const [totalRecipes, settotalRecipes] = useState(0);
+	const [page, setpage] = useState(1);
+	const [limit, setlimit] = useState(6);
 
 	const selectFunc = () => {
 		settype(document.querySelector('select').value);
 	};
 
 	const changeValueFunc = value => {
-		// console.log(value);
-		fetchByTitle(value)
-			.then(({ data }) => setcards(data.data.recipes))
+		settotalRecipes(0);
+		if (!value) {
+			toast.error('Enter something in the search box...', {
+				position: 'top-center',
+				autoClose: 3000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+				theme: 'colored',
+			});
+		}
+		fetchByTitle(value, { page, limit })
+			.then(({ data }) => {
+				setcards(data.data.recipes);
+				settotalRecipes(data.data.totalRecipes);
+				console.log(data);
+			})
 			.catch(error => error);
 	};
-	// console.log(type);
+	console.log(type);
+	console.log(totalRecipes);
 
 	return (
 		<DivStyled>
@@ -40,7 +62,10 @@ export const SearchingPage = () => {
 				<TitleSearch>Search by:</TitleSearch>
 				<SelectStyled onChange={selectFunc}>
 					<OptionStyled value="Title">Title</OptionStyled>
-					<OptionStyled value="Ingrediets">Ingrediets</OptionStyled>
+					<OptionStyled value="Ingredients">Ingredients</OptionStyled>
+					<OptionStyled value="Global">
+						Global Ingredients
+					</OptionStyled>
 				</SelectStyled>
 			</SearchByBox>
 			<CardList>
