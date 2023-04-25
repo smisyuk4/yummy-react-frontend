@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import {
-	// deleteIngredientInShoppingList,
+	deleteIngredientInShoppingList,
 	getShoppingList,
 } from '../fetchShoppingList';
 
@@ -16,31 +16,21 @@ import {
 } from './IngredientsShoppingList.styled';
 import { Icon } from 'components/Icon';
 
-// import ItemShoppingList from '../ItemShoppingList/ItemShoppingList';
 
 const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
-	// const [delIngredient, setDelIngredient] = useState('');
 
 	useEffect(() => {
 		getShoppingList()
 			.then(({ data }) => setShoppingList(data.shoppingList))
 			.catch(error => console.error(error));
-	}, []); // приходить масив з шопінг
-
-	  const ingredientId = shoppingList.map(({ ttl}) => ttl);
-console.log(ingredientId)
-
-	// 	useEffect(() => {
-	// 		deleteIngredientInShoppingList(ingredientId)
-	// .then(({data}) => setDelIngredient(data, console.log(data)))
-	// .catch((error) => error);
-	// 	}, [ingredientId]);
-
-	// const onDelete = (id) => {
-	// 	setShoppingList(prevState => prevState.filter(ingredient => ingredient.id !== id)
-	// 	);
-	// };
+	}, []);
+	
+	const onDelete = async ingredientId => {
+		await deleteIngredientInShoppingList(ingredientId);
+		setShoppingList(prevState => prevState.filter(ingredient => ingredient._id !== ingredientId))
+	
+	};
 	return (
 		<div>
 			<DivContainer>
@@ -54,12 +44,18 @@ console.log(ingredientId)
 				{shoppingList &&
 					shoppingList.map(({ _id, ttl, thb, measure }) => (
 						<ItemShoppingList key={_id}>
-			<img src={thb} alt={ttl} width={60} height={60} />
-			<p>{ttl}</p>
-			<SpanMeasure>{measure}</SpanMeasure>
-			<CloseBtn type="button">
-			<Icon id="icon-close" height="14" width="14" style={{ stroke: '#333333' }} /></CloseBtn>
-		</ItemShoppingList>
+							<img src={thb} alt={ttl} width={60} height={60} />
+							<p>{ttl}</p>
+							<SpanMeasure>{measure}</SpanMeasure>
+							<CloseBtn type="button" onClick={() => onDelete(_id)}>
+								<Icon
+									id="icon-close"
+									height="14"
+									width="14"
+									style={{ stroke: '#333333' }}
+								/>
+							</CloseBtn>		
+						</ItemShoppingList>
 					))}
 			</ShoppingList>
 			{shoppingList < 1 && <p>Your Shopping List is Empty</p>}
