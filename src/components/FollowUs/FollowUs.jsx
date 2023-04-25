@@ -68,5 +68,5 @@ export const FollowUs = ({ title }) => {
 };
 
 FollowUs.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
   }
