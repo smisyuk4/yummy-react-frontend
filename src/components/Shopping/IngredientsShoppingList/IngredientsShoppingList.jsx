@@ -1,62 +1,69 @@
-// import { ColorRing } from "react-loader-spinner";
-import { SpanMeasure, ItemShoppingList, ShoppingList, DivContainer, ListBar, ItemBar } from "./IngredientsShoppingListstyled";
-
 import { useState, useEffect } from 'react';
-import { deletIngredientInShoppingList, getShoppingList }  from '../fetchShoppingList'
-import { useParams } from "react-router-dom";
+
+import {
+	// deleteIngredientInShoppingList,
+	getShoppingList,
+} from '../fetchShoppingList';
+
+import {
+	CloseBtn,
+	ItemShoppingList,
+	SpanMeasure,
+	ShoppingList,
+	DivContainer,
+	ListBar,
+	ItemBar,
+} from './IngredientsShoppingList.styled';
+import { Icon } from 'components/Icon';
+
+// import ItemShoppingList from '../ItemShoppingList/ItemShoppingList';
 
 const IngredientsShoppingList = () => {
-	const [ingredient, setIngredient] = useState([]);
-	const { id } = useParams();
+	const [shoppingList, setShoppingList] = useState([]);
+	// const [delIngredient, setDelIngredient] = useState('');
 
 	useEffect(() => {
-		getShoppingList().then(({data}) => setIngredient(console.log(data.data.shoppingList))).catch(error => error);
-	}, []);
+		getShoppingList()
+			.then(({ data }) => setShoppingList(data.shoppingList))
+			.catch(error => console.error(error));
+	}, []); // приходить масив з шопінг
 
-	useEffect(() => {
-		deletIngredientInShoppingList(id).then(({data}) => setIngredient(data.shoppingList)).catch(error => error);
-	}, [id]);
+	  const ingredientId = shoppingList.map(({ ttl}) => ttl);
+console.log(ingredientId)
 
-	const onDelete = ingredientId => {
-		setIngredient(prevState => prevState.filter(ingredient => ingredient.id !== ingredientId)
-		);
-	};
+	// 	useEffect(() => {
+	// 		deleteIngredientInShoppingList(ingredientId)
+	// .then(({data}) => setDelIngredient(data, console.log(data)))
+	// .catch((error) => error);
+	// 	}, [ingredientId]);
 
-	
-	
-
-	// if (isLoading)
-	// 	return (
-	// 		<ColorRing
-	// 			visible={true}
-	// 			ariaLabel="blocks-loading"
-	// 			wrapperClass="blocks-wrapper"
-	// 			colors={
-	// 				['#2a2c36', '#04711a', '#4ebb46', '#8cc293', '#cfd8d4']}
-	// 		/>
+	// const onDelete = (id) => {
+	// 	setShoppingList(prevState => prevState.filter(ingredient => ingredient.id !== id)
 	// 	);
+	// };
 	return (
-	<div>
-		<DivContainer>
-			<ListBar>
-				<ItemBar style={{ marginRight: "167px" }}>Prodacts</ItemBar>
-				<ItemBar style={{ marginRight: "24px" }}>Number</ItemBar>
-				<ItemBar>Remove</ItemBar>
-			</ListBar>
-		</DivContainer>
-		<ShoppingList >
-		{ingredient.length > 0 &&
-          ingredient.map(({ _id, ttl, thb, measure }) => (
-            <ItemShoppingList key={_id}>
-			<img src={thb} alt={ttl} />
-				<p>{ttl}Name ingredient</p>
-				<SpanMeasure>{measure}6 g</SpanMeasure>
-				<button type="button" onClick={onDelete}>
-					remove
-				</button>
-			</ItemShoppingList>
-          ))}
-		</ShoppingList>
-	</div>
-	)}
+		<div>
+			<DivContainer>
+				<ListBar>
+					<ItemBar>Products</ItemBar>
+					<ItemBar>Number</ItemBar>
+					<ItemBar>Remove</ItemBar>
+				</ListBar>
+			</DivContainer>
+			<ShoppingList>
+				{shoppingList &&
+					shoppingList.map(({ _id, ttl, thb, measure }) => (
+						<ItemShoppingList key={_id}>
+			<img src={thb} alt={ttl} width={60} height={60} />
+			<p>{ttl}</p>
+			<SpanMeasure>{measure}</SpanMeasure>
+			<CloseBtn type="button">
+			<Icon id="icon-close" height="14" width="14" style={{ stroke: '#333333' }} /></CloseBtn>
+		</ItemShoppingList>
+					))}
+			</ShoppingList>
+			{shoppingList < 1 && <p>Your Shopping List is Empty</p>}
+		</div>
+	);
+};
 export default IngredientsShoppingList;

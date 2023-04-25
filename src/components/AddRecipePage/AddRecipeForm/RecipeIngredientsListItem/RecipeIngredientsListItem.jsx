@@ -87,7 +87,13 @@ export const RecipeingredientsListItem = ({
 
 	const onMeasureHelpListSelect = e => {
 		setMeasureHelpListState(false);
-		setMeasure(prevState => prevState + ' ' + e.target.textContent);
+		setMeasure(prevState => {
+			if (prevState.includes(' ')) {
+			const measureValue = prevState.split(' ') 
+			return measureValue[0] + ' ' + e.target.textContent;
+			}
+			return prevState + ' ' + e.target.textContent;
+		});
 	};
 
 	return (
@@ -101,12 +107,22 @@ export const RecipeingredientsListItem = ({
 				<StyledHelpListShowButton
 					type="button"
 					onClick={openIngredientHelpList}>
-					d
+					<Icon
+						id="icon-arrow-down"
+						width={14}
+						height={14}
+						stroke="#8BAA36"></Icon>
 				</StyledHelpListShowButton>
 				{ingredientHelpListState && (
 					<DropdownIngredientContainer>
-						<DropdownHideButton type="button" onClick={closeIngredientHelpList}>
-							^
+						<DropdownHideButton
+							type="button"
+							onClick={closeIngredientHelpList}>
+							<Icon
+								id="icon-arrow-up"
+								width={14}
+								height={14}
+								stroke="#8BAA36"></Icon>
 						</DropdownHideButton>
 						<DropdownIngredientUl>
 							{filteredIngredients.map(({ _id, ttl }) => {
@@ -136,12 +152,22 @@ export const RecipeingredientsListItem = ({
 				<StyledHelpListShowButton
 					type="button"
 					onClick={openMeasureHelpList}>
-					d
+					<Icon
+						id="icon-arrow-down"
+						width={14}
+						height={14}
+						stroke="#8BAA36"></Icon>
 				</StyledHelpListShowButton>
 				{measureHelpListState && (
 					<DropdownMeasureContainer>
-						<DropdownHideButton type="button" onClick={closeMeasureHelpList}>
-							^
+						<DropdownHideButton
+							type="button"
+							onClick={closeMeasureHelpList}>
+							<Icon
+								id="icon-arrow-up"
+								width={14}
+								height={14}
+								stroke="#8BAA36"></Icon>
 						</DropdownHideButton>
 						<DropdownIngredientUl>
 							{measureOptions.map(optionValue => {
@@ -159,11 +185,14 @@ export const RecipeingredientsListItem = ({
 					</DropdownMeasureContainer>
 				)}
 			</StyledMeasureLabel>
-			<StyledCloseButton onClick={onButtonDeleteClick} id={item.id} type="button">
+			<StyledCloseButton
+				onClick={onButtonDeleteClick}
+				id={item.id}
+				type="button">
 				<Icon
 					id="icon-close"
-					width={12}
-					height={12}
+					width={20}
+					height={20}
 					stroke="#333333"></Icon>
 			</StyledCloseButton>
 		</li>

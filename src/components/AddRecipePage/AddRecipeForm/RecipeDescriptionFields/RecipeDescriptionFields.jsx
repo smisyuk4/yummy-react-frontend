@@ -70,7 +70,7 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 		}
 	};
 	const categoriName = categoriList.map(categ => {
-		return <option value={categ}>{categ}</option>;
+		return <option key={categ} value={categ}>{categ}</option>;
 	});
 
 	const timeList = [];
@@ -78,7 +78,7 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 		timeList.push(i);
 	}
 	const timeSelect = timeList.map(categ => {
-		return <option value={categ}>{categ} min</option>;
+		return <option key={categ} value={categ}>{categ} min</option>;
 	});
 
 	// const data = {
