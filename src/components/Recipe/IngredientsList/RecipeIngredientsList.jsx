@@ -1,5 +1,7 @@
 import * as React from 'react';
+
 import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
+
 import { IngredientsListSection, ListStyled, IngedientsItem } from './RecipeIngredients.styled';
 
 export const IngredientsList = () => {

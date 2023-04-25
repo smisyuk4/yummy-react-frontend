@@ -12,17 +12,17 @@ export const RecipeIngredientsFieldsCounter = ({
 			<CounterButton onClick={onDecrementClick}>
 				<Icon
 					id="icon-minus"
-					width={11}
-					height={5}
+					width={16}
+					height={16}
 					stroke="rgba(51, 51, 51, 0.3)"></Icon>
 			</CounterButton>
 			<CounterValue>{count}</CounterValue>
 			<CounterButton onClick={onIncrementClick}>
 				<Icon
 					id="icon-plus"
-					width={11}
-					height={11}
-					stroke="rgba(51, 51, 51, 0.3)"></Icon>
+					width={16}
+					height={16}
+					stroke="#8BAA36"></Icon>
 			</CounterButton>
 		</CounterContainer>
 	);

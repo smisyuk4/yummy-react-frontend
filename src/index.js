@@ -21,6 +21,7 @@ const LightTheme = {
 		buttonPrimaryBG: '#8BAA36',
 		darkBG: '#2a2c36',
 		lightBG: '#ECECEC',
+		textSecondary: '#7E7E7E',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
