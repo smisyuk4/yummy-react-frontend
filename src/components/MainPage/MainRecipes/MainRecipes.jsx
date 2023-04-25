@@ -46,8 +46,8 @@ export const MainRecipes = () => {
 	const loadMore = () => {
 		setDisplayedRecipesCount(prevCount => prevCount + 4);
 	};
-
-	const count = windowWidth <= 767 ? 1 : windowWidth <= 1439 ? 2 : 4;
+//!!trottle
+	const count = windowWidth <= 767 ? 1 : windowWidth <= 1439  ? 2  : 4;
 
 	return (
 		<Section>
@@ -76,11 +76,11 @@ export const MainRecipes = () => {
 										);
 									})}
 							</CardItem>
-							<NavBox>
+							{ oneRes.length <= count ? null : (<NavBox>
 								<NavToCategory to={`/categories/${category}`}>
 									See all
 								</NavToCategory>
-							</NavBox>
+							</NavBox>) }
 						</li>
 					);
 				})}

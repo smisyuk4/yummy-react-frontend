@@ -2,29 +2,12 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 // import banner from '../../../images/MainPageImg/bgf.png';
 
-export const Section = styled.section``;
-
-// export const CardList = styled.ul`
-// 	padding: 0;
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	gap: 28px;
-// 	margin-top: 0;
-// 	margin-bottom: 40px;
-
-// 	@media screen and (min-width: 768px) {
-// 		/* margin-top: 50px;
-// 		gap: 32px;
-// 		flex-direction: row; */
-// 	}
-// 	@media screen and (min-width: 1440px) {
-// 		/* gap: 14px;
-// 		grid-row-gap: 100px;
-// 		CardItem:first-child {
-// 			padding-top: 5px;
-// 		} */
-// 	}
-// `;
+export const Section = styled.section`
+margin-bottom: 146px;
+	@media screen and (min-width: 1440px) {
+		margin-bottom: 164px;
+	}
+`;
 
 export const CardItem = styled.div`
 	position: relative;
@@ -32,7 +15,6 @@ export const CardItem = styled.div`
 	gap: 10px;
 
 	@media screen and (min-width: 768px) {
-		/* max-height: 336px; */
 		gap: 32px;
 	}
 
@@ -62,10 +44,10 @@ export const ImageBox = styled.div`
 	display: flex;
 	justify-content: center;
 	@media screen and (min-width: 768px) {
-		max-width: 326px;
+		width: calc(100% / 2);
 	}
 	@media screen and (min-width: 1440px) {
-		max-width: 300px;
+		width: calc(100% / 4);
 	}
 `;
 export const Image = styled.img`
@@ -127,9 +109,6 @@ export const NavToCategory = styled(NavLink)`
 export const BtnBox = styled.div`
 	display: flex;
 	justify-content: center;
-	margin-bottom: 100px;
-	@media screen and (min-width: 1440px) {
-		margin-bottom: 118px;
-	}
+	
 `;
 
