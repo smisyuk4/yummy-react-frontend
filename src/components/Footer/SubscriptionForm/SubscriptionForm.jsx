@@ -1,7 +1,7 @@
 import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled } from './SubscriptionForm.styled';
 import { Formik } from 'formik';
 // import { useEffect } from 'react';
-// import { fetchUpdateSubscribe } from './subscriptionFetch';
+import { fetchUpdateSubscribe } from './subscriptionFetch';
 import * as Yup from 'yup';
 import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
@@ -24,7 +24,10 @@ const SubscribeSchema = Yup.object().shape({
 
 
 export const SubscriptionForm = () => {
-			const sendSubscription = ({ email }, { resetForm }) => {	
+		const sendSubscription = async ({ email }, { resetForm }) => {	
+			console.log(email)
+			const data = await fetchUpdateSubscribe({email})
+			console.log(data)
 			console.log(email)
 			resetForm();
 		}
