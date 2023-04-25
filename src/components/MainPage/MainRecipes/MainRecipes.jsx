@@ -6,7 +6,7 @@ import {
 	Section,
 	// CardList,
 	CardItem,
-	// TitleCategory,
+	TitleCategory,
 	Image,
 	ImageBox,
 	CardBox,
@@ -55,14 +55,9 @@ export const MainRecipes = () => {
 				{recipes.slice(0, displayedRecipesCount).map(oneRes => {
 					const { category } = oneRes[0];
 					return (
-						<li key={uuidv4()}>
-							<h2>{category}</h2>
-							<CardItem
-								style={{
-									display: 'flex',
-									gap: '10px',
-									// // maxHeight: '309px',
-								}}>
+						<li key={uuidv4()} >
+							<TitleCategory>{category}</TitleCategory>
+							<CardItem>
 								{oneRes
 									.slice(0, count)
 									.map(({ title, thumb }) => {
