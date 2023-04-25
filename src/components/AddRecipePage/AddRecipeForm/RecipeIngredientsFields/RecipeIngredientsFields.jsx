@@ -3,9 +3,14 @@ import { RecipeIngredientsFieldsCounter } from '../RecipeIngredientsFieldsCounte
 import { RecipeingredientsListItem } from '../RecipeIngredientsListItem';
 import { getAllIngredients } from '../fetchIngredients';
 import { v4 as uuidv4 } from 'uuid';
-import { HeadingStyledContainer, RecipeIngredientsHeading, RecipeIngredientsSection, RecipeIngredientsUl } from './RecipeIngredientsFields.styled';
+import {
+	HeadingStyledContainer,
+	RecipeIngredientsHeading,
+	RecipeIngredientsSection,
+	RecipeIngredientsUl,
+} from './RecipeIngredientsFields.styled';
 
-export const RecipeIngredientsFields = () => {
+export const RecipeIngredientsFields = ({ onChange }) => {
 	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
 	const [allIngredientsList, setAllIngredientsList] = useState([]);
 	const [addedIngredientsArray, setAddedIngredientsArray] = useState([]);
@@ -29,9 +34,9 @@ export const RecipeIngredientsFields = () => {
 		setIgredientsQuantity(ingredientsQuantity + 1);
 		setAddedIngredientsArray(prevState => [
 			...prevState,
-			{ id: uuidv4(),ingredientId:'', ttl: '', measure: '' },
+			{ id: uuidv4(), ingredientId: '', ttl: '', measure: '' },
 		]);
-		console.log(addedIngredientsArray);
+		// console.log(addedIngredientsArray);
 	};
 
 	const onDecrement = () => {
@@ -43,7 +48,7 @@ export const RecipeIngredientsFields = () => {
 				);
 				return filteredArray;
 			});
-			console.log(addedIngredientsArray);
+			// console.log(addedIngredientsArray);
 		}
 	};
 
@@ -82,7 +87,7 @@ export const RecipeIngredientsFields = () => {
 		});
 		setAddedIngredientsArray(updatedArray);
 	};
-	console.log(addedIngredientsArray);
+	// console.log(addedIngredientsArray);
 
 	const onButtonDeleteClick = e => {
 		const id = e.currentTarget.id;
@@ -91,7 +96,7 @@ export const RecipeIngredientsFields = () => {
 		const reworkedArray = addedIngredientsArray.filter(
 			element => element.id !== id
 		);
-		console.log(reworkedArray);
+		// console.log(reworkedArray);
 
 		setAddedIngredientsArray(reworkedArray);
 		setIgredientsQuantity(ingredientsQuantity - 1);
@@ -109,7 +114,7 @@ export const RecipeIngredientsFields = () => {
 					}></RecipeIngredientsFieldsCounter>
 			</HeadingStyledContainer>
 			{ingredientsQuantity !== 0 && (
-				<RecipeIngredientsUl>
+				<RecipeIngredientsUl onChange={onChange(addedIngredientsArray)}>
 					{addedIngredientsArray.map(item => {
 						return (
 							<RecipeingredientsListItem
