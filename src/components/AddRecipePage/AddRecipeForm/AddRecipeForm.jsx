@@ -14,6 +14,7 @@ export const AddRecipeForm = () => {
 	const [categori, setCategori] = useState('');
 	const [picture, setPicture] = useState(null);
 	const [time, setTime] = useState('');
+	const [ingretients, setIngridients] = useState([]);
 
 	const [totalFormValues, setTotalFormValues] = useState({});
 	// const addRecipe = data => {
@@ -26,6 +27,10 @@ export const AddRecipeForm = () => {
 		console.log(totalFormValues);
 	};
 
+	const ingridientsCange = ingridientsArray => {
+		setIngridients(ingridientsArray);
+		console.log('ingretients array', ingretients);
+	};
 	const tesOnCanfeDescription = terget => {
 		switch (terget.name) {
 			case 'title':
@@ -62,7 +67,7 @@ export const AddRecipeForm = () => {
 	return (
 		<>
 			<RecipeDescriptionFields onChange={tesOnCanfeDescription} />
-			<RecipeIngredientsFields onChange={testFunc} />
+			<RecipeIngredientsFields onChange={ingridientsCange} />
 			<RecipePreparationFields onChange={testFunc} />
 			<AddButton onClick={testFunc2}>Add</AddButton>
 		</>
