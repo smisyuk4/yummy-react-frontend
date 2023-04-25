@@ -1,17 +1,31 @@
 import styled from '@emotion/styled';
 import {flexBox} from 'styles/mixins';
 
+
 export const OverlayDiv = styled.div`
-   width: 100%;
-    height: 100%;
-    background-color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    ${flexBox};
+    flex-direction: column;
+    justify-content: space-between;
     position: absolute;
-    top: 0;
-    right: 0;
+    padding: 18px;
+    top: 72px;
+    right: 60px;
+    width: 160px;
+    height: 130px;
+    background-color: ${props => props.theme.colors.buttonLightBG};
+    border: 1px solid #8BAA36;
+    border-radius: 8px;
+
+    transform: translateY(-300px);
+    transition: transform 1s ease-in;
     z-index: 999;
+
+    &.open {
+        transform: translateY(60px);
+    }
+    &.close {
+        transform: translateY(-300px);
+    }
 `
 export const ModalDiv = styled.div`
      max-width: 50%;
@@ -19,7 +33,7 @@ export const ModalDiv = styled.div`
     position: relative;
     top: 0;
     right: 0;
-    padding: 25px 15px 15px;
+    
     background-color: #fff;
 `
 export const DivStyled = styled.div`
@@ -33,13 +47,17 @@ export const DivStyled = styled.div`
 `;
 
 export const WrapperEdit = styled.div`
+width: 100%;
     ${flexBox};
     justify-content: space-between;
     flex-direction: row;
+    
 `
 
 export const LogOutBtn = styled.button`
+
     width: 125px;
+    width: 100%;
     height: 43px;
     text-align: center;
     cursor: pointer;

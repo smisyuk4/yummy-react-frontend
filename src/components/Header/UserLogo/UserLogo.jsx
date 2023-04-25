@@ -1,25 +1,33 @@
 import { useState } from 'react';
-import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, BurgerMuneBtn, BurgerMenuImg } from './UserLogo.styled';
-import burgerMenuImg from 'images/menu-03.png'
-import userImg from 'images/user.png'
+import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, AvatarUser, BurgerMuneBtn, BurgerMenuIcon } from './UserLogo.styled';
 import { PopupUser } from './PopupUser/PopupUser'
+import { useSelector } from 'react-redux';
+
 
 export const UserLogo = ({ onOpenModal }) => {
+ const [openPopUp, setOpenPopUp] = useState(false)
 
-  const [isOpen, setIsOpen] = useState(false)
+ const onClosePopUp = () => {
+  setOpenPopUp(false)
+}
 
-  const onClose = () => {
-    console.log('edit modal open')
-    setIsOpen(false)
-  }
-  return <UserLogoDiv onClick={() => setIsOpen(true)}>
-          <WrapperImg onClick={() => setIsOpen(true)}>
-            <UserAvatarImg src={userImg} alt="avatar"></UserAvatarImg>      
+  const auth = useSelector(state => state.auth)
+  const user = auth.user
+  const isGravatar = user.avatarURL.includes('gravatar')
+  console.log(auth.isLoggedIn)
+
+  return <UserLogoDiv >
+          <WrapperImg onClick={() => setOpenPopUp(true)} >
+            {isGravatar && <AvatarUser  id="icon-person" />}
+            {!isGravatar && <UserAvatarImg src={user.avatarURL} />}
           </WrapperImg>
-          <UserNameP>User's name</UserNameP>
+          <UserNameP>{user.name}</UserNameP>
           <BurgerMuneBtn onClick={onOpenModal}>
-          <BurgerMenuImg src={burgerMenuImg} alt=""></BurgerMenuImg>
+          <BurgerMenuIcon id='icon-burger' />
         </BurgerMuneBtn>
-        <PopupUser open={isOpen} close={onClose} />
+        <PopupUser 
+          openPopUp={openPopUp}
+          closePopUp={onClosePopUp}
+        />
   </UserLogoDiv>;
 };
