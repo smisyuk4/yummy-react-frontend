@@ -18,7 +18,6 @@ import { fetchByTitle } from './FetchWithCategory';
 
 export const SearchingPage = () => {
 	const [type, settype] = useState('Title');
-	const [searchValue, setsearchValue] = useState('');
 	const [cards, setcards] = useState([]);
 
 	const selectFunc = () => {
@@ -26,13 +25,12 @@ export const SearchingPage = () => {
 	};
 
 	const changeValueFunc = value => {
-		setsearchValue(value.search.toLowerCase());
-		fetchByTitle(searchValue)
+		// console.log(value);
+		fetchByTitle(value)
 			.then(({ data }) => setcards(data.data.recipes))
 			.catch(error => error);
 	};
-	console.log(type);
-	// console.log(searchValue);
+	// console.log(type);
 
 	return (
 		<DivStyled>

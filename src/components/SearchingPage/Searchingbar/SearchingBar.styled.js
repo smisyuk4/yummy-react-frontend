@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
-import { Field, Form } from 'formik';
+// import { Field, Form } from 'formik';
 
 export const SearchStyled = styled.div`
 	margin-top: 50px;
 `;
 
-export const SearchForm = styled(Form)`
+export const FormStyled = styled.form`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -16,7 +16,7 @@ export const SearchForm = styled(Form)`
 	}
 `;
 
-export const Input = styled(Field)`
+export const Input = styled.input`
 	background: ${({ theme }) => theme.colors.BGCintoButton};
 	border-radius: 24px 44px;
 	border: 1px solid #6161613d;
