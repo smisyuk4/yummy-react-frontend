@@ -2,56 +2,68 @@ import styled from '@emotion/styled';
 import { Field, Form } from 'formik';
 
 export const SearchStyled = styled.header`
-    position: relative;
-    top: -159px;
-    left: -22px;
-    transform: translate( 7px, -7px);
-    z-index: 6;
+	position: relative;
+	top: -139px;
+	left: -22px;
+	transform: translate(7px, -7px);
+	z-index: 6;
+  @media screen and (min-width: 768px) {
+    top: -666px;
+		left: -335px;
+	}
 `;
 
 export const SearchForm = styled(Form)`
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  width: 100%;
-
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	width: 100%;
 `;
 
 export const Input = styled(Field)`
-  background: #FFFFFF;
-  border-radius: 24px 44px; 
-  border: 1px solid #F0F0F0;
-  width: 295px;
-  height: 52px;
+	background: #ffffff;
+	border-radius: 24px 44px;
+	border: 1px solid #f0f0f0;
+	width: 295px;
+	height: 52px;
 
-  padding-left: 32px;
-  position: absolute;
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  color: #BDBDBD;
-  &:focus {
-    border-color: #F0F0F0;
-    outline: none;
-  }
+	padding-left: 32px;
+	position: absolute;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 18px;
+	color: #bdbdbd;
+	&:focus {
+		border-color: #f0f0f0;
+		outline: none;
+	}
+	@media screen and (min-width: 768px) {
+		width: 362px;
+		height: 59px;
+	}
 `;
 
 export const SearchFormBtn = styled.button`
-background-color: transparent; 
-border-radius: 24px 44px; 
-border: 1px solid green;
-width: 113px;
-height: 52px;
-position: absolute;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 14px;
-line-height: 21px;
-color: #FAFAFA;
-background: #22252A;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color: transparent;
+	border-radius: 24px 44px;
+	border: 1px solid green;
+	width: 113px;
+	height: 52px;
+	position: absolute;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	color: #fafafa;
+	background: ${({ theme }) => theme.colors.buttonDarkBG};
+	border: 1px solid #000000;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	@media screen and (min-width: 768px) {
+		font-weight: 400;
+		width: 161px;
+		height: 59px;
+	}
 `;
