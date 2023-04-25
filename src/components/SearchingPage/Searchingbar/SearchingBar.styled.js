@@ -19,7 +19,7 @@ export const SearchForm = styled(Form)`
 export const Input = styled(Field)`
 	background: ${({ theme }) => theme.colors.BGCintoButton};
 	border-radius: 24px 44px;
-	border: 1px solid ${({ theme }) => theme.colors.borderColorLight};
+	border: 1px solid #6161613d;
 	width: 260px;
 	height: 52px;
 	padding-left: 32px;
@@ -28,7 +28,7 @@ export const Input = styled(Field)`
 	line-height: 18px;
 	color: ${({ theme }) => theme.colors.fontColorDark};
 	&:focus {
-		border-color: ${({ theme }) => theme.colors.borderColorLight};
+		border-color: #61616170;
 		outline: none;
 	}
 `;
@@ -40,11 +40,11 @@ export const SearchFormBtn = styled.button`
 	background: ${({ theme }) => theme.colors.buttonPrimaryBG};
 	border: 1px solid white;
 	width: 113px;
-	height: 52px;
+	height: 54px;
 
 	position: absolute;
-	right: 0;
-	top: 2px;
+	right: 1px;
+	top: 1px;
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;
