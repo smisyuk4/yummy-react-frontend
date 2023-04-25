@@ -2,10 +2,9 @@ import {createPortal} from "react-dom";
 import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayImg, IconPerson, IconPlus, Input, FormUpdateUser, LabelInput, IconEdit, IconPersonInput, BtnModalUser, IconCross } from './ModalUserProfil.styled';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { userUpdate, userUpdateAvatar } from 'redux/auth/operations';
-import { fetchChangeUserAvatar, fetchChangeNameUser } from "./fetchApiChangeUserProfil";
+
 
 // const URL = "https://yummy-rest-api.onrender.com/user/update";
 // const url = 'http://localhost:3001/user/update'
@@ -51,10 +50,8 @@ const handleChangeName = (e) => {
   const handleSubmitForm = async (e) => {
     e.preventDefault()
     const formEl = document.getElementById('form-user-change')
-    // console.log(formEl.elements.avatarURL.files[0])
     const dataFile = new FormData();
     dataFile.set('avatar', formEl.files[0]);
-    console.log(dataFile.get('avatar'))
  
     const newName = {
       name: nameUser
