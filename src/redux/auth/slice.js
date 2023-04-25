@@ -43,14 +43,14 @@ const authSlice = createSlice({
 				state.isLoggedIn = true;
 				state.token = action.payload.token;
 				state.user = action.payload.user;
-				state.isRefreshing = true;
+				state.isRefreshing = false;
 			})
 			.addCase(registerUser.rejected, (state, action) => {
 				toast.error(
 					`Register unsuccessful with error: ${action.payload.message}`,
 					toastParam
 				);
-				state.isRefreshing = true;
+				state.isRefreshing = false;
 			})
 
 			.addCase(loginUser.pending, state => {
@@ -60,14 +60,14 @@ const authSlice = createSlice({
 				state.isLoggedIn = true;
 				state.token = action.payload.token;
 				state.user = action.payload.user;
-				state.isRefreshing = true;
+				state.isRefreshing = false;
 			})
 			.addCase(loginUser.rejected, (state, action) => {
 				toast.error(
 					`Login unsuccessful with error: ${action.payload.message}`,
 					toastParam
 				);
-				state.isRefreshing = true;
+				state.isRefreshing = false;
 			})
 
 			.addCase(syncUser.pending, state => {
