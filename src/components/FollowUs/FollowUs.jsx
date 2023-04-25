@@ -1,10 +1,14 @@
-import { DivStyled, SonetLinksList, IconSonetLink } from './FollowUs.styled';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+
+import { Title } from 'components/Title';
+import { DivStyled, SonetLinksList, IconSonetLink } from './FollowUs.styled';
 
 export const FollowUs = ({ title }) => {
 	return (
 		<DivStyled>
-			<h2>{title}</h2>
+			<Title title={title}/>
+
 			<SonetLinksList>
 				<li>
 					<Link
@@ -62,3 +66,7 @@ export const FollowUs = ({ title }) => {
 		</DivStyled>
 	);
 };
+
+FollowUs.propTypes = {
+	title: PropTypes.string.isRequired,
+  }

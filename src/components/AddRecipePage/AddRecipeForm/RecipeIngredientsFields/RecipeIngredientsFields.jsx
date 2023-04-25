@@ -31,7 +31,7 @@ export const RecipeIngredientsFields = () => {
 			...prevState,
 			{ id: uuidv4(),ingredientId:'', ttl: '', measure: '' },
 		]);
-		console.log(addedIngredientsArray);
+		// console.log(addedIngredientsArray);
 	};
 
 	const onDecrement = () => {
@@ -43,7 +43,7 @@ export const RecipeIngredientsFields = () => {
 				);
 				return filteredArray;
 			});
-			console.log(addedIngredientsArray);
+			// console.log(addedIngredientsArray);
 		}
 	};
 
@@ -82,7 +82,7 @@ export const RecipeIngredientsFields = () => {
 		});
 		setAddedIngredientsArray(updatedArray);
 	};
-	console.log(addedIngredientsArray);
+	// console.log(addedIngredientsArray);
 
 	const onButtonDeleteClick = e => {
 		const id = e.currentTarget.id;
@@ -91,7 +91,7 @@ export const RecipeIngredientsFields = () => {
 		const reworkedArray = addedIngredientsArray.filter(
 			element => element.id !== id
 		);
-		console.log(reworkedArray);
+		// console.log(reworkedArray);
 
 		setAddedIngredientsArray(reworkedArray);
 		setIgredientsQuantity(ingredientsQuantity - 1);

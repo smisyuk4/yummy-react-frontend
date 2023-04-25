@@ -54,7 +54,7 @@ export const AddRecipeForm = () => {
 
 		// та відправити на сервер
 
-		console.log(totalFormValues);
+		// console.log(totalFormValues);
 	};
 
 	testFunc2();

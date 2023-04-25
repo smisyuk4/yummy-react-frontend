@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import { TitleDiv, TitleH } from './Title.styled';
 
 export const Title = ({title}) => {
@@ -5,3 +6,7 @@ export const Title = ({title}) => {
           <TitleH>{title}</TitleH>
         </TitleDiv>;
 };
+
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+}
