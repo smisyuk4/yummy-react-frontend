@@ -1,36 +1,50 @@
 import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
+import {flexBox} from 'styles/mixins';
+import { BtnSybscribe } from 'components/Footer/SubscriptionForm/SubscriptionForm.styled';
+
 
 export const DivStyled = styled.div`
-width: 100%;
+    width: 100%;
     height: 100%;
-    background-color: transparent;
+    background-color: grey;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 999;
+    z-index: 1000;
+
 `;
 
 export const ModalProfil = styled.div`
     position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-    padding: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 32px 24px;
     border: 1px solid #8BAA36;
     border-radius: 18px;
-    width: 161px;
-    height: 130px;
+    width: 330px;
     text-align: center;
+
+    background: #FFF;
+    box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
 `
 export const OvarlayImg = styled.div`
+position: relative;
+  width: 88px;
+  height: 88px;
  text-align: center;
+ border-radius: 50%;
+ background: #D9D9D9;
+ ${flexBox};
+
 `
 export const LabelAvatar = styled.label`
-
-
+ margin-bottom: 54px;
 `
 export const InputAvatar = styled.input`
     display: none;
@@ -66,12 +80,108 @@ display: block;
   border: 2px solid transparent;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
   transition: all ease-in-out .3s;
+  object-fit: cover;
   &:hover {
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
   }
+`
+export const FigureAvatar = styled.figure`
+  position: relative;
+  width: 88px;
+  height: 88px;
 `
 export const ImgDefault = styled.img`
 margin-top: 15px;
   width: 50px;
   height: 50px;
+`
+export const IconPerson = styled(Icon)`
+  width: 50px;
+  height: 50px;
+  stroke: #C4C4C4;
+`
+
+export const IconPlus = styled(Icon)`
+position: absolute;
+top: 70px;
+right: 13px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  stroke: #fff;
+  background: #8BAA36;
+  padding: 5px;
+`
+export const Input = styled.input`
+  height: 48px;
+  width: inherit;
+  box-sizing: border-box;
+  border: 1px solid #23262A; 
+  border-radius: 6px;
+  
+  padding-left: 40px;
+
+  &::placeholder {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #23262A;
+      opacity: 0.8;
+    }
+`
+export const FormUpdateUser = styled.form`
+  ${flexBox};
+  flex-direction: column;
+`
+export const IconPersonInput = styled(IconPerson)`
+  width: 18px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  stroke: #23262A;
+`
+export const IconEdit = styled(Icon)`
+width: 15px;
+  height: 15px;
+  fill: #23262A;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+`
+
+export const LabelInput = styled.label`
+  position: relative;
+  margin-bottom: 24px;
+  width: 100%;
+`
+
+export const BtnModalUser = styled(BtnSybscribe)`
+  width: 100%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #FAFAFA;
+`
+export const IconCross = styled(Icon)`
+  width: 13px;
+  height: 13px;
+  stroke: #23262A;
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  transform: translateY(-50%);
 `

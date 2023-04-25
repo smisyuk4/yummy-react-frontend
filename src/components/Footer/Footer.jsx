@@ -1,10 +1,10 @@
 import {WrapperFooter, WrapDiscrSubscrForm, FooterStyled, FotterUpDiv, WrapperDiscr, WrapperTitle, 
-  // IconFooter, IconDiv,
+  IconFooter,
    Title, FooterNav, FooterNavlink, FooterTeam } from './Footer.styled';
 import { SubscriptionForm } from './SubscriptionForm';
 import { FooterDescription } from './FooterDescription';
 import { FollowUs } from 'components/FollowUs';
-import { HeaderLogo } from 'components/Header/HeaderLogo';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return <WrapperFooter>
@@ -13,7 +13,10 @@ export const Footer = () => {
       <FotterUpDiv>
         <WrapperDiscr>
           <WrapperTitle>
-            <HeaderLogo />
+            <Link to='/'>
+              <IconFooter id="icon-knife-btn"/>
+            </Link>
+            
             <Title>So Yummy</Title>
           </WrapperTitle>
           <FooterDescription />

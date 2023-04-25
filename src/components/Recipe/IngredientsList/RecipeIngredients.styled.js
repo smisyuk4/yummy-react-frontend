@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const IngredientsListSection = styled.section`
-background-color: '#ECECEC';
+/* background-color: '#ECECEC'; */
 padding-top: 32px;`
 
 export const ListStyled = styled.ul`

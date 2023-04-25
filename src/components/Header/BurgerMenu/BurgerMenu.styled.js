@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import bgImgS from 'images/headerImges/burger-bg-s.png'
 import bgImgM from 'images/headerImges/burger-bg-m.png'
 import {flexBox} from 'styles/mixins';
+import { Icon } from 'components/Icon';
 
 export const BurgerMenuDiv = styled.div`
-    padding: 16px;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -21,6 +21,7 @@ export const BurgerMenuDiv = styled.div`
     }
 `;
 export const ModalDiv = styled.div`
+    padding: 18px 16px;
     max-width: 100%;
     position: relative;
 `;
@@ -28,14 +29,21 @@ export const ModalDiv = styled.div`
 export const HeaderLogoDiv = styled.div`
     ${flexBox};
     justify-content: space-between;
+    align-items: center;
 `
 
 export const BtnCloseModal = styled.button`
+    display: block;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+`
+export const CloseIcon = styled(Icon)`
     width: 32px;
     height: 32px;
-    
-    font-size: 16px;
-    cursor: pointer;
+    stroke: #23262A;
+    background-color: transparent;
+
 `
 
 export const BurgerNavigationNav = styled.nav`

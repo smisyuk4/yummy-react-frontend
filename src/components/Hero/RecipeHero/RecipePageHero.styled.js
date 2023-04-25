@@ -9,21 +9,22 @@ export const HeroSection = styled.section`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-     padding-top: 144px; 
-    padding-bottom: 90px;
+     padding-top: 144px;  
+    /* padding-bottom: 90px; */
     width: 100%;
-
     height: 495px;
     text-align: center;
-    @media ${props => props.theme.media.tablet} {
-       background: url(${heroTab1});
-      width: 100vw;
+    /* @media ${props => props.theme.media.tablet} { */
+      @media (min-width: 768px){
+    background: url(${heroTab1});
         height: 493px;
         padding-top: 136px;
         padding-bottom: 32px;
         background-repeat: no-repeat;
+        background-size: cover;
     }
-     @media ${props => props.theme.media.desktop} {
+     /* @media ${props => props.theme.media.desktop} { */
+     @media (min-width: 1440px){
      background-image: url(${heroDesk1});
     padding-top: 164px;
  } 

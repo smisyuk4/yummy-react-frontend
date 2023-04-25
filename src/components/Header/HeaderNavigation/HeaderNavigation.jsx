@@ -3,7 +3,7 @@ import searchImg from 'images/headerImges/search.png';
 
 export const HeaderNavigation = () => {
   return <HeaderNavigationNav>
-            <HeaderNavlink to="/categories/:categoryName">Categories</HeaderNavlink>
+            <HeaderNavlink to="/categories">Categories</HeaderNavlink>
             <HeaderNavlink to="/add">Add recipes</HeaderNavlink>
             <HeaderNavlink to="/my">My recipes</HeaderNavlink>
             <HeaderNavlink to="/favorite ">Favorites</HeaderNavlink>
