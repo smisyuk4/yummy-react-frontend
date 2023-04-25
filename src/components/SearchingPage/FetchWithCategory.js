@@ -8,7 +8,18 @@ export const fetchByTitle = async (value, { page, limit }) => {
 	return responce;
 };
 
-export const fetchByIngredients = async categ => {
-	const responce = await axios.get(`/recipes/category/${categ}`);
+export const fetchByIngredients = async (value, { page, limit }) => {
+	console.log(value, page, limit);
+	const responce = await axios.get(
+		`/recipes/ingredients?ttl=${value}&page=${page}&limit=${limit}`
+	);
+	return responce;
+};
+
+export const fetchByGlobalIngredients = async (value, { page, limit }) => {
+	console.log(value, page, limit);
+	const responce = await axios.get(
+		`/recipes/ingredients?ttl=${value}&page=${page}&limit=${limit}`
+	);
 	return responce;
 };
