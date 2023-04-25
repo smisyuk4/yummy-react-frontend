@@ -16,3 +16,4 @@ export const fetchLogout = async (token) => {
         console.log(error)
     }
 }
+

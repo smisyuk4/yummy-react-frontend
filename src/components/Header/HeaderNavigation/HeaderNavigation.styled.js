@@ -13,16 +13,19 @@ export const HeaderNavigationNav = styled.nav`
 `;
 
 export const HeaderNavlink = styled(NavLink)`
+    font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 1.57;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.02em;
     color: #23262A;
-    font-family: 'Poppins', sans-serif;
    
-
+    &:hover {
+        color: ${({ theme }) => theme.colors.primary};
+    }
     &.active {
-        color: #8BAA36
+        color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

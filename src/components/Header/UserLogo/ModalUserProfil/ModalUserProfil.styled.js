@@ -169,7 +169,8 @@ export const BtnModalUser = styled(BtnSybscribe)`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
-
+  cursor: pointer;
+  
   display: flex;
   align-items: center;
   text-align: center;

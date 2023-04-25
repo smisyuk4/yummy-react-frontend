@@ -32,7 +32,7 @@ export const ModalLogOut = ({isOpen, close}) => {
         <p>Are you sure you want to log out?</p>
         <WrapperBtns>
           <BtnLogOut type='submit' onClick={() => dispatch(logOut())}>Log out</BtnLogOut>
-          <BtnCancel>Cancel</BtnCancel>
+          <BtnCancel type="submit" onClick={closeModal}>Cancel</BtnCancel>
         </WrapperBtns>
     </Modal>
   </DivStyledLogOut>,

@@ -1,8 +1,7 @@
 import { useEffect } from "react";
 import {createPortal} from "react-dom";
-import { BurgerMenuDiv, BtnCloseModal, HeaderLogoDiv, BurgerNavigationNav, ModalDiv, CloseIcon } from './BurgerMenu.styled';
-import { HeaderNavlink, SearchImg } from '../HeaderNavigation/HeaderNavigation.styled';
-import searchImg from 'images/headerImges/search.png';
+import { BurgerMenuDiv, BtnCloseModal, HeaderLogoDiv, BurgerNavigationNav, ModalDiv, CloseIcon, SearchIcon } from './BurgerMenu.styled';
+import { HeaderNavlink } from '../HeaderNavigation/HeaderNavigation.styled';
 import { HeaderLogo } from '../HeaderLogo';
 
 const modalRoot = document.getElementById('modal-root');
@@ -35,13 +34,13 @@ export const BurgerMenu = ({closeModal}) => {
         </HeaderLogoDiv>
         
         <BurgerNavigationNav onClick={closeModal} >
-            <HeaderNavlink to="/categories/:categoryName">Categories</HeaderNavlink>
+            <HeaderNavlink to="/categories/Breakfast">Categories</HeaderNavlink>
             <HeaderNavlink to="/add">Add recipes</HeaderNavlink>
             <HeaderNavlink to="/my">My recipes</HeaderNavlink>
             <HeaderNavlink to="/favorite ">Favorites</HeaderNavlink>
             <HeaderNavlink to="/shopping-list">Shopping list</HeaderNavlink>
             <HeaderNavlink to="/search">
-              <SearchImg src={searchImg} alt='search'></SearchImg>
+              <SearchIcon id="icon-search"></SearchIcon>
             </HeaderNavlink>  
         </BurgerNavigationNav>
       </ModalDiv>

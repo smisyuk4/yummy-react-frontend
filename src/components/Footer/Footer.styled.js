@@ -108,8 +108,13 @@ export const FooterNavlink = styled(NavLink)`
     font-size: 14px;
     line-height: 1.57;
     letter-spacing: -0.02em;
-
     color: ${props => props.theme.colors.fontColor};
+    &:hover {
+        color: ${({ theme }) => theme.colors.primary};
+    }
+    &.active {
+        color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const FooterTeam = styled.div`

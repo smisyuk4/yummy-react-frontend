@@ -7,7 +7,8 @@ const instance = axios.create({
 
 export const fetchChangeUserAvatar = async(userInf) => {
     try{
-        const {data} = await instance.patch("/user/update", userInf, {
+        console.log(userInf)
+        const {data} = await instance.post("/user/avatars", userInf, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

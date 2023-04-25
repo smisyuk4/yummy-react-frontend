@@ -19,7 +19,20 @@ export const WrapperBtns = styled.div`
 `
 export const BtnLogOut = styled(BtnModalUser)`
     height: 50px;
+    &:hover {
+        background: #22252A;
+        color: #FAFAFA;
+    }
 `
 export const BtnCancel = styled(BtnModalUser)`
     height: 50px;
+    background: #D9D9D9;
+    color: #23262A;
+    border: transparent;
+    &:hover {
+        border: 1px solid #23262A;
+        border-radius: 6px;
+        background: #ECECEC;
+
+    }
 `
