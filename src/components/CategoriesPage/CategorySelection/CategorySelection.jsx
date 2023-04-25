@@ -12,8 +12,8 @@ import {
 	CardBox,
 	CardTitle,
 	Image,
-	DivPositionen,
-	ImageBG,
+	// DivPositionen,
+	// ImageBG,
 } from './CategorySelection.styled';
 import { ReusableComponentTitleWithJewelry } from '../../ReusableComponentTitleWithJewelry';
 import { fetchAllCategory, fetchOneCategory } from '../FetchWithCategory';
@@ -81,9 +81,9 @@ export const CategorySelection = () => {
 					);
 				})}
 			</CardList>
-			<DivPositionen>
+			{/* <DivPositionen>
 				<ImageBG />
-			</DivPositionen>
+			</DivPositionen> */}
 		</DivStyled>
 	);
 };
