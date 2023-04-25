@@ -40,11 +40,11 @@ export const SearchFormBtn = styled.button`
 	background: ${({ theme }) => theme.colors.buttonPrimaryBG};
 	border: 1px solid white;
 	width: 113px;
-	height: 54px;
+	height: 56px;
 
 	position: absolute;
-	right: 1px;
-	top: 1px;
+	right: 0px;
+	top: 0px;
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;

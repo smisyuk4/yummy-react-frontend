@@ -6,10 +6,9 @@ import {
 	Input,
 } from './SearchingBar.styled';
 
-export const SearchingBar = ({ onSubmit }) => {
+export const SearchingBar = ({ changeValue }) => {
 	const handleSubmit = (values, actions) => {
-		console.log(values);
-		// onSubmit(values);
+		changeValue(values);
 		actions.resetForm();
 	};
 
