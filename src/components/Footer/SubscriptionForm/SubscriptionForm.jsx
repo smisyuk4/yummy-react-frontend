@@ -1,34 +1,40 @@
+import { toast } from 'react-toastify';
 import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled } from './SubscriptionForm.styled';
 import { Formik } from 'formik';
-// import { useEffect } from 'react';
 import { fetchUpdateSubscribe } from './subscriptionFetch';
 import * as Yup from 'yup';
 import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
-// import { useState } from 'react';
 
-
-const emailRegex = /^[\w]+@([\w]+\.)+[\w]{1,4}$/;
 
 const SubscribeSchema = Yup.object().shape({
 	email: Yup.string()
 		.min(6)
 		.max(64)
-		.matches(
-			emailRegex,
-			'Email may only latin letters, numbers and _ @ . symbols.'
-		)
 		.email()
 		.required(),
 });
-
+const toastParam = {
+	position: 'top-right',
+	autoClose: 5000,
+	hideProgressBar: false,
+	closeOnClick: true,
+	pauseOnHover: true,
+	draggable: true,
+	progress: undefined,
+	theme: 'colored',
+};
 
 export const SubscriptionForm = () => {
 		const sendSubscription = async ({ email }, { resetForm }) => {	
 			console.log(email)
 			const data = await fetchUpdateSubscribe({email})
-			console.log(data)
-			console.log(email)
+			console.log(data.data)
+			if (data.status === 200) {
+				toast.success(`You are subscribed successful`, toastParam);
+			} else {
+				toast.error('Something went wrong, try again later', toastParam)
+			}
 			resetForm();
 		}
 
