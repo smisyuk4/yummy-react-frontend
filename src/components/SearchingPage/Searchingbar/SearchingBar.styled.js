@@ -3,38 +3,32 @@ import { Field, Form } from 'formik';
 
 export const SearchStyled = styled.div`
 	margin-top: 50px;
-	/* transform: translate(7px, -7px); */
-	/* margin-right: calc((100% - 295px - 32px -34px) / 2); */
 `;
 
 export const SearchForm = styled(Form)`
-	/* display: flex;
+	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: end; */
-	/* width: 295px; */
-	/* margin-right: calc((100% - 295px - 32px -34px) / 2); */
+	justify-content: center;
+
+	.position {
+		position: relative;
+	}
 `;
 
 export const Input = styled(Field)`
-	/* position: relative; */
-	/* background: #ffffff; */
-	background: aqua;
+	background: ${({ theme }) => theme.colors.BGCintoButton};
 	border-radius: 24px 44px;
-	border: 1px solid #f0f0f0;
+	border: 1px solid ${({ theme }) => theme.colors.borderColorLight};
 	width: 260px;
 	height: 52px;
-	margin-left: calc((100% - 260px - 32px) / 2);
 	padding-left: 32px;
-	/* position: absolute; */
-	/* font-family: 'Poppins';
-	font-style: normal; */
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 18px;
-	color: #bdbdbd;
+	color: ${({ theme }) => theme.colors.fontColorDark};
 	&:focus {
-		border-color: #f0f0f0;
+		border-color: ${({ theme }) => theme.colors.borderColorLight};
 		outline: none;
 	}
 `;
@@ -42,17 +36,18 @@ export const Input = styled(Field)`
 export const SearchFormBtn = styled.button`
 	background-color: transparent;
 	border-radius: 24px 44px;
-	border: 1px solid green;
+	color: ${({ theme }) => theme.colors.buttonLightBG};
+	background: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	border: 1px solid white;
 	width: 113px;
 	height: 52px;
-	/* position: absolute; */
+
+	position: absolute;
+	right: 0;
+	top: 2px;
 	font-family: 'Poppins';
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
-	color: #fafafa;
-	background: #22252a;
-	border: 1px solid #000000;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
