@@ -13,7 +13,7 @@ export const IngredientsList = ({ ingredients }) => {
 // 		async function getShopping() {
 //       try {
 // 		  const currentlist = await getShoppingList();
-// 		  console.log('test', currentlist);
+		  // console.log('test', currentlist);
 //         setShoppingList(currentlist);
 // 		  console.log(currentlist)
 //       } catch (error) {
