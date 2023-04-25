@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import {
 	HeadingStyledContainer,
 	RecipeIngredientsHeading,
-	RecipeIngredientsSection,
+	RecipeIngredientsFieldset,
 	RecipeIngredientsUl,
 } from './RecipeIngredientsFields.styled';
 
@@ -103,7 +103,7 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 	};
 
 	return (
-		<RecipeIngredientsSection>
+		<RecipeIngredientsFieldset>
 			<HeadingStyledContainer>
 				<RecipeIngredientsHeading>Ingredients</RecipeIngredientsHeading>
 				<RecipeIngredientsFieldsCounter
@@ -131,6 +131,6 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 					})}
 				</RecipeIngredientsUl>
 			)}
-		</RecipeIngredientsSection>
+		</RecipeIngredientsFieldset>
 	);
 };
