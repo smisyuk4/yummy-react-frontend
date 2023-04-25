@@ -41,7 +41,6 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 	}, [picture]);
 
 	const handleSubmit = async ({ title, about, categori }, { resetForm }) => {
-		// onSubmit(data);
 		resetForm();
 	};
 
@@ -62,15 +61,15 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 			// 	case 'categori':
 			// 		setCategori(event.target.value);
 			// 		break;
-			// 	case 'time':
-			// 		setTime(event.target.value);
-			// 		break;
+			// case 'time':
+			// 	event.target.size = 6;
+			// 	break;
 			default:
 				console.log('Invalid subscription type');
 		}
 	};
 	const categoriName = categoriList.map(categ => {
-		return <option value={categ}>{categ}</option>;
+		return <option key={categ} value={categ}>{categ}</option>;
 	});
 
 	const timeList = [];
@@ -78,17 +77,23 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 		timeList.push(i);
 	}
 	const timeSelect = timeList.map(categ => {
-		return <option value={categ}>{categ} min</option>;
+		return <option key={categ} value={categ}>{categ} min</option>;
 	});
 
-	// const data = {
-	// 	title,
-	// 	about,
-	// 	categori,
-	// 	picture,
-	// 	time,
-	// };
-	// console.log('data---', data);
+	const selectFocus = prop => {
+		prop.target.size = 6;
+		prop.target.style = 'position: absolute; right: 0; z-index: 10;';
+	};
+
+	const selectChange = prop => {
+		prop.target.size = 1;
+		prop.target.blur();
+	};
+
+	const selectBlur = prop => {
+		prop.target.size = 1;
+		prop.target.style = 'position: relative; z-index: 1;';
+	};
 
 	return (
 		<DescriptionDiv>
@@ -138,20 +143,26 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 							<InputSelct
 								name="categori"
 								as="select"
-								list="character"
-								placeholder="Categori">
+								placeholder="Categori"
+								onFocus={selectFocus}
+								onChange={selectChange}
+								onBlur={selectBlur}>
 								{categoriName}
 							</InputSelct>
 						</LabelSelect>
 						<LabelSelect>
 							Cooking time
-							<InputSelct name="time" as="select">
+							<InputSelct
+								name="time"
+								as="select"
+								startValue=""
+								onFocus={selectFocus}
+								onChange={selectChange}
+								onBlur={selectBlur}>
 								{timeSelect}
 							</InputSelct>
 						</LabelSelect>
 					</InputWrapper>
-
-					<button type="submit">submit</button>
 				</DescrForm>
 			</Formik>
 		</DescriptionDiv>

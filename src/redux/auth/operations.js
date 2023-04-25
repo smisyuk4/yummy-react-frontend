@@ -36,6 +36,28 @@ export const loginUser = createAsyncThunk(
 		}
 	}
 );
+export const userUpdate = createAsyncThunk(
+	'update',
+	async (credentials, thunkAPI) => {
+		try {
+			const response = await axios.patch('/user/update', credentials);
+			return response.data;
+		} catch (e) {
+			return thunkAPI.rejectWithValue(e.response.data);
+		}
+	}
+);
+export const userUpdateAvatar = createAsyncThunk(
+	'avatars',
+	async (credentials, thunkAPI) => {
+		try {
+			const response = await axios.post('/user/avatars', credentials);
+			return response.data;
+		} catch (e) {
+			return thunkAPI.rejectWithValue(e.response.data);
+		}
+	}
+);
 export const logOut = createAsyncThunk('logout', async (_, thunkAPI) => {
 	try {
 		const response = await axios.post('/user/logout');

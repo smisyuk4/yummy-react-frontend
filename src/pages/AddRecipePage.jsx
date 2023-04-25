@@ -1,14 +1,14 @@
-import { Title } from '../components/Title';
 import { AddRecipeForm } from 'components/AddRecipePage/AddRecipeForm';
 import { FollowUs } from 'components/FollowUs';
 import { PopularRecipe } from 'components/AddRecipePage/PopularRecipe';
 // // import { AddRecipeDivStyled } from './AddRecipePage.styled';
+import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 
 const AddRecipePage = () => {
   return (
 //   <AddRecipeDivStyled>
 		<>
-			<Title title="Add recipe"/>
+			<ReusableComponentTitleWithJewelry title="Add recipe"/>
 			<AddRecipeForm/>
 			<FollowUs title="Follow us"/>
 			<PopularRecipe title="Popular recipe"/>

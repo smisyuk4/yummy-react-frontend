@@ -1,51 +1,35 @@
 import { 
   // DivStyled, 
-  OverlayDiv, ModalDiv, WrapperEdit, LogOutBtn } from './PopupUser.styled';
+  OverlayDiv, WrapperEdit, LogOutBtn } from './PopupUser.styled';
 import {IditIcon} from './edit-01'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ModalUserProfil } from '../ModalUserProfil';
-import {createPortal} from "react-dom";
+import { ModalLogOut } from '../ModalLogOut';
 
+export const PopupUser = ({openPopUp, closePopUp, close}) => {
+  const [isOpenModal, setIsOpenModal] = useState(false)
+  const [isLogOutModal, setIsLogOutModal] = useState(false)
 
-const modalRoot = document.getElementById('modal-root');
-
-export const PopupUser = ({open, close}) => {
-
-  const [isOpen, setIsOpen] = useState(false)
-
-  const onClose = () => {
-    setIsOpen(false)
+  const onCloseModal = () => {
+    setIsOpenModal(false)
+  }
+  const onCloseLogOutModal = () => {
+    setIsLogOutModal(false)
   }
 
-  useEffect(() => {
-    document.addEventListener("keydown", closeModal);
-    
-    return () => document.removeEventListener("keydown", closeModal)
-});
-
-  const closeModal = ({target, currentTarget, code}) => {
-    if(target === currentTarget || code === "Escape") {
-      console.log(target)
-        close()
-    }
-};
-
-  if(!open) return null;
-
-  return createPortal(
-  <OverlayDiv onClick={closeModal}>
-    <ModalDiv>
+  return <OverlayDiv onClick={closePopUp} className={
+    (openPopUp ? 'open' : 'close')
+ }>
+    {/* <ModalDiv> */}
       {/* <DivStyled> */}
-      <WrapperEdit onClick={() => setIsOpen(true)}>
+      <WrapperEdit onClick={() => setIsOpenModal(true)}>
         <p>Edit profile</p>
         <IditIcon />
       </WrapperEdit>
-      <LogOutBtn>Log out</LogOutBtn>
-      <ModalUserProfil open={isOpen} close={onClose} />
+      <LogOutBtn onClick={() => setIsLogOutModal(true)}>Log out</LogOutBtn>
+      <ModalUserProfil isOpen={isOpenModal} close={onCloseModal} />
+      <ModalLogOut isOpen={isLogOutModal} close={onCloseLogOutModal} />
       {/* </DivStyled> */}
-    </ModalDiv>
-  </OverlayDiv>,
-  modalRoot
-  )
- 
+    {/* </ModalDiv> */}
+  </OverlayDiv>
 };
