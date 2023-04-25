@@ -32,6 +32,7 @@ export const LabelForm = styled.label`
 `;
 
 export const LabelSelect = styled.label`
+	position: relative;
 	display: flex;
 	justify-content: space-between;
 	font-weight: 400;
@@ -79,7 +80,8 @@ export const InputFile = styled(Field)`
 
 export const InputSelct = styled(Field)`
 	border: none;
-	&: after;
+	background-color: #ffffff;
+	z-index: 1;
 `;
 
 export const OverlayPicture = styled.div`

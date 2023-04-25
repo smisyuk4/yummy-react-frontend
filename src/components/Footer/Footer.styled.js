@@ -1,12 +1,17 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import { Icon } from 'components/Icon';
 import {flexBox} from 'styles/mixins';
+import { HeaderLogoIcon } from 'components/Header/HeaderLogo/HeaderLogo.styled'; 
+
+import bgImgDown from 'images/footerImgs/bg-footer-bottom.png'
+
+
 
 export const WrapperFooter = styled.footer`
     ${flexBox};
     flex-direction: column;
     text-align: center;
+    margin-top: auto;
 
 `
 export const FooterStyled = styled.div`
@@ -27,6 +32,11 @@ export const FooterStyled = styled.div`
         padding-right: 100px;
 	}
   
+`
+export const IconFooter = styled(HeaderLogoIcon)`
+    stroke: ${props => props.theme.colors.primary};
+    background-color: #EBF3D4;
+    
 `
 export const WrapperDiscr = styled.div`
         margin-bottom: 32px;
@@ -72,17 +82,6 @@ export const WrapperTitle = styled.div`
 	}
 
 `
-export const IconDiv = styled.div`
-    width: 32px;
-    height: 32px;
-    background: #EBF3D4;
-    border-radius: 6px;
-    padding: 7px;
-    ${flexBox};
-`
-export const IconFooter = styled(Icon)`
-    stroke: ${({color}) => color};
-`
 
 export const Title = styled.p`
 font-family: 'Poppins';
@@ -115,6 +114,7 @@ export const FooterNavlink = styled(NavLink)`
 
 export const FooterTeam = styled.div`
     width: 100%;
+    height: 66px;
     ${flexBox};
     flex-direction: row;
     text-align: center;
@@ -129,4 +129,15 @@ export const FooterTeam = styled.div`
     color: ${props => props.theme.colors.buttonDarkBG};
     opacity: 0.5;
 
+    background: url(${bgImgDown}) no-repeat right bottom;
+
 `
+
+// export const IconDiv = styled.div`
+//     width: 32px;
+//     height: 32px;
+//     background: #EBF3D4;
+//     border-radius: 6px;
+//     padding: 7px;
+//     ${flexBox};
+// `

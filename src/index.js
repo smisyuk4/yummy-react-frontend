@@ -23,6 +23,7 @@ const LightTheme = {
 		lightBG: '#ECECEC',
 		BGCintoButton: 'FFFFF',
 		borderColorLight: '#f0f0f0',
+		textSecondary: '#7E7E7E',
 	},
 	media: {
 		tablet: '(min-width: 768px)',

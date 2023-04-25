@@ -1,5 +1,13 @@
+import { OwnRecipes } from 'components/OwnRecipes/OwnRecipes';
+import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
+
 const MyRecipesPage = () => {
-	return <div>MyRecipesPage</div>;
+	return (
+		<>
+			<ReusableComponentTitleWithJewelry title="My recipes" />
+			<OwnRecipes></OwnRecipes>
+		</>
+	);
 };
 
-export default MyRecipesPage
+export default MyRecipesPage;

@@ -1,11 +1,20 @@
 import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
+import { IconPerson } from './ModalUserProfil/ModalUserProfil.styled';
 
 export const UserLogoDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+
 `;
+export const AvatarUser = styled(IconPerson)`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    stroke: #C4C4C4;
+`
 export const UserNameP = styled.p`
     margin-left: 14px;
     font-family: 'Poppins';
@@ -20,12 +29,20 @@ export const WrapperImg = styled.div`
     border: 1px solid grey;
     border-radius: 50%;
     overflow: hidden;
+
 `
 export const UserAvatarImg = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
 `
+export const UserIcon = styled(Icon)`
+    width: 100%;
+    height: 100%;
+    stroke: #C4C4C4;
+    object-fit: cover;
+`
+
 export const BurgerMuneBtn = styled.button`
     width: 28px;
     height: 28px;
@@ -36,14 +53,14 @@ export const BurgerMuneBtn = styled.button`
     background-color: transparent;
     text-align: center;
     margin-left: 24px;
-
     @media ${props => props.theme.media.desktop} {
         display: none;
     }
 `
-export const BurgerMenuImg = styled.img`
+
+export const BurgerMenuIcon = styled(Icon)`
     width: 28px;
     height: 28px;
-    margin: 0;
-    padding: 0;
+    stroke: ${props => props.theme.colors.buttonDarkBG};
+    border: none;
 `

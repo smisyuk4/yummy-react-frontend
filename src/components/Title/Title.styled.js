@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const TitleDiv = styled.div`
 	padding-top: 50px;
-	padding-bottom: 72px;
+	padding-bottom: 50px;
 	width: 100%;
 
     @media ${props => props.theme.media.tablet} {
@@ -22,5 +22,5 @@ export const TitleH = styled.h1`
 `;
 
 /* font-family: 'Poppins'; */
-	/* font-style: normal; */
-	/* font-weight: 600; */
+/* font-style: normal; */
+/* font-weight: 600; */
