@@ -1,16 +1,15 @@
 import {createPortal} from "react-dom";
-import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayImg, Figure, ImgDefault, IconPerson, IconPlus, Input, FormUpdateUser, LabelInput, IconEdit, IconPersonInput, BtnModalUser, IconCross, FigureAvatar
-} from './ModalUserProfil.styled';
+import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayImg, IconPerson, IconPlus, Input, FormUpdateUser, LabelInput, IconEdit, IconPersonInput, BtnModalUser, IconCross } from './ModalUserProfil.styled';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import axios from "axios";
+// import axios from "axios";
 import { useDispatch } from 'react-redux';
 import { userUpdate, userUpdateAvatar } from 'redux/auth/operations';
 
 // import { fetchChangeUserAvatar, fetchChangeNameUser } from "./fetchApiChangeUserProfil";
 
-const URL = "https://yummy-rest-api.onrender.com/user/update";
-const url = 'http://localhost:3001/user/update'
+// const URL = "https://yummy-rest-api.onrender.com/user/update";
+// const url = 'http://localhost:3001/user/update'
 
 const modalRoot = document.getElementById('modal-root');
 
@@ -68,9 +67,9 @@ const handleChangeName = (e) => {
 
   }
 
-  const fetchRequest = async (searchName, page) => {
-    const response = await axios.get('http://yummy-rest-api.onrender.com/user/update');
-    return response.data;
+  // const fetchRequest = async (searchName, page) => {
+  //   const response = await axios.get('http://yummy-rest-api.onrender.com/user/update');
+  //   return response.data;
 
   
     // let response = await fetchChangeNameUser(nameUser)
@@ -87,7 +86,7 @@ const handleChangeName = (e) => {
     // console.log(response)
     // console.log(response.message);
     // console.log(formData)
-}
+// }
 
 if(!isOpen) return null;
 

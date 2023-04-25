@@ -2,7 +2,7 @@ import * as React from 'react';
 
 // import { useState, useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
-import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingListstyled';
+import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 // import { getShoppingList, addIngredient, deletIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
 
 

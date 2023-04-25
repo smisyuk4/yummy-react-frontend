@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-// import { NavLink } from 'react-router-dom';
-import { NavLinkStyled } from 'components/ButtonNav/ButtonNav.styled';
 import { DivStyled, ModalProfil, BtnModalUser } from '../ModalUserProfil/ModalUserProfil.styled';
 import { flexBox } from 'styles/mixins';
 
