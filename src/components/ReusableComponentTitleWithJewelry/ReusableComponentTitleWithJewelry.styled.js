@@ -1,5 +1,20 @@
 import styled from '@emotion/styled';
 
+export const TitleDiv = styled.div`
+	padding-top: 29px;
+	padding-bottom: 50px;
+	width: 100%;
+
+	@media ${props => props.theme.media.tablet} {
+		padding-top: 51px;
+		padding-bottom: 100px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		padding-top: 79px;
+		padding-bottom: 100px;
+	}
+`;
+
 export const TitleStyled = styled.h2`
 	font-weight: 600;
 	font-size: 28px;
