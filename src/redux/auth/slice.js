@@ -36,30 +36,38 @@ const authSlice = createSlice({
 	initialState,
 	extraReducers: builder => {
 		builder
-			.addCase(registerUser.pending, state => {})
+			.addCase(registerUser.pending, state => {
+				state.isRefreshing = true;
+			})
 			.addCase(registerUser.fulfilled, (state, action) => {
 				state.isLoggedIn = true;
 				state.token = action.payload.token;
 				state.user = action.payload.user;
+				state.isRefreshing = true;
 			})
 			.addCase(registerUser.rejected, (state, action) => {
 				toast.error(
 					`Register unsuccessful with error: ${action.payload.message}`,
 					toastParam
 				);
+				state.isRefreshing = true;
 			})
 
-			.addCase(loginUser.pending, state => {})
+			.addCase(loginUser.pending, state => {
+				state.isRefreshing = true;
+			})
 			.addCase(loginUser.fulfilled, (state, action) => {
 				state.isLoggedIn = true;
 				state.token = action.payload.token;
 				state.user = action.payload.user;
+				state.isRefreshing = true;
 			})
 			.addCase(loginUser.rejected, (state, action) => {
 				toast.error(
 					`Login unsuccessful with error: ${action.payload.message}`,
 					toastParam
 				);
+				state.isRefreshing = true;
 			})
 
 			.addCase(syncUser.pending, state => {
