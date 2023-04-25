@@ -4,6 +4,9 @@ import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayIm
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import axios from "axios";
+import { useDispatch } from 'react-redux';
+import { userUpdate, userUpdateAvatar } from 'redux/auth/operations';
+
 // import { fetchChangeUserAvatar, fetchChangeNameUser } from "./fetchApiChangeUserProfil";
 
 const URL = "https://yummy-rest-api.onrender.com/user/update";
@@ -13,6 +16,7 @@ const modalRoot = document.getElementById('modal-root');
 
 
 export const ModalUserProfil = ({isOpen, close}) => {
+  const dispatch = useDispatch()
   const auth = useSelector(state => state.auth)
   const user = auth.user
   const isGravatar = user.avatarURL.includes('gravatar')
@@ -28,7 +32,7 @@ useEffect(() => {
 
 useEffect(() => {
   if (userImage) {
-      const photoUrl = URL.createObjectURL(userImage)
+      const photoUrl = window.URL.createObjectURL(userImage)
       setImageUrl(photoUrl);
   }  
 },[userImage]);
@@ -40,33 +44,28 @@ const closeModal = ({target, currentTarget, code}) => {
   }
 };
 
-useEffect(() => {
-  const fetchImages = async (data) => {
-        try {
-          const result = await fetchRequest(data);
-          console.log(result)
-      } catch (error) {
-          console.log(error.message);
-      }
-  };
-  fetchImages(nameUser)
-}, []);
-
-
 const handleChangeName = (e) => {
   const { value } = e.target;
   setNameUser(value);
   }
 
-  const formEl = document.getElementById('form-user-change')
-  console.log(auth.token)
-
   const handleSubmitForm = async (e) => {
     e.preventDefault()
-    let formData = new FormData();
-    formData.append("name", {nameUser});
-    formData.append("avatarURL", {imageUrl});
-    return formData;
+    const formEl = document.getElementById('form-user-change')
+    console.log(formEl)
+    const formData = new FormData(formEl);
+    // const fileField = document.querySelector('input[type="file"]');
+    // console.log(fileField)
+    // formData.append("avatarURL", fileField.files[0]);
+
+    console.log(userImage)
+    console.log(imageUrl)
+    const newName = {
+      name: nameUser
+    }
+    dispatch(userUpdate(JSON.stringify(newName)));
+    dispatch(userUpdateAvatar(formData));
+
   }
 
   const fetchRequest = async (searchName, page) => {

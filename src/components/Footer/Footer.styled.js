@@ -3,11 +3,16 @@ import { NavLink } from 'react-router-dom';
 import {flexBox} from 'styles/mixins';
 import { HeaderLogoIcon } from 'components/Header/HeaderLogo/HeaderLogo.styled'; 
 
+import bgImgDown from 'images/footerImgs/bg-footer-bottom.png'
+
+
+
 export const WrapperFooter = styled.footer`
     ${flexBox};
     flex-direction: column;
     text-align: center;
     margin-top: auto;
+
 `
 export const FooterStyled = styled.div`
     width: 100%;
@@ -109,6 +114,7 @@ export const FooterNavlink = styled(NavLink)`
 
 export const FooterTeam = styled.div`
     width: 100%;
+    height: 66px;
     ${flexBox};
     flex-direction: row;
     text-align: center;
@@ -122,6 +128,8 @@ export const FooterTeam = styled.div`
     letter-spacing: -0.01em;
     color: ${props => props.theme.colors.buttonDarkBG};
     opacity: 0.5;
+
+    background: url(${bgImgDown}) no-repeat right bottom;
 
 `
 
