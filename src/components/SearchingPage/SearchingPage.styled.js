@@ -7,6 +7,7 @@ export const DivStyled = styled.div`
 
 	@media screen and (min-width: 768px) {
 		margin-top: 72px;
+		margin-bottom: 305px;
 	}
 	@media screen and (min-width: 1440px) {
 		margin-top: 100px;
@@ -68,7 +69,7 @@ export const CardList = styled.ul`
 	flex-wrap: wrap;
 
 	gap: 28px;
-	margin-bottom: 100px;
+	margin-bottom: 191px;
 	margin-top: 32px;
 
 	@media screen and (min-width: 768px) {

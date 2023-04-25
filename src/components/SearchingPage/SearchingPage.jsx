@@ -1,36 +1,37 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import {
 	DivStyled,
 	SearchByBox,
 	TitleSearch,
 	SelectStyled,
 	OptionStyled,
-	// CardList,
-	// CardItem,
-	// NavLink,
-	// Image,
-	// CardBox,
-	// CardTitle,
+	CardList,
+	CardItem,
+	Image,
+	CardBox,
+	CardTitle,
 } from './SearchingPage.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 import { SearchingBar } from './Searchingbar';
-import { fetchByTitle } from 'components/CategoriesPage/FetchWithCategory';
+import { fetchByTitle } from './FetchWithCategory';
 
 export const SearchingPage = () => {
 	const [type, settype] = useState('Title');
 	const [searchValue, setsearchValue] = useState('');
+	const [cards, setcards] = useState([]);
 
 	const selectFunc = () => {
 		settype(document.querySelector('select').value);
 	};
 
 	const changeValueFunc = value => {
-		setsearchValue(value.search);
+		setsearchValue(value.search.toLowerCase());
 		fetchByTitle(searchValue)
-			.then(({ data }) => console.log(data))
+			.then(({ data }) => setcards(data.data.recipes))
 			.catch(error => error);
 	};
-	// console.log(type);
+	console.log(type);
 	// console.log(searchValue);
 
 	return (
@@ -44,8 +45,8 @@ export const SearchingPage = () => {
 					<OptionStyled value="Ingrediets">Ingrediets</OptionStyled>
 				</SelectStyled>
 			</SearchByBox>
-			{/* <CardList>
-				{oneCategory.map(({ _id, title, thumb }) => {
+			<CardList>
+				{cards.map(({ _id, title, thumb }) => {
 					return (
 						<CardItem key={title}>
 							<NavLink
@@ -60,7 +61,7 @@ export const SearchingPage = () => {
 						</CardItem>
 					);
 				})}
-			</CardList> */}
+			</CardList>
 		</DivStyled>
 	);
 };
