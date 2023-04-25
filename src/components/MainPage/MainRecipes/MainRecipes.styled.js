@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 // import banner from '../../../images/MainPageImg/bgf.png';
 
 export const Section = styled.section`
-	padding: 0 16px;
-	background-color: ${({ theme }) => theme.colors.fontColor};
+	
+	
 `;
 
 export const CardList = styled.ul`
@@ -16,42 +16,31 @@ export const CardList = styled.ul`
 	margin-bottom: 40px;
 
 	@media screen and (min-width: 768px) {
-		margin-top: 50px;
+		/* margin-top: 50px;
 		gap: 32px;
-		flex-direction: row;
+		flex-direction: row; */
 	}
 	@media screen and (min-width: 1440px) {
-		gap: 14px;
+		/* gap: 14px;
 		grid-row-gap: 100px;
 		CardItem:first-child {
 			padding-top: 5px;
-		}
+		} */
 	}
 `;
-export const CardItem = styled.li`
+export const CardItem = styled.div`
 	position: relative;
-
+	display: 'flex';
+	gap: '10px';
+	/* max-height: '336px'; */
 	@media screen and (min-width: 768px) {
-		width: calc((100% - 32px) / 2);
-
-		&:nth-of-type(2n) {
-			padding-top: 56px;
-		}
+		max-height: 336px;
+		gap: '32px';
 	}
 
 	@media screen and (min-width: 1440px) {
-		width: calc((100% - 42px) / 4);
-		/* align-items: stretch;
-	&:last-child {
-	align-items: flex-end;
-      padding-top: 0;
-    } */
-		/* &:nth-of-type(2n) {
-      padding-top: 0;
-    }; */
-		/* &:first-child {
-		padding-top: 5px;
-	} */
+		
+
 	}
 `;
 
@@ -65,6 +54,10 @@ export const TitleCategory = styled.h3`
 	color: ${({ theme }) => theme.colors.titleColor};
 `;
 
+export const ImageBox = styled.div`
+	display: flex;
+	justify-content: center;
+`;
 export const Image = styled.img`
 	object-fit: cover;
 	border-radius: 8px;
@@ -78,7 +71,7 @@ export const CardBox = styled.div`
 	border-radius: 8px;
 	width: calc(100% - 36px);
 	left: 18px;
-	bottom: 87px;
+	top: 330px;
 `;
 
 export const CardTitle = styled.p`

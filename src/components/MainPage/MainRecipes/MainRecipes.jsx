@@ -4,10 +4,11 @@ import { fetchRecipes } from './FetchRecipes';
 import { Button } from './Button';
 import {
 	Section,
-	CardList,
+	// CardList,
 	CardItem,
-	TitleCategory,
+	// TitleCategory,
 	Image,
+	ImageBox,
 	CardBox,
 	CardTitle,
 	NavBox,
@@ -46,7 +47,7 @@ export const MainRecipes = () => {
 		setDisplayedRecipesCount(prevCount => prevCount + 4);
 	};
 
-	const count = windowWidth <= 767 ? 1 : windowWidth <= 1439 ? 3 : 4;
+	const count = windowWidth <= 767 ? 1 : windowWidth <= 1439 ? 2 : 4;
 
 	return (
 		<Section>
@@ -54,19 +55,19 @@ export const MainRecipes = () => {
 				{recipes.slice(0, displayedRecipesCount).map(oneRes => {
 					const { category } = oneRes[0];
 					return (
-						<li key={category}>
+						<li key={uuidv4()}>
 							<h2>{category}</h2>
-							<div
+							<CardItem
 								style={{
 									display: 'flex',
 									gap: '10px',
-									maxHeight: '309px',
+									// // maxHeight: '309px',
 								}}>
 								{oneRes
 									.slice(0, count)
 									.map(({ title, thumb }) => {
 										return (
-											<div>
+											<ImageBox key={uuidv4()}>
 												<Image
 													src={thumb}
 													alt={title}
@@ -76,10 +77,10 @@ export const MainRecipes = () => {
 														{title}
 													</CardTitle>
 												</CardBox>
-											</div>
+											</ImageBox>
 										);
 									})}
-							</div>
+							</CardItem>
 							<NavBox>
 								<NavToCategory to={`/categories/${category}`}>
 									See all
