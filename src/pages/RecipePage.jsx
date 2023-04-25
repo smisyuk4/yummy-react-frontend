@@ -28,13 +28,14 @@ const RecipePage = () => {
     }
     getRecipe();
 	}, [recipeId]);
-	const { _id, title, description, time, thumb, instructions} = recipe;
+	const { _id, title, description, time, thumb, instructions, favorites} = recipe;
 	return (<>
 		<RecipePageHero
 		title={title}
 		description={description}
-		id={_id}
-		time= {time}/>
+		_id={_id}
+		time={time}
+		favorites={favorites}/>
 		<IngredientsList ingredients={ingredients} />
 		<RecipePreparation
 			instructions={instructions}
