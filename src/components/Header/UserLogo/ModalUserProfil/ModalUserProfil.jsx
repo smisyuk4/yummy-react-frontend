@@ -38,8 +38,23 @@ const handleChangeName = (e) => {
 
   const handleSubmitForm = async (e) => {
     e.preventDefault()
-    // const formEl = document.getElementById('form-user-change')
-    // let formData = new FormData(formEl)
+    const formEl = document.getElementById('form-user-change')
+    const formData = new FormData();
+    const fileField = document.querySelector('input[type="file"]');
+    console.log(fileField.files[0])
+    formData.append("avatar", fileField.files[0]);
+    const newName = {
+      name: nameUser
+    }
+    dispatch(userUpdate(JSON.stringify(newName)));
+    dispatch(userUpdateAvatar(formData));
+
+  }
+
+  const fetchRequest = async (searchName, page) => {
+    const response = await axios.get('http://yummy-rest-api.onrender.com/user/update');
+    return response.data;
+
   
     // let response = await fetch('https://yummy-rest-api.onrender.com/user/update', {
     //   method: 'PATCH',
