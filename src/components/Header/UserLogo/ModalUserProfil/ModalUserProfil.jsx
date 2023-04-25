@@ -3,6 +3,11 @@ import { DivStyled, ModalProfil, LabelAvatar, InputAvatar,  ImgAvatar, OvarlayIm
 } from './ModalUserProfil.styled';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import axios from "axios";
+// import { fetchChangeUserAvatar, fetchChangeNameUser } from "./fetchApiChangeUserProfil";
+
+const URL = "https://yummy-rest-api.onrender.com/user/update";
+const url = 'http://localhost:3001/user/update'
 
 const modalRoot = document.getElementById('modal-root');
 
@@ -10,10 +15,8 @@ const modalRoot = document.getElementById('modal-root');
 export const ModalUserProfil = ({isOpen, close}) => {
   const auth = useSelector(state => state.auth)
   const user = auth.user
-
-  console.log(user)
   const isGravatar = user.avatarURL.includes('gravatar')
-  console.log(isGravatar)
+
   const [nameUser, setNameUser] = useState('')
   const [userImage, setUserImage] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
@@ -37,26 +40,54 @@ const closeModal = ({target, currentTarget, code}) => {
   }
 };
 
+useEffect(() => {
+  const fetchImages = async (data) => {
+        try {
+          const result = await fetchRequest(data);
+          console.log(result)
+      } catch (error) {
+          console.log(error.message);
+      }
+  };
+  fetchImages(nameUser)
+}, []);
+
+
 const handleChangeName = (e) => {
   const { value } = e.target;
   setNameUser(value);
   }
 
+  const formEl = document.getElementById('form-user-change')
+  console.log(auth.token)
+
   const handleSubmitForm = async (e) => {
     e.preventDefault()
-    const formEl = document.getElementById('form-user-change')
     let formData = new FormData();
     formData.append("name", {nameUser});
     formData.append("avatarURL", {imageUrl});
+    return formData;
+  }
+
+  const fetchRequest = async (searchName, page) => {
+    const response = await axios.get('http://yummy-rest-api.onrender.com/user/update');
+    return response.data;
+
   
-    let response = await fetch('https://yummy-rest-api.onrender.com/user/update', {
-      method: 'PATCH',
-      body: formData
-    });
-    let result = await response.json();
-    console.log(result)
-    console.log(result.message);
-    console.log(formData)
+    // let response = await fetchChangeNameUser(nameUser)
+
+    // fetch('http://yummy-rest-api.onrender.com/user/update', {
+    //   method: 'PATCH',
+    //   body: formData,
+    //   headers: {
+    //     'Authorization': `Bearer ${auth.token}`, 
+    //     'Content-Type': 'application/x-www-form-urlencoded'
+    // }, 
+    // });
+    // let result = await response.json();
+    // console.log(response)
+    // console.log(response.message);
+    // console.log(formData)
 }
 
 if(!isOpen) return null;
@@ -65,11 +96,10 @@ if(!isOpen) return null;
     <DivStyled onClick={closeModal}>
             <ModalProfil>
             <FormUpdateUser id="form-user-change" encType="multipart/data" onSubmit={handleSubmitForm}>
- 
+
             <LabelAvatar htmlFor="22" onChange={e => setUserImage(e.target.files[0])} > 
             <InputAvatar name="avatar" id="22" type="file" onChange={e => setUserImage(e.target.files[0])} multiple />
-            {/* <FigureAvatar> */}
-                
+            {/* <FigureAvatar> */} 
                 <OvarlayImg>
                   {isGravatar && <IconPerson id="icon-person" />}
                   {imageUrl && <ImgAvatar src={imageUrl} alt="avatar"/>}

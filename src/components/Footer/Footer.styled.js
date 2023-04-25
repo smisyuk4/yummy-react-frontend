@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import { Icon } from 'components/Icon';
 import {flexBox} from 'styles/mixins';
+import { HeaderLogoIcon } from 'components/Header/HeaderLogo/HeaderLogo.styled'; 
 
 export const WrapperFooter = styled.footer`
     ${flexBox};
@@ -27,6 +27,11 @@ export const FooterStyled = styled.div`
         padding-right: 100px;
 	}
   
+`
+export const IconFooter = styled(HeaderLogoIcon)`
+    stroke: ${props => props.theme.colors.primary};
+    background-color: #EBF3D4;
+    
 `
 export const WrapperDiscr = styled.div`
         margin-bottom: 32px;
@@ -71,17 +76,6 @@ export const WrapperTitle = styled.div`
         margin-bottom: 24px;
 	}
 
-`
-export const IconDiv = styled.div`
-    width: 32px;
-    height: 32px;
-    background: #EBF3D4;
-    border-radius: 6px;
-    padding: 7px;
-    ${flexBox};
-`
-export const IconFooter = styled(Icon)`
-    stroke: ${({color}) => color};
 `
 
 export const Title = styled.p`
@@ -130,3 +124,12 @@ export const FooterTeam = styled.div`
     opacity: 0.5;
 
 `
+
+// export const IconDiv = styled.div`
+//     width: 32px;
+//     height: 32px;
+//     background: #EBF3D4;
+//     border-radius: 6px;
+//     padding: 7px;
+//     ${flexBox};
+// `

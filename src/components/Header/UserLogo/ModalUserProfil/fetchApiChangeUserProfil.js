@@ -25,7 +25,7 @@ export const fetchChangeNameUser = async(userInf) => {
     try {
         const {data} = await instance.patch("/user/update", userInf, {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                'Content-Type': 'application/json'
             }
         });
         console.log(data)

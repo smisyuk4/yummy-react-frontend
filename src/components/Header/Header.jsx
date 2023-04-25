@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { HeaderStyled } from './Header.styled';
-import {  } from './HeaderLogo';
 import { HeaderNavigation } from './HeaderNavigation';
 import {UserLogo} from './UserLogo/UserLogo';
 import { BurgerMenu } from './BurgerMenu';
-import { LogoHeader, HeaderLogoDiv } from './HeaderLogo/HeaderLogo.styled';
+import { HeaderLogo } from './HeaderLogo';
 
 export const Header = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -17,11 +16,8 @@ export const Header = () => {
   }
 
   return <HeaderStyled>
-    {modalOpen && <BurgerMenu onCloseModal={closeModal} />}
-    <HeaderLogoDiv>
-      <LogoHeader />
-    </HeaderLogoDiv>
-    
+    {modalOpen && <BurgerMenu closeModal={closeModal} />}
+      <HeaderLogo />
     <HeaderNavigation />
     <UserLogo onOpenModal={openModal} />
   </HeaderStyled>;

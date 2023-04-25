@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, AvatarUser, BurgerMuneBtn, BurgerMenuImg } from './UserLogo.styled';
+import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, AvatarUser, BurgerMuneBtn, BurgerMenuIcon } from './UserLogo.styled';
 import { PopupUser } from './PopupUser/PopupUser'
 import { useSelector } from 'react-redux';
 
@@ -23,7 +23,7 @@ export const UserLogo = ({ onOpenModal }) => {
           </WrapperImg>
           <UserNameP>{user.name}</UserNameP>
           <BurgerMuneBtn onClick={onOpenModal}>
-          <BurgerMenuImg id='icon-burger' />
+          <BurgerMenuIcon id='icon-burger' />
         </BurgerMuneBtn>
         <PopupUser 
           openPopUp={openPopUp}

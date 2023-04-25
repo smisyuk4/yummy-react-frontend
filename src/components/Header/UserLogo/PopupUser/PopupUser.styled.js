@@ -13,6 +13,8 @@ export const OverlayDiv = styled.div`
     width: 160px;
     height: 130px;
     background-color: ${props => props.theme.colors.buttonLightBG};
+    border: 1px solid #8BAA36;
+    border-radius: 8px;
 
     transform: translateY(-300px);
     transition: transform 1s ease-in;

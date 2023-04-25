@@ -4,16 +4,30 @@ import {flexBox} from 'styles/mixins';
 import { Icon } from 'components/Icon';
 
 export const HeaderLogoStyled = styled(Link)`
-    display: inline-block;
+    ${flexBox};
+`
+export const HeaderLogoIcon = styled(Icon)`
     width: 40px;
     height: 40px;
+    padding: 10px;
+    stroke: #FAFAFA;
+    border-radius: 12px;
+    background-color: ${props => props.theme.colors.primary};
 
     @media (min-width: 480px) {
-    width: 44px;
-    height: 44px;
+        width: 44px;
+        height: 44px;
   }
 `
+// export const IconFooter = styled(HeaderLogoIcon)`
+//     stroke: ${({color}) => color};
+// `
 
+
+
+export const HeaderLogoDiv= styled.div`
+    
+`
 export const IconDiv = styled.div`
     width: 32px;
     height: 32px;
@@ -21,22 +35,4 @@ export const IconDiv = styled.div`
     border-radius: 6px;
     padding: 7px;
     ${flexBox};
-`
-
-export const IconFooter = styled(Icon)`
-    stroke: ${({color}) => color};
-`
-
-export const HeaderLogoDiv= styled.div`
-    width: 40px;
-    height: 40px;
-    background: ${props => props.theme.colors.primary};
-    border-radius: 6px;
-    padding: 7px;
-    ${flexBox};
-`
-export const LogoHeader = styled(IconFooter)`
-    width: 40px;
-    height: 40px;
-    color: ${props => props.theme.colors.primary};
 `

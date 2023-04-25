@@ -53,14 +53,14 @@ export const BurgerMuneBtn = styled.button`
     background-color: transparent;
     text-align: center;
     margin-left: 24px;
-
     @media ${props => props.theme.media.desktop} {
         display: none;
     }
 `
-export const BurgerMenuImg = styled(Icon)`
+
+export const BurgerMenuIcon = styled(Icon)`
     width: 28px;
     height: 28px;
     stroke: ${props => props.theme.colors.buttonDarkBG};
-
+    border: none;
 `

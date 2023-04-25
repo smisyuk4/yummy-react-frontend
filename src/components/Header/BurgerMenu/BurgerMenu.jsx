@@ -1,43 +1,40 @@
 import { useEffect } from "react";
 import {createPortal} from "react-dom";
-import { BurgerMenuDiv, BtnCloseModal, HeaderLogoDiv, BurgerNavigationNav, ModalDiv } from './BurgerMenu.styled';
+import { BurgerMenuDiv, BtnCloseModal, HeaderLogoDiv, BurgerNavigationNav, ModalDiv, CloseIcon } from './BurgerMenu.styled';
 import { HeaderNavlink, SearchImg } from '../HeaderNavigation/HeaderNavigation.styled';
 import searchImg from 'images/headerImges/search.png';
-import { Icon } from 'components/Icon';
+import { HeaderLogo } from '../HeaderLogo';
 
 const modalRoot = document.getElementById('modal-root');
 
 
-export const BurgerMenu = ({onCloseModal}) => {
-
+export const BurgerMenu = ({closeModal}) => {
   useEffect(() => {
-    document.addEventListener("keydown", closeModal);
+    document.addEventListener("keydown", onCloseModal);
     
-    return () => document.removeEventListener("keydown", closeModal)
+    return () => document.removeEventListener("keydown", onCloseModal)
 });
 
 
-  const closeModal = ({target, currentTarget, code}) => {
+  const onCloseModal = ({target, currentTarget, code}) => {
       if(target === currentTarget || code === "Escape") {
         console.log(code)
-        onCloseModal()
+        closeModal()
       }
   };
 
 
   return createPortal(
-    <BurgerMenuDiv onClick={closeModal}>
+    <BurgerMenuDiv onClick={onCloseModal}>
       <ModalDiv close={closeModal}>
         <HeaderLogoDiv>
-          <div style={{backgroundColor: "grey"}}>
-              <Icon id="icon-knife-btn" height="50" width="50" />
-          </div>  
+           <HeaderLogo />
           <BtnCloseModal onClick={closeModal}>
-            <span>X</span>
+            <CloseIcon id="icon-close"/>
           </BtnCloseModal>
         </HeaderLogoDiv>
         
-        <BurgerNavigationNav>
+        <BurgerNavigationNav onClick={closeModal} >
             <HeaderNavlink to="/categories/:categoryName">Categories</HeaderNavlink>
             <HeaderNavlink to="/add">Add recipes</HeaderNavlink>
             <HeaderNavlink to="/my">My recipes</HeaderNavlink>
