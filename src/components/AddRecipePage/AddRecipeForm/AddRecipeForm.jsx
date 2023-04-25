@@ -23,7 +23,7 @@ export const AddRecipeForm = () => {
 	const testFunc = terget => {
 		// прийняти данні з форм внизу та записати собі в загальний стейт
 		setTotalFormValues();
-		// console.log(totalFormValues);
+		console.log(totalFormValues);
 	};
 
 	const tesOnCanfeDescription = terget => {
@@ -47,7 +47,7 @@ export const AddRecipeForm = () => {
 				console.log('Invalid subscription type');
 		}
 	};
-	// console.log('TOTAL', title, time, categori, picture, about);
+	console.log('TOTAL', title, time, categori, picture, about);
 
 	const testFunc2 = () => {
 		// взяти данні з стейт - створити новий рецепт
