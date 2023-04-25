@@ -63,4 +63,7 @@ export const BurgerMenuIcon = styled(Icon)`
     height: 28px;
     stroke: ${props => props.theme.colors.buttonDarkBG};
     border: none;
+    &:hover {
+        stroke: ${({ theme }) => theme.colors.primary};
+    }
 `

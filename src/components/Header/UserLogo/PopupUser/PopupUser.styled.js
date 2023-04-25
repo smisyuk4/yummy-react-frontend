@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import {flexBox} from 'styles/mixins';
-
+import { Icon } from 'components/Icon';
 
 export const OverlayDiv = styled.div`
     ${flexBox};
@@ -21,11 +21,25 @@ export const OverlayDiv = styled.div`
     z-index: 999;
 
     &.open {
-        transform: translateY(60px);
+        transform: translateY(72px);
+        @media ${props => props.theme.media.tablet} {
+            transform: translateY(78px);
+    }
+        @media ${props => props.theme.media.desktop} {
+            transform: translateY(78px);
+    }
     }
     &.close {
         transform: translateY(-300px);
     }
+`
+export const EditText = styled.p`
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.57;
+    color: #23262A;
 `
 export const ModalDiv = styled.div`
      max-width: 50%;
@@ -33,7 +47,6 @@ export const ModalDiv = styled.div`
     position: relative;
     top: 0;
     right: 0;
-    
     background-color: #fff;
 `
 export const DivStyled = styled.div`
@@ -51,11 +64,16 @@ width: 100%;
     ${flexBox};
     justify-content: space-between;
     flex-direction: row;
+    &:hover p {
+    color: ${({ theme }) => theme.colors.primary};
+}
+    &:hover svg {
+        fill: ${({ theme }) => theme.colors.primary};
+    }
     
 `
 
 export const LogOutBtn = styled.button`
-
     width: 125px;
     width: 100%;
     height: 43px;
@@ -65,4 +83,12 @@ export const LogOutBtn = styled.button`
     border-radius: 24px 44px;
     background-color: #8BAA36;
     color: #fff;
+    &:hover {
+        background: #22252A;
+        color: #FAFAFA;
+    }
+`
+export const EditIcon = styled(Icon)`
+    width: 12px;
+    height: 12px;
 `

@@ -1,8 +1,11 @@
 import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled } from './SubscriptionForm.styled';
 import { Formik } from 'formik';
+// import { useEffect } from 'react';
+// import { fetchUpdateSubscribe } from './subscriptionFetch';
 import * as Yup from 'yup';
 import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
+// import { useState } from 'react';
 
 
 const emailRegex = /^[\w]+@([\w]+\.)+[\w]{1,4}$/;
@@ -21,9 +24,11 @@ const SubscribeSchema = Yup.object().shape({
 
 
 export const SubscriptionForm = () => {
-  const sendSubscription = ({ email }, { resetForm }) => {	
-		resetForm();
-	};
+			const sendSubscription = ({ email }, { resetForm }) => {	
+			console.log(email)
+			resetForm();
+		}
+
 
   return (<div>
   <DiscrSubscribeForm />

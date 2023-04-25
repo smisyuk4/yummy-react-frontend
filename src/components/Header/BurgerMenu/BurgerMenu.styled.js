@@ -37,12 +37,29 @@ export const BtnCloseModal = styled.button`
     border: none;
     cursor: pointer;
     background-color: transparent;
+    &:hover {
+        stroke: ${({ theme }) => theme.colors.primary};
+    }
+
 `
 export const CloseIcon = styled(Icon)`
     width: 32px;
     height: 32px;
     stroke: #23262A;
     background-color: transparent;
+    &:hover {
+        stroke: ${({ theme }) => theme.colors.primary};
+    }
+
+`
+export const SearchIcon = styled(Icon)`
+    width: 16px;
+    height: 16px;
+    stroke: #23262A;
+    background-color: transparent;
+    &:hover {
+        stroke: ${({ theme }) => theme.colors.primary};
+    }
 
 `
 

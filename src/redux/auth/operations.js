@@ -41,6 +41,7 @@ export const userUpdate = createAsyncThunk(
 	async (credentials, thunkAPI) => {
 		try {
 			const response = await axios.patch('/user/update', credentials);
+			console.log(response)
 			return response.data;
 		} catch (e) {
 			return thunkAPI.rejectWithValue(e.response.data);
@@ -51,7 +52,13 @@ export const userUpdateAvatar = createAsyncThunk(
 	'avatars',
 	async (credentials, thunkAPI) => {
 		try {
-			const response = await axios.post('/user/avatars', credentials);
+			console.log(credentials)
+			const response = await axios.post('/user/avatars', credentials, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+              });
+			  console.log(response)
 			return response.data;
 		} catch (e) {
 			return thunkAPI.rejectWithValue(e.response.data);

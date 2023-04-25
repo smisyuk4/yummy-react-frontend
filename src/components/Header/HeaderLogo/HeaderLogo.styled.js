@@ -6,7 +6,7 @@ import { Icon } from 'components/Icon';
 export const HeaderLogoStyled = styled(Link)`
     ${flexBox};
 `
-export const HeaderLogoIcon = styled(Icon)`
+export const  HeaderLogoIcon= styled(Icon)`
     width: 40px;
     height: 40px;
     padding: 10px;
