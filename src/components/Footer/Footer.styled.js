@@ -31,9 +31,9 @@ export const FooterStyled = styled.div`
         height: 392px;
         background: url(${bgImgTop}) no-repeat right bottom;
         position: absolute;
-        top: -35%;
-        left: 0;
-        transform: rotate(-30deg);
+        bottom: 400px;
+        left: 10px;
+        transform: rotate(-40deg);
         z-index:-50;
     }
     &::after {
@@ -46,7 +46,6 @@ export const FooterStyled = styled.div`
         right: 0;
         transform: rotate(-30deg);
         z-index:-50;
-        overflow: hidden;
     }
 
     @media screen and (min-width: 768px) {
