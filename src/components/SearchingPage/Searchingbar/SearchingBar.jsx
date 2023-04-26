@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import {
 	FormStyled,
 	SearchStyled,
@@ -8,6 +9,12 @@ import {
 
 export const SearchingBar = ({ changeValue }) => {
 	const [searchValue, setsearchValue] = useState('');
+	const { query } = useParams();
+	useEffect(() => {
+		if (query) {
+			setsearchValue(query);
+		}
+	}, [query]);
 
 	const handleSubmit = event => {
 		event.preventDefault();

@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
 	background-color: ${({ theme }) => theme.colors.buttonLightBG};
-	margin-top: 50px;
-	margin-bottom: 100px;
+	margin-top: 32px;
+	margin-bottom: 191px;
 
 	@media screen and (min-width: 768px) {
-		margin-top: 72px;
+		margin-top: 52px;
 		margin-bottom: 305px;
 	}
 	@media screen and (min-width: 1440px) {
-		margin-top: 100px;
+		margin-top: 84px;
 		margin-bottom: 200px;
 	}
 `;
@@ -24,6 +24,15 @@ export const SearchByBox = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media screen and (min-width: 768px) {
+		width: 265px;
+		height: 41px;
+		margin-top: 28px;
+	}
+	@media screen and (min-width: 768px) {
+		width: 310px;
+		height: 47px;
+	}
 `;
 
 export const TitleSearch = styled.p`
@@ -34,8 +43,16 @@ export const TitleSearch = styled.p`
 	line-height: 16px;
 	letter-spacing: -0.24px;
 	margin: 0;
-
 	color: #001833;
+
+	@media screen and (min-width: 768px) {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	@media screen and (min-width: 1440px) {
+		font-size: 18px;
+		line-height: 24px;
+	}
 `;
 
 export const SelectStyled = styled.select`
@@ -45,10 +62,12 @@ export const SelectStyled = styled.select`
 	padding-left: 14px;
 	background: #7575751f;
 	border-radius: 6px;
-
 	/* убираем стандартную стрелку */
 	/* appearance: none;
 	overflow: hidden; */
+	@media screen and (min-width: 768px) {
+		margin-left: 18px;
+	}
 `;
 
 export const OptionStyled = styled.option`
@@ -60,23 +79,26 @@ export const OptionStyled = styled.option`
 	letter-spacing: -0.02em;
 	color: #000000;
 	opacity: 0.5;
+	@media screen and (min-width: 768px) {
+		font-size: 14px;
+		line-height: 21px;
+	}
 `;
 
 export const CardList = styled.ul`
 	padding: 0;
-	/* display: grid; */
 	display: flex;
 	flex-wrap: wrap;
 
 	gap: 28px;
-	margin-bottom: 191px;
-	margin-top: 32px;
+	margin-top: 42px;
 
 	@media screen and (min-width: 768px) {
-		margin-top: 50px;
+		margin-top: 40px;
 		gap: 32px;
 	}
 	@media screen and (min-width: 1440px) {
+		margin-top: 90px;
 		gap: 14px;
 		grid-row-gap: 100px;
 	}
