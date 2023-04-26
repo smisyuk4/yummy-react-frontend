@@ -51,7 +51,6 @@ const IngredientsShoppingList = () => {
 			{shoppingList && <DivContainer>
 				<ListBar>
 					<ItemBar>Products</ItemBar>
-					{/* <ItemBar>For recipe</ItemBar> */}
 					<ItemBar>Number</ItemBar>
 					<ItemBar>Remove</ItemBar>
 				</ListBar>
@@ -65,7 +64,7 @@ const IngredientsShoppingList = () => {
 							</ContainerImg>
 							<TaglineP>{ttl}</TaglineP>
 							<NavLink to="/recipe/:id">recipe{id}</NavLink>
-							<Measure>{measure}</Measure>
+								<Measure>{measure}</Measure>
 							<CloseBtn type="button" onClick={() => onDelete(_id)}>
 								<CloseIcon
 									id="icon-close"
