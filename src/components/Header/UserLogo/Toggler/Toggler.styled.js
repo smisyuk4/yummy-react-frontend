@@ -10,10 +10,10 @@ export const WrapperToggler = styled.button`
         position: relative;
         border: transparent;
     }
-    &.active > svg:nth-child(1) {
+    &.active > svg:nth-of-type(1) {
         fill: ${({ theme }) => theme.colors.primary};
         }
-    &.active > svg:nth-child(2) {
+    &.active > svg:nth-of-type(2) {
             transform: translateX(35px);
         }
 `;

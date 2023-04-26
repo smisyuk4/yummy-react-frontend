@@ -27,9 +27,7 @@ const toastParam = {
 export const SubscriptionForm = () => {
 	
 		const sendSubscription = async ({ email }, { resetForm }) => {	
-			console.log(email)
 			const data = await fetchUpdateSubscribe({email})
-			console.log(data.data)
 			if (data.status === 200) {
 				toast.success(`You are subscribed successful`, toastParam);
 			} else {
@@ -49,7 +47,6 @@ export const SubscriptionForm = () => {
 		validationSchema={SubscribeSchema}>
 		{formik => {
 			const { errors, touched } = formik;
-			console.log(formik)
 			return (
 				<FormStyled autoComplete="on">
 					<LabelStyled

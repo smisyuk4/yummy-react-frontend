@@ -5,13 +5,13 @@ import { BtnSybscribe } from 'components/Footer/SubscriptionForm/SubscriptionFor
 
 
 export const DivStyled = styled.div`
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: grey;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 1000;
@@ -19,7 +19,7 @@ export const DivStyled = styled.div`
 `;
 
 export const ModalProfil = styled.div`
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
