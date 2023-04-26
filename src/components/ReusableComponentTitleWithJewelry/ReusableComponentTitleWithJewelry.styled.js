@@ -34,26 +34,26 @@ export const JewelryBoxBig = styled.div`
 	}
 	&.left {
 		left: 120px;
-		top: 62px;
+		top: 76px;
 		@media screen and (min-width: 768px) {
 			left: 220px;
-			top: 74px;
+			top: 85px;
 		}
 		@media screen and (min-width: 1440px) {
 			left: 328px;
-			top: 98px;
+			top: 116px;
 		}
 	}
 	&.right {
 		right: 16px;
-		top: 100px;
+		top: 109px;
 		@media screen and (min-width: 768px) {
 			right: 24px;
-			top: 100px;
+			top: 98px;
 		}
 		@media screen and (min-width: 1440px) {
 			right: 172px;
-			top: 112px;
+			top: 130px;
 		}
 	}
 `;
@@ -66,7 +66,7 @@ export const JewelryBoxSmall = styled.div`
 	border-radius: 3px;
 	transform: rotate(-25deg);
 	left: 248px;
-	top: 126px;
+	top: 142px;
 	@media screen and (min-width: 768px) {
 		width: 12px;
 		height: 12px;
@@ -75,6 +75,6 @@ export const JewelryBoxSmall = styled.div`
 	}
 	@media screen and (min-width: 1440px) {
 		left: 807px;
-		top: 182px;
+		top: 200px;
 	}
 `;

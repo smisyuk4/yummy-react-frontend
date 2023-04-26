@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
 	background-color: ${({ theme }) => theme.colors.buttonLightBG};
-	margin-top: 50px;
-	margin-bottom: 100px;
+	margin-top: 32px;
+	margin-bottom: 191px;
 
 	@media screen and (min-width: 768px) {
-		margin-top: 72px;
+		margin-top: 52px;
 		margin-bottom: 305px;
 	}
 	@media screen and (min-width: 1440px) {
-		margin-top: 100px;
+		margin-top: 84px;
 		margin-bottom: 200px;
 	}
 `;
