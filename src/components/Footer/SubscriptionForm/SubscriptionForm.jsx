@@ -1,9 +1,8 @@
 import { toast } from 'react-toastify';
-import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled } from './SubscriptionForm.styled';
 import { Formik } from 'formik';
-import { fetchUpdateSubscribe } from './subscriptionFetch';
 import * as Yup from 'yup';
-import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
+import { fetchUpdateSubscribe } from './subscriptionFetch';
+import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled,  BtnSybscribe, ErrorSpan} from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
 
 const SubscribeSchema = Yup.object().shape({
@@ -27,9 +26,7 @@ const toastParam = {
 export const SubscriptionForm = () => {
 	
 		const sendSubscription = async ({ email }, { resetForm }) => {	
-			console.log(email)
 			const data = await fetchUpdateSubscribe({email})
-			console.log(data.data)
 			if (data.status === 200) {
 				toast.success(`You are subscribed successful`, toastParam);
 			} else {
@@ -49,7 +46,6 @@ export const SubscriptionForm = () => {
 		validationSchema={SubscribeSchema}>
 		{formik => {
 			const { errors, touched } = formik;
-			console.log(formik)
 			return (
 				<FormStyled autoComplete="on">
 					<LabelStyled
@@ -62,7 +58,6 @@ export const SubscriptionForm = () => {
 							type="email"
 							name="email"
 							placeholder="Enter your email address"
-							// onChange={onHandleChange}
 						/>
 						{touched.email &&
 						(errors.email ? (
@@ -82,9 +77,6 @@ export const SubscriptionForm = () => {
 				)
 				}}
 	</Formik>
-
   </div>
-    
   )
-
 };

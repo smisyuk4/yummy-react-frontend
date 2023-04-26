@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
     display: none;
-
     @media ${props => props.theme.media.desktop} {
 		display: inline-block;
         width: 340px;
@@ -10,7 +9,6 @@ export const DivStyled = styled.div`
         text-align: left;
 	}
 `;
-
 export const TitleFormSubscription = styled.div`
     padding: 0;
     margin: 0;
@@ -20,10 +18,8 @@ export const TitleFormSubscription = styled.div`
     font-size: 18px;
     line-height: 1.5;
     color: ${props => props.theme.colors.fontColor};
-
     margin-bottom: 14px;
 `
-
 export const SubscribeFormText = styled.p`
     padding: 0;
     margin: 0;

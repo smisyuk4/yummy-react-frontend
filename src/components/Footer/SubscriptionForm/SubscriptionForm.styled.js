@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import { Form, Field } from 'formik';
+import { Form, Field, ErrorMessage } from 'formik';
 import { Icon } from 'components/Icon';
 import {flexBox} from 'styles/mixins';
-import { ErrorMessage } from 'formik';
+
 
 export const FormStyled = styled(Form)`
     width: 204px;
