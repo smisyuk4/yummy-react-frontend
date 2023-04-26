@@ -89,7 +89,7 @@ export const SearchingPage = () => {
 		}
 	};
 	// console.log(type);
-	// console.log(totalRecipes);
+	console.log(totalRecipes);
 
 	return (
 		<DivStyled>

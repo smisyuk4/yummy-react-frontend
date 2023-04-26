@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-// import { Field, Form } from 'formik';
 
 export const SearchStyled = styled.div`
 	margin-top: 50px;

@@ -87,7 +87,6 @@ export const OptionStyled = styled.option`
 
 export const CardList = styled.ul`
 	padding: 0;
-	/* display: grid; */
 	display: flex;
 	flex-wrap: wrap;
 

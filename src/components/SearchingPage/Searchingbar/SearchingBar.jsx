@@ -14,7 +14,7 @@ export const SearchingBar = ({ changeValue }) => {
 		if (query) {
 			setsearchValue(query);
 		}
-	}, []);
+	}, [query]);
 
 	const handleSubmit = event => {
 		event.preventDefault();
