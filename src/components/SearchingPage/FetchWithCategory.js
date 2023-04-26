@@ -1,14 +1,25 @@
 import axios from 'axios';
 
-export const fetchByTitle = async searchValue => {
-	console.log(searchValue);
+export const fetchByTitle = async (value, { page, limit }) => {
+	console.log(value, page, limit);
 	const responce = await axios.get(
-		`/recipes/search?title=${searchValue}&page=1&limit=10`
+		`/recipes/search?title=${value}&page=${page}&limit=${limit}`
 	);
 	return responce;
 };
 
-export const fetchByIngredients = async categ => {
-	const responce = await axios.get(`/recipes/category/${categ}`);
+export const fetchByIngredients = async (value, { page, limit }) => {
+	console.log(value, page, limit);
+	const responce = await axios.get(
+		`/recipes/ingredients?ttl=${value}&page=${page}&limit=${limit}`
+	);
+	return responce;
+};
+
+export const fetchByGlobalIngredients = async (value, { page, limit }) => {
+	console.log(value, page, limit);
+	const responce = await axios.get(
+		`/recipes/ingredients?ttl=${value}&page=${page}&limit=${limit}`
+	);
 	return responce;
 };
