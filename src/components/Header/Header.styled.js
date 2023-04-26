@@ -15,7 +15,6 @@ export const HeaderStyled = styled.header`
     @media ${props => props.theme.media.tablet} {
        padding-left: 32px;
        padding-right: 32px;
-
     }
     @media ${props => props.theme.media.desktop} {
         padding-left: 100px;

@@ -14,7 +14,7 @@ export const FormStyled = styled(Form)`
 
 	margin-top: 32px;
 
-	@media screen and (min-width: 768px) and (max-width: 1140px) {
+	@media screen and (min-width: 768px) and (max-width: 1440px) {
 		width: 100%;
 		height: 50px;
 		flex-direction: row;
@@ -22,7 +22,7 @@ export const FormStyled = styled(Form)`
 		margin-bottom: 15px;
 	}
 
-	@media screen and (min-width: 1140px) {
+	@media screen and (min-width: 1440px) {
 		width: 204px;
 		${flexBox};
 		flex-direction: column;

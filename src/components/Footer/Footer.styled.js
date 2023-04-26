@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import {flexBox} from 'styles/mixins';
 import { HeaderLogoIcon } from 'components/Header/HeaderLogo/HeaderLogo.styled'; 
-
+import bgImgTop from 'images/footerImgs/bg-footer-top.png'
 import bgImgDown from 'images/footerImgs/bg-footer-bottom.png'
 
 
@@ -15,6 +15,7 @@ export const WrapperFooter = styled.footer`
 
 `
 export const FooterStyled = styled.div`
+    position: relative;
     width: 100%;
     padding-top: 28px;
     padding-bottom: 20px;
@@ -24,10 +25,34 @@ export const FooterStyled = styled.div`
     gap: 32px;
     align-items: center;
 
+    &::before {
+        content: "";
+        width: 256px;
+        height: 392px;
+        background: url(${bgImgTop}) no-repeat right bottom;
+        position: absolute;
+        top: -35%;
+        left: 0;
+        transform: rotate(-30deg);
+        z-index:-50;
+    }
+    &::after {
+        content: "";
+        width: 160px;
+        height: 172px;
+        background: url(${bgImgDown}) no-repeat right bottom;
+        position: absolute;
+        top: 85%;
+        right: 0;
+        transform: rotate(-30deg);
+        z-index:-50;
+        overflow: hidden;
+    }
+
     @media screen and (min-width: 768px) {
         gap: 0px;
 	}
-    @media screen and (min-width: 1140px) {
+    @media screen and (min-width: 1440px) {
         padding-left: 100px;
         padding-right: 100px;
 	}
@@ -47,7 +72,7 @@ export const WrapperDiscr = styled.div`
 	}
 `
 export const WrapDiscrSubscrForm = styled.div`
-    @media screen and (min-width: 1140px) {
+    @media screen and (min-width: 1440px) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -65,7 +90,7 @@ export const FotterUpDiv = styled.div`
         margin-bottom: 72px;
 	    }
 
-    @media screen and (min-width: 1140px) {
+    @media screen and (min-width: 1440px) {
         width: 66%;
         display: flex;
         flex-direction: row;
@@ -131,11 +156,8 @@ export const FooterTeam = styled.div`
     font-size: 10px;
     line-height: 1;
     letter-spacing: -0.01em;
-    color: ${props => props.theme.colors.buttonDarkBG};
-    opacity: 0.5;
-
-    background: url(${bgImgDown}) no-repeat right bottom;
-
+    color: rgba(34,37,42, 0.5);
+    overflow: hidden;
 `
 
 // export const IconDiv = styled.div`
