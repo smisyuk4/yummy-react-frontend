@@ -14,5 +14,5 @@ export const getShoppingList = async () => {
 
 export const deleteIngredientInShoppingList = async ingredientId => {
     const response = await axios.delete(`/ingredients/shopping-list/${ingredientId}`); 
-    return response;
+    return response.data;
 }
