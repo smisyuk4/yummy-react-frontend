@@ -5,15 +5,13 @@ import { fetchRecipes } from 'components/Recipe/FetchRecipe';
 import { RecipePageHero } from 'components/Hero/RecipeHero/RecipePageHero';
 import { IngredientsList } from 'components/Recipe/IngredientsList/RecipeIngredientsList';
 import { RecipePreparation } from 'components/Recipe/RecipePreparation';
-const zipWith = require('lodash.zipwith');
 
 const RecipePage = () => {
   const { recipeId } = useParams();
   const [recipe, setRecipe] = useState([]);
   const [ingredientsOne, setIngredientsOne] = useState([]);
   const [arrayAllId, setArrayAllId] = useState([]);
-  const [ingredientsTwo, setIngredientsTwo] = useState([]);
-  const [bingo, setBingo] = useState([])
+  const [ingredients, setIngredients] = useState([]);
 
   // get recipe
   useEffect(() => {
@@ -51,29 +49,14 @@ const RecipePage = () => {
           return;
         }
 
-		// rename key object
-		// const renamedArr = someIngredients.map(function(obj) {
-		// 	obj['_id'] = obj['id']; // Assign new key
-		// 	delete obj['id']; // Delete old key
-		// 	return obj;
-		// });
+        // merge two array objects
+        const totalInfoForRecipe = someIngredients.map(ingredient => {
+          const haveEqualId = item => item.id === ingredient._id;
+          const userWithEqualId = ingredientsOne.find(haveEqualId);
+          return Object.assign({}, ingredient, userWithEqualId);
+        });
 
-		const renamedArr = ingredientsOne.map((obj) => {
-			obj._id = obj.id; // Assign new key
-			delete obj.id; // Delete old key
-			return obj;
-		});
-		
-
-		// merge array with object ingredients
-		const merge = (obj1, obj2) => ({...obj1, ...obj2});
-		const newArrIngredients = zipWith(someIngredients, renamedArr, merge)
-
-
-
-
-        setIngredientsTwo(someIngredients);
-		setBingo(newArrIngredients)
+        setIngredients(totalInfoForRecipe);
       } catch (error) {
         console.log(error);
       }
@@ -92,12 +75,7 @@ const RecipePage = () => {
         time={time}
         favorites={favorites}
       />
-      <IngredientsList
-
-        // ingredientsOne={ingredientsOne}
-        ingredientsTwo={ingredientsTwo}
-		bingo={bingo}
-      />
+      <IngredientsList ingredients={ingredients} />
       <RecipePreparation instructions={instructions} thumb={thumb} />
     </>
   );
