@@ -11,6 +11,10 @@ export const HeroSection = styled.section`
     background-size: cover;
      padding-top: 144px;  
     padding-bottom: 90px;
+    padding-right: 30px;
+  margin-right: -16px; 
+	margin-left: -16px;
+	margin-top: -102px;
     width: 100%;
     height: 495px;
     text-align: center;
@@ -20,6 +24,10 @@ export const HeroSection = styled.section`
         height: 493px;
         padding-top: 136px;
         padding-bottom: 32px;
+        padding-right: 70px;
+        margin-top: -106px;
+		margin-right: -32px;
+		margin-left: -32px; 
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -29,6 +37,8 @@ export const HeroSection = styled.section`
     padding-top: 164px;
  } 
      `; 
+
+  
 
     
 export const ButtonStyled = styled.button`
