@@ -140,9 +140,12 @@ export const BtnSybscribe = styled.button`
     line-height: 1.14;
 	transition: color 0.3s ease-in-out;
 
-	&:hover {
+	&:active {
 		transition: color 0.3s ease-in-out;
 		color: ${({ theme }) => theme.colors.buttonDarkBG};
+	}
+	&:disabled {
+		background-color: grey;
 	}
 `
 

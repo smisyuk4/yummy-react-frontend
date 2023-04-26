@@ -5,7 +5,7 @@ import { fetchUpdateSubscribe } from './subscriptionFetch';
 import * as Yup from 'yup';
 import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
-
+import { useState } from 'react';
 
 const SubscribeSchema = Yup.object().shape({
 	email: Yup.string()
@@ -26,6 +26,13 @@ const toastParam = {
 };
 
 export const SubscriptionForm = () => {
+	const [email, setEmail] = useState(true);
+
+	const onHandleChange = (e) => {
+		console.log(e.target.value)
+		setEmail(false)
+	}
+
 		const sendSubscription = async ({ email }, { resetForm }) => {	
 			console.log(email)
 			const data = await fetchUpdateSubscribe({email})
@@ -49,7 +56,7 @@ export const SubscriptionForm = () => {
 		validationSchema={SubscribeSchema}>
 		{formik => {
 			const { errors, touched } = formik;
-
+			console.log(formik)
 			return (
 				<FormStyled autoComplete="on">
 					<LabelStyled
@@ -62,6 +69,7 @@ export const SubscriptionForm = () => {
 							type="email"
 							name="email"
 							placeholder="Enter your email address"
+							// onChange={onHandleChange}
 						/>
 						{touched.email &&
 						(errors.email ? (
@@ -76,7 +84,7 @@ export const SubscriptionForm = () => {
 						<IconStatusStyled id="icon-validation-success" />
 								))}
 					</LabelStyled>
-					<BtnSybscribe type="submit">Subcribe</BtnSybscribe>
+					<BtnSybscribe type="submit" disabled={!(formik.dirty && formik.isValid)} >Subcribe</BtnSybscribe>
 				</FormStyled>
 				)
 				}}
