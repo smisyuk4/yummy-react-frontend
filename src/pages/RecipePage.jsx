@@ -5,6 +5,7 @@ import { fetchRecipes } from 'components/Recipe/FetchRecipe';
 import { RecipePageHero } from 'components/Hero/RecipeHero/RecipePageHero';
 import { IngredientsList } from 'components/Recipe/IngredientsList/RecipeIngredientsList';
 import { RecipePreparation } from 'components/Recipe/RecipePreparation';
+const zipWith = require('lodash.zipwith');
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -12,6 +13,7 @@ const RecipePage = () => {
   const [ingredientsOne, setIngredientsOne] = useState([]);
   const [arrayAllId, setArrayAllId] = useState([]);
   const [ingredientsTwo, setIngredientsTwo] = useState([]);
+  const [bingo, setBingo] = useState([])
 
   // get recipe
   useEffect(() => {
@@ -19,10 +21,10 @@ const RecipePage = () => {
       try {
         const recipe = await fetchRecipes(recipeId);
 
-        //   console.log('test', getrecipe);
-        // if (!getrecipe) {
-        //   return;
-        // }
+        if (recipe.length === 0) {
+          return;
+        }
+
         setRecipe(recipe);
 
         setIngredientsOne(recipe.ingredients);
@@ -30,18 +32,6 @@ const RecipePage = () => {
         const arrayId = recipe.ingredients.map(item => item.id);
 
         setArrayAllId(arrayId);
-
-        // const query = {
-        // 	"arrayId": [ "640c2dd963a319ea671e3756"]
-        // }
-
-        // const someIngredients = await fetchSomeIngredients(query);
-
-        // console.log('someIngredients Arr', someIngredients);
-        // setIngredientsTwo(someIngredients)
-
-        //   console.log(getrecipe.ingredients)
-        //   console.log("arrayId:", ingredientsTwo)
       } catch (error) {
         console.log(error);
       }
@@ -52,25 +42,44 @@ const RecipePage = () => {
   // get ingredients
   useEffect(() => {
     async function getIngredients() {
-      const query = {"arrayId": arrayAllId}
-    //   const query = {
-    //     arrayId: [
-    //       '640c2dd963a319ea671e3796',
-    //       '640c2dd963a319ea671e370c',
-    //       '640c2dd963a319ea671e3756',
-    //     ],
-    //   };
-      // console.log(query);
+      const query = { arrayId: arrayAllId };
+
       try {
         const someIngredients = await fetchSomeIngredients(query);
-        console.log('someIngredients Arr', someIngredients);
+
+        if (someIngredients.length === 0) {
+          return;
+        }
+
+		// rename key object
+		// const renamedArr = someIngredients.map(function(obj) {
+		// 	obj['_id'] = obj['id']; // Assign new key
+		// 	delete obj['id']; // Delete old key
+		// 	return obj;
+		// });
+
+		const renamedArr = ingredientsOne.map((obj) => {
+			obj._id = obj.id; // Assign new key
+			delete obj.id; // Delete old key
+			return obj;
+		});
+		
+
+		// merge array with object ingredients
+		const merge = (obj1, obj2) => ({...obj1, ...obj2});
+		const newArrIngredients = zipWith(someIngredients, renamedArr, merge)
+
+
+
+
         setIngredientsTwo(someIngredients);
+		setBingo(newArrIngredients)
       } catch (error) {
         console.log(error);
       }
     }
     getIngredients();
-  }, [arrayAllId]);
+  }, [arrayAllId, ingredientsOne]);
 
   const { _id, title, description, time, thumb, instructions, favorites } =
     recipe;
@@ -83,7 +92,12 @@ const RecipePage = () => {
         time={time}
         favorites={favorites}
       />
-      <IngredientsList ingredients={ingredientsOne} />
+      <IngredientsList
+
+        // ingredientsOne={ingredientsOne}
+        ingredientsTwo={ingredientsTwo}
+		bingo={bingo}
+      />
       <RecipePreparation instructions={instructions} thumb={thumb} />
     </>
   );
@@ -93,17 +107,7 @@ axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
 
 export const fetchSomeIngredients = async data => {
   const responce = await axios.post(`ingredients`, data);
-  console.log('responce: ', responce);
   return responce.data.data.ingretients;
 };
 
 export default RecipePage;
-
-// axios({
-// 	method: 'post',
-// 	url: '/user/12345',
-// 	data: {
-// 	  firstName: 'Fred',
-// 	  lastName: 'Flintstone'
-// 	}
-//   });

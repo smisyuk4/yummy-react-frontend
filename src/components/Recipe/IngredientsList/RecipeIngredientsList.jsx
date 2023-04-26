@@ -10,7 +10,7 @@ import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsS
 import { IngredientsListSection, ListStyled, IngedientsItem } from './RecipeIngredients.styled';
 
 
-export const IngredientsList = ({ ingredients }) => {
+export const IngredientsList = ({ bingo, ingredientsOne, ingredientsTwo }) => {
   // const [isChecked, setIsChecked] = useState(false);
   // const [shoppingList, setShoppingList] = useState([]);
 //  useEffect(() => {
@@ -39,8 +39,8 @@ export const IngredientsList = ({ ingredients }) => {
             </DivContainer>
             <>
             <ListStyled>
-                    {ingredients &&
-            ingredients.map(({ thb, id, measure, ttl }) => {
+                    {bingo.length > 0 &&
+            bingo.map(({ thb, id, measure, ttl }) => {
               return (
                 <IngedientsItem key={id}>
                   <div>
