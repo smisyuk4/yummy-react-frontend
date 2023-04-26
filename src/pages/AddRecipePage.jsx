@@ -1,5 +1,5 @@
 import { AddRecipeForm } from 'components/AddRecipePage/AddRecipeForm';
-import { FollowUs } from 'components/FollowUs';
+import { AddRecipePageFollowUs } from 'components/AddRecipePage/AddRecipePageFollowUs/AddRecipePageFollowUs';
 import { PopularRecipe } from 'components/AddRecipePage/PopularRecipe';
 // // import { AddRecipeDivStyled } from './AddRecipePage.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
@@ -10,7 +10,7 @@ const AddRecipePage = () => {
 		<>
 			<ReusableComponentTitleWithJewelry title="Add recipe"/>
 			<AddRecipeForm/>
-			<FollowUs title="Follow us"/>
+			<AddRecipePageFollowUs title='Follow us'></AddRecipePageFollowUs>
 			<PopularRecipe title="Popular recipe"/>
 		</>
 

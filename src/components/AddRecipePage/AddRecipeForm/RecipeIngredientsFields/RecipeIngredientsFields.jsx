@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { RecipeIngredientsFieldsCounter } from '../RecipeIngredientsFieldsCounter';
 import { RecipeingredientsListItem } from '../RecipeIngredientsListItem';
@@ -133,4 +134,8 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 			)}
 		</RecipeIngredientsFieldset>
 	);
+};
+
+RecipeIngredientsFields.propType = {
+	onChange: PropTypes.func.isRequired,
 };

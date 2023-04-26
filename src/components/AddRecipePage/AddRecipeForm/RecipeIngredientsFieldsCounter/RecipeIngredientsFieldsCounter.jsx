@@ -1,6 +1,11 @@
-import { Icon } from "components/Icon";
-import { CounterButton, CounterContainer, CounterValue } from "./RecipeIngredientsFieldsCounter.styled";
-
+import PropTypes from 'prop-types';
+import {
+	CounterButton,
+	CounterContainer,
+	CounterValue,
+	IconMinus,
+	IconPlus,
+} from './RecipeIngredientsFieldsCounter.styled';
 
 export const RecipeIngredientsFieldsCounter = ({
 	onDecrementClick,
@@ -10,20 +15,18 @@ export const RecipeIngredientsFieldsCounter = ({
 	return (
 		<CounterContainer>
 			<CounterButton onClick={onDecrementClick}>
-				<Icon
-					id="icon-minus"
-					width={16}
-					height={16}
-					stroke="rgba(51, 51, 51, 0.3)"></Icon>
+				<IconMinus id="icon-minus" width={16} height={16}></IconMinus>
 			</CounterButton>
 			<CounterValue>{count}</CounterValue>
 			<CounterButton onClick={onIncrementClick}>
-				<Icon
-					id="icon-plus"
-					width={16}
-					height={16}
-					stroke="#8BAA36"></Icon>
+				<IconPlus id="icon-plus" width={16} height={16}></IconPlus>
 			</CounterButton>
 		</CounterContainer>
 	);
 };
+
+RecipeIngredientsFieldsCounter.propType = {
+	onDecrementClick: PropTypes.func.isRequired,
+	onIncrementClick: PropTypes.func.isRequired,
+	count: PropTypes.string.isRequired
+}
