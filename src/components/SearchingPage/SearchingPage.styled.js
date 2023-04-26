@@ -24,6 +24,11 @@ export const SearchByBox = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@media screen and (min-width: 768px) {
+		width: 265px;
+		height: 41px;
+		margin-top: 28px;
+	}
 `;
 
 export const TitleSearch = styled.p`
@@ -34,8 +39,16 @@ export const TitleSearch = styled.p`
 	line-height: 16px;
 	letter-spacing: -0.24px;
 	margin: 0;
-
 	color: #001833;
+
+	@media screen and (min-width: 768px) {
+		font-size: 14px;
+		line-height: 18px;
+	}
+	@media screen and (min-width: 1440px) {
+		font-size: 18px;
+		line-height: 24px;
+	}
 `;
 
 export const SelectStyled = styled.select`
@@ -45,10 +58,12 @@ export const SelectStyled = styled.select`
 	padding-left: 14px;
 	background: #7575751f;
 	border-radius: 6px;
-
 	/* убираем стандартную стрелку */
 	/* appearance: none;
 	overflow: hidden; */
+	@media screen and (min-width: 768px) {
+		margin-left: 18px;
+	}
 `;
 
 export const OptionStyled = styled.option`
@@ -60,6 +75,10 @@ export const OptionStyled = styled.option`
 	letter-spacing: -0.02em;
 	color: #000000;
 	opacity: 0.5;
+	@media screen and (min-width: 768px) {
+		font-size: 14px;
+		line-height: 21px;
+	}
 `;
 
 export const CardList = styled.ul`
@@ -69,11 +88,10 @@ export const CardList = styled.ul`
 	flex-wrap: wrap;
 
 	gap: 28px;
-	margin-bottom: 191px;
-	margin-top: 32px;
+	margin-top: 42px;
 
 	@media screen and (min-width: 768px) {
-		margin-top: 50px;
+		margin-top: 40px;
 		gap: 32px;
 	}
 	@media screen and (min-width: 1440px) {
