@@ -1,7 +1,6 @@
 import { PropTypes } from 'prop-types';
 
 import {
-  LiStyled,
   NavLinkStyled,
   ImgStyled,
   HStyled,
@@ -10,7 +9,6 @@ import {
 
 export const PopularItem = ({ _id, title, description, preview }) => {
   return (
-    <LiStyled>
       <NavLinkStyled to={`/recipes/${_id}`} replace={true} area-label={title}>
         <ImgStyled src={preview} alt={title} width={100} height={100} />
 
@@ -19,7 +17,6 @@ export const PopularItem = ({ _id, title, description, preview }) => {
           <PStyled>{description}</PStyled>
         </div>
       </NavLinkStyled>
-    </LiStyled>
   );
 };
 
