@@ -8,9 +8,7 @@ import { DivStyled, UlStyled } from './PopularRecipe.styled';
 
 export const PopularRecipe = ({ title }) => {
   const [popRecipes, setPopRecipes] = useState([]);
-  	const [windowWidth, setWindowWidth] = useState(
-		() => window.innerWidth || 0
-	);
+  const [windowWidth, setWindowWidth] = useState(() => window.innerWidth || 0);
 
   useEffect(() => {
     async function fetch() {
@@ -27,22 +25,21 @@ export const PopularRecipe = ({ title }) => {
     fetch();
   }, []);
 
+  // make responsive arr recipes
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    // make responsive arr recipes
-  	useEffect(() => {
-      function handleResize() {
-        setWindowWidth(window.innerWidth);
-      }
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-	const count = windowWidth <= 767 ? 4 : windowWidth <= 1439  ? 2  : 4;
+  const count = windowWidth <= 767 ? 4 : windowWidth <= 1439 ? 2 : 4;
 
   if (popRecipes?.length === 0) {
     return (
       <DivStyled>
-         <Title title={title} className={"title-popular"}/>
+        <Title title={title} className={'title-popular'} />
         <p>Sorry, but we are still preparing the collection for you</p>
       </DivStyled>
     );
@@ -51,18 +48,20 @@ export const PopularRecipe = ({ title }) => {
   if (popRecipes?.length > 0) {
     return (
       <DivStyled>
-        <Title title={title} className={"title-popular"}/>
-		
+        <Title title={title} className={'title-popular'} />
+
         <UlStyled>
-          {popRecipes.slice(0, count).map(({ _id, title, description, preview }) => (
-            <PopularItem
-              key={_id}
-              _id={_id}
-              title={title}
-              description={description}
-              preview={preview}
-            />
-          ))}
+          {popRecipes
+            .slice(0, count)
+            .map(({ _id, title, description, preview }) => (
+              <PopularItem
+                key={_id}
+                _id={_id}
+                title={title}
+                description={description}
+                preview={preview}
+              />
+            ))}
         </UlStyled>
       </DivStyled>
     );

@@ -4,7 +4,7 @@ import {
   NavLinkStyled,
   ImgStyled,
   HStyled,
-  PStyled,
+  EllipsisTextStyled,
 } from './PopularItem.styled';
 
 export const PopularItem = ({ _id, title, description, preview }) => {
@@ -14,7 +14,7 @@ export const PopularItem = ({ _id, title, description, preview }) => {
 
         <div>
           <HStyled>{title}</HStyled>
-          <PStyled>{description}</PStyled>
+          <EllipsisTextStyled text={description} length={"70"}/>
         </div>
       </NavLinkStyled>
   );
