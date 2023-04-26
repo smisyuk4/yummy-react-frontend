@@ -7,9 +7,13 @@ export const SearchStyled = styled.header`
 	left: -22px;
 	transform: translate(7px, -7px);
 	z-index: 6;
-  @media screen and (min-width: 768px) {
-    top: -666px;
-		left: -335px;
+	@media screen and (min-width: 768px) {
+		top: -610px;
+		left: -361px;
+	}
+	@media screen and (min-width: 1440px) {
+		top: -895px;
+		left: -825px;
 	}
 `;
 
@@ -40,8 +44,12 @@ export const Input = styled(Field)`
 		outline: none;
 	}
 	@media screen and (min-width: 768px) {
-		width: 362px;
+		width: 330px;
 		height: 59px;
+	}
+	@media screen and (min-width: 768px) {
+		width: 483px;
+		height: 71px;
 	}
 `;
 
@@ -65,5 +73,8 @@ export const SearchFormBtn = styled.button`
 		font-weight: 400;
 		width: 161px;
 		height: 59px;
+	}
+	@media screen and (min-width: 768px) {
+		height: 70px;
 	}
 `;
