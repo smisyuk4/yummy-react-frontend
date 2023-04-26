@@ -84,7 +84,7 @@ const RecipePage = () => {
 axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
 
 export const fetchSomeIngredients = async data => {
-  const responce = await axios.post(`ingredients`, data);
+  const responce = await axios.post(`ingredients/list`, data);
   return responce.data.data.ingretients;
 };
 
