@@ -4,9 +4,44 @@ import { AddButton } from './AddRecipeForm.styled';
 
 import { useState } from 'react';
 
-import { RecipeDescriptionFields } from './RecipeDescriptionFields';
 import { RecipeIngredientsFields } from './RecipeIngredientsFields';
 import { RecipePreparationFields } from './RecipePreparationFields';
+import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
+import axios from 'axios';
+
+const URL = 'https://yummy-rest-api.onrender.com';
+
+const instance = axios.create({
+	baseURL: URL,
+});
+
+const fetchImg = async userInf => {
+	try {
+		const { data } = await instance.post('/ownRecipes', userInf, {
+			headers: {
+				'Content-Type': 'multipart/form-data',
+			},
+		});
+		console.log(data);
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+// const fetchData = async userInf => {
+// 	try {
+// 		const { data } = await instance.post('/ownRecipes', userInf, {
+// 			headers: {
+// 				'Content-Type': 'application/json',
+// 			},
+// 		});
+// 		console.log(data);
+// 		return data;
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// };
 
 export const AddRecipeForm = () => {
 	const [title, setTitle] = useState('');
@@ -15,21 +50,26 @@ export const AddRecipeForm = () => {
 	const [picture, setPicture] = useState(null);
 	const [time, setTime] = useState('');
 	const [ingretients, setIngridients] = useState([]);
+	const [preparationEditedText, setPreparationEditedText] = useState([]);
 
-	const [totalFormValues, setTotalFormValues] = useState({});
+	// const [totalFormValues, setTotalFormValues] = useState({});
 	// const addRecipe = data => {
 	// 	console.log('New Recipe', data);
 	// };
 
-	const testFunc = terget => {
-		// прийняти данні з форм внизу та записати собі в загальний стейт
-		setTotalFormValues();
-		console.log(totalFormValues);
-	};
+	// const testFunc = terget => {
+	// 	// прийняти данні з форм внизу та записати собі в загальний стейт
+	// 	setTotalFormValues();
+	// 	console.log(totalFormValues);
+	// };
 
 	const ingridientsCange = ingridientsArray => {
 		setIngridients(ingridientsArray);
 		console.log('ingretients array', ingretients);
+	};
+	const preparationChange = change => {
+		setPreparationEditedText(change);
+		console.log('preparation -------', preparationEditedText);
 	};
 	const tesOnCanfeDescription = terget => {
 		switch (terget.name) {
@@ -56,20 +96,37 @@ export const AddRecipeForm = () => {
 
 	const testFunc2 = () => {
 		// взяти данні з стейт - створити новий рецепт
-
 		// та відправити на сервер
-
 		// console.log(totalFormValues);
 	};
 
 	testFunc2();
 
+	const newRecipe = {
+		title: title,
+		category: categori,
+		time: time,
+		instructions: preparationEditedText,
+		// imageURL:
+		// 	'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/kknfjaqupiqhufj5kspx.jpg',
+		ingredients: ingretients,
+	};
+	const PostRecipe = async event => {
+		const dataFile = new FormData();
+		dataFile.set('photo', picture);
+		dataFile.append('text', JSON.stringify(newRecipe));
+		console.log('FORM-DATA----', dataFile);
+
+		await fetchImg(dataFile);
+		// await fetchData(JSON.stringify(newRecipe));
+	};
+
 	return (
 		<>
 			<RecipeDescriptionFields onChange={tesOnCanfeDescription} />
 			<RecipeIngredientsFields onChange={ingridientsCange} />
-			<RecipePreparationFields onChange={testFunc} />
-			<AddButton onClick={testFunc2}>Add</AddButton>
+			<RecipePreparationFields onChange={preparationChange} />
+			<AddButton onClick={PostRecipe}>Add</AddButton>
 		</>
 		// <RecipeFormDivStyled>
 		// 	<RecipeDescription onSubmit={addRecipe} />
