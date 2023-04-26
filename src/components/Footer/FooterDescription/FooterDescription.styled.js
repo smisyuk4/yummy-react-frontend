@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 
 export const UlStyled = styled.ul`
-display: none;
+        display: none;
 
 @media screen and (min-width: 768px) {
         padding: 0px;
@@ -29,5 +29,4 @@ display: none;
 `;
 
 export const DescriptionItem = styled.li`
-
 `

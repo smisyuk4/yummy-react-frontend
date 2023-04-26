@@ -1,9 +1,8 @@
 import { toast } from 'react-toastify';
-import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled } from './SubscriptionForm.styled';
 import { Formik } from 'formik';
-import { fetchUpdateSubscribe } from './subscriptionFetch';
 import * as Yup from 'yup';
-import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
+import { fetchUpdateSubscribe } from './subscriptionFetch';
+import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled,  BtnSybscribe, ErrorSpan} from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
 
 const SubscribeSchema = Yup.object().shape({
@@ -59,7 +58,6 @@ export const SubscriptionForm = () => {
 							type="email"
 							name="email"
 							placeholder="Enter your email address"
-							// onChange={onHandleChange}
 						/>
 						{touched.email &&
 						(errors.email ? (
@@ -79,9 +77,6 @@ export const SubscriptionForm = () => {
 				)
 				}}
 	</Formik>
-
   </div>
-    
   )
-
 };
