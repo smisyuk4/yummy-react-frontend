@@ -42,7 +42,7 @@ export const MainRecipes = () => {
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
-	console.log(`Ширина экрана: ${windowWidth}px`);
+	// console.log(`Ширина экрана: ${windowWidth}px`);
 	const loadMore = () => {
 		setDisplayedRecipesCount(prevCount => prevCount + 4);
 	};

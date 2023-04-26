@@ -14,7 +14,7 @@ export const Header = () => {
   const closeModal = ()=> {
       setModalOpen(false);
   }
-
+  
   return <HeaderStyled>
     {modalOpen && <BurgerMenu closeModal={closeModal} />}
       <HeaderLogo />
