@@ -24,7 +24,7 @@ export const PreparationTextArea = styled.textarea`
 	height: 154px;
 	resize: none;
 	padding: 10px 16px;
-	background-color: #d9d9d9;
+	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
 	border: none;
 	margin-bottom: 18px;
 	box-sizing: border-box;
@@ -44,11 +44,11 @@ export const PreparationTextArea = styled.textarea`
 	::-webkit-input-placeholder {
 		font-size: 14px;
 		line-height: 1.5;
-		color: rgba(0, 0, 0, 0.5);
+		color: ${p => p.theme.colors.addRecipeFormPlaceholder};
 	}
 	:-ms-input-placeholder {
 		font-size: 14px;
 		line-height: 1.5;
-		color: rgba(0, 0, 0, 0.5);
+		color: ${p => p.theme.colors.addRecipeFormPlaceholder};
 	}
 `;
