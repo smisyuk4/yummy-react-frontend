@@ -79,14 +79,16 @@ export const SearchingPage = () => {
 		}
 		//! Если запрос по Global Ingredients (ПОКА НЕ РАБОТАЕТ ЗАПРОС)
 		if (type === 'Global Ingredients') {
-			fetchByGlobalIngredients(value, { page, limit })
+			fetchByGlobalIngredients(value)
 				.then(({ data }) => {
-					setcards(data.data.recipes);
-					settotalRecipes(data.data.totalRecipes);
+					console.log(data);
+					// setcards(data.data.recipes);
+					// settotalRecipes(data.data.totalRecipes);
 				})
 				.catch(error => error);
 		}
 	};
+
 	console.log(type);
 	console.log(totalRecipes, setpage);
 
