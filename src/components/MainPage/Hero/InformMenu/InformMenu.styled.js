@@ -10,8 +10,8 @@ export const InformWrapperStyled = styled.div`
 	width: 225px;
 	background-color: #fafafa;
 	border-radius: 8px;
-	top: 388px;
-	left: 209px;
+	top: 428px;
+    left: 110px;
 	z-index: 7;
 	@media screen and (min-width: 768px) {
 		width: 261px;

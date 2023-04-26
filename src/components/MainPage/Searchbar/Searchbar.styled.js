@@ -8,8 +8,8 @@ export const SearchStyled = styled.header`
 	transform: translate(7px, -7px);
 	z-index: 6;
 	@media screen and (min-width: 768px) {
-		top: -610px;
-		left: -361px;
+		top: -811px;
+    left: -351px;
 	}
 	@media screen and (min-width: 1440px) {
 		top: -895px;
@@ -44,10 +44,10 @@ export const Input = styled(Field)`
 		outline: none;
 	}
 	@media screen and (min-width: 768px) {
-		width: 330px;
+		width: 342px;
 		height: 59px;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 1440px) {
 		width: 483px;
 		height: 71px;
 	}
@@ -74,7 +74,7 @@ export const SearchFormBtn = styled.button`
 		width: 161px;
 		height: 59px;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 1440px) {
 		height: 70px;
 	}
 `;
