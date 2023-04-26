@@ -2,13 +2,11 @@ import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
 import { IconPerson } from './ModalUserProfil/ModalUserProfil.styled';
 
-
 export const UserLogoDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-
 `;
 export const AvatarUser = styled(IconPerson)`
     width: 100%;
@@ -68,7 +66,7 @@ export const BurgerMuneBtn = styled.button`
     background-color: transparent;
     text-align: center;
     margin-left: 24px;
-    @media ${props => props.theme.media.desktop} {
+    @media ${props => props.theme.media.tablet} {
         margin-left: 54px;
     }
     @media ${props => props.theme.media.desktop} {

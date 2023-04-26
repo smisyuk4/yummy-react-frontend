@@ -20,7 +20,6 @@ const togglerTheme = () => {
   const auth = useSelector(state => state.auth)
   const user = auth.user
   const isGravatar = user.avatarURL.includes('gravatar')
-  console.log(auth.isLoggedIn)
 
   return <UserLogoDiv >
           <WrapperImg onClick={() => setOpenPopUp(true)} >

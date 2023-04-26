@@ -7,7 +7,6 @@ import { Icon } from 'components/Icon';
 export const DivStyled = styled.div`
     ${flexBox};
 `;
-
 export const SonetLinksList = styled.ul`
     ${flexBox};
     padding: 15px 28px;
@@ -25,12 +24,9 @@ export const SonetLinksList = styled.ul`
         margin: 0;
     }
 `
-
 export const SonetItem = styled.li`
-
 `
 export const SonetLink = styled(Link)`
-
 `
 export const IconSonetLink = styled(Icon)`
     width: 20px;
