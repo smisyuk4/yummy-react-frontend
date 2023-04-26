@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 export const LiStyled = styled.li`
   border-bottom: 1px solid #707070;
 `;
 
-export const AStyled = styled.a`
+export const NavLinkStyled = styled(Link)`
   display: flex;
   padding-bottom: 13px;
   padding-right: 14px;

@@ -122,7 +122,7 @@ export const App = () => {
 						}
 					/>
 					<Route
-						path="recipe/:recipeId"
+						path="recipes/:recipeId"
 						element={
 							<PrivateRoute
 								redirectTo="/login"
