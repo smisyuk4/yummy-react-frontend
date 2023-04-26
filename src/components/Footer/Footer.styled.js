@@ -5,7 +5,9 @@ import { HeaderLogoIcon } from 'components/Header/HeaderLogo/HeaderLogo.styled';
 import bgImgTopS from 'images/footerImgs/footer-bg-s-top.png'
 import bgImgTopM from 'images/footerImgs/footer-bg-m-top.png'
 import bgImgTopL from 'images/footerImgs/footer-bg-l-top.png'
-import bgImgDown from 'images/footerImgs/footer-bg-m-top.png'
+import bgImgDownS from 'images/footerImgs/footer-bg-s-bottom.png'
+import bgImgDownM from 'images/footerImgs/footer-bg-m-bottom.png'
+import bgImgDownL from 'images/footerImgs/footer-bg-l-bottom.png'
 
 
 
@@ -54,24 +56,6 @@ export const FooterStyled = styled.div`
             transform: rotate(355deg);
         }
     }
-    &::after {
-        content: "";
-        /* width: 315px;
-        height: 467px; */
-        /* background: url(${bgImgDown}) no-repeat right bottom; */
-        position: absolute;
-        top: 85%;
-        right: 0;
-        transform: rotate(-30deg);
-        z-index:-50;
-        @media ${props => props.theme.media.tablet}  {
-        
-	}
-    @media ${props => props.theme.media.desktop} {
-       
-	}
-    }
-
    @media ${props => props.theme.media.tablet}  {
         gap: 0px;
 	}
@@ -128,12 +112,9 @@ export const WrapperTitle = styled.div`
         justify-content: left;
         margin-bottom: 24px;
 	}
-
 `
 
 export const Title = styled.p`
-    font-family: 'Poppins';
-    font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 1.0;
@@ -146,7 +127,6 @@ export const Title = styled.p`
     @media ${props => props.theme.media.desktop} {
         font-size: 28px;
         }
-    
 `
 
 export const FooterNav = styled.div`
@@ -156,8 +136,6 @@ export const FooterNav = styled.div`
 `
 
 export const FooterNavlink = styled(NavLink)`
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.57;
@@ -173,18 +151,29 @@ export const FooterNavlink = styled(NavLink)`
 
 export const FooterTeam = styled.div`
     width: 100%;
-    height: 66px;
     ${flexBox};
     flex-direction: row;
     text-align: center;
     gap: 14px;
 
-    font-family: 'Poppins';
-    font-style: normal;
     font-weight: 500;
     font-size: 10px;
     line-height: 1;
     letter-spacing: -0.01em;
     color: rgba(34,37,42, 0.5);
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+      
+    background: url(${bgImgDownS}) no-repeat right bottom;
     overflow: hidden;
+    @media ${props => props.theme.media.tablet} {
+        font-size: 14px;
+        background: url(${bgImgDownM}) no-repeat right bottom;
+        }
+    @media ${props => props.theme.media.desktop} {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background: url(${bgImgDownL}) no-repeat right bottom;
+        }
 `

@@ -5,7 +5,6 @@ import { fetchUpdateSubscribe } from './subscriptionFetch';
 import * as Yup from 'yup';
 import { BtnSybscribe, ErrorSpan } from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
-import { useState } from 'react';
 
 const SubscribeSchema = Yup.object().shape({
 	email: Yup.string()
@@ -26,13 +25,7 @@ const toastParam = {
 };
 
 export const SubscriptionForm = () => {
-	const [email, setEmail] = useState(true);
-
-	const onHandleChange = (e) => {
-		console.log(e.target.value)
-		setEmail(false)
-	}
-
+	
 		const sendSubscription = async ({ email }, { resetForm }) => {	
 			console.log(email)
 			const data = await fetchUpdateSubscribe({email})
