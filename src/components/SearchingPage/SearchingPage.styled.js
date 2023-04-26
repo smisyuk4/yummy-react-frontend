@@ -29,6 +29,10 @@ export const SearchByBox = styled.div`
 		height: 41px;
 		margin-top: 28px;
 	}
+	@media screen and (min-width: 768px) {
+		width: 310px;
+		height: 47px;
+	}
 `;
 
 export const TitleSearch = styled.p`
@@ -95,6 +99,7 @@ export const CardList = styled.ul`
 		gap: 32px;
 	}
 	@media screen and (min-width: 1440px) {
+		margin-top: 90px;
 		gap: 14px;
 		grid-row-gap: 100px;
 	}

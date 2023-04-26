@@ -7,6 +7,9 @@ export const SearchStyled = styled.div`
 	@media screen and (min-width: 768px) {
 		margin-top: 40px;
 	}
+	@media screen and (min-width: 768px) {
+		margin-top: 50px;
+	}
 `;
 
 export const FormStyled = styled.form`
@@ -43,6 +46,8 @@ export const Input = styled.input`
 		line-height: 21px;
 	}
 	@media screen and (min-width: 1440px) {
+		width: 475px;
+		height: 68px;
 		font-size: 16px;
 		line-height: 24px;
 	}
@@ -73,5 +78,6 @@ export const SearchFormBtn = styled.button`
 		line-height: 24px;
 	}
 	@media screen and (min-width: 1440px) {
+		height: 70px;
 	}
 `;
