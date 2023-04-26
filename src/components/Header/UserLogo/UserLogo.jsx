@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, WrapperToggler, Toggler, TogglerBtn, AvatarUser, BurgerMuneBtn, BurgerMenuIcon } from './UserLogo.styled';
+import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, AvatarUser, BurgerMuneBtn, BurgerMenuIcon } from './UserLogo.styled';
+import { Toggler } from './Toggler';
 import { PopupUser } from './PopupUser/PopupUser'
 import { useSelector } from 'react-redux';
 
@@ -30,11 +31,7 @@ const togglerTheme = () => {
           <BurgerMuneBtn onClick={onOpenModal}>
           <BurgerMenuIcon id='icon-burger' />
           </BurgerMuneBtn>
-          <WrapperToggler type='button' className={(darkTheme ? 'active' : null)} onClick={togglerTheme} >
-            <Toggler id="icon-switch-body" />
-            <TogglerBtn id="icon-switch-button" />
-          </WrapperToggler>
-           
+          <Toggler toggleTheme={togglerTheme} darkTheme={darkTheme}  />
         <PopupUser 
           openPopUp={openPopUp}
           closePopUp={onClosePopUp}
