@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { fetchFavorite } from './FetchFavorite';
-import { useDispatch } from 'react-redux';
 
 import {
 	FavoriteArticle,
@@ -19,12 +18,8 @@ import {
 
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 
-export const Favorite = (onDelete, { id }) => {
+export const Favorite = (props, { id }) => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState();
-
-	const dispatch = useDispatch();
-
-	const handleDelete = () => dispatch(onDelete(id));
 
 	useEffect(() => {
 		async function fetch() {
@@ -61,7 +56,7 @@ export const Favorite = (onDelete, { id }) => {
 									</FavoriteRecipeTitle>
 									<FavoriteDeleteBtn
 										type="button"
-										onClick={handleDelete}>
+										onClick={props.onDelete}>
 										<FavoriteIcon
 											id="icon-trash"
 											fill="#EBF3D4"
@@ -72,7 +67,7 @@ export const Favorite = (onDelete, { id }) => {
 										{instructions}
 									</FavoriteArticle>
 									<FavoriteTime>{time} min</FavoriteTime>
-									<FavoriteSeeBtn to="recipes/">
+									<FavoriteSeeBtn to={`/recipes/${_id}`}>
 										See pecipe
 									</FavoriteSeeBtn>
 								</FavoriteRecipeBox>
