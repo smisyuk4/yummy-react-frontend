@@ -4,9 +4,9 @@ export const DivStyled = styled.div``;
 
 export const BtnScroll = styled.button`
     bottom: 25px;
-    right: 25px;
+    right: 30px;
     position: fixed;
-    font-size: 130px;
+    font-size: 20px;
     color: #ffffff;
     cursor: pointer;
     border: none;
@@ -15,8 +15,13 @@ export const BtnScroll = styled.button`
     -moz-border-radius: 55px;
     -ms-border-radius: 55px;
     -o-border-radius: 55px;
-    background: rgb(16, 12, 45);
+    background: #EBF3D4;
+    z-index: 120;
     &:hover {
-        background: rgb(21, 28, 229);
+        background: ${props => props.theme.colors.primary};
     }
+`
+export const IconScroll = styled.div`
+    width: 50px;
+    height: 50px;
 `

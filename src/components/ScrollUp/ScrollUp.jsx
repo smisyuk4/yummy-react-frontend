@@ -1,6 +1,6 @@
 import { DivStyled, BtnScroll } from './ScrollUp.styled';
 import React from "react";
-
+import imgArrow from './arrow_double_up_1_15737.png';
 
 export const ScrollUp = () => {
   const [scrollTop, setScrollTop] = React.useState(false);
@@ -23,7 +23,8 @@ export const ScrollUp = () => {
     <DivStyled>
       {scrollTop && (
         <BtnScroll onClick={bottomToTop} className="backToTop">
-          &#8593;
+          {/* &#8593; */}
+          <img src={imgArrow} alt='arrow' width='40' height='40' />
         </BtnScroll>
       )}
     </DivStyled>
