@@ -10,14 +10,20 @@ export const InformWrapperStyled = styled.div`
 	width: 225px;
 	background-color: #fafafa;
 	border-radius: 8px;
-	top: 433px;
+	top: 388px;
 	left: 209px;
 	z-index: 7;
 	@media screen and (min-width: 768px) {
 		width: 261px;
 		padding: 12px;
-		top: 390px;
+		top: 432px;
 		left: 452px;
+	}
+	@media screen and (min-width: 1440px) {
+		width: 251px;
+		padding: 16px;
+		top: 510px;
+		left: 1033px;
 	}
 `;
 export const TextfStyled = styled.p`
@@ -31,6 +37,10 @@ export const TextfStyled = styled.p`
 	font-size: 14px;
 	@media screen and (min-width: 768px) {
 		font-size: 14px;
+	}
+	@media screen and (min-width: 1440px) {
+		font-size: 14px;
+		line-height: 20px;
 	}
 `;
 
