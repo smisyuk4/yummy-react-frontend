@@ -76,7 +76,7 @@ export const MainRecipes = () => {
 										);
 									})}
 							</CardItem>
-							{ oneRes.length <= count ? null : (<NavBox>
+							{ oneRes.length < count ? null : (<NavBox>
 								<NavToCategory to={`/categories/${category}`}>
 									See all
 								</NavToCategory>
