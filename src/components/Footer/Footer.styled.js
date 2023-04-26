@@ -2,8 +2,10 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 import {flexBox} from 'styles/mixins';
 import { HeaderLogoIcon } from 'components/Header/HeaderLogo/HeaderLogo.styled'; 
-import bgImgTop from 'images/footerImgs/bg-footer-top.png'
-import bgImgDown from 'images/footerImgs/bg-footer-bottom.png'
+import bgImgTopS from 'images/footerImgs/footer-bg-s-top.png'
+import bgImgTopM from 'images/footerImgs/footer-bg-m-top.png'
+import bgImgTopL from 'images/footerImgs/footer-bg-l-top.png'
+import bgImgDown from 'images/footerImgs/footer-bg-m-top.png'
 
 
 
@@ -27,25 +29,47 @@ export const FooterStyled = styled.div`
 
     &::before {
         content: "";
-        width: 256px;
-        height: 392px;
-        background: url(${bgImgTop}) no-repeat right bottom;
+        width: 315px;
+        height: 487px;
+        background: url(${bgImgTopS}) no-repeat right bottom;
         position: absolute;
-        bottom: 400px;
-        left: 10px;
-        transform: rotate(-40deg);
-        z-index:-50;
+        bottom: 300px;
+        left: 0px;
+        transform: rotate(350deg);
+        z-index: -100;
+        @media ${props => props.theme.media.tablet}  {
+            width: 500px;
+            height: 710px;
+            background: url(${bgImgTopM}) no-repeat right bottom;
+            bottom: 50px;
+            left: 0px;
+            transform: rotate(355deg);
+	}
+        @media ${props => props.theme.media.desktop} {
+            width: 696px;
+            height: 1037px;
+            background: url(${bgImgTopL}) no-repeat right bottom;
+            bottom: -120px;
+            left: 100px;
+            transform: rotate(355deg);
+        }
     }
     &::after {
         content: "";
-        width: 160px;
-        height: 172px;
-        background: url(${bgImgDown}) no-repeat right bottom;
+        /* width: 315px;
+        height: 467px; */
+        /* background: url(${bgImgDown}) no-repeat right bottom; */
         position: absolute;
         top: 85%;
         right: 0;
         transform: rotate(-30deg);
         z-index:-50;
+        @media ${props => props.theme.media.tablet}  {
+        
+	}
+    @media ${props => props.theme.media.desktop} {
+       
+	}
     }
 
    @media ${props => props.theme.media.tablet}  {
