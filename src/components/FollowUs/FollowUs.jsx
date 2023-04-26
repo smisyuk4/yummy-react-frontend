@@ -7,7 +7,7 @@ import { DivStyled, SonetLinksList, IconSonetLink } from './FollowUs.styled';
 export const FollowUs = ({ title }) => {
 	return (
 		<DivStyled>
-			<Title title={title}/>
+			{title && <Title title={title}/>}
 
 			<SonetLinksList>
 				<li>
