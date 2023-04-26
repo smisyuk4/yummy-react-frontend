@@ -3,14 +3,27 @@ import styled from '@emotion/styled';
 export const DivStyled = styled.div``;
 
 export const UlStyled = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
-  grid-gap: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
   margin-bottom: 100px;
 
-  @media screen ${props => props.theme.media.destop} {
-    /* grid-template-columns: minmax(319px, 1fr); */
-    /* display: block;
-    width: 319px; */
+  @media ${props => props.theme.media.tablet} {
+    margin-bottom: 200px;
+
+    & a {
+      max-width: calc(100% / 2 - 15px);
+    }
+  }
+
+  @media ${props => props.theme.media.desktop} {
+    max-width: 319px;
+    flex-direction: column;
+
+    & a {
+      max-width: 100%;
+    }
   }
 `;
