@@ -1,12 +1,13 @@
 import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
 
 export const StyledIngredientInput = styled.input`
 	width: 194px;
 	font-size: 18px;
 	font-style: normal;
 	line-height: 1.5;
-	background-color: #d9d9d9;
-	color: #23262a;
+	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
+	color: ${p => p.theme.colors.addRecipeFormFieldsTextColor};
 	border: none;
 	outline: none;
 	padding: 16px;
@@ -27,8 +28,8 @@ export const StyledMeasureInput = styled.input`
 	font-size: 14px;
 	font-style: normal;
 	line-height: 1.5;
-	background-color: #d9d9d9;
-	color: #23262a;
+	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
+	color: ${p => p.theme.colors.addRecipeFormFieldsTextColor};
 	border: none;
 	outline: none;
 	padding: 16px 30px 16px 14px;
@@ -86,7 +87,8 @@ export const StyledCloseButton = styled.button`
 export const DropdownMeasureContainer = styled.div`
 	border-radius: 0 0 6px 6px;
 
-	background-color: #ffffff;
+	background-color: ${p =>
+		p.theme.colors.addRecipeFormFieldsDropdownBackground};
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
 
@@ -102,7 +104,8 @@ export const DropdownMeasureContainer = styled.div`
 
 export const DropdownIngredientContainer = styled.div`
 	border-radius: 0 0 6px 6px;
-	background-color: #ffffff;
+	background-color: ${p =>
+		p.theme.colors.addRecipeFormFieldsDropdownBackground};
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
 	height: 128px;
@@ -134,14 +137,31 @@ export const DropdownListPosition = styled.button`
 	border: none;
 	background-color: transparent;
 	border-color: transparent;
-	color: rgba(0, 0, 0, 0.5);
+	color: ${p => p.theme.colors.addRecipeFormFieldsDropdownListPosition};
 	font-weight: 400;
 	font-size: 12px;
 	line-height: 1.5;
+	&:hover {
+		color: ${p => p.theme.colors.addRecipeFormFieldsDropdownListHover};
+	}
+	&:focus {
+		color: ${p => p.theme.colors.addRecipeFormFieldsDropdownListHover};
+	}
 	@media ${props => props.theme.media.tablet} {
 		font-size: 14px;
 	}
 	@media ${props => props.theme.media.desktop} {
 		font-size: 14px;
 	}
+`;
+
+
+export const DropdownButtonIcon = styled(Icon)`
+	stroke: ${p => p.theme.colors.addRecipeFormFieldsDropdownButtonIcon};
+`;
+
+export const ListItemDeleteIcon = styled(Icon)`
+	stroke: ${p =>
+		p.theme.colors
+			.addRecipeFormFieldsDeleteButton};
 `;

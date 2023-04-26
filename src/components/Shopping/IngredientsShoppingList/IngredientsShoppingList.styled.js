@@ -6,6 +6,7 @@ export const DivContainer = styled.div`
 	border-radius: 8px;
 	padding: 10px;
 	margin: 0 0 32px 0;
+	min-width: 359px;
 	@media ${props => props.theme.media.tablet} {
 		padding: 20px;
 	}
@@ -19,10 +20,11 @@ export const ListBar = styled.ul`
 	align-items: center;
 	justify-content: space-between;
 	min-width: fit-content;
+	
+	/* min-width: 349px; */
+
 `;
 export const ItemBar = styled.li`
-	font-family: 'Poppins', sans-serif;
-	font-style: normal;
 	font-weight: 600;
 	font-size: 12px;
 	line-height: 1.5;
@@ -61,11 +63,9 @@ export const ItemBar = styled.li`
 `;
 
 export const ShoppingList = styled.ul`
-	/* display: block;
-	padding: 0;
-	margin: 0;
-	margin-left: auto;
-	margin-right: auto; */
+	display: grid;
+	max-width: 343px;
+	margin-bottom: 100px;
 `;
 
 export const ItemShoppingList = styled.li`
@@ -78,6 +78,8 @@ export const ItemShoppingList = styled.li`
 	border-bottom: 1px solid #e0e0e0;
 	min-height: 84px;
 	min-width: fit-content;
+	max-width: 343px;
+	width: 100%;
 	margin-bottom: 24px;
 	
 
@@ -86,7 +88,7 @@ export const ItemShoppingList = styled.li`
 	}
 `;
 export const ContainerImg = styled.div`
-margin-right: 10px;
+/* margin-right: 10px; */
 background-color: ${({ theme }) => theme.colors.primarySoft};
 border-radius: 6px;
 min-width: 60px;
@@ -95,27 +97,27 @@ padding: 6px;
 `
 
 export const Image = styled.img`
+background-size: cover;
 width: 48px;
 height: 48px;
 `
 export const TaglineP = styled.p`
-	font-family: 'Poppins', sans-serif;
-	font-style: normal;
 	font-weight: 500;
 	font-size: 10px;
 	line-height: 1.2;
 
 	color: ${({ theme }) => theme.colors.fontColorDark};
-	margin-right: 108px;
+	/* margin-right: 108px; */
 `;
 
 export const Measure = styled.p`
 	background-color: ${({ theme }) => theme.colors.primary};
 	color: ${({ theme }) => theme.colors.fontColor};
 	border-radius: 5px;
-	margin-right: 46px;
+	min-width: fit-content;
+	/* margin-right: 46px; */
 	padding: 4px;
-	min-width: 37px;
+	
 `;
 
 export const CloseBtn = styled.button`
@@ -123,7 +125,7 @@ export const CloseBtn = styled.button`
 	border: none;
 	height: 14px;
 	width: 14px;
-	margin-right: 19px;
+	/* margin-right: 19px; */
 `;
 export const CloseIcon = styled(Icon)`
 	height: 14px;

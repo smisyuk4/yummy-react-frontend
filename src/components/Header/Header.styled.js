@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import {flexBox} from 'styles/mixins';
 
 export const HeaderStyled = styled.header`
+    box-sizing: border-box;
     min-width: 375px;
     max-width: 1440px;
     position: relative;

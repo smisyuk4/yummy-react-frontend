@@ -1,26 +1,15 @@
 import styled from '@emotion/styled';
 
-export const TitleDiv = styled.div`
-	padding-top: 50px;
-	padding-bottom: 50px;
-	width: 100%;
-
-    @media ${props => props.theme.media.tablet} {
-		padding-top: 72px;
-	    padding-bottom: 100px;
-	}
-	@media ${props => props.theme.media.desktop} {
-		padding-top: 100px;
-	    padding-bottom: 100px;
-`;
-
 export const TitleH = styled.h1`
-	font-size: 28px;
-	line-height: 28px;
-	letter-spacing: -0.02em;
-	color: #001833;
-`;
+  margin-bottom: 32px;
 
-/* font-family: 'Poppins'; */
-/* font-style: normal; */
-/* font-weight: 600; */
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: -0.24px;
+  color: ${props => props.theme.colors.fontColorDark};
+
+  @media ${props => props.theme.media.tablet} {
+    margin-bottom: 40px;
+  }
+`;

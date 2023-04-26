@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import {
 	PreparationFieldSet,
@@ -25,6 +26,10 @@ export const RecipePreparationFields = ({ onChange }) => {
 				onChange={onTextAreaChange}></PreparationTextArea>
 		</PreparationFieldSet>
 	);
+};
+
+RecipePreparationFields.propType = {
+	onChange: PropTypes.func.isRequired,
 };
 
 // "Компонент рендерить textarea елемент.

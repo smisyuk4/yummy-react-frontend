@@ -32,7 +32,7 @@ const togglerTheme = () => {
   return createPortal(
     <BurgerMenuDiv onClick={onCloseModal}>
       <ModalDiv close={closeModal}>
-        <HeaderLogoDiv>
+        <HeaderLogoDiv onClick={closeModal}>
            <HeaderLogo />
           <BtnCloseModal onClick={closeModal}>
             <CloseIcon id="icon-close"/>

@@ -7,6 +7,7 @@ export const HeaderLogoStyled = styled(Link)`
     ${flexBox};
 `
 export const  HeaderLogoIcon= styled(Icon)`
+    box-sizing: border-box;
     width: 40px;
     height: 40px;
     padding: 10px;
