@@ -17,7 +17,15 @@ display: flex;
   justify-content: space-between;
   padding: 10px;
   gap: 8px;
-  background-color: '#EBF3D4;';
+  background: #EBF3D4;
   border-radius: 8px;
+`;
 
-`
+export const Wrapper = styled.div`
+display: flex;
+align-items: center;
+`;
+
+export const ImageStyled = styled.image`
+display: block;
+  object-fit: contain;` 
