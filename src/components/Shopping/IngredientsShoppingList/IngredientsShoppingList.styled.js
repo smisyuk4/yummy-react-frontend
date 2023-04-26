@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
 
 export const DivContainer = styled.div`
 	background-color: ${({ theme }) => theme.colors.primary};
@@ -32,33 +33,33 @@ export const ItemBar = styled.li`
 	color: ${({ theme }) => theme.colors.buttonLightBG};
 	margin-right: 24px;
 
-	/* &:first-child {
+	&:first-of-type {
 		margin-right: 167px;
 	}
-	&:last-child {
+	&:last-of-type {
 		margin-right: 0;
-	} */
+	}
 	@media ${props => props.theme.media.tablet} {
 		font-size: 18px;
 		margin-right: 78px;
 
-		/* &:first-child {
+		&:first-of-type {
 			margin-right: 318px;
 		}
-		&:last-child {
+		&:last-of-type {
 			margin-right: 0;
-		} */
+		}
 	}
 
 	@media ${props => props.theme.media.desktop} {
 		margin-right: 142px;
 
-		/* &:first-child {
+		&:first-of-type {
 			margin-right: 750px;
 		}
-		&:last-child {
+		&:last-of-type {
 			margin-right: 0;
-		} */
+		}
 	}
 `;
 
@@ -70,34 +71,65 @@ export const ShoppingList = styled.ul`
 	margin-right: auto;
 `;
 
-export const SpanMeasure = styled.span`
-	background-color: #8baa36;
-	color: #fff;
-	border-radius: 5px;
-	margin-left: 41px;
-	margin-right: 2px;
-	padding: 4px 14px;
-`;
-
 export const ItemShoppingList = styled.li`
 	outline: 1px red solid;
 	display: flex;
 	align-content: flex-start;
 	flex-wrap: nowrap;
-	align-items: center;
+	align-items: flex-start;
+	gap: 10px;
 	border-bottom: 1px solid #e0e0e0;
 	min-height: 84px;
 	min-width: 343px;
 	margin-bottom: 24px;
+	
 
-	/* &:last-child {
+	&:last-of-type {
 		margin-bottom: 0;
-	} */
+	}
 `;
-export const CloseBtn = styled.button`
-background-color: transparent;
-border: none;
+export const ContainerImg = styled.div`
+margin-right: 10px;
+background-color: ${({ theme }) => theme.colors.primarySoft};
+border-radius: 6px;
+min-width: 60px;
+min-height: 60px;
+padding: 6px;
 `
 
+export const Image = styled.img`
+width: 48px;
+height: 48px;
+`
+export const TaglineP = styled.p`
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 10px;
+	line-height: 1.2;
 
+	color: ${({ theme }) => theme.colors.fontColorDark};
+	margin-right: 108px;
+`;
 
+export const Measure = styled.p`
+	background-color: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.fontColor};
+	border-radius: 5px;
+	margin-right: 46px;
+	padding: 4px;
+	min-width: 37px;
+`;
+
+export const CloseBtn = styled.button`
+	background-color: transparent;
+	border: none;
+	height: 14px;
+	width: 14px;
+	margin-right: 19px;
+`;
+export const CloseIcon = styled(Icon)`
+	height: 14px;
+	width: 14px;
+	stroke: #333333;
+`;
