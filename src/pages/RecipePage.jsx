@@ -18,7 +18,6 @@ const RecipePage = () => {
     async function getRecipe() {
       try {
         const recipe = await fetchRecipes(recipeId);
-
         if (recipe.length === 0) {
           return;
         }

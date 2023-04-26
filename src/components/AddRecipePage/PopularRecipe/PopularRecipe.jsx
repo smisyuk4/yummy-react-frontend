@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { toast } from 'react-toastify';
+import { Title } from 'components/Title';
 import { fetchPopularRecipes } from './fetchPopularRecipes';
 import { PopularItem } from './PopularItem';
-// import { Title } from 'components/Title';
-import { DivStyled, TitlePopular, UlStyled } from './PopularRecipe.styled';
+import { DivStyled, UlStyled } from './PopularRecipe.styled';
 
 export const PopularRecipe = ({ title }) => {
   const [popRecipes, setPopRecipes] = useState([]);
@@ -42,7 +42,7 @@ export const PopularRecipe = ({ title }) => {
   if (popRecipes?.length === 0) {
     return (
       <DivStyled>
-        <TitlePopular title={title} />
+         <Title title={title} className={"title-popular"}/>
         <p>Sorry, but we are still preparing the collection for you</p>
       </DivStyled>
     );
@@ -51,7 +51,7 @@ export const PopularRecipe = ({ title }) => {
   if (popRecipes?.length > 0) {
     return (
       <DivStyled>
-        <TitlePopular title={title} />
+        <Title title={title} className={"title-popular"}/>
 		
         <UlStyled>
           {popRecipes.slice(0, count).map(({ _id, title, description, preview }) => (
