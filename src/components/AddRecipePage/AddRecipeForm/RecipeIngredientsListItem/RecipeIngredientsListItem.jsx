@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import {
@@ -12,8 +13,9 @@ import {
 	DropdownIngredientUl,
 	DropdownHideButton,
 	DropdownListPosition,
+	DropdownButtonIcon,
+	ListItemDeleteIcon,
 } from './RecipeIngredientListItem.styled';
-import { Icon } from 'components/Icon';
 
 export const RecipeingredientsListItem = ({
 	allIngredientsList,
@@ -89,8 +91,8 @@ export const RecipeingredientsListItem = ({
 		setMeasureHelpListState(false);
 		setMeasure(prevState => {
 			if (prevState.includes(' ')) {
-			const measureValue = prevState.split(' ') 
-			return measureValue[0] + ' ' + e.target.textContent;
+				const measureValue = prevState.split(' ');
+				return measureValue[0] + ' ' + e.target.textContent;
 			}
 			return prevState + ' ' + e.target.textContent;
 		});
@@ -107,22 +109,20 @@ export const RecipeingredientsListItem = ({
 				<StyledHelpListShowButton
 					type="button"
 					onClick={openIngredientHelpList}>
-					<Icon
+					<DropdownButtonIcon
 						id="icon-arrow-down"
 						width={14}
-						height={14}
-						stroke="#8BAA36"></Icon>
+						height={14}></DropdownButtonIcon>
 				</StyledHelpListShowButton>
 				{ingredientHelpListState && (
 					<DropdownIngredientContainer>
 						<DropdownHideButton
 							type="button"
 							onClick={closeIngredientHelpList}>
-							<Icon
+							<DropdownButtonIcon
 								id="icon-arrow-up"
 								width={14}
-								height={14}
-								stroke="#8BAA36"></Icon>
+								height={14}></DropdownButtonIcon>
 						</DropdownHideButton>
 						<DropdownIngredientUl>
 							{filteredIngredients.map(({ _id, ttl }) => {
@@ -152,22 +152,20 @@ export const RecipeingredientsListItem = ({
 				<StyledHelpListShowButton
 					type="button"
 					onClick={openMeasureHelpList}>
-					<Icon
+					<DropdownButtonIcon
 						id="icon-arrow-down"
 						width={14}
-						height={14}
-						stroke="#8BAA36"></Icon>
+						height={14}></DropdownButtonIcon>
 				</StyledHelpListShowButton>
 				{measureHelpListState && (
 					<DropdownMeasureContainer>
 						<DropdownHideButton
 							type="button"
 							onClick={closeMeasureHelpList}>
-							<Icon
+							<DropdownButtonIcon
 								id="icon-arrow-up"
 								width={14}
-								height={14}
-								stroke="#8BAA36"></Icon>
+								height={14}></DropdownButtonIcon>
 						</DropdownHideButton>
 						<DropdownIngredientUl>
 							{measureOptions.map(optionValue => {
@@ -189,12 +187,19 @@ export const RecipeingredientsListItem = ({
 				onClick={onButtonDeleteClick}
 				id={item.id}
 				type="button">
-				<Icon
+				<ListItemDeleteIcon
 					id="icon-close"
 					width={20}
-					height={20}
-					stroke="#333333"></Icon>
+					height={20}></ListItemDeleteIcon>
 			</StyledCloseButton>
 		</li>
 	);
+};
+
+RecipeingredientsListItem.propType = {
+	onButtonDeleteClick: PropTypes.func.isRequired,
+	getIngredientName: PropTypes.func.isRequired,
+	getIngredientMeasure: PropTypes.func.isRequired,
+	item: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+	allIngredientsList: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };

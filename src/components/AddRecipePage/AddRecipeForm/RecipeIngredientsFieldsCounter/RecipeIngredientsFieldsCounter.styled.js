@@ -1,11 +1,13 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
 
 
 export const CounterContainer = styled.div`
 	height: 32px;
 	border-radius: 18px;
 	background-color: transparent;
-	border: 1px solid rgba(51, 51, 51, 0.3);
+	border: 1px solid
+		${props => props.theme.colors.addRecipeFormCounterButtons};
 	display: flex;
 	width: 71px;
 	padding: 0 12px;
@@ -18,9 +20,21 @@ export const CounterContainer = styled.div`
 		size: 81px;
 	}
 `;
+
 export const CounterButton = styled.div`
-    border: none;
-    background-color: transparent;
+	border: none;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	stroke: ${props =>
+		props.theme.colors.addRecipeFormCounterButtons};
+	&:hover {
+		stroke: ${props => props.theme.colors.addRecipeFormCounterButtonsHover};
+	}
+
+	&:focus {
+		stroke: ${props => props.theme.colors.addRecipeFormCounterButtonsHover};
+	}
 `;
 
 export const CounterValue = styled.span`
@@ -34,3 +48,15 @@ export const CounterValue = styled.span`
 		size: 16px;
 	}
 `;
+
+export const IconPlus = styled(Icon)`
+	color: currentColor;
+`;
+
+export const IconMinus = styled(Icon)`
+	color: currentColor;
+
+
+`;
+
+

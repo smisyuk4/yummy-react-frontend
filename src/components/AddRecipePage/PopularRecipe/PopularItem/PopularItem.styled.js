@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
+import EllipsisText from "react-ellipsis-text";
 
 export const NavLinkStyled = styled(Link)`
   display: flex;
@@ -23,7 +24,7 @@ export const HStyled = styled.h3`
   color: ${({ theme }) => theme.colors.fontColorDark};
 `;
 
-export const PStyled = styled.p`
+export const EllipsisTextStyled = styled(EllipsisText)`
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: -0.24px;
