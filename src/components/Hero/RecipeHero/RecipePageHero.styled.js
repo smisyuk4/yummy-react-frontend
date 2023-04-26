@@ -10,12 +10,12 @@ export const HeroSection = styled.section`
     background-position: center;
     background-size: cover;
      padding-top: 144px;  
-    /* padding-bottom: 90px; */
+    padding-bottom: 90px;
     width: 100%;
     height: 495px;
     text-align: center;
-    /* @media ${props => props.theme.media.tablet} { */
-      @media (min-width: 768px){
+    @media ${props => props.theme.media.tablet} {
+     
     background: url(${heroTab1});
         height: 493px;
         padding-top: 136px;
@@ -23,8 +23,8 @@ export const HeroSection = styled.section`
         background-repeat: no-repeat;
         background-size: cover;
     }
-     /* @media ${props => props.theme.media.desktop} { */
-     @media (min-width: 1440px){
+     @media ${props => props.theme.media.desktop} {
+     
      background-image: url(${heroDesk1});
     padding-top: 164px;
  } 
@@ -75,7 +75,7 @@ export const PStyled = styled.p`
      max-width: 300px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
   font-size: 12px;
   line-height: 1.33;
   `;
