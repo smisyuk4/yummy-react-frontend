@@ -6,7 +6,7 @@ import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsS
 import { getShoppingList } from 'components/Shopping/fetchShoppingList';
 import ingredImage from 'images/recipeImg/ingredImage.jpg'
 import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper} from './RecipeIngredients.styled';
-import { MyCheckbox } from './Checkbox';
+// import { MyCheckbox } from './Checkbox';
 
 export const IngredientsList = ({ ingredients }) => {
   // const [checked, setChecked] = useState(false);
@@ -46,7 +46,7 @@ export const IngredientsList = ({ ingredients }) => {
                   <div>
                     <p>{measure}</p>
                     <label >
-                      <MyCheckbox
+                      <input
                         type="checkbox"
                         ingredient={{ id, ttl, thb, measure }}
       
