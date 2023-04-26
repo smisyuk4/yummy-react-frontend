@@ -1,16 +1,19 @@
 import * as React from 'react';
-import {PreparationSection, ImageWrapper, InstructionItem} from './RecipePreparation.styled'
+import {PreparationSection, ImageWrapper, InstructionItem, TextDiv, ImgStyled, TitleStyles} from './RecipePreparation.styled'
+import photo from 'images/recipeImg/photoRec.jpg';
 
 export const RecipePreparation = ({instructions, thumb}) => {
     return (
         <PreparationSection>
-            <h2>Recipe Preparation</h2>
+            <TextDiv>
+            <TitleStyles>Recipe Preparation</TitleStyles>
             <ol>
                 <InstructionItem>{ instructions}</InstructionItem>
-            </ol>
-            
-                <ImageWrapper src={thumb} alt="" />
-               
+                </ol>
+                </TextDiv>
+            <ImageWrapper>
+                <ImgStyled src={thumb ?? photo} alt="" />
+               </ImageWrapper>
         </PreparationSection>
     )
 };

@@ -4,10 +4,8 @@ import * as React from 'react';
 // import { useParams } from 'react-router-dom';
 import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 // import { getShoppingList, addIngredient, deletIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
-
-
-
-import { IngredientsListSection, ListStyled, IngedientsItem } from './RecipeIngredients.styled';
+import ingredImage from 'images/recipeImg/ingredImage.jpg'
+import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper} from './RecipeIngredients.styled';
 
 
 export const IngredientsList = ({ ingredients }) => {
@@ -43,15 +41,15 @@ export const IngredientsList = ({ ingredients }) => {
             ingredients.map(({ thb, id, measure, ttl }) => {
               return (
                 <IngedientsItem key={id}>
-                  <div>
+                  <Wrapper>
                     {
                       <img
-                        src={thb}
+                        src={thb ?? ingredImage}
                         alt="Ingredient"
                       />
                     }
                     <p>{ttl}</p>
-                  </div>
+                  </Wrapper>
                   <div>
                     <p>{measure}</p>
                     {/* <label >

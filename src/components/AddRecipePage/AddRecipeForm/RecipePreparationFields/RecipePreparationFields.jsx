@@ -1,21 +1,25 @@
-import { useEffect, useState } from 'react';
-import { PreparationFieldSet, PreparationHeading, PreparationTextArea } from './RecipePreparationFields.styled';
+import { useState } from 'react';
+import {
+	PreparationFieldSet,
+	PreparationHeading,
+	PreparationTextArea,
+} from './RecipePreparationFields.styled';
 
-export const RecipePreparationFields = () => {
+export const RecipePreparationFields = ({ onChange }) => {
 	// форму створив до того як читав ТЗ, треба думати, виправляти
 	const [preparationUneditedText, setPreparationUneditedText] = useState('');
 	const [preparationEditedText, setPreparationEditedText] = useState([]);
 
 	const onTextAreaChange = e => {
-    setPreparationUneditedText([e.currentTarget.value]); 
-    const result = e.currentTarget.value.split(/\r?\n/)
-    setPreparationEditedText(result)
+		setPreparationUneditedText([e.currentTarget.value]);
+		const result = e.currentTarget.value.split(/\r?\n/);
+		setPreparationEditedText(result);
+		onChange(preparationEditedText);
 	};
 	return (
 		<PreparationFieldSet>
 			<PreparationHeading>Recipe preparation</PreparationHeading>
 			<PreparationTextArea
-
 				placeholder="Enter recipe"
 				value={preparationUneditedText}
 				onChange={onTextAreaChange}></PreparationTextArea>
