@@ -7,16 +7,17 @@ export const HeaderLogoStyled = styled(Link)`
     ${flexBox};
 `
 export const  HeaderLogoIcon= styled(Icon)`
-    width: 30px;
-    height: 30px;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
     padding: 10px;
     stroke: #FAFAFA;
     border-radius: 12px;
     background-color: ${props => props.theme.colors.primary};
 
     @media ${props => props.theme.media.tablet} {
-        width: 34px;
-        height: 34px;
+        width: 44px;
+        height: 44px;
     }
     &:hover {
         stroke: ${props => props.theme.colors.primary};
