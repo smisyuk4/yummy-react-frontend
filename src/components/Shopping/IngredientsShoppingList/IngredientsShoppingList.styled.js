@@ -15,13 +15,10 @@ export const DivContainer = styled.div`
 `;
 
 export const ListBar = styled.ul`
-	padding: 0;
-	margin: 0;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	max-width: 664px;
-	min-width: 339px;
+	min-width: fit-content;
 `;
 export const ItemBar = styled.li`
 	font-family: 'Poppins', sans-serif;
@@ -64,11 +61,11 @@ export const ItemBar = styled.li`
 `;
 
 export const ShoppingList = styled.ul`
-	display: block;
+	/* display: block;
 	padding: 0;
 	margin: 0;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: auto; */
 `;
 
 export const ItemShoppingList = styled.li`
@@ -80,7 +77,7 @@ export const ItemShoppingList = styled.li`
 	gap: 10px;
 	border-bottom: 1px solid #e0e0e0;
 	min-height: 84px;
-	min-width: 343px;
+	min-width: fit-content;
 	margin-bottom: 24px;
 	
 

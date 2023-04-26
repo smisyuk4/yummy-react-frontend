@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
 import { IconPerson } from './ModalUserProfil/ModalUserProfil.styled';
 
+
 export const UserLogoDiv = styled.div`
     display: flex;
     justify-content: center;
@@ -22,6 +23,12 @@ export const UserNameP = styled.p`
     font-weight: 600;
     font-size: 12px;
     line-height: 1.7;
+    @media ${props => props.theme.media.tablet} {
+        font-size: 14px;
+    }
+    @media ${props => props.theme.media.desktop} {
+        font-size: 14px;
+    }
 `
 export const WrapperImg = styled.div`
     width: 34px;
@@ -29,6 +36,14 @@ export const WrapperImg = styled.div`
     border: 1px solid grey;
     border-radius: 50%;
     overflow: hidden;
+    @media ${props => props.theme.media.tablet} {
+        width: 44px;
+        height: 44px;
+    }
+    @media ${props => props.theme.media.desktop} {
+        width: 44px;
+        height: 44px;
+    }
 
 `
 export const UserAvatarImg = styled.img`
@@ -53,6 +68,9 @@ export const BurgerMuneBtn = styled.button`
     background-color: transparent;
     text-align: center;
     margin-left: 24px;
+    @media ${props => props.theme.media.desktop} {
+        margin-left: 54px;
+    }
     @media ${props => props.theme.media.desktop} {
         display: none;
     }

@@ -1,20 +1,21 @@
 import styled from '@emotion/styled';
 import { Form, Field } from 'formik';
 
-export const DescriptionDiv = styled.div`
-	display: flex;
-	align-items: center;
-`;
+// export const DescriptionDiv = styled.div`
+// 	display: flex;
+// 	align-items: center;
+// `;
 
 export const DescrForm = styled(Form)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 343px;
-	padding: 10px;
+
+	padding: 0px 10px;
 	background-color: white;
 	@media ${props => props.theme.media.tablet} {
 		flex-direction: row;
+		padding: 0;
 	}
 `;
 
@@ -22,13 +23,21 @@ export const InputWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 343px;
+	gap: 24px;
+	@media ${props => props.theme.media.tablet} {
+		width: 393px;
+		margin-left: 32px;
+		gap: 32px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		margin-left: 50px;
+	}
 `;
 
 export const LabelForm = styled.label`
 	width: 100%;
-	border-bottom: 1px;
-	border-color: #e0e0e0;
-	margin-top: 24px;
+	padding-bottom: 18px;
+	border-bottom: 1px solid #e0e0e0;
 `;
 
 export const LabelSelect = styled.label`
@@ -38,11 +47,13 @@ export const LabelSelect = styled.label`
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
-	margin-top: 24px;
 	letter-spacing: -0.02em;
-
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 18px;
+	color: rgba(0, 0, 1, 0.5);
 	@media ${props => props.theme.media.tablet} {
-		font-size: 18px;
+		font-size: 16px;
+		line-height: 24px;
 		width: 100%;
 	}
 `;
@@ -51,26 +62,23 @@ export const InputForm = styled(Field)`
 	width: 100%;
 	height: 40px;
 
+	font-family: 'Poppins';
+	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
-	margin-top: 24px;
 	letter-spacing: -0.02em;
-
+	border: none;
 	color: #000000;
 
 	@media ${props => props.theme.media.tablet} {
-		font-size: 18px;
+		font-size: 16px;
+		line-height: 24px;
 		width: 100%;
 	}
-	border: none;
-	border-color: #e0e0e0;
-	border-bottom-width: 1px;
 `;
 
-export const LabelFile = styled.label`
-	margin-bottom: 32px;
-`;
+export const LabelFile = styled.label``;
 
 export const InputFile = styled(Field)`
 	width: 100%;
@@ -82,6 +90,12 @@ export const InputSelct = styled(Field)`
 	border: none;
 	background-color: #ffffff;
 	z-index: 1;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: inherit;
+	line-height: inherit;
+	letter-spacing: -0.02em;
 `;
 
 export const OverlayPicture = styled.div`
@@ -89,7 +103,13 @@ export const OverlayPicture = styled.div`
 	width: 279px;
 	height: 268px;
 	border-radius: 8px;
+	margin-bottom: 32px;
 	background-color: ${props => props.theme.colors.buttonPrimaryBG};
+	@media ${props => props.theme.media.desktop} {
+		width: 357px;
+		height: 344px;
+		margin-bottom: 0;
+	}
 `;
 export const ThumbImege = styled.div`
 	display: flex;

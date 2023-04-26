@@ -6,11 +6,7 @@ import { useDispatch } from 'react-redux';
 import { userUpdate, userUpdateAvatar } from 'redux/auth/operations';
 
 
-// const URL = "https://yummy-rest-api.onrender.com/user/update";
-// const url = 'http://localhost:3001/user/update'
-
 const modalRoot = document.getElementById('modal-root');
-
 
 export const ModalUserProfil = ({isOpen, close}) => {
   const dispatch = useDispatch()

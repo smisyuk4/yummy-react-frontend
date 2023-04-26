@@ -4,6 +4,7 @@ import bgImgM from 'images/headerImges/burger-bg-m.png'
 import {flexBox} from 'styles/mixins';
 import { Icon } from 'components/Icon';
 
+
 export const BurgerMenuDiv = styled.div`
     width: 100vw;
     height: 100vh;

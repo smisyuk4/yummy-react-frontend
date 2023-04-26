@@ -1,31 +1,24 @@
 import * as React from 'react';
 
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import { useParams } from 'react-router-dom';
 import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
-// import { getShoppingList, addIngredient, deletIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
+import { getShoppingList } from 'components/Shopping/fetchShoppingList';
 import ingredImage from 'images/recipeImg/ingredImage.jpg'
 import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper} from './RecipeIngredients.styled';
-
+// import { MyCheckbox } from './Checkbox';
 
 export const IngredientsList = ({ ingredients }) => {
-  // const [isChecked, setIsChecked] = useState(false);
-  // const [shoppingList, setShoppingList] = useState([]);
-//  useEffect(() => {
-// 		async function getShopping() {
-//       try {
-// 		  const currentlist = await getShoppingList();
-		  // console.log('test', currentlist);
-//         setShoppingList(currentlist);
-// 		  console.log(currentlist)
-//       } catch (error) {
-// 		  console.log(error);
-//       }
-//     }
-//     getShopping();
-//  }, []); 
-  
-    // const { recipeId } = useParams();
+  // const [checked, setChecked] = useState(false);
+  const [shoppingList, setShoppingList] = useState([]);
+
+  useEffect(() => {
+		getShoppingList()
+			.then(() => setShoppingList())
+			.catch(error => console.error(error));
+	}, []);
+
+
     return (
         <IngredientsListSection>
             <DivContainer>
@@ -52,21 +45,21 @@ export const IngredientsList = ({ ingredients }) => {
                   </Wrapper>
                   <div>
                     <p>{measure}</p>
-                    {/* <label >
+                    <label >
                       <input
                         type="checkbox"
                         ingredient={{ id, ttl, thb, measure }}
-                        currentShopList={shoppingList} */}
-                        
-                        {/* // checked={!!shoppingList.find(item => item.id === _id)}
-                        // id={_id}
-                        // value={_id}
-                        // onChange={handleInputChange}
-                      /> */}
-                      {/* <CheckBoxWrap>
-                        <CheckMarkIcon /> */}
+      
+                        currentShopList={shoppingList}
                       
-                    {/* </label> */}
+                        // onChange={event => handleCheckboxChange(event, { ttl, thb, measure, id })}
+                        // checked={!!shoppingList.find(item => item.id === id)}
+                        id={id}
+                        // value={id}
+                        // onChange={handleInputChange}
+                      />
+                      
+                    </label>
                   </div>
                 </IngedientsItem>
               );
@@ -78,4 +71,3 @@ export const IngredientsList = ({ ingredients }) => {
     
 )
 };
-

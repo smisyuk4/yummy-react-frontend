@@ -77,7 +77,7 @@ export const SearchingPage = () => {
 				})
 				.catch(error => error);
 		}
-		//! Если запрос по Global Ingredients
+		//! Если запрос по Global Ingredients (ПОКА НЕ РАБОТАЕТ ЗАПРОС)
 		if (type === 'Global Ingredients') {
 			fetchByGlobalIngredients(value, { page, limit })
 				.then(({ data }) => {
@@ -87,8 +87,8 @@ export const SearchingPage = () => {
 				.catch(error => error);
 		}
 	};
-	// console.log(type);
-	// console.log(totalRecipes);
+	console.log(type);
+	console.log(totalRecipes, setpage);
 
 	return (
 		<DivStyled>

@@ -1,19 +1,25 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import {createPortal} from "react-dom";
 import { BurgerMenuDiv, BtnCloseModal, HeaderLogoDiv, BurgerNavigationNav, ModalDiv, CloseIcon, SearchIcon } from './BurgerMenu.styled';
 import { HeaderNavlink } from '../HeaderNavigation/HeaderNavigation.styled';
 import { HeaderLogo } from '../HeaderLogo';
+import { TogglerBurgerMenu } from "../UserLogo/Toggler/BurgerToggler";
 
 const modalRoot = document.getElementById('modal-root');
 
 
 export const BurgerMenu = ({closeModal}) => {
+  const [darkTheme, setDarkTheme] = useState(false)
+
   useEffect(() => {
     document.addEventListener("keydown", onCloseModal);
     
     return () => document.removeEventListener("keydown", onCloseModal)
 });
 
+const togglerTheme = () => {
+  darkTheme ? setDarkTheme(false) : setDarkTheme(true)
+}
 
   const onCloseModal = ({target, currentTarget, code}) => {
       if(target === currentTarget || code === "Escape") {
@@ -26,7 +32,7 @@ export const BurgerMenu = ({closeModal}) => {
   return createPortal(
     <BurgerMenuDiv onClick={onCloseModal}>
       <ModalDiv close={closeModal}>
-        <HeaderLogoDiv>
+        <HeaderLogoDiv onClick={closeModal}>
            <HeaderLogo />
           <BtnCloseModal onClick={closeModal}>
             <CloseIcon id="icon-close"/>
@@ -44,6 +50,7 @@ export const BurgerMenu = ({closeModal}) => {
             </HeaderNavlink>  
         </BurgerNavigationNav>
       </ModalDiv>
+      <TogglerBurgerMenu toggleTheme={togglerTheme} darkTheme={darkTheme}  />
     </BurgerMenuDiv>,
      modalRoot
      );

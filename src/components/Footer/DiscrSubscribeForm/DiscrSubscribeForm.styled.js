@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const DivStyled = styled.div`
     display: none;
 
-    @media screen and (min-width: 1140px) {
+    @media ${props => props.theme.media.desktop} {
 		display: inline-block;
         width: 340px;
         margin-bottom: 28px;
