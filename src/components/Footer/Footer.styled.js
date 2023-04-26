@@ -48,10 +48,10 @@ export const FooterStyled = styled.div`
         z-index:-50;
     }
 
-    @media screen and (min-width: 768px) {
+   @media ${props => props.theme.media.tablet}  {
         gap: 0px;
 	}
-    @media screen and (min-width: 1440px) {
+    @media ${props => props.theme.media.desktop} {
         padding-left: 100px;
         padding-right: 100px;
 	}
@@ -108,15 +108,21 @@ export const WrapperTitle = styled.div`
 `
 
 export const Title = styled.p`
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 1.0;
-letter-spacing: 0.015em;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.0;
+    letter-spacing: 0.015em;
+    color: ${props => props.theme.colors.fontColor};
 
-color: ${props => props.theme.colors.fontColor};
-
+    @media ${props => props.theme.media.tablet} {
+        font-size: 28px;
+        }
+    @media ${props => props.theme.media.desktop} {
+        font-size: 28px;
+        }
+    
 `
 
 export const FooterNav = styled.div`
@@ -158,12 +164,3 @@ export const FooterTeam = styled.div`
     color: rgba(34,37,42, 0.5);
     overflow: hidden;
 `
-
-// export const IconDiv = styled.div`
-//     width: 32px;
-//     height: 32px;
-//     background: #EBF3D4;
-//     border-radius: 6px;
-//     padding: 7px;
-//     ${flexBox};
-// `

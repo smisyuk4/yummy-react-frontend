@@ -22,8 +22,8 @@ export const FormStyled = styled(Form)`
 		margin-bottom: 15px;
 	}
 
-	@media screen and (min-width: 1440px) {
-		width: 204px;
+	@media ${props => props.theme.media.desktop} {
+		width: 100%;
 		${flexBox};
 		flex-direction: column;
 		column-gap: 8px;
@@ -38,7 +38,9 @@ export const LabelStyled = styled.label`
     display: flex;
 	flex-direction: column;
     position: relative;
-
+	@media ${props => props.theme.media.desktop} {
+		width: 100%;
+	}
 `;
 
 export const InputForm = styled(Field)`
@@ -53,16 +55,27 @@ export const InputForm = styled(Field)`
     text-overflow: clip;
     &::placeholder {
         font-size: 10px;
-        line-height: 1,5;
+        line-height: 1.5;
         letter-spacing: -0.02em;
         color: ${({ theme }) => theme.colors.fontColor};
-    }
-
-	@media screen and (min-width: 768px) {
-		width: 100%;
-		height: 100%;
+		@media ${props => props.theme.media.tablet} {
+		font-size: 14px;
 	}
-
+	@media ${props => props.theme.media.desktop} {
+		font-size: 18px;
+	}
+    }
+	@media ${props => props.theme.media.tablet} {
+		width: 100%;
+		height: 50px;
+		font-size: 18px;
+		line-height: 27px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		width: 100%;
+		height: 60px;
+		padding-left: 51px;
+	}
     &:focus {
 		outline: 1px solid ${({ theme }) => theme.colors.fontColor};
 		border-color: ${({ theme }) => theme.colors.fontColor};
@@ -80,10 +93,6 @@ export const InputForm = styled(Field)`
 	.valid & {
 		border: 1px solid #3cbc81;
 		outline: none;
-	}
-	@media screen and (min-width: 768px) {
-		font-size: 18px;
-		line-height: 27px;
 	}
 `;
 
@@ -131,7 +140,6 @@ export const BtnSybscribe = styled.button`
     font-size: 14px;
 	line-height: 1.14px;
     padding: 11px, 71px;
-
 	border-radius: 6px;
 	border: 1px solid ${({ theme }) => theme.colors.buttonPrimaryBG};
 	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
@@ -139,14 +147,37 @@ export const BtnSybscribe = styled.button`
 	font-size: 14px;
     line-height: 1.14;
 	transition: color 0.3s ease-in-out;
+	border: transparent;
 
-	&:active {
+	&:hover {
+		border: transparent;
 		transition: color 0.3s ease-in-out;
 		color: ${({ theme }) => theme.colors.buttonDarkBG};
 	}
 	&:disabled {
+		border: transparent;
 		background-color: grey;
+		color: ${({ theme }) => theme.colors.buttonLightBG};
 	}
+
+	@media ${props => props.theme.media.tablet} {
+        width: 204px;
+    	height: 50px;
+		margin-top: 0px;
+		font-size: 16px;
+		line-height: 1.14px;
+		padding: 16px, 50px;
+		border: transparent;
+    }
+	@media ${props => props.theme.media.desktop} {
+        width: 100%;
+    	height: 60px;
+		margin-top: 16px;
+		font-size: 16px;
+		line-height: 1.14px;
+		padding: 16px, 50px;
+		border: transparent;
+    }
 `
 
 export const ErrorSpan = styled(ErrorMessage)`
