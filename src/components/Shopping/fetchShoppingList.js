@@ -2,8 +2,8 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
 
-export const addIngredient = async () => {
-    const response = await axios.post('/ingredients/shopping-list'); 
+export const addIngredient = async (data) => {
+    const response = await axios.post('/ingredients/shopping-list', data); 
     return response;
 };
 
