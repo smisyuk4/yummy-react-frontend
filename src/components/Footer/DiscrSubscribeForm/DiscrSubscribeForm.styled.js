@@ -5,7 +5,6 @@ export const DivStyled = styled.div`
     @media ${props => props.theme.media.desktop} {
 		display: inline-block;
         width: 340px;
-        margin-bottom: 28px;
         text-align: left;
 	}
 `;
