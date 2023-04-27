@@ -81,9 +81,6 @@ export const CategorySelection = () => {
 					);
 				})}
 			</CardList>
-			{/* <DivPositionen>
-				<ImageBG />
-			</DivPositionen> */}
 		</DivStyled>
 	);
 };
