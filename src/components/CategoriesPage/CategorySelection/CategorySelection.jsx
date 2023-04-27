@@ -70,7 +70,7 @@ export const CategorySelection = () => {
 						<CardItem key={title}>
 							<NavLink
 								className="card-link"
-								to={`/recipe/${_id}`}
+								to={`/recipes/${_id}`}
 								replace={true}>
 								<Image src={thumb} alt={title} />
 								<CardBox>
