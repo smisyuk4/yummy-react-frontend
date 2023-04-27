@@ -2,6 +2,10 @@ import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
 	padding: 1rem;
+	& div {
+		position: relative;
+		overflow: hidden;
+	}
 `;
 
 export const H1Styled = styled.h1`
@@ -50,6 +54,7 @@ export const LiStyled = styled.li`
 		filter: blur(2px) brightness(0.8);
 		transform: scale(1);
 		object-fit: cover;
+		width: 100%;
 		transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 		@media (min-width: 600px) {
 			height: calc(100vw / 2 - 10px);
@@ -67,4 +72,22 @@ export const LiStyled = styled.li`
 		transform: scale(1.04);
 		transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 	}
+	&:hover p {
+		transform: translateY(0);
+		transition: transform 0.3s ease-in-out;
+	}
+`;
+
+export const PStyled = styled.p`
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	font-size: 16px;
+	box-sizing: border-box;
+	color: ${({ theme }) => theme.colors.titleColor};
+	background-color: ${({ theme }) => `${theme.colors.lightBG}A6`};
+	transform: translateY(100%);
+	transition: transform 0.3s ease-in-out;
 `;

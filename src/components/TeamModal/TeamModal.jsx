@@ -5,6 +5,7 @@ import {
 	LiStyled,
 	H2Styled,
 	H3Styled,
+	PStyled,
 } from './TeamModal.styled';
 import { Modal } from 'components/Modal';
 import { useState } from 'react';
@@ -29,7 +30,7 @@ const teamateData = [
 	{
 		name: 'Iryna Rybka',
 		position: 'Fullstack Developer, Scrum Master',
-		role: 'Shopping-list and own recipes',
+		role: 'Shopping-list backend and frontend',
 		avatar: avatar2,
 	},
 	{
@@ -40,27 +41,27 @@ const teamateData = [
 	},
 
 	{
-		name: 'Olexii Andriushchenko',
+		name: 'Oleksii Andriushchenko',
 		position: 'Fullstack Developer',
 		role: 'Recipes and MainPage',
 		avatar: avatar3,
 	},
 	{
-		name: 'Andriy Asmolovskyi',
+		name: 'Andrii Asmolovskyi',
 		position: 'Fullstack Developer',
-		role: 'Recipes and MainPage',
+		role: 'Recipes and Search',
 		avatar: avatar5,
 	},
 	{
-		name: 'Vitalii Volyanik',
+		name: 'Vitalii Volianyk',
 		position: 'Fullstack Developer',
-		role: 'Authorization and Registration',
+		role: 'Authorization&Registration backend and frontend',
 		avatar: avatar16,
 	},
 	{
-		name: 'Oksana Polyakova',
+		name: 'Oksana Poliakova',
 		position: 'Fullstack Developer',
-		role: 'Subscribe, Header and Footer',
+		role: 'Subscribe, Header and Footer, theme toggler',
 		avatar: avatar6,
 	},
 	{
@@ -84,8 +85,14 @@ const teamateData = [
 	{
 		name: 'Yuriy Zagrai',
 		position: 'Fullstack Developer',
-		role: 'Bug tracking and testing',
+		role: 'AddRecipePage - PopularRecipe',
 		avatar: avatar9,
+	},
+	{
+		name: 'Oksana Mylymuk',
+		position: 'Fullstack Developer',
+		role: 'Own recipes',
+		avatar: avatar11,
 	},
 	{
 		name: 'Viktoriia Levchenko',
@@ -94,12 +101,6 @@ const teamateData = [
 		avatar: avatar4,
 	},
 
-	{
-		name: 'Oksana Mylymuk',
-		position: 'QA Engineer',
-		role: 'Bug tracking and testing',
-		avatar: avatar11,
-	},
 	{
 		name: 'Iryna Mykhailyshyn',
 		position: 'QA Engineer',
@@ -126,9 +127,12 @@ const teamateData = [
 	},
 ];
 
-const teamCards = teamateData.map(({ name, position, avatar }) => (
+const teamCards = teamateData.map(({ name, position, avatar, role }) => (
 	<LiStyled key={name}>
-		<img src={avatar} alt="avatar" />
+		<div>
+			<img src={avatar} alt="avatar" />
+			<PStyled>{role}</PStyled>
+		</div>
 		<H2Styled>{name}</H2Styled>
 		<H3Styled>{position}</H3Styled>
 	</LiStyled>
