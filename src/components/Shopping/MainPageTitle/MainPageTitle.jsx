@@ -1,8 +1,10 @@
+import {TitleShoppingList} from './MainPageTitle.styled'
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
-
 const MainPageTitle = () => {
 	return (
-		<ReusableComponentTitleWithJewelry title="Shopping list" />
+		<TitleShoppingList>
+			<ReusableComponentTitleWithJewelry title="Shopping list" />
+		</TitleShoppingList>
 	);
 };
 export default MainPageTitle;

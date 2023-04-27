@@ -20,14 +20,13 @@ const togglerTheme = () => {
   const auth = useSelector(state => state.auth)
   const user = auth.user
   const isGravatar = user.avatarURL.includes('gravatar')
-  console.log(auth.isLoggedIn)
 
   return <UserLogoDiv >
           <WrapperImg onClick={() => setOpenPopUp(true)} >
             {isGravatar && <AvatarUser  id="icon-person" />}
             {!isGravatar && <UserAvatarImg src={user.avatarURL} />}
           </WrapperImg>
-          <UserNameP>{user.name}</UserNameP>
+          <UserNameP onClick={() => setOpenPopUp(true)}>{user.name}</UserNameP>
           <BurgerMuneBtn onClick={onOpenModal}>
           <BurgerMenuIcon id='icon-burger' />
           </BurgerMuneBtn>

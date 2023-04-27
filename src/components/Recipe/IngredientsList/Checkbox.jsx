@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { addIngredient, deleteIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
 
-export const MyCheckbox = ({ ingredient, currentShopList }) => {
+export const Checkbox = ({ ingredient, currentShopList }) => {
   const [checked, setChecked] = useState(false);
 
   const { id, ttl, thb, measure } = ingredient;
@@ -10,16 +10,16 @@ export const MyCheckbox = ({ ingredient, currentShopList }) => {
 
   useEffect(() => {
     if (currentShopList.length > 0) {
-      const isInList = currentShopList.find(item => item.ttl === ttl);
-      setChecked(isInList ? isInList.id : false);
+      const inShoppingList = currentShopList.find(item => item.ingredientId === id);
+      setChecked(inShoppingList ? true : false);
     }
-  }, [currentShopList, ttl]);
+  }, [currentShopList, id]);
 
-  const handleCheckboxChange = (event) => {
+  const checkboxChange = (event) => {
     if (checked) {
       deleteIngredientInShoppingList(checked).then(() => setChecked(false));
     } else {
-      addIngredient().then(() => setChecked(true));
+      addIngredient({ingredientId: id, ttl, thb, measure }).then(() => setChecked(true));
     }
   };
 
@@ -28,7 +28,7 @@ export const MyCheckbox = ({ ingredient, currentShopList }) => {
       id={id}
       type="checkbox"
       checked={checked}
-      onChange={event => handleCheckboxChange(event, { ttl, thb, measure })}
+      onChange={event => checkboxChange(event, { ttl, thb, measure })}
     ></input>
   );
 };

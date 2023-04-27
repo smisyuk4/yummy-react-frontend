@@ -3,15 +3,17 @@ import {flexBox} from 'styles/mixins';
 import { Icon } from 'components/Icon';
 
 export const OverlayDiv = styled.div`
+    box-sizing: border-box;
+    width: 161px;
+    height: 130px;
+    padding: 18px;
+    position: absolute;
+    top: 12px;
+    right: 60px;
     ${flexBox};
     flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    padding: 18px;
-    top: 72px;
-    right: 60px;
-    width: 160px;
-    height: 130px;
+    gap: 28px;
+
     background-color: ${props => props.theme.colors.buttonLightBG};
     border: 1px solid #8BAA36;
     border-radius: 8px;
@@ -32,6 +34,14 @@ export const OverlayDiv = styled.div`
     &.close {
         transform: translateY(-300px);
     }
+    @media ${props => props.theme.media.tablet} {
+        top: 18px;
+        right: 128px;
+        width: 177px;
+        height: 130px;
+        gap: 32px;
+        border: transparent;
+    }
 `
 export const EditText = styled.p`
     font-family: 'Poppins';
@@ -41,24 +51,6 @@ export const EditText = styled.p`
     line-height: 1.57;
     color: #23262A;
 `
-export const ModalDiv = styled.div`
-     max-width: 50%;
-    border-radius: 10px;
-    position: relative;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-`
-export const DivStyled = styled.div`
-    padding: 15px;
-    border: 1px solid #8BAA36;
-    border-radius: 18px;
-    width: 161px;
-    height: 130px;
-    text-align: center;
-    z-index: 100;
-`;
-
 export const WrapperEdit = styled.div`
 width: 100%;
     ${flexBox};
@@ -70,11 +62,8 @@ width: 100%;
     &:hover svg {
         fill: ${({ theme }) => theme.colors.primary};
     }
-    
 `
-
 export const LogOutBtn = styled.button`
-    width: 125px;
     width: 100%;
     height: 43px;
     text-align: center;
@@ -83,6 +72,7 @@ export const LogOutBtn = styled.button`
     border-radius: 24px 44px;
     background-color: #8BAA36;
     color: #fff;
+
     &:hover {
         background: #22252A;
         color: #FAFAFA;

@@ -9,11 +9,12 @@ export const WrapperToggler = styled.button`
         margin-left: 50px;
         position: relative;
         border: transparent;
+        border-radius: 50%;
     }
-    &.active > svg:nth-child(1) {
+    &.active > svg:nth-of-type(1) {
         fill: ${({ theme }) => theme.colors.primary};
         }
-    &.active > svg:nth-child(2) {
+    &.active > svg:nth-of-type(2) {
             transform: translateX(35px);
         }
 `;
@@ -45,8 +46,8 @@ export const TogglerBtn = styled(Icon)`
         transition: transform 0.5s ease-in;
         width: 25px;
         height: 25px;
-        background: linear-gradient(180deg, #FFFFFF 0%, #E8EAEA 100%);
         border-radius: 50%;
+        background: linear-gradient(180deg, #FFFFFF 0%, #E8EAEA 100%);
         fill: #FFFFFF;
     }
 `

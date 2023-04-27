@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { RecipeList } from 'components/RecipeList';
 import { RecipeListItem } from 'components/RecipeListItem';
 import { NoResults } from 'components/NoResults';
+import { TitleStyled } from './Title/Title';
 import { deleteOwnRecipe, fetchOwnRecipes } from './operations';
 
 export const OwnRecipes = () => {
@@ -32,19 +33,22 @@ export const OwnRecipes = () => {
 		}
 	}
 
-	if (ownRecipes?.length > 0) {
-		return (
-			<RecipeList>
-				{ownRecipes.map(recipe => (
-					<RecipeListItem
-						key={recipe._id}
-						recipe={recipe}
-						onDelete={() => deleteRecipe(recipe._id)}
-					/>
-				))}
-			</RecipeList>
-		);
-	} else {
-		return <NoResults text="No recipes found" />;
-	}
+	return (
+		<div>
+			<TitleStyled title="My recipes"></TitleStyled>
+			{ownRecipes?.length > 0 ? (
+				<RecipeList>
+					{ownRecipes.map(recipe => (
+						<RecipeListItem
+							key={recipe._id}
+							recipe={recipe}
+							onDelete={() => deleteRecipe(recipe._id)}
+						/>
+					))}
+				</RecipeList>
+			) : (
+				<NoResults text="No recipes found" />
+			)}
+		</div>
+	);
 };

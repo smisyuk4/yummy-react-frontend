@@ -1,8 +1,14 @@
 import styled from '@emotion/styled';
-// import { Field, Form } from 'formik';
 
 export const SearchStyled = styled.div`
 	margin-top: 50px;
+
+	@media screen and (min-width: 768px) {
+		margin-top: 40px;
+	}
+	@media screen and (min-width: 768px) {
+		margin-top: 50px;
+	}
 `;
 
 export const FormStyled = styled.form`
@@ -31,6 +37,19 @@ export const Input = styled.input`
 		border-color: #61616170;
 		outline: none;
 	}
+
+	@media screen and (min-width: 768px) {
+		width: 327px;
+		height: 54px;
+		font-size: 14px;
+		line-height: 21px;
+	}
+	@media screen and (min-width: 1440px) {
+		width: 475px;
+		height: 68px;
+		font-size: 16px;
+		line-height: 24px;
+	}
 `;
 
 export const SearchFormBtn = styled.button`
@@ -50,4 +69,14 @@ export const SearchFormBtn = styled.button`
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
+
+	@media screen and (min-width: 768px) {
+		width: 161px;
+		height: 60px;
+		font-size: 16px;
+		line-height: 24px;
+	}
+	@media screen and (min-width: 1440px) {
+		height: 70px;
+	}
 `;

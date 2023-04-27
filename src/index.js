@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 import { App } from 'components/App/App';
+import { ScrollUp } from 'components/ScrollUp';
 import './index.css';
 
 const LightTheme = {
@@ -52,6 +53,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 			<PersistGate loading={null} persistor={persistor}>
 				<ThemeProvider theme={LightTheme}>
 					<BrowserRouter basename={baseUrl}>
+						<ScrollUp />
 						<App />
 					</BrowserRouter>
 				</ThemeProvider>

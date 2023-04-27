@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { userUpdate, userUpdateAvatar } from 'redux/auth/operations';
 
-
 const modalRoot = document.getElementById('modal-root');
+
 
 export const ModalUserProfil = ({isOpen, close}) => {
   const dispatch = useDispatch()
@@ -16,9 +16,8 @@ export const ModalUserProfil = ({isOpen, close}) => {
 
   const [nameUser, setNameUser] = useState('')
   const [userImage, setUserImage] = useState(null);
-  const [imageUrl, setImageUrl] = useState('');
+  const [imageUrl, setImageUrl] = useState(null);
 
-  
 useEffect(() => {
   document.addEventListener("keydown", closeModal);
   return () => document.removeEventListener("keydown", closeModal)
@@ -79,7 +78,7 @@ if(!isOpen) return null;
             
             <BtnModalUser type="submit">Save changes</BtnModalUser>
             </FormUpdateUser>
-            <IconCross id="icon-close" />
+            <IconCross id="icon-close" onClick={closeModal} />
     </ModalProfil>
   </DivStyled>,
      modalRoot

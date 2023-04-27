@@ -1,20 +1,22 @@
 import * as React from 'react';
-
 import { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
 import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 import { getShoppingList } from 'components/Shopping/fetchShoppingList';
 import ingredImage from 'images/recipeImg/ingredImage.jpg'
 import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper} from './RecipeIngredients.styled';
-// import { MyCheckbox } from './Checkbox';
+import { Checkbox } from './Checkbox';
 
 export const IngredientsList = ({ ingredients }) => {
-  // const [checked, setChecked] = useState(false);
   const [shoppingList, setShoppingList] = useState([]);
-
+  console.log(ingredients);
   useEffect(() => {
-		getShoppingList()
-			.then(() => setShoppingList())
+    
+    getShoppingList()
+      .then((data) => {
+        setShoppingList(data.data.shoppingList)
+        console.log(data.data.shoppingList)
+      })
+  
 			.catch(error => console.error(error));
 	}, []);
 
@@ -46,17 +48,11 @@ export const IngredientsList = ({ ingredients }) => {
                   <div>
                     <p>{measure}</p>
                     <label >
-                      <input
+                      <Checkbox
                         type="checkbox"
                         ingredient={{ id, ttl, thb, measure }}
-      
                         currentShopList={shoppingList}
-                      
-                        // onChange={event => handleCheckboxChange(event, { ttl, thb, measure, id })}
-                        // checked={!!shoppingList.find(item => item.id === id)}
                         id={id}
-                        // value={id}
-                        // onChange={handleInputChange}
                       />
                       
                     </label>

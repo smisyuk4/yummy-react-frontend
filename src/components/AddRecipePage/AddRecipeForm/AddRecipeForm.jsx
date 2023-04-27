@@ -1,6 +1,10 @@
 // import { RecipeDescription } from '../RecipeDescription';
 // import { AddButton, RecipeFormDivStyled } from './AddRecipeForm.styled';
-import { AddButton } from './AddRecipeForm.styled';
+import {
+	AddButton,
+	AddRecipeFormWrapper,
+	WrapperAllInput,
+} from './AddRecipeForm.styled';
 
 import { useState } from 'react';
 
@@ -9,25 +13,25 @@ import { RecipePreparationFields } from './RecipePreparationFields';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
 import axios from 'axios';
 
-const URL = 'https://yummy-rest-api.onrender.com';
+// const URL = 'https://yummy-rest-api.onrender.com';
 
-const instance = axios.create({
-	baseURL: URL,
-});
+// const instance = axios.create({
+// 	baseURL: URL,
+// });
 
-const fetchImg = async userInf => {
-	try {
-		const { data } = await instance.post('/ownRecipes', userInf, {
-			headers: {
-				'Content-Type': 'multipart/form-data',
-			},
-		});
-		console.log(data);
-		return data;
-	} catch (error) {
-		console.log(error);
-	}
-};
+// const fetchImg = async userInf => {
+// 	try {
+// 		const { data } = await instance.post('/ownRecipes', userInf, {
+// 			headers: {
+// 				'Content-Type': 'multipart/form-data',
+// 			},
+// 		});
+// 		console.log(data);
+// 		return data;
+// 	} catch (error) {
+// 		console.log(error);
+// 	}
+// };
 
 // const fetchData = async userInf => {
 // 	try {
@@ -104,6 +108,7 @@ export const AddRecipeForm = () => {
 
 	const newRecipe = {
 		title: title,
+		description: about,
 		category: categori,
 		time: time,
 		instructions: preparationEditedText,
@@ -113,21 +118,32 @@ export const AddRecipeForm = () => {
 	};
 	const PostRecipe = async event => {
 		const dataFile = new FormData();
-		dataFile.set('photo', picture);
-		dataFile.append('text', JSON.stringify(newRecipe));
+		dataFile.set('file', picture);
+		dataFile.append('body', JSON.stringify(newRecipe));
 		console.log('FORM-DATA----', dataFile);
 
-		await fetchImg(dataFile);
+		// await fetchImg(dataFile);
+		try {
+			await axios.post('/ownRecipes', dataFile, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			});
+		} catch (error) {
+			console.log(error);
+		}
 		// await fetchData(JSON.stringify(newRecipe));
 	};
 
 	return (
-		<>
-			<RecipeDescriptionFields onChange={tesOnCanfeDescription} />
-			<RecipeIngredientsFields onChange={ingridientsCange} />
-			<RecipePreparationFields onChange={preparationChange} />
+		<AddRecipeFormWrapper>
+			<WrapperAllInput>
+				<RecipeDescriptionFields onChange={tesOnCanfeDescription} />
+				<RecipeIngredientsFields onChange={ingridientsCange} />
+				<RecipePreparationFields onChange={preparationChange} />
+			</WrapperAllInput>
 			<AddButton onClick={PostRecipe}>Add</AddButton>
-		</>
+		</AddRecipeFormWrapper>
 		// <RecipeFormDivStyled>
 		// 	<RecipeDescription onSubmit={addRecipe} />
 		// 	<AddButton>Add</AddButton>
