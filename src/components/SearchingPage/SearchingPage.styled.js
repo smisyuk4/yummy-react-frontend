@@ -140,3 +140,7 @@ export const CardTitle = styled.p`
 	padding: 16px;
 	margin: 0;
 `;
+
+export const DivNoResultsStyle = styled.div`
+	margin-top: 50px;
+`;
