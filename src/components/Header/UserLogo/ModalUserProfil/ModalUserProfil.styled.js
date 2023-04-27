@@ -103,6 +103,7 @@ export const IconPerson = styled(Icon)`
 `
 
 export const IconPlus = styled(Icon)`
+    box-sizing: border-box;
     position: absolute;
     top: 70px;
     right: 13px;
@@ -112,6 +113,10 @@ export const IconPlus = styled(Icon)`
     stroke: #fff;
     background: #8BAA36;
     padding: 5px;
+    &:hover {
+        stroke: ${({ theme }) => theme.colors.primary};
+        background: #fff;
+    }
 `
 export const Input = styled.input`
     height: 48px;
@@ -120,6 +125,7 @@ export const Input = styled.input`
     border: 1px solid #23262A; 
     border-radius: 6px;
     padding-left: 40px;
+    
 
   &::placeholder {
       font-family: 'Poppins';
@@ -130,6 +136,10 @@ export const Input = styled.input`
       color: #23262A;
       opacity: 0.8;
     }
+    &:focus {
+		outline: 1px solid ${({ theme }) => theme.colors.fontColor};
+		border-color: ${({ theme }) => theme.colors.primary};
+	} 
 `
 export const FormUpdateUser = styled.form`
     ${flexBox};
@@ -186,4 +196,7 @@ export const IconCross = styled(Icon)`
     top: 22px;
     right: 22px;
     transform: translateY(-50%);
+    &:hover {
+        stroke: ${({ theme }) => theme.colors.primary};
+    }
 `
