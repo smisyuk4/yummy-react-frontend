@@ -18,7 +18,7 @@ export const BtnScroll = styled.button`
     background: #EBF3D4;
     z-index: 120;
     &:hover {
-        background: ${props => props.theme.colors.primary};
+        background: #8BAA36;
     }
 `
 export const IconScroll = styled.div`
