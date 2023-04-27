@@ -26,7 +26,7 @@ const togglerTheme = () => {
             {isGravatar && <AvatarUser  id="icon-person" />}
             {!isGravatar && <UserAvatarImg src={user.avatarURL} />}
           </WrapperImg>
-          <UserNameP>{user.name}</UserNameP>
+          <UserNameP onClick={() => setOpenPopUp(true)}>{user.name}</UserNameP>
           <BurgerMuneBtn onClick={onOpenModal}>
           <BurgerMenuIcon id='icon-burger' />
           </BurgerMuneBtn>

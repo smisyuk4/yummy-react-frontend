@@ -78,7 +78,7 @@ if(!isOpen) return null;
             
             <BtnModalUser type="submit">Save changes</BtnModalUser>
             </FormUpdateUser>
-            <IconCross id="icon-close" />
+            <IconCross id="icon-close" onClick={closeModal} />
     </ModalProfil>
   </DivStyled>,
      modalRoot
