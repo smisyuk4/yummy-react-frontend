@@ -22,7 +22,7 @@ margin-bottom: 40px;
     margin-bottom: 0;
   }`
 
-  export const TitleStyles = styled.h2`
+export const TitleStyles = styled.h2`
   font-weight: 600;
   font-size: 24px;
   line-height: 1;

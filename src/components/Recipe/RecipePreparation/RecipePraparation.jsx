@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {PreparationSection, ImageWrapper, InstructionItem, TextDiv, ImgStyled, TitleStyles} from './RecipePreparation.styled'
-import photo from 'images/recipeImg/photoRec.jpg';
+import photo from 'images/recipeImg/ingredImage.jpg'
 
 export const RecipePreparation = ({instructions, thumb}) => {
     return (
