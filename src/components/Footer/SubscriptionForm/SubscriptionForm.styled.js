@@ -137,9 +137,8 @@ export const BtnSybscribe = styled.button`
     width: 204px;
     height: 38px;
 	margin-top: 8px;
-    font-size: 14px;
-	line-height: 1.14px;
-    padding: 11px, 71px;
+	line-height: 1.14;
+    padding: 11px 71px;
 	border-radius: 6px;
 	border: 1px solid ${({ theme }) => theme.colors.buttonPrimaryBG};
 	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
@@ -152,21 +151,18 @@ export const BtnSybscribe = styled.button`
 	&:hover {
 		border: transparent;
 		transition: color 0.3s ease-in-out;
-		color: ${({ theme }) => theme.colors.buttonDarkBG};
+		color: ${({ theme }) => theme.colors.textButtonPrimaryHover};
 	}
 	&:disabled {
 		border: transparent;
-		background-color: grey;
-		color: ${({ theme }) => theme.colors.buttonLightBG};
+		opacity: 0.8;
 	}
 
 	@media ${props => props.theme.media.tablet} {
-        width: 204px;
     	height: 50px;
 		margin-top: 0px;
 		font-size: 16px;
-		line-height: 1.14px;
-		padding: 16px, 50px;
+		padding: 16px 50px;
 		border: transparent;
     }
 	@media ${props => props.theme.media.desktop} {
@@ -174,8 +170,7 @@ export const BtnSybscribe = styled.button`
     	height: 60px;
 		margin-top: 16px;
 		font-size: 16px;
-		line-height: 1.14px;
-		padding: 16px, 50px;
+		padding: 16px 50px;
 		border: transparent;
     }
 `

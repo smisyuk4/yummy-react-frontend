@@ -101,17 +101,32 @@ export const DishStyled = styled.div`
 	left: -18px;
 	z-index: 3;
 	border: none;
+	transform-origin: 57% center;
+	animation: rotateArrRight 120s linear infinite;
 	@media screen and (min-width: 768px) {
 		background: url(${banner2T}) no-repeat top right;
 		top: 222px;
 		left: 0px;
 		height: 351px;
+		transform-origin: 76% center;
+	animation: rotateArrRight 120s linear infinite;
 	}
 	@media screen and (min-width: 1440px) {
 		background: url(${banner2D}) no-repeat top right;
 		height: 539px;
 		top: 125px;
 		left: -177px;
+		transform-origin: 80% center;
+	    animation: rotateArrRight 120s linear infinite;
+	}
+	@keyframes rotateArrRight {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+		
 	}
 `;
 export const InformFieldStyled = styled.div`
@@ -125,7 +140,7 @@ export const TitleStyled = styled.h1`
 	font-weight: 700;
 	text-align: center;
 
-	color: ${({ theme }) => theme.colors.buttonDarkBG};
+	color: ${({ theme }) => theme.colors.fontHero};
 	@media screen and (min-width: 768px) {
 		font-weight: 400;
 		font-size: 72px;
@@ -196,7 +211,13 @@ export const ArrRight = styled.div`
 		z-index: 10;
 	}
 	@media screen and (min-width: 1440px) {
-		top: 607px;
+		top: 589px;
+		left: 1046px;
+		
+		@media screen and (min-width: 1440px) {
+		top: 589px;
 		left: 1046px;
 	}
+	}
+
 `;

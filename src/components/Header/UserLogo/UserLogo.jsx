@@ -5,7 +5,7 @@ import { PopupUser } from './PopupUser/PopupUser'
 import { useSelector } from 'react-redux';
 
 
-export const UserLogo = ({ onOpenModal }) => {
+export const UserLogo = ({ onOpenModal, themeToggler }) => {
  const [openPopUp, setOpenPopUp] = useState(false)
  const [darkTheme, setDarkTheme] = useState(false)
 
@@ -30,7 +30,7 @@ const togglerTheme = () => {
           <BurgerMuneBtn onClick={onOpenModal}>
           <BurgerMenuIcon id='icon-burger' />
           </BurgerMuneBtn>
-          <Toggler toggleTheme={togglerTheme} darkTheme={darkTheme}  />
+          <Toggler toggleTheme={togglerTheme} darkTheme={darkTheme} themeToggler={themeToggler} />
         <PopupUser 
           openPopUp={openPopUp}
           closePopUp={onClosePopUp}

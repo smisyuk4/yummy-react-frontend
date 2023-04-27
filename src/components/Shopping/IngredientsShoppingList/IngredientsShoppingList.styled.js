@@ -26,10 +26,11 @@ export const ListBar = styled.ul`
 
 	@media ${props => props.theme.media.tablet} {
 		min-width: 664px;
-		max-width: 1160px;
+		max-width: 1159px;
 	}
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
+		grid-template-columns: 74.6% 18.7% 6.7%;
 	}
 `;
 export const ItemBar = styled.li`
@@ -74,20 +75,22 @@ export const ItemBar = styled.li`
 `;
 
 export const ShoppingList = styled.ul`
-	display: grid;
+	/* display: grid; */
 	min-width: 343px;
-	max-width: 704px;
+	max-width: 703px;
 	margin-bottom: 100px;
 	justify-content: center;
 
 	@media ${props => props.theme.media.tablet} {
 		min-width: 704px;
-		max-width: 1160px;
+		max-width: 1159px;
 		margin-bottom: 200px;
 	}
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
 		margin-bottom: 195px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 `;
 
@@ -111,9 +114,14 @@ export const ItemShoppingList = styled.li`
 	@media ${props => props.theme.media.tablet} {
 		min-width: 704px;
 		max-width: 1160px;
+		min-height: 140px;
+		grid-template-columns: 15% 45% 25% 9%;
+		margin-bottom: 45px;
 	}
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
+		grid-template-columns: 9% 62.5% 24.2% 2%;
+
 	}
 `;
 export const ContainerImg = styled.div`
@@ -141,6 +149,13 @@ export const TaglineP = styled.p`
 
 	color: ${({ theme }) => theme.colors.fontColorDark};
 	/* margin-right: 108px; */
+	@media ${props => props.theme.media.tablet} {
+		font-size: 16px;
+		line-height: 1.5;
+
+	}
+
+color: #3E4462;
 `;
 
 export const Measure = styled.p`
@@ -157,6 +172,15 @@ export const Measure = styled.p`
 	text-align: center;
 	margin-right: auto;
 	margin-left: auto;
+	@media ${props => props.theme.media.tablet} {
+		min-width: 68px;
+		border-radius: 4px;
+		padding-right: 8px;
+		padding-left: 8px;
+		font-size: 18px;
+		line-height: 1.5;
+
+	}
 `;
 
 export const CloseBtn = styled.button`
@@ -171,13 +195,17 @@ export const CloseIcon = styled(Icon)`
 	height: 14px;
 	width: 14px;
 	stroke: ${({ theme }) => theme.colors.addRecipeFormFieldsDeleteButton};
+	@media ${props => props.theme.media.tablet} {
+		height: 20px;
+		width: 20px;
+	}
 `;
 
 export const EmptyList = styled.p`
 	font-weight: 600;
 	font-size: 28px;
-	line-height: 28px;
-	letter-spacing: -0.02em;
+	line-height: 1.2;
+	letter-spacing: 0.1em;
 	margin: 0;
 	color: ${({ theme }) => theme.colors.primary};
 	text-align: center;

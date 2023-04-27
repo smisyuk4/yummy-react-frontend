@@ -5,10 +5,9 @@ body {
 	font-family: Poppins, sans-serif;
 	padding: 0;
 	width: 100%;
-  background-color: #FAFAFA;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: #fafafa;
+	/* background: #fafafa; */
 }
 
 h1,
@@ -58,4 +57,5 @@ code {
 	justify-content: space-between;
 	display: flex;
 	flex-direction: column;
+	overflow-x: clip;
 }

@@ -10,34 +10,45 @@ import {
 	RecipeIngredientsFieldset,
 	RecipeIngredientsUl,
 } from './RecipeIngredientsFields.styled';
+import { EmptyFieldNotation } from '../RecipePreparationFields/RecipePreparationFields.styled';
 
 export const RecipeIngredientsFields = ({ onChange }) => {
 	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
 	const [allIngredientsList, setAllIngredientsList] = useState([]);
 	const [addedIngredientsArray, setAddedIngredientsArray] = useState([]);
+	const [anyEmptyFieldsState, setAnyEmptyFieldsState] = useState(true);
 
 	const fetchIngredients = async () => {
 		const fetchedIngredientsList = await getAllIngredients();
 
-		const reworkedList = fetchedIngredientsList.data.data.ingretients.map(
-			ingredient => {
-				return { id: ingredient._id, ttl: ingredient.ttl };
-			}
-		);
-		setAllIngredientsList(reworkedList);
+		// const reworkedList = fetchedIngredientsList.data.data.ingretients.map(
+		// 	ingredient => {
+		// 		return { id: ingredient._id, ttl: ingredient.ttl };
+		// 	}
+		// );
+		setAllIngredientsList(fetchedIngredientsList.data.data.ingretients);
 	};
 
 	useEffect(() => {
 		fetchIngredients();
 	}, []);
 
+	useEffect(() => {
+		addedIngredientsArray.map(ingredient => {
+			if (ingredient.emptyFields) {
+				setAnyEmptyFieldsState(true)
+			} else {
+				setAnyEmptyFieldsState(false)
+			}
+		})
+	}, [addedIngredientsArray])
+
 	const onIncrement = () => {
 		setIgredientsQuantity(ingredientsQuantity + 1);
 		setAddedIngredientsArray(prevState => [
 			...prevState,
-			{ id: uuidv4(), ingredientId: '', ttl: '', measure: '' },
+			{ id: uuidv4(), ingredientId: '', ttl: '', measure: '', emptyFields: true},
 		]);
-		// console.log(addedIngredientsArray);
 	};
 
 	const onDecrement = () => {
@@ -49,12 +60,10 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 				);
 				return filteredArray;
 			});
-			// console.log(addedIngredientsArray);
 		}
 	};
 
 	const getIngredientName = (id, data) => {
-		console.log(2, id, data);
 		const requstedIngredient = allIngredientsList.find(
 			ingredient => ingredient.ttl === data.ttl
 		);
@@ -67,6 +76,7 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 						: '',
 					ttl: data.ttl,
 					measure: ingredient.measure,
+					emptyFields: ingredient.emptyFields,
 				});
 			}
 			return ingredient;
@@ -82,14 +92,31 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 					ingredientId: ingredient.ingredientId,
 					ttl: ingredient.ttl,
 					measure: data.measure,
+					emptyFields: ingredient.emptyFields,
 				});
 			}
 			return ingredient;
 		});
 		setAddedIngredientsArray(updatedArray);
 	};
-	// console.log(addedIngredientsArray);
 
+	const getEmptyFieldData = (id,data) => {
+		const updatedArray = addedIngredientsArray.map(ingredient => {
+			if (id === ingredient.id) {
+				return (ingredient = {
+					id: id,
+					ingredientId: ingredient.ingredientId,
+					ttl: ingredient.ttl,
+					measure: data.measure,
+					emptyFields: data,
+				});
+			}
+			return ingredient;
+		});
+		setAddedIngredientsArray(updatedArray);
+	};
+
+	console.log('addDataArray', addedIngredientsArray);
 	const onButtonDeleteClick = e => {
 		const id = e.currentTarget.id;
 		console.log(1, id);
@@ -106,7 +133,12 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 	return (
 		<RecipeIngredientsFieldset>
 			<HeadingStyledContainer>
-				<RecipeIngredientsHeading>Ingredients</RecipeIngredientsHeading>
+				<RecipeIngredientsHeading>
+					Ingredients
+					{anyEmptyFieldsState && (
+						<EmptyFieldNotation> *</EmptyFieldNotation>
+					)}
+				</RecipeIngredientsHeading>
 				<RecipeIngredientsFieldsCounter
 					onDecrementClick={onDecrement}
 					onIncrementClick={onIncrement}
@@ -125,8 +157,9 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 								addedIngredientsArray={addedIngredientsArray}
 								onButtonDeleteClick={onButtonDeleteClick}
 								getIngredientName={getIngredientName}
-								getIngredientMeasure={
-									getIngredientMeasure
+								getIngredientMeasure={getIngredientMeasure}
+								getEmptyFieldData={
+									getEmptyFieldData
 								}></RecipeingredientsListItem>
 						);
 					})}

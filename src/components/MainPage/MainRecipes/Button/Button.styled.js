@@ -15,4 +15,8 @@ line-height: 21px;
 border: 2px solid ${({theme}) => theme.colors.primary};
 color: ${({theme}) => theme.colors.buttonDarkBG};
 background: ${({theme}) => theme.colors.buttonLightBG};
+&:hover {
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.fontColor};
+	  }
 `;

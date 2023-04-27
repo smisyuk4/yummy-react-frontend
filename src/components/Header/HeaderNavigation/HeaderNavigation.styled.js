@@ -13,13 +13,11 @@ export const HeaderNavigationNav = styled.nav`
 `;
 
 export const HeaderNavlink = styled(NavLink)`
-    font-family: 'Poppins';
-    font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 1;
     letter-spacing: -0.02em;
-    color: #23262A;
+    color: ${props => props.theme.colors.fontColorNavigation};;
    
     &:hover {
         color: ${({ theme }) => theme.colors.primary};
@@ -28,8 +26,3 @@ export const HeaderNavlink = styled(NavLink)`
         color: ${({ theme }) => theme.colors.primary};
   }
 `;
-
-export const SearchImg = styled.img`
-    width: 24px;
-    height: 24px;
-`
