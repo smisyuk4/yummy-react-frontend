@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { addIngredient, deleteIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
+import {InputCheck} from './RecipeIngredients.styled'
 
 export const Checkbox = ({ ingredient, currentShopList }) => {
   const [checked, setChecked] = useState(false);
@@ -24,11 +25,12 @@ export const Checkbox = ({ ingredient, currentShopList }) => {
   };
 
   return (
-    <input
+    <InputCheck
       id={id}
       type="checkbox"
       checked={checked}
       onChange={event => checkboxChange(event, { ttl, thb, measure })}
-    ></input>
+    >
+    </InputCheck>
   );
 };
