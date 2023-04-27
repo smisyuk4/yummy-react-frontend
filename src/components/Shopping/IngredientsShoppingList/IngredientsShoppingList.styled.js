@@ -40,7 +40,7 @@ export const ItemBar = styled.li`
 	color: ${({ theme }) => theme.colors.buttonLightBG};
 	/* margin-right: 24px; */
 	&:nth-of-type(2) {
-		margin-left:auto;
+		margin-left: auto;
 		margin-right: auto;
 	}
 	&:first-of-type {
@@ -80,7 +80,7 @@ export const ShoppingList = styled.ul`
 	margin-bottom: 100px;
 	justify-content: center;
 
-	 @media ${props => props.theme.media.tablet} {
+	@media ${props => props.theme.media.tablet} {
 		min-width: 704px;
 		max-width: 1160px;
 		margin-bottom: 200px;
@@ -88,7 +88,6 @@ export const ShoppingList = styled.ul`
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
 		margin-bottom: 195px;
-		
 	}
 `;
 
@@ -152,12 +151,12 @@ export const Measure = styled.p`
 	line-height: 1.2;
 	border-radius: 5px;
 	min-width: 37px;
-	
+
 	/* margin-right: 46px; */
 	padding: 4px;
 	text-align: center;
 	margin-right: auto;
-    margin-left: auto;
+	margin-left: auto;
 `;
 
 export const CloseBtn = styled.button`
@@ -166,10 +165,50 @@ export const CloseBtn = styled.button`
 	height: 14px;
 	width: 14px;
 	margin-right: auto;
-    margin-left: auto;
+	margin-left: auto;
 `;
 export const CloseIcon = styled(Icon)`
 	height: 14px;
 	width: 14px;
-	stroke: #333333;
+	stroke: ${({ theme }) => theme.colors.addRecipeFormFieldsDeleteButton};
+`;
+
+export const EmptyList = styled.p`
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 28px;
+	letter-spacing: -0.02em;
+	margin: 0;
+	color: ${({ theme }) => theme.colors.primary};
+	text-align: center;
+	margin-bottom: 132px;
+	@media screen and (min-width: 768px) {
+		font-size: 32px;
+		line-height: 32px;
+	}
+	@media screen and (min-width: 1440px) {
+		font-size: 44px;
+		line-height: 44px;
+	}
+`;
+export const ContainerEmpty = styled.div`
+position: relative;
+`
+export const ShopBag = styled(Icon)`
+	height: 50px;
+	width: 50px;
+	fill: ${({ theme }) => theme.colors.primary};
+
+	position: absolute;
+	top: -80px;
+	left: 47%;
+	@media screen and (min-width: 768px) {
+		height: 75px;
+		width: 75px;
+		top: -140px;
+	}
+	@media screen and (min-width: 1440px) {
+		height: 85px;
+		width: 85px;
+	}
 `;

@@ -17,6 +17,9 @@ import {
 	TaglineP,
 	ContainerImg,
 	Measure,
+	EmptyList,
+	ShopBag,
+	ContainerEmpty,
 } from './IngredientsShoppingList.styled';
 
 const IngredientsShoppingList = () => {
@@ -67,17 +70,21 @@ const IngredientsShoppingList = () => {
 							<TaglineP>{ttl}</TaglineP>
 
 							{/* <NavLink to="/recipe/:id">recipe{id}</NavLink> */}
-								<Measure>{measure}</Measure>
-							<CloseBtn type="button" onClick={() => onDelete(_id)}>
-								<CloseIcon
-									id="icon-close"
-								/>
-							</CloseBtn>		
-
+							<Measure>{measure}</Measure>
+							<CloseBtn
+								type="button"
+								onClick={() => onDelete(_id)}>
+								<CloseIcon id="icon-close" />
+							</CloseBtn>
 						</ItemShoppingList>
 					))}
 			</ShoppingList>
-			{shoppingList.length === 0 && <p>Your Shopping List is Empty</p>}
+			{shoppingList.length === 0 && (
+				<ContainerEmpty>
+					<ShopBag id="icon-cart" />
+					<EmptyList>Your Shopping List is Empty</EmptyList>
+				</ContainerEmpty>
+			)}
 		</div>
 	);
 };
