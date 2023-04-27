@@ -13,40 +13,6 @@ import { RecipePreparationFields } from './RecipePreparationFields';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
 import axios from 'axios';
 
-// const URL = 'https://yummy-rest-api.onrender.com';
-
-// const instance = axios.create({
-// 	baseURL: URL,
-// });
-
-// const fetchImg = async userInf => {
-// 	try {
-// 		const { data } = await instance.post('/ownRecipes', userInf, {
-// 			headers: {
-// 				'Content-Type': 'multipart/form-data',
-// 			},
-// 		});
-// 		console.log(data);
-// 		return data;
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
-
-// const fetchData = async userInf => {
-// 	try {
-// 		const { data } = await instance.post('/ownRecipes', userInf, {
-// 			headers: {
-// 				'Content-Type': 'application/json',
-// 			},
-// 		});
-// 		console.log(data);
-// 		return data;
-// 	} catch (error) {
-// 		console.log(error);
-// 	}
-// };
-
 export const AddRecipeForm = () => {
 	const [title, setTitle] = useState('');
 	const [about, setAbout] = useState('');
@@ -55,17 +21,6 @@ export const AddRecipeForm = () => {
 	const [time, setTime] = useState('');
 	const [ingretients, setIngridients] = useState([]);
 	const [preparationEditedText, setPreparationEditedText] = useState([]);
-
-	// const [totalFormValues, setTotalFormValues] = useState({});
-	// const addRecipe = data => {
-	// 	console.log('New Recipe', data);
-	// };
-
-	// const testFunc = terget => {
-	// 	// прийняти данні з форм внизу та записати собі в загальний стейт
-	// 	setTotalFormValues();
-	// 	console.log(totalFormValues);
-	// };
 
 	const ingridientsCange = ingridientsArray => {
 		setIngridients(ingridientsArray);
@@ -97,14 +52,6 @@ export const AddRecipeForm = () => {
 	};
 	console.log('TOTAL', title, time, categori, picture, about);
 
-	const testFunc2 = () => {
-		// взяти данні з стейт - створити новий рецепт
-		// та відправити на сервер
-		// console.log(totalFormValues);
-	};
-
-	testFunc2();
-
 	const PostRecipe = async () => {
 		const igr = ingretients.map(el => {
 			return { id: el.ingredientId, measure: el.measure };
@@ -122,10 +69,7 @@ export const AddRecipeForm = () => {
 		dataFile.set('body', JSON.stringify(requestBody));
 		console.log('FORM-DATA----', dataFile);
 
-		// await fetchImg(dataFile);
 		try {
-			axios.defaults.baseURL =
-				'https://vitalii-volianyk-upgraded-waddle-jpx7pp5jw9r3jgx9-4000.preview.app.github.dev/';
 			await axios.post('/ownRecipes', dataFile, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
@@ -134,7 +78,6 @@ export const AddRecipeForm = () => {
 		} catch (error) {
 			console.log(error);
 		}
-		// await fetchData(JSON.stringify(newRecipe));
 	};
 
 	return (
@@ -146,10 +89,6 @@ export const AddRecipeForm = () => {
 			</WrapperAllInput>
 			<AddButton onClick={PostRecipe}>Add</AddButton>
 		</AddRecipeFormWrapper>
-		// <RecipeFormDivStyled>
-		// 	<RecipeDescription onSubmit={addRecipe} />
-		// 	<AddButton>Add</AddButton>
-		// </RecipeFormDivStyled>
 	);
 };
 
