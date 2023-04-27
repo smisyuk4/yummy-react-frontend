@@ -69,28 +69,27 @@ export const AddRecipeForm = () => {
 
 	const ingridientsCange = ingridientsArray => {
 		setIngridients(ingridientsArray);
-		console.log('ingretients array', ingretients);
 	};
 	const preparationChange = change => {
 		setPreparationEditedText(change);
-		console.log('preparation -------', preparationEditedText);
 	};
-	const tesOnCanfeDescription = terget => {
-		switch (terget.name) {
+	const tesOnCanfeDescription = target => {
+		console.log(target);
+		switch (target.name) {
 			case 'title':
-				setTitle(terget.value);
+				setTitle(target.value);
 				break;
 			case 'about':
-				setAbout(terget.value);
+				setAbout(target.value);
 				break;
 			case 'picture':
-				setPicture(terget.files[0]);
+				setPicture(target.files[0]);
 				break;
 			case 'categori':
-				setCategori(terget.value);
+				setCategori(target.value);
 				break;
 			case 'time':
-				setTime(terget.value);
+				setTime(target.value);
 				break;
 			default:
 				console.log('Invalid subscription type');
@@ -106,24 +105,27 @@ export const AddRecipeForm = () => {
 
 	testFunc2();
 
-	const newRecipe = {
-		title: title,
-		description: about,
-		category: categori,
-		time: time,
-		instructions: preparationEditedText,
-		// imageURL:
-		// 	'https://res.cloudinary.com/ddbvbv5sp/image/upload/v1678560408/kknfjaqupiqhufj5kspx.jpg',
-		ingredients: ingretients,
-	};
-	const PostRecipe = async event => {
+	const PostRecipe = async () => {
+		const igr = ingretients.map(el => {
+			return { id: el.ingredientId, measure: el.measure };
+		});
 		const dataFile = new FormData();
-		dataFile.set('file', picture);
-		dataFile.append('body', JSON.stringify(newRecipe));
+		const requestBody = {
+			title: title,
+			description: about,
+			category: categori,
+			time: time,
+			instructions: preparationEditedText.toString(),
+			ingredients: igr,
+		};
+		dataFile.set('imageURL', picture);
+		dataFile.set('body', JSON.stringify(requestBody));
 		console.log('FORM-DATA----', dataFile);
 
 		// await fetchImg(dataFile);
 		try {
+			axios.defaults.baseURL =
+				'https://vitalii-volianyk-upgraded-waddle-jpx7pp5jw9r3jgx9-4000.preview.app.github.dev/';
 			await axios.post('/ownRecipes', dataFile, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
