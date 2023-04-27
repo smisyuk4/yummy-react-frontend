@@ -35,23 +35,35 @@ export const LiStyled = styled.li`
 	display: flex;
 	flex-direction: column;
 	margin: 5px;
+	aspect-ratio: 1/1;
 	@media (min-width: 600px) {
-		max-width: calc(100% / 2 - 10px);
+		width: calc(100vw / 2 - 10px);
 	}
 	@media (min-width: 900px) {
-		max-width: calc(100% / 3 - 10px);
+		width: calc(100vw / 3 - 10px);
 	}
 	@media (min-width: 1440px) {
-		max-width: calc(100% / 4 - 10px);
+		width: calc(100vw / 4 - 10px);
 	}
 	& img {
 		border-radius: 6px;
-		filter: grayscale(1);
+		filter: blur(2px) brightness(0.8);
 		transform: scale(1);
+		object-fit: cover;
 		transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+		@media (min-width: 600px) {
+			height: calc(100vw / 2 - 10px);
+		}
+		@media (min-width: 900px) {
+			height: calc(100vw / 3 - 10px);
+		}
+		@media (min-width: 1440px) {
+			height: calc(100vw / 4 - 10px);
+		}
 	}
 	&:hover img {
-		filter: grayscale(0);
+		filter: blur(0) brightness(1);
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 		transform: scale(1.04);
 		transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 	}

@@ -8,5 +8,5 @@ export const ModalDiv = styled.div`
 	z-index: 100;
 	width: 100vw;
 	height: 100vh;
-	background-color: ${({ theme }) => theme.colors.buttonLightBG};
+	background-color: ${({ theme }) => theme.colors.lightBG};
 `;
