@@ -10,13 +10,13 @@ import bgImgDownM from 'images/footerImgs/footer-bg-m-bottom.png'
 import bgImgDownL from 'images/footerImgs/footer-bg-l-bottom.png'
 
 
-
 export const WrapperFooter = styled.footer`
+    box-sizing: border-box;
+    max-width: 2000px;
     ${flexBox};
     flex-direction: column;
     text-align: center;
     margin-top: auto;
-
 `
 export const FooterStyled = styled.div`
     position: relative;
