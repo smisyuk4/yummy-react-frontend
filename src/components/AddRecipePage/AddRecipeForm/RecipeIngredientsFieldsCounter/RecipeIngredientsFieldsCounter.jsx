@@ -28,5 +28,5 @@ export const RecipeIngredientsFieldsCounter = ({
 RecipeIngredientsFieldsCounter.propType = {
 	onDecrementClick: PropTypes.func.isRequired,
 	onIncrementClick: PropTypes.func.isRequired,
-	count: PropTypes.string.isRequired
+	count: PropTypes.number.isRequired
 }

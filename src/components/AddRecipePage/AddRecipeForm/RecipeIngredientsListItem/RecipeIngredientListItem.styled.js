@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
+import { Field } from 'formik';
 
-export const StyledIngredientInput = styled.input`
+export const StyledIngredientInput = styled(Field)`
 	width: 194px;
-	font-size: 18px;
+	font-size: 14px;
 	font-style: normal;
 	line-height: 1.5;
 	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
@@ -23,8 +24,8 @@ export const StyledIngredientInput = styled.input`
 	}
 `;
 
-export const StyledMeasureInput = styled.input`
-	width: 84px;
+export const StyledMeasureValueInput = styled(Field)`
+	width: 42px;
 	font-size: 14px;
 	font-style: normal;
 	line-height: 1.5;
@@ -32,16 +33,38 @@ export const StyledMeasureInput = styled.input`
 	color: ${p => p.theme.colors.addRecipeFormFieldsTextColor};
 	border: none;
 	outline: none;
-	padding: 16px 30px 16px 14px;
-	border-radius: 6px;
+	padding: 16px 0 16px 12px;
+	border-radius: 6px 0 0 6px;
 	box-sizing: border-box;
 	@media ${props => props.theme.media.tablet} {
 		font-size: 18px;
-		width: 99px;
+		width: 56px;
 	}
 	@media ${props => props.theme.media.desktop} {
 		font-size: 18px;
-		width: 99px;
+		width: 56px;
+	}
+`;
+
+export const StyledMeasureInput = styled(Field)`
+	width: 42px;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 1.5;
+	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
+	color: ${p => p.theme.colors.addRecipeFormFieldsTextColor};
+	border: none;
+	outline: none;
+	padding: 16px 0px 16px 0;
+	border-radius: 0 6px 6px 0;
+	box-sizing: border-box;
+	@media ${props => props.theme.media.tablet} {
+		font-size: 18px;
+		width: 44px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		font-size: 18px;
+		width: 44px;
 	}
 `;
 
@@ -95,7 +118,8 @@ export const DropdownMeasureContainer = styled.div`
 	height: 128px;
 	width: 100%;
 
-	overflow: hidden;
+	overflow: scroll;
+	overflow-x: hidden;
 	z-index: 2;
 
 	padding: 16px 35px;
@@ -155,13 +179,32 @@ export const DropdownListPosition = styled.button`
 	}
 `;
 
-
 export const DropdownButtonIcon = styled(Icon)`
 	stroke: ${p => p.theme.colors.addRecipeFormFieldsDropdownButtonIcon};
 `;
 
 export const ListItemDeleteIcon = styled(Icon)`
-	stroke: ${p =>
-		p.theme.colors
-			.addRecipeFormFieldsDeleteButton};
+	stroke: ${p => p.theme.colors.addRecipeFormFieldsDeleteButton};
+`;
+
+export const IngredientsListItem = styled.li`
+	position: relative;
+	display: flex;
+	align-items: center;
+`;
+
+export const EmptyFieldNotation = styled.span`
+	font-size: 36px;
+	color: red;
+	position: absolute;
+	top: 14px;
+	right: 35px;
+	@media ${props => props.theme.media.tablet} {
+		top: 14px;
+		right: 140px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		top: 14px;
+		right: 60px;
+	}
 `;
