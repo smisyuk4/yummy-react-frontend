@@ -8,11 +8,12 @@ import { Footer } from 'components/Footer';
 import { useAuth } from 'hooks/useAuth';
 import { ColorRing } from 'react-loader-spinner';
 
-export const Layout = ({themeToggler}) => {
+export const Layout = ({ themeToggler }) => {
 	const { isLoggedIn } = useAuth();
+
 	if (!isLoggedIn)
 		return (
-			<DivStyled>
+			<>
 				<ToastContainer
 					position="top-right"
 					autoClose={2000}
@@ -42,7 +43,7 @@ export const Layout = ({themeToggler}) => {
 					}>
 					<Outlet />
 				</Suspense>
-			</DivStyled>
+			</>
 		);
 	return (
 		<>

@@ -45,7 +45,7 @@ const LightTheme = {
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		darkBG: '#2a2c36',
-		lightBG: '#ECECEC',
+		lightBG: '#FAFAFA',
 		BGCintoButton: 'FFFFF',
 		borderColorLight: '#f0f0f0',
 		textSecondary: '#7E7E7E',
@@ -107,13 +107,30 @@ const DarkTheme = {
 };
 
 export const App = () => {
-	const [currentTheme, setCurrentTheme] = useState('LightTheme')
+	const [currentTheme, setCurrentTheme] = useState('LightTheme');
 	const themeToggler = () => {
-		console.log('click')
-		currentTheme === 'LightTheme' ? setCurrentTheme('DarkTheme') : setCurrentTheme('LightTheme')
+		if (currentTheme === 'LightTheme') {
+			setCurrentTheme('DarkTheme');
+			localStorage.setItem('theme', 'DarkTheme');
+			document.body.style.backgroundColor = '#1E1F28';
+		} else {
+			setCurrentTheme('LightTheme');
+			localStorage.setItem('theme', 'LightTheme');
+			document.body.style.backgroundColor = '#FAFAFA';
 		}
+	};
 	const dispatch = useDispatch();
 
+	useEffect(() => {
+		const savedTheme = localStorage.getItem('theme');
+		if (savedTheme) {
+			if (savedTheme !== currentTheme) {
+				themeToggler();
+			}
+		} else {
+			localStorage.setItem('theme', 'LightTheme');
+		}
+	}, []);
 	useEffect(() => {
 		dispatch(syncUser());
 	}, [dispatch]);
@@ -128,135 +145,138 @@ export const App = () => {
 		);
 
 	return (
-		<ThemeProvider theme={currentTheme === 'LightTheme' ? LightTheme : DarkTheme}>
-				<Suspense
-			fallback={
-				<ColorRing
-					visible={true}
-					ariaLabel="blocks-loading"
-					wrapperClass="blocks-wrapper"
-					colors={[
-						'#2a2c36',
-						'#f47e60',
-						'#f8b26a',
-						'#8BAA36',
-						'#EBF3D4',
-					]}
-				/>
-			}>
-			<Routes>
-				<Route path="/" element={<Layout themeToggler={themeToggler} />}>
-					<Route
-						index
-						element={
-							<RestrictedRoute
-								redirectTo="/main"
-								component={<WelcomePage />}
-							/>
-						}
+		<ThemeProvider
+			theme={currentTheme === 'LightTheme' ? LightTheme : DarkTheme}>
+			<Suspense
+				fallback={
+					<ColorRing
+						visible={true}
+						ariaLabel="blocks-loading"
+						wrapperClass="blocks-wrapper"
+						colors={[
+							'#2a2c36',
+							'#f47e60',
+							'#f8b26a',
+							'#8BAA36',
+							'#EBF3D4',
+						]}
 					/>
+				}>
+				<Routes>
 					<Route
-						path="register"
-						element={
-							<RestrictedRoute
-								redirectTo="/main"
-								component={<RegisterPage />}
-							/>
-						}
-					/>
-					<Route
-						path="login"
-						element={
-							<RestrictedRoute
-								redirectTo="/main"
-								component={<SigninPage />}
-							/>
-						}
-					/>
-					<Route
-						path="main"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<MainPage />}
-							/>
-						}
-					/>
-					<Route
-						path="categories/:categoryName"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<CategoriesPage />}
-							/>
-						}
-					/>
-					<Route
-						path="add"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<AddRecipePage />}
-							/>
-						}
-					/>
-					<Route
-						path="favorite"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<FavoritePage />}
-							/>
-						}
-					/>
-					<Route
-						path="recipes/:recipeId"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<RecipePage />}
-							/>
-						}
-					/>
-					<Route
-						path="my"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<MyRecipesPage />}
-							/>
-						}
-					/>
-					<Route
-						path="search"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<SearchPage />}
-							/>
-						}
-					/>
-					<Route
-						path="search/:query"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<SearchPage />}
-							/>
-						}
-					/>
-					<Route
-						path="shopping-list"
-						element={
-							<PrivateRoute
-								redirectTo="/login"
-								component={<ShoppingListPage />}
-							/>
-						}
-					/>
-				</Route>
-			</Routes>
-		</Suspense>
+						path="/"
+						element={<Layout themeToggler={themeToggler} />}>
+						<Route
+							index
+							element={
+								<RestrictedRoute
+									redirectTo="/main"
+									component={<WelcomePage />}
+								/>
+							}
+						/>
+						<Route
+							path="register"
+							element={
+								<RestrictedRoute
+									redirectTo="/main"
+									component={<RegisterPage />}
+								/>
+							}
+						/>
+						<Route
+							path="login"
+							element={
+								<RestrictedRoute
+									redirectTo="/main"
+									component={<SigninPage />}
+								/>
+							}
+						/>
+						<Route
+							path="main"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<MainPage />}
+								/>
+							}
+						/>
+						<Route
+							path="categories/:categoryName"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<CategoriesPage />}
+								/>
+							}
+						/>
+						<Route
+							path="add"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<AddRecipePage />}
+								/>
+							}
+						/>
+						<Route
+							path="favorite"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<FavoritePage />}
+								/>
+							}
+						/>
+						<Route
+							path="recipes/:recipeId"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<RecipePage />}
+								/>
+							}
+						/>
+						<Route
+							path="my"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<MyRecipesPage />}
+								/>
+							}
+						/>
+						<Route
+							path="search"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<SearchPage />}
+								/>
+							}
+						/>
+						<Route
+							path="search/:query"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<SearchPage />}
+								/>
+							}
+						/>
+						<Route
+							path="shopping-list"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<ShoppingListPage />}
+								/>
+							}
+						/>
+					</Route>
+				</Routes>
+			</Suspense>
 		</ThemeProvider>
 	);
 };

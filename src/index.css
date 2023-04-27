@@ -57,4 +57,5 @@ code {
 	justify-content: space-between;
 	display: flex;
 	flex-direction: column;
+	overflow-x: clip;
 }
