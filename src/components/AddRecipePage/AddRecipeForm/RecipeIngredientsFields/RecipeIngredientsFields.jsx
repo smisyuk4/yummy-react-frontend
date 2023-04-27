@@ -75,13 +75,14 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 		const requstedIngredient = allIngredientsList.find(
 			ingredient => ingredient.ttl === data.ttl
 		);
-		console.log(requstedIngredient);
+
+		console.log('requstedIngredient', requstedIngredient);
 		const updatedArray = addedIngredientsArray.map(ingredient => {
 			if (id === ingredient.id) {
 				return (ingredient = {
 					id: id,
-					ingredientId: requstedIngredient
-						? requstedIngredient.id
+					ingredientId: requstedIngredient  
+						? requstedIngredient._id
 						: '',
 					ttl: data.ttl,
 					measure: ingredient.measure,
