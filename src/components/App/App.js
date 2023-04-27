@@ -134,7 +134,7 @@ export const App = () => {
 		} else {
 			localStorage.setItem('theme', 'LightTheme');
 		}
-	}, []);
+	});
 	useEffect(() => {
 		dispatch(syncUser());
 	}, [dispatch]);

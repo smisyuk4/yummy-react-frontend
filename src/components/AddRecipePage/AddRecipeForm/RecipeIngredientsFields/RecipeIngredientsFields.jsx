@@ -21,12 +21,12 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 	const fetchIngredients = async () => {
 		const fetchedIngredientsList = await getAllIngredients();
 
-		const reworkedList = fetchedIngredientsList.data.data.ingretients.map(
-			ingredient => {
-				return { id: ingredient._id, ttl: ingredient.ttl };
-			}
-		);
-		setAllIngredientsList(reworkedList);
+		// const reworkedList = fetchedIngredientsList.data.data.ingretients.map(
+		// 	ingredient => {
+		// 		return { id: ingredient._id, ttl: ingredient.ttl };
+		// 	}
+		// );
+		setAllIngredientsList(fetchedIngredientsList.data.data.ingretients);
 	};
 
 	useEffect(() => {
