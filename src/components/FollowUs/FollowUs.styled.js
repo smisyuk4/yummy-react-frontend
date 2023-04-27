@@ -14,7 +14,7 @@ export const SonetLinksList = styled.ul`
     background: ${({ theme }) => theme.colors.followUsBG};
     gap: 16px;
     &:hover {
-        background: ${({ theme }) => theme.colors.foffowUsBGHover};
+        background: ${({ theme }) => theme.colors.followUsBGHover};
     }
     &:hover svg {
         fill: ${({ theme }) => theme.colors.followUsColorHover};       
