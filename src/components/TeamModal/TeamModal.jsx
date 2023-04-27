@@ -82,17 +82,18 @@ const teamateData = [
 		avatar: avatar8,
 	},
 	{
-		name: 'Viktoriia Levchenko',
-		position: 'QA Engineer, QA Team Lead',
-		role: 'Bug tracking and testing, Bug report template(Trello)',
-		avatar: avatar4,
-	},
-	{
 		name: 'Yuriy Zagrai',
-		position: 'QA Engineer',
+		position: 'Fullstack Developer',
 		role: 'Bug tracking and testing',
 		avatar: avatar9,
 	},
+	{
+		name: 'Viktoriia Levchenko',
+		position: 'QA Engineer, QA Team Lead',
+		role: 'The management of the QA Team',
+		avatar: avatar4,
+	},
+
 	{
 		name: 'Oksana Mylymuk',
 		position: 'QA Engineer',
