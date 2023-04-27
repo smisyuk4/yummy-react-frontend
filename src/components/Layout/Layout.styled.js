@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useAuth } from 'hooks/useAuth';
 
 export const DivStyled = styled.div`
-	body {
+	body & {
 		background-color: ${props => props.theme.colors.lightBG};
 	}
 	
