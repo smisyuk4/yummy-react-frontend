@@ -1,7 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
+import { ThemeProvider } from '@emotion/react';
 import { lazy, Suspense } from 'react';
 import { ColorRing } from 'react-loader-spinner';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { syncUser } from 'redux/auth/operations';
 import { useAuth } from 'hooks/useAuth';
@@ -24,8 +25,95 @@ const RestrictedRoute = lazy(() =>
 const PrivateRoute = lazy(() => import('components/subRoutes/PrivateRoute'));
 const Layout = lazy(() => import('components/Layout'));
 
+const LightTheme = {
+	colors: {
+		primary: '#8BAA36',
+		primarySoft: '#EBF3D4',
+		footerBG: '#22252A',
+		bgModal: '#FAFAFA',
+		fontColor: '#fafafa',
+		fontColorDark: '#3e4462',
+		fontColorPassive: '#E0E0E0',
+		titleColor: '#001833',
+		fontColorNavigation: '#23262a',
+		fontHero: '#22252A',
+		followUsColor: '#8BAA36',
+		followUsColorHover: '#FFFFFF',
+		followUsBG: 'transparent',
+		foffowUsBGHover: '#8BAA36',
+		buttonLightBG: '#fafafa',
+		buttonDarkBG: '#22252A',
+		buttonPrimaryBG: '#8BAA36',
+		darkBG: '#2a2c36',
+		lightBG: '#ECECEC',
+		BGCintoButton: 'FFFFF',
+		borderColorLight: '#f0f0f0',
+		textSecondary: '#7E7E7E',
+		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
+		addRecipeFormFieldsBackground: '#d9d9d9',
+		addRecipeFormFieldsTextColor: '#23262a',
+		addRecipeFormFieldsDropdownBackground: '#ffffff',
+		addRecipeFormFieldsDropdownButtonIcon: '#8BAA36',
+		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
+		addRecipeFormFieldsDropdownListHover: '#8BAA36',
+		addRecipeFormFieldsDeleteButton: '#333333',
+		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
+		addRecipeFormCounterButtonsHover: '#8baa36',
+	},
+	media: {
+		tablet: '(min-width: 768px)',
+		desktop: '(min-width: 1440px)',
+	},
+};
+const DarkTheme = {
+	colors: {
+		primary: '#8BAA36',
+		primarySoft: '#EBF3D4',
+		footerBG: '#8BAA36',
+		bgModal: '#2A2C36',
+		fontColor: '#fafafa',
+		fontColorDark: '#3e4462',
+		fontColorPassive: '#E0E0E0',
+		titleColor: '#FAFAFA',
+		fontColorNavigation: '#FAFAFA',
+		fontHero: '#FAFAFA',
+		followUsColor: '#FFFFFF',
+		followUsColorHover: '#1E1F28',
+		followUsBG: '#8BAA36',
+		foffowUsBGHover: 'transparent',
+		buttonLightBG: '#fafafa',
+		buttonDarkBG: '#8BAA36',
+		buttonPrimaryBG: '#8BAA36',
+		darkBG: '#2a2c36',
+		lightBG: '#1E1F28',
+		BGCintoButton: 'FFFFF',
+		borderColorLight: '#f0f0f0',
+		textSecondary: 'rgba(250, 250, 250, 0.6)',
+		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
+		addRecipeFormFieldsBackground: '#d9d9d9',
+		addRecipeFormFieldsTextColor: '#23262a',
+		addRecipeFormFieldsDropdownBackground: '#ffffff',
+		addRecipeFormFieldsDropdownButtonIcon: '#8BAA36',
+		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
+		addRecipeFormFieldsDropdownListHover: '#8BAA36',
+		addRecipeFormFieldsDeleteButton: '#333333',
+		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
+		addRecipeFormCounterButtonsHover: '#8baa36',
+	},
+	media: {
+		tablet: '(min-width: 768px)',
+		desktop: '(min-width: 1440px)',
+	},
+};
+
 export const App = () => {
+	const [currentTheme, setCurrentTheme] = useState('LightTheme')
+	const themeToggler = () => {
+		console.log('click')
+		currentTheme === 'LightTheme' ? setCurrentTheme('DarkTheme') : setCurrentTheme('LightTheme')
+		}
 	const dispatch = useDispatch();
+
 	useEffect(() => {
 		dispatch(syncUser());
 	}, [dispatch]);
@@ -40,7 +128,8 @@ export const App = () => {
 		);
 
 	return (
-		<Suspense
+		<ThemeProvider theme={currentTheme === 'LightTheme' ? LightTheme : DarkTheme}>
+				<Suspense
 			fallback={
 				<ColorRing
 					visible={true}
@@ -56,7 +145,7 @@ export const App = () => {
 				/>
 			}>
 			<Routes>
-				<Route path="/" element={<Layout />}>
+				<Route path="/" element={<Layout themeToggler={themeToggler} />}>
 					<Route
 						index
 						element={
@@ -168,5 +257,6 @@ export const App = () => {
 				</Route>
 			</Routes>
 		</Suspense>
+		</ThemeProvider>
 	);
 };

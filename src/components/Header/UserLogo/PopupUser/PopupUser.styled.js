@@ -13,8 +13,7 @@ export const OverlayDiv = styled.div`
     ${flexBox};
     flex-direction: column;
     gap: 28px;
-
-    background-color: ${props => props.theme.colors.buttonLightBG};
+    background-color: ${({ theme }) => theme.colors.bgModal};
     border: 1px solid #8BAA36;
     border-radius: 8px;
 
@@ -49,7 +48,7 @@ export const EditText = styled.p`
     font-weight: 500;
     font-size: 14px;
     line-height: 1.57;
-    color: #23262A;
+    color: ${({ theme }) => theme.colors.fontColorNavigation};
 `
 export const WrapperEdit = styled.div`
 width: 100%;

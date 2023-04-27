@@ -23,7 +23,7 @@ export const FooterStyled = styled.div`
     width: 100%;
     padding-top: 28px;
     padding-bottom: 20px;
-    background-color: ${props => props.theme.colors.buttonDarkBG};
+    background-color: ${props => props.theme.colors.footerBG};
     ${flexBox};
     flex-direction: column;
     gap: 32px;
@@ -35,10 +35,10 @@ export const FooterStyled = styled.div`
         height: 487px;
         background: url(${bgImgTopS}) no-repeat right bottom;
         position: absolute;
-        bottom: 300px;
+        bottom: 250px;
         left: 0px;
         transform: rotate(350deg);
-        z-index: -100;
+        z-index: -1;
         @media ${props => props.theme.media.tablet}  {
             width: 500px;
             height: 710px;
