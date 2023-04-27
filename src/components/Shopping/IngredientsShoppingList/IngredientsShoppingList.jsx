@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { NavLink, useParams } from 'react-router-dom';
 
 import {
 	deleteIngredientInShoppingList,
@@ -10,7 +9,7 @@ import {
 	CloseBtn,
 	ItemShoppingList,
 	ShoppingList,
-	DivContainer,
+	// DivContainer,
 	ListBar,
 	ItemBar,
 	CloseIcon,
@@ -22,10 +21,10 @@ import {
 	ContainerEmpty,
 } from './IngredientsShoppingList.styled';
 
+
 const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
-	// const { id } = useParams();
-
+	
 	useEffect(() => {
 		getShoppingList()
 			.then(({ data }) => setShoppingList(data.shoppingList))
@@ -38,6 +37,7 @@ const IngredientsShoppingList = () => {
 			prevState.filter(ingredient => ingredient._id !== ingredientId)
 		);
 	};
+
 	// const groupedShoppingList = shoppingList.reduce((acc, curr) => {
 	// 	if (!acc[curr.ingredientId]) {
 	// 		acc[curr.ingredientId] = { ...curr, measures: [curr.measure] };
@@ -51,25 +51,26 @@ const IngredientsShoppingList = () => {
 
 	return (
 		<div>
-			{shoppingList && (
-				<DivContainer>
+			{shoppingList.length > 0 && (
+				// <DivContainer>
 					<ListBar>
 						<ItemBar>Products</ItemBar>
 						<ItemBar>Number</ItemBar>
 						<ItemBar>Remove</ItemBar>
 					</ListBar>
-				</DivContainer>
+				// </DivContainer>
 			)}
 			<ShoppingList>
-				{shoppingList &&
+				{shoppingList.length > 0 &&
 					shoppingList.map(({ _id, ttl, thb, measure }) => (
 						<ItemShoppingList key={_id}>
 							<ContainerImg>
 								<img src={thb} alt={ttl} />
 							</ContainerImg>
-							<TaglineP>{ttl}</TaglineP>
-
-							{/* <NavLink to="/recipe/:id">recipe{id}</NavLink> */}
+							<TaglineP>{ttl}
+							 <br/>
+							{/* <p>{recipe}</p> */}
+							</TaglineP>
 							<Measure>{measure}</Measure>
 							<CloseBtn
 								type="button"
