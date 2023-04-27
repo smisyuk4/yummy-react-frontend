@@ -34,9 +34,9 @@ export const IngredientsList = ({ ingredients }) => {
             <>
             <ListStyled>
                     {ingredients.length > 0 &&
-            ingredients.map(({ thb, id, measure, ttl }) => {
+            ingredients.map(({ thb, _id, id, measure, ttl }) => {
               return (
-                <IngedientsItem key={id}>
+                <IngedientsItem key={_id}>
                   <Wrapper>
                     {
                       <img
