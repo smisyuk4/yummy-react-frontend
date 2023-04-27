@@ -10,9 +10,7 @@ export const DescrForm = styled(Form)`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	padding: 0px 10px;
-	background-color: white;
 	@media ${props => props.theme.media.tablet} {
 		flex-direction: row;
 		padding: 0;
@@ -60,7 +58,6 @@ export const LabelSelect = styled.label`
 
 export const InputForm = styled(Field)`
 	width: 100%;
-	height: 40px;
 
 	font-family: 'Poppins';
 	font-style: normal;
@@ -69,6 +66,7 @@ export const InputForm = styled(Field)`
 	line-height: 21px;
 	letter-spacing: -0.02em;
 	border: none;
+	background-color: inherit;
 	color: #000000;
 
 	@media ${props => props.theme.media.tablet} {
@@ -88,7 +86,7 @@ export const InputFile = styled(Field)`
 
 export const InputSelct = styled(Field)`
 	border: none;
-	background-color: #ffffff;
+	background-color: inherit;
 	z-index: 1;
 	font-family: 'Poppins';
 	font-style: normal;
@@ -104,11 +102,13 @@ export const OverlayPicture = styled.div`
 	height: 268px;
 	border-radius: 8px;
 	margin-bottom: 32px;
-	background-color: ${props => props.theme.colors.buttonPrimaryBG};
+	background-color: ${props => props.theme.colors.primary};
+	@media ${props => props.theme.media.desktop} {
+		margin-bottom: 0;
+	}
 	@media ${props => props.theme.media.desktop} {
 		width: 357px;
 		height: 344px;
-		margin-bottom: 0;
 	}
 `;
 export const ThumbImege = styled.div`
