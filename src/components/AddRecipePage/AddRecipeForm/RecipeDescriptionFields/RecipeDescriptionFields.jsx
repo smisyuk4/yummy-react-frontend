@@ -19,8 +19,8 @@ import { Icon } from 'components/Icon';
 
 export const RecipeDescriptionFields = ({ onChange }) => {
 	const [picture, setPicture] = useState(null);
-	const [category, setCategory] = useState(null);
-	const [time, setTime] = useState(null);
+	const [category, setCategory] = useState('Beef');
+	const [time, setTime] = useState('5mins');
 
 	const [pictureUrl, setPictureUrl] = useState('');
 	const [categoriList, setCategoriList] = useState([]);
