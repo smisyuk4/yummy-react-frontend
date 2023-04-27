@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 import { getShoppingList } from 'components/Shopping/fetchShoppingList';
 import ingredImage from 'images/recipeImg/ingredImage.jpg'
-import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper} from './RecipeIngredients.styled';
+import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper, IngMeasure} from './RecipeIngredients.styled';
 import { Checkbox } from './Checkbox';
+
 
 export const IngredientsList = ({ ingredients }) => {
   const [shoppingList, setShoppingList] = useState([]);
@@ -43,20 +44,21 @@ export const IngredientsList = ({ ingredients }) => {
                         alt="Ingredient"
                       />
                     }
-                    <p>{ttl}</p>
+                     <p>{ttl}</p>
                   </Wrapper>
-                  <div>
-                    <p>{measure}</p>
-                    <label >
+                
+                   <Wrapper>
+                  <IngMeasure>{measure}</IngMeasure>
+                    <label>
                       <Checkbox
                         type="checkbox"
                         ingredient={{ id, ttl, thb, measure }}
                         currentShopList={shoppingList}
                         id={id}
                       />
-                      
+                    
                     </label>
-                  </div>
+                    </Wrapper>
                 </IngedientsItem>
               );
             })}
