@@ -52,10 +52,10 @@ export const userUpdateAvatar = createAsyncThunk(
 	async (credentials, thunkAPI) => {
 		try {
 			const response = await axios.post('/user/avatars', credentials, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-              });
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			});
 			return response.data;
 		} catch (e) {
 			return thunkAPI.rejectWithValue(e.response.data);
