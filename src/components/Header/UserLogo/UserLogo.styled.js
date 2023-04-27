@@ -21,6 +21,7 @@ export const UserNameP = styled.p`
     font-weight: 600;
     font-size: 12px;
     line-height: 1.7;
+    color: ${({ theme }) => theme.colors.fontColorNavigation};
     @media ${props => props.theme.media.tablet} {
         font-size: 14px;
     }
@@ -77,7 +78,7 @@ export const BurgerMuneBtn = styled.button`
 export const BurgerMenuIcon = styled(Icon)`
     width: 28px;
     height: 28px;
-    stroke: ${props => props.theme.colors.buttonDarkBG};
+    stroke: ${props => props.theme.colors.fontColorNavigation};
     border: none;
     &:hover {
         stroke: ${({ theme }) => theme.colors.primary};

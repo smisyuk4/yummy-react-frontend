@@ -11,12 +11,13 @@ export const SonetLinksList = styled.ul`
     ${flexBox};
     padding: 15px 28px;
     border-radius: 6px;
+    background: ${({ theme }) => theme.colors.followUsBG};
     gap: 16px;
     &:hover {
-        background: #8BAA36;
+        background: ${({ theme }) => theme.colors.followUsBGHover};
     }
     &:hover svg {
-        fill: #FFFFFF;       
+        fill: ${({ theme }) => theme.colors.followUsColorHover};       
     }
 
     & > a {
@@ -31,9 +32,9 @@ export const SonetLink = styled(Link)`
 export const IconSonetLink = styled(Icon)`
     width: 20px;
     height: 20px;
-    fill: ${({ theme }) => theme.colors.primary};
+    fill: ${({ theme }) => theme.colors.followUsColor};
     &:hover  {
-        fill: #FFFFFF;       
+        fill: ${({ theme }) => theme.colors.followUsColorHover};       
     }
 
 `
