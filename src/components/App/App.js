@@ -109,13 +109,28 @@ const DarkTheme = {
 export const App = () => {
 	const [currentTheme, setCurrentTheme] = useState('LightTheme');
 	const themeToggler = () => {
-		console.log('click');
-		currentTheme === 'LightTheme'
-			? setCurrentTheme('DarkTheme')
-			: setCurrentTheme('LightTheme');
+		if (currentTheme === 'LightTheme') {
+			setCurrentTheme('DarkTheme');
+			localStorage.setItem('theme', 'DarkTheme');
+			document.body.style.backgroundColor = '#1E1F28';
+		} else {
+			setCurrentTheme('LightTheme');
+			localStorage.setItem('theme', 'LightTheme');
+			document.body.style.backgroundColor = '#FAFAFA';
+		}
 	};
 	const dispatch = useDispatch();
 
+	useEffect(() => {
+		const savedTheme = localStorage.getItem('theme');
+		if (savedTheme) {
+			if (savedTheme !== currentTheme) {
+				themeToggler();
+			}
+		} else {
+			localStorage.setItem('theme', 'LightTheme');
+		}
+	}, []);
 	useEffect(() => {
 		dispatch(syncUser());
 	}, [dispatch]);
