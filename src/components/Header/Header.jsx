@@ -5,7 +5,7 @@ import {UserLogo} from './UserLogo/UserLogo';
 import { BurgerMenu } from './BurgerMenu';
 import { HeaderLogo } from './HeaderLogo';
 
-export const Header = () => {
+export const Header = ({themeToggler}) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const openModal = () => {
@@ -14,12 +14,12 @@ export const Header = () => {
   const closeModal = ()=> {
       setModalOpen(false);
   }
-
+  
   return <HeaderStyled>
     {modalOpen && <BurgerMenu closeModal={closeModal} />}
       <HeaderLogo />
     <HeaderNavigation />
-    <UserLogo onOpenModal={openModal} />
+    <UserLogo onOpenModal={openModal} themeToggler={themeToggler} />
   </HeaderStyled>;
 };
 

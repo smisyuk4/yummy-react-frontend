@@ -1,11 +1,12 @@
 import { Formik } from 'formik';
 import {
 	DescrForm,
-	DescriptionDiv,
+	// DescriptionDiv,
 	InputFile,
 	InputForm,
 	InputSelct,
 	InputWrapper,
+	LabelFile,
 	LabelForm,
 	LabelSelect,
 	OverlayPicture,
@@ -18,6 +19,8 @@ import { Icon } from 'components/Icon';
 
 export const RecipeDescriptionFields = ({ onChange }) => {
 	const [picture, setPicture] = useState(null);
+	const [category, setCategory] = useState(null);
+	const [time, setTime] = useState(null);
 
 	const [pictureUrl, setPictureUrl] = useState('');
 	const [categoriList, setCategoriList] = useState([]);
@@ -82,6 +85,12 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 	const selectChange = prop => {
 		prop.target.size = 1;
 		prop.target.blur();
+		if (prop.target.name === 'categori') {
+			setCategory(prop.target.value);
+		}
+		if (prop.target.name === 'time') {
+			setTime(prop.target.value);
+		}
 	};
 
 	const selectBlur = prop => {
@@ -90,75 +99,79 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 	};
 
 	return (
-		<DescriptionDiv>
-			<Formik
-				initialValues={{
-					title: '',
-					about: '',
-					categori: '',
-				}}
-				onSubmit={handleSubmit}>
-				<DescrForm autoComplete="off" onChange={handleOnChange}>
-					<OverlayPicture>
-						<LabelForm>
-							<InputFile name="picture" type="file" multiple />
-							<ThumbImege>
-								{pictureUrl ? (
-									<RecipeImg src={pictureUrl} alt="PICTURE" />
-								) : (
-									<Icon
-										id="icon-add-photo-recipe"
-										fill="#fafafa"
-										width={64}
-										height={64}
-									/>
-								)}
-							</ThumbImege>
-						</LabelForm>
-					</OverlayPicture>
+		// <DescriptionDiv>
+		<Formik
+			initialValues={{
+				title: '',
+				about: '',
+				categori: '',
+			}}
+			onSubmit={handleSubmit}>
+			<DescrForm autoComplete="off" onChange={handleOnChange}>
+				<OverlayPicture>
+					<LabelFile>
+						<InputFile
+							name="picture"
+							type="file"
+							multiple={false}
+						/>
+						<ThumbImege>
+							{pictureUrl ? (
+								<RecipeImg src={pictureUrl} alt="PICTURE" />
+							) : (
+								<Icon
+									id="icon-add-photo-recipe"
+									fill="#fafafa"
+									width={64}
+									height={64}
+								/>
+							)}
+						</ThumbImege>
+					</LabelFile>
+				</OverlayPicture>
 
-					<InputWrapper>
-						<LabelForm>
-							<InputForm
-								name="title"
-								type="text"
-								placeholder="Enter item title"
-							/>
-						</LabelForm>
-						<LabelForm>
-							<InputForm
-								name="about"
-								type="text"
-								placeholder="Enter about recipe"
-							/>
-						</LabelForm>
-						<LabelSelect>
-							Categori
-							<InputSelct
-								name="categori"
-								as="select"
-								placeholder="Categori"
-								onFocus={selectFocus}
-								onChange={selectChange}
-								onBlur={selectBlur}>
-								{categoriName}
-							</InputSelct>
-						</LabelSelect>
-						<LabelSelect>
-							Cooking time
-							<InputSelct
-								name="time"
-								as="select"
-								startValue=""
-								onFocus={selectFocus}
-								onChange={selectChange}
-								onBlur={selectBlur}>
-								{timeSelect}
-							</InputSelct>
-						</LabelSelect>
-					</InputWrapper>
-				</DescrForm>
-			</Formik>
-		</DescriptionDiv>
+				<InputWrapper>
+					<LabelForm>
+						<InputForm
+							name="title"
+							type="text"
+							placeholder="Enter item title"
+						/>
+					</LabelForm>
+					<LabelForm>
+						<InputForm
+							name="about"
+							type="text"
+							placeholder="Enter about recipe"
+						/>
+					</LabelForm>
+					<LabelSelect>
+						Categori
+						<InputSelct
+							name="categori"
+							component="select"
+							onFocus={selectFocus}
+							onChange={selectChange}
+							onBlur={selectBlur}
+							value={category}>
+							{categoriName}
+						</InputSelct>
+					</LabelSelect>
+					<LabelSelect>
+						Cooking time
+						<InputSelct
+							name="time"
+							component="select"
+							onFocus={selectFocus}
+							onChange={selectChange}
+							onBlur={selectBlur}
+							value={time}>
+							{timeSelect}
+						</InputSelct>
+					</LabelSelect>
+				</InputWrapper>
+			</DescrForm>
+		</Formik>
+		// </DescriptionDiv>
 	);
 };

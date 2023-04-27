@@ -1,46 +1,42 @@
 import * as React from 'react';
-
-// import { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
-// import { getShoppingList, addIngredient, deletIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
+import { useState, useEffect } from 'react';
+// import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
+import { getShoppingList } from 'components/Shopping/fetchShoppingList';
 import ingredImage from 'images/recipeImg/ingredImage.jpg'
-import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper} from './RecipeIngredients.styled';
+import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper, IngMeasure, ListBar, ItemBar} from './RecipeIngredients.styled';
+import { Checkbox } from './Checkbox';
 
 
 export const IngredientsList = ({ ingredients }) => {
-  // const [isChecked, setIsChecked] = useState(false);
-  // const [shoppingList, setShoppingList] = useState([]);
-//  useEffect(() => {
-// 		async function getShopping() {
-//       try {
-// 		  const currentlist = await getShoppingList();
-		  // console.log('test', currentlist);
-//         setShoppingList(currentlist);
-// 		  console.log(currentlist)
-//       } catch (error) {
-// 		  console.log(error);
-//       }
-//     }
-//     getShopping();
-//  }, []); 
+  const [shoppingList, setShoppingList] = useState([]);
+  console.log(ingredients);
+  useEffect(() => {
+    
+    getShoppingList()
+      .then((data) => {
+        setShoppingList(data.data.shoppingList)
+        console.log(data.data.shoppingList)
+      })
   
-    // const { recipeId } = useParams();
+			.catch(error => console.error(error));
+	}, []);
+
+
     return (
         <IngredientsListSection>
-            <DivContainer>
+            {/* <DivContainer> */}
 			<ListBar>
 				<ItemBar>Ingredients</ItemBar>
 				<ItemBar>Number</ItemBar>
 				<ItemBar>Add to list</ItemBar>
 			</ListBar>
-            </DivContainer>
+            {/* </DivContainer> */}
             <>
             <ListStyled>
                     {ingredients.length > 0 &&
-            ingredients.map(({ thb, id, measure, ttl }) => {
+            ingredients.map(({ thb, _id, id, measure, ttl }) => {
               return (
-                <IngedientsItem key={id}>
+                <IngedientsItem key={_id}>
                   <Wrapper>
                     {
                       <img
@@ -48,26 +44,21 @@ export const IngredientsList = ({ ingredients }) => {
                         alt="Ingredient"
                       />
                     }
-                    <p>{ttl}</p>
+                     <p>{ttl}</p>
                   </Wrapper>
-                  <div>
-                    <p>{measure}</p>
-                    {/* <label >
-                      <input
+                
+                   <Wrapper>
+                  <IngMeasure>{measure}</IngMeasure>
+                    <label>
+                      <Checkbox
                         type="checkbox"
                         ingredient={{ id, ttl, thb, measure }}
-                        currentShopList={shoppingList} */}
-                        
-                        {/* // checked={!!shoppingList.find(item => item.id === _id)}
-                        // id={_id}
-                        // value={_id}
-                        // onChange={handleInputChange}
-                      /> */}
-                      {/* <CheckBoxWrap>
-                        <CheckMarkIcon /> */}
-                      
-                    {/* </label> */}
-                  </div>
+                        currentShopList={shoppingList}
+                        id={id}
+                      />
+                    
+                    </label>
+                    </Wrapper>
                 </IngedientsItem>
               );
             })}
@@ -78,4 +69,3 @@ export const IngredientsList = ({ ingredients }) => {
     
 )
 };
-

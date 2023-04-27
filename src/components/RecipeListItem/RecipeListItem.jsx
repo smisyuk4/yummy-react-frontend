@@ -22,10 +22,13 @@ export const RecipeListItem = props => {
 		_id,
 	} = props.recipe;
 
+	let image = '';
+	imageURL.includes('default') ? (image = defaultImage) : (image = imageURL);
+
 	return (
 		<RecipeItem>
 			<RecipeImgWrapper>
-				<RecipeImg src={imageURL} alt={title} />
+				<RecipeImg src={image} alt={title} />
 			</RecipeImgWrapper>
 			<RecipeWrapper>
 				<RecipeTitle>{title}</RecipeTitle>

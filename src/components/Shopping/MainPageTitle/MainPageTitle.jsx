@@ -1,14 +1,10 @@
-import { DivCenter, DivLeft, DivRight, Tegline } from './MainPageTitle.styled';
-
+import {TitleShoppingList} from './MainPageTitle.styled'
+import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 const MainPageTitle = () => {
 	return (
-		<Tegline>
-			Shopping list
-			<DivCenter></DivCenter>
-			<DivRight></DivRight>
-			<DivLeft></DivLeft>
-		</Tegline>
-		
+		<TitleShoppingList>
+			<ReusableComponentTitleWithJewelry title="Shopping list" />
+		</TitleShoppingList>
 	);
 };
 export default MainPageTitle;

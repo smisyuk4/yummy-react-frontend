@@ -1,23 +1,29 @@
 import { AddRecipeForm } from 'components/AddRecipePage/AddRecipeForm';
-import { FollowUs } from 'components/FollowUs';
+import {
+	ContentDiv,
+	OtherDiv,
+	RecipePageDiv,
+} from 'components/AddRecipePage/AddRecipeForm/AddRecipePage.styled';
+import { AddRecipePageFollowUs } from 'components/AddRecipePage/AddRecipePageFollowUs/AddRecipePageFollowUs';
 import { PopularRecipe } from 'components/AddRecipePage/PopularRecipe';
-// // import { AddRecipeDivStyled } from './AddRecipePage.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 
 const AddRecipePage = () => {
-  return (
-//   <AddRecipeDivStyled>
-		<>
-			<ReusableComponentTitleWithJewelry title="Add recipe"/>
-			<AddRecipeForm/>
-			<FollowUs title="Follow us"/>
-			<PopularRecipe title="Popular recipe"/>
-		</>
+	return (
+		<RecipePageDiv>
+			<ReusableComponentTitleWithJewelry title="Add recipe" />
+			<ContentDiv>
+				<AddRecipeForm />
+				<OtherDiv>
+					<AddRecipePageFollowUs title="Follow us"></AddRecipePageFollowUs>
+					<PopularRecipe title="Popular recipe" />
+				</OtherDiv>
+			</ContentDiv>
+		</RecipePageDiv>
+	);
+};
 
-//   </AddRecipeDivStyled>;
-)};
-
-export default AddRecipePage
+export default AddRecipePage;
 
 // "Зверстати компоненти що знаходяться на сторінці AddRecipePage (мобільна, планшет та десктопна версії):
 // 1. MainTitle - універсальний компонент, що відмальовує заголовок і використовується на різних сторінках застосунку

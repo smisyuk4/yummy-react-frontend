@@ -1,4 +1,7 @@
 import styled from '@emotion/styled';
+import { Field } from 'formik';
+
+
 
 export const PreparationFieldSet = styled.fieldset`
     border: 0;
@@ -19,12 +22,12 @@ export const PreparationHeading = styled.h2`
 	}
 `;
 
-export const PreparationTextArea = styled.textarea`
+export const PreparationTextArea = styled(Field)`
 	width: 343px;
 	height: 154px;
 	resize: none;
 	padding: 10px 16px;
-	background-color: #d9d9d9;
+	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
 	border: none;
 	margin-bottom: 18px;
 	box-sizing: border-box;
@@ -44,11 +47,15 @@ export const PreparationTextArea = styled.textarea`
 	::-webkit-input-placeholder {
 		font-size: 14px;
 		line-height: 1.5;
-		color: rgba(0, 0, 0, 0.5);
+		color: ${p => p.theme.colors.addRecipeFormPlaceholder};
 	}
 	:-ms-input-placeholder {
 		font-size: 14px;
 		line-height: 1.5;
-		color: rgba(0, 0, 0, 0.5);
+		color: ${p => p.theme.colors.addRecipeFormPlaceholder};
 	}
 `;
+export const EmptyFieldNotation = styled.span`
+	font-size: 24px;
+	color: red;
+	`

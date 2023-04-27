@@ -42,7 +42,7 @@ export const MainRecipes = () => {
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
 	}, []);
-	console.log(`Ширина экрана: ${windowWidth}px`);
+	// console.log(`Ширина экрана: ${windowWidth}px`);
 	const loadMore = () => {
 		setDisplayedRecipesCount(prevCount => prevCount + 4);
 	};
@@ -76,7 +76,7 @@ export const MainRecipes = () => {
 										);
 									})}
 							</CardItem>
-							{ oneRes.length <= count ? null : (<NavBox>
+							{ oneRes.length < count ? null : (<NavBox>
 								<NavToCategory to={`/categories/${category}`}>
 									See all
 								</NavToCategory>

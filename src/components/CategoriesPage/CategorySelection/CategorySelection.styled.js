@@ -3,15 +3,15 @@ import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
 	background-color: ${({ theme }) => theme.colors.buttonLightBG};
-	margin-top: 50px;
+	margin-top: 32px;
 	margin-bottom: 100px;
 
 	@media screen and (min-width: 768px) {
-		margin-top: 72px;
+		margin-top: 52px;
+		margin-bottom: 200px;
 	}
 	@media screen and (min-width: 1440px) {
-		margin-top: 100px;
-		margin-bottom: 200px;
+		margin-top: 84px;
 	}
 `;
 
@@ -124,20 +124,3 @@ export const CardTitle = styled.p`
 	padding: 16px;
 	margin: 0;
 `;
-
-// export const DivPositionen = styled.div`
-// 	position: relative;
-// `;
-
-// export const ImageBG = styled.div`
-// 	width: 375px;
-// 	height: 814px;
-// 	background-size: cover;
-// 	background: url(${imageBG}) no-repeat bottom left;
-// 	position: absolute;
-// 	top: -426px;
-// 	left: -34px;
-// 	transform: rotate(90deg);
-// 	filter: blur(4.5px);
-// 	z-index: -5;
-// `;

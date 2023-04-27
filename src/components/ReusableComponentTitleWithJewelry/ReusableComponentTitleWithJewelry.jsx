@@ -1,5 +1,4 @@
 import {
-	TitleDiv,
 	TitleStyled,
 	JewelryBox,
 	JewelryBoxBig,
@@ -9,9 +8,7 @@ import {
 export const ReusableComponentTitleWithJewelry = props => {
 	return (
 		<div>
-			<TitleDiv>
-				<TitleStyled>{props.title}</TitleStyled>
-			</TitleDiv>
+			<TitleStyled>{props.title}</TitleStyled>
 			<JewelryBox>
 				<JewelryBoxBig className="left" />
 				<JewelryBoxBig className="right" />

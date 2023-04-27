@@ -10,8 +10,8 @@ export const InformWrapperStyled = styled.div`
 	width: 225px;
 	background-color: #fafafa;
 	border-radius: 8px;
-	top: 388px;
-	left: 209px;
+	top: 428px;
+    left: 110px;
 	z-index: 7;
 	@media screen and (min-width: 768px) {
 		width: 261px;
@@ -27,9 +27,6 @@ export const InformWrapperStyled = styled.div`
 	}
 `;
 export const TextfStyled = styled.p`
-	font-family: Poppins, sans-serif;
-	font-style: normal;
-	font-weight: 500;
 	font-size: 12px;
 	line-height: 18px;
 	letter-spacing: -0.24px;
@@ -37,6 +34,7 @@ export const TextfStyled = styled.p`
 	font-size: 14px;
 	@media screen and (min-width: 768px) {
 		font-size: 14px;
+
 	}
 	@media screen and (min-width: 1440px) {
 		font-size: 14px;

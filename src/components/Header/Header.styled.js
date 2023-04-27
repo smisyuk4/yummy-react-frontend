@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import {flexBox} from 'styles/mixins';
 
 export const HeaderStyled = styled.header`
-    min-width: 375px;
-    max-width: 1440px;
+    box-sizing: border-box;
+    max-width: 2000px;
     position: relative;
     z-index: 5;
     padding: 21px 16px;
@@ -15,7 +15,6 @@ export const HeaderStyled = styled.header`
     @media ${props => props.theme.media.tablet} {
        padding-left: 32px;
        padding-right: 32px;
-
     }
     @media ${props => props.theme.media.desktop} {
         padding-left: 100px;

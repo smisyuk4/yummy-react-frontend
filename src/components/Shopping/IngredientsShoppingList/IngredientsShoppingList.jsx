@@ -1,68 +1,90 @@
 import { useState, useEffect } from 'react';
+// import { NavLink, useParams } from 'react-router-dom';
 
 import {
-	// deleteIngredientInShoppingList,
+	deleteIngredientInShoppingList,
 	getShoppingList,
 } from '../fetchShoppingList';
 
 import {
 	CloseBtn,
 	ItemShoppingList,
-	SpanMeasure,
 	ShoppingList,
 	DivContainer,
 	ListBar,
 	ItemBar,
+	CloseIcon,
+	TaglineP,
+	ContainerImg,
+	Measure,
+	EmptyList,
+	ShopBag,
+	ContainerEmpty,
 } from './IngredientsShoppingList.styled';
-import { Icon } from 'components/Icon';
-
-// import ItemShoppingList from '../ItemShoppingList/ItemShoppingList';
 
 const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
-	// const [delIngredient, setDelIngredient] = useState('');
+	// const { id } = useParams();
 
 	useEffect(() => {
 		getShoppingList()
 			.then(({ data }) => setShoppingList(data.shoppingList))
 			.catch(error => console.error(error));
-	}, []); // приходить масив з шопінг
+	}, []);
 
-	  const ingredientId = shoppingList.map(({ ttl}) => ttl);
-console.log(ingredientId)
+	const onDelete = async ingredientId => {
+		await deleteIngredientInShoppingList(ingredientId);
+		setShoppingList(prevState =>
+			prevState.filter(ingredient => ingredient._id !== ingredientId)
+		);
+	};
+	// const groupedShoppingList = shoppingList.reduce((acc, curr) => {
+	// 	if (!acc[curr.ingredientId]) {
+	// 		acc[curr.ingredientId] = { ...curr, measures: [curr.measure] };
+	// 	} else {
+	// 		acc[curr.ingredientId].measures.push(curr.measure);
+	// 	}
+	// 	return acc;
+	// }, {});
 
-	// 	useEffect(() => {
-	// 		deleteIngredientInShoppingList(ingredientId)
-	// .then(({data}) => setDelIngredient(data, console.log(data)))
-	// .catch((error) => error);
-	// 	}, [ingredientId]);
+	// const groupedShoppingListArray = Object.values(groupedShoppingList);
 
-	// const onDelete = (id) => {
-	// 	setShoppingList(prevState => prevState.filter(ingredient => ingredient.id !== id)
-	// 	);
-	// };
 	return (
 		<div>
-			<DivContainer>
-				<ListBar>
-					<ItemBar>Products</ItemBar>
-					<ItemBar>Number</ItemBar>
-					<ItemBar>Remove</ItemBar>
-				</ListBar>
-			</DivContainer>
+			{shoppingList && (
+				<DivContainer>
+					<ListBar>
+						<ItemBar>Products</ItemBar>
+						<ItemBar>Number</ItemBar>
+						<ItemBar>Remove</ItemBar>
+					</ListBar>
+				</DivContainer>
+			)}
 			<ShoppingList>
 				{shoppingList &&
 					shoppingList.map(({ _id, ttl, thb, measure }) => (
 						<ItemShoppingList key={_id}>
-			<img src={thb} alt={ttl} width={60} height={60} />
-			<p>{ttl}</p>
-			<SpanMeasure>{measure}</SpanMeasure>
-			<CloseBtn type="button">
-			<Icon id="icon-close" height="14" width="14" style={{ stroke: '#333333' }} /></CloseBtn>
-		</ItemShoppingList>
+							<ContainerImg>
+								<img src={thb} alt={ttl} />
+							</ContainerImg>
+							<TaglineP>{ttl}</TaglineP>
+
+							{/* <NavLink to="/recipe/:id">recipe{id}</NavLink> */}
+							<Measure>{measure}</Measure>
+							<CloseBtn
+								type="button"
+								onClick={() => onDelete(_id)}>
+								<CloseIcon id="icon-close" />
+							</CloseBtn>
+						</ItemShoppingList>
 					))}
 			</ShoppingList>
-			{shoppingList < 1 && <p>Your Shopping List is Empty</p>}
+			{shoppingList.length === 0 && (
+				<ContainerEmpty>
+					<ShopBag id="icon-cart" />
+					<EmptyList>Your Shopping List is Empty</EmptyList>
+				</ContainerEmpty>
+			)}
 		</div>
 	);
 };

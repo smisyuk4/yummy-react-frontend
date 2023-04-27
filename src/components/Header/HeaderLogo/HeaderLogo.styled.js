@@ -7,6 +7,7 @@ export const HeaderLogoStyled = styled(Link)`
     ${flexBox};
 `
 export const  HeaderLogoIcon= styled(Icon)`
+    box-sizing: border-box;
     width: 40px;
     height: 40px;
     padding: 10px;
@@ -14,25 +15,15 @@ export const  HeaderLogoIcon= styled(Icon)`
     border-radius: 12px;
     background-color: ${props => props.theme.colors.primary};
 
-    @media (min-width: 480px) {
+    @media ${props => props.theme.media.tablet} {
         width: 44px;
         height: 44px;
-  }
+    }
+    &:hover {
+        stroke: ${props => props.theme.colors.primary};
+        background-color: #EBF3D4;
+    }
 `
-// export const IconFooter = styled(HeaderLogoIcon)`
-//     stroke: ${({color}) => color};
-// `
-
-
-
 export const HeaderLogoDiv= styled.div`
     
-`
-export const IconDiv = styled.div`
-    width: 32px;
-    height: 32px;
-    background: #EBF3D4;
-    border-radius: 6px;
-    padding: 7px;
-    ${flexBox};
 `

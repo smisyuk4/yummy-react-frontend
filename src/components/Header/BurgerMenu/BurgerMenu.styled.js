@@ -31,7 +31,6 @@ export const HeaderLogoDiv = styled.div`
     justify-content: space-between;
     align-items: center;
 `
-
 export const BtnCloseModal = styled.button`
     display: block;
     border: none;
@@ -40,7 +39,6 @@ export const BtnCloseModal = styled.button`
     &:hover {
         stroke: ${({ theme }) => theme.colors.primary};
     }
-
 `
 export const CloseIcon = styled(Icon)`
     width: 32px;
@@ -50,19 +48,16 @@ export const CloseIcon = styled(Icon)`
     &:hover {
         stroke: ${({ theme }) => theme.colors.primary};
     }
-
 `
 export const SearchIcon = styled(Icon)`
     width: 16px;
     height: 16px;
-    stroke: #23262A;
+    stroke: ${({ theme }) => theme.colors.fontColorNavigation};
     background-color: transparent;
     &:hover {
         stroke: ${({ theme }) => theme.colors.primary};
     }
-
 `
-
 export const BurgerNavigationNav = styled.nav`
     display: none;
     ${flexBox};

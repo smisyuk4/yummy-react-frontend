@@ -1,27 +1,33 @@
 import { Formik } from 'formik';
 import { SearchStyled, SearchForm, SearchFormBtn, Input } from "./Searchbar.styled"
+import { NavLink } from 'react-router-dom';
+// import { useState } from 'react';
 
-export const Searchbar = ({onSubmit}) => {
+export const Searchbar = ({ onSubmit }) => {
 
-  const handleSubmit = (values, actions) => {
-    onSubmit(values);
-    actions.resetForm();
-}
 
-  return <SearchStyled>
-            <Formik initialValues={{ search: '' }}
-                onSubmit={handleSubmit}>
+    return (
+        <SearchStyled>
+          <Formik initialValues={{ search: '' }}>
+            {formik => {
+              const { values } = formik;
+              return (
                 <SearchForm>
-                    <Input
-                        name='search'
-                        type="text"
-                        autoComplete="off"
-                        autoFocus
-                    />
+                  <Input
+                    name="search"
+                    type="text"
+                    autoComplete="off"
+                    autoFocus
+                  />
+                 <NavLink to={`/search/${values.search}`}>
                     <SearchFormBtn type="submit">
-                        <span >Search</span>
+                      <span>Search</span>
                     </SearchFormBtn>
+                  </NavLink>
                 </SearchForm>
-            </Formik>
-  </SearchStyled>;
-};
+              );
+            }}
+          </Formik>
+        </SearchStyled>
+      );
+    };

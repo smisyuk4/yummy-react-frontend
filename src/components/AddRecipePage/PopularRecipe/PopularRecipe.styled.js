@@ -1,18 +1,29 @@
 import styled from '@emotion/styled';
 
-import { Title } from 'components/Title';
-
 export const DivStyled = styled.div``;
 
 export const UlStyled = styled.ul`
-    display: flex;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 100px;
+
+  @media ${props => props.theme.media.tablet} {
+    margin-bottom: 200px;
+
+    & a {
+      max-width: calc(100% / 2 - 15px);
+    }
+  }
+
+  @media ${props => props.theme.media.desktop} {
+    max-width: 319px;
     flex-direction: column;
-    gap: 24px;
-    margin-bottom: 100px;
+
+    & a {
+      max-width: 100%;
+    }
+  }
 `;
-
-
-export const TitlePopular = styled(Title)`
-    padding: 0;
-    color: red;
-`

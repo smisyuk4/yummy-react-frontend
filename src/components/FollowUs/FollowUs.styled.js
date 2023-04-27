@@ -7,36 +7,34 @@ import { Icon } from 'components/Icon';
 export const DivStyled = styled.div`
     ${flexBox};
 `;
-
 export const SonetLinksList = styled.ul`
     ${flexBox};
-    width: 189px;
-    height: 50px;
-    padding: 16px 28px;
+    padding: 15px 28px;
     border-radius: 6px;
+    background: ${({ theme }) => theme.colors.followUsBG};
     gap: 16px;
     &:hover {
-        background: #8BAA36;
+        background: ${({ theme }) => theme.colors.followUsBGHover};
     }
     &:hover svg {
-        fill: #FFFFFF;       
+        fill: ${({ theme }) => theme.colors.followUsColorHover};       
     }
 
-    
+    & > a {
+        padding: 0;
+        margin: 0;
+    }
 `
-
 export const SonetItem = styled.li`
-
 `
 export const SonetLink = styled(Link)`
-
 `
 export const IconSonetLink = styled(Icon)`
-    width: 18px;
-    height: 18px;
-    fill: ${({ theme }) => theme.colors.primary};
+    width: 20px;
+    height: 20px;
+    fill: ${({ theme }) => theme.colors.followUsColor};
     &:hover  {
-        fill: #FFFFFF;       
+        fill: ${({ theme }) => theme.colors.followUsColorHover};       
     }
 
 `

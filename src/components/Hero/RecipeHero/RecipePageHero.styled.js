@@ -9,26 +9,39 @@ export const HeroSection = styled.section`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-     padding-top: 144px;  
-    padding-bottom: 90px;
+     padding-top: 204px;  
+  padding-right: 16px; 
+	padding-left: 16px;
+  margin-left: -16px;
+	margin-top: -102px;
     width: 100%;
-    height: 495px;
+    height: 353px;
     text-align: center;
     @media ${props => props.theme.media.tablet} {
      
     background: url(${heroTab1});
-        height: 493px;
-        padding-top: 136px;
-        padding-bottom: 32px;
+        height: 361px;
+        padding-top: 240px;
+        padding-left: 32px;
+        padding-right: 32px;
+        margin-top: -106px;
+		    margin-left: -32px; 
         background-repeat: no-repeat;
         background-size: cover;
     }
      @media ${props => props.theme.media.desktop} {
      
      background-image: url(${heroDesk1});
-    padding-top: 164px;
+      padding-top: 242px;
+      padding-left: 100px;
+      padding-right: 100px;
+      margin-left: -100px; 
+      height: 357px;
+  
  } 
      `; 
+
+  
 
     
 export const ButtonStyled = styled.button`

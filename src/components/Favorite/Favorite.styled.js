@@ -8,7 +8,6 @@ export const FavoriteImgBox = styled.div`
 	width: 124px;
 	height: 124px;
 	flex: 0 0 auto;
-
 	border-radius: 8px;
 
 	@media ${props => props.theme.media.tablet} {
@@ -62,7 +61,7 @@ export const FavoriteIcon = styled(Icon)`
 	width: 14px;
 	height: 14px;
 
-	stroke: #ffffff;
+	stroke: ${({ theme }) => theme.colors.buttonDarkBG};
 	fill: none;
 
 	@media ${props => props.theme.media.tablet} {
@@ -117,7 +116,7 @@ export const FavoriteDeleteBtn = styled.button`
 	justify-content: center;
 	align-items: center;
 	padding: 0;
-	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	background-color: #ebf3d4;
 	border-radius: 4px;
 	border: none;
 	cursor: pointer;
@@ -190,6 +189,13 @@ export const FavoriteSeeBtn = styled(NavLinkStyled)`
 	font-weight: 400;
 	font-size: 10px;
 	line-height: 100%;
+	background-color: ${({ theme }) => theme.colors.buttonDarkBG};
+	border-color: ${({ theme }) => theme.colors.buttonDarkBG};
+	&:hover,
+	&:focus {
+		background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+		border-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	}
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 14px;
