@@ -29,10 +29,18 @@ const LightTheme = {
 	colors: {
 		primary: '#8BAA36',
 		primarySoft: '#EBF3D4',
+		footerBG: '#22252A',
+		bgModal: '#FAFAFA',
 		fontColor: '#fafafa',
 		fontColorDark: '#3e4462',
 		fontColorPassive: '#E0E0E0',
 		titleColor: '#001833',
+		fontColorNavigation: '#23262a',
+		fontHero: '#22252A',
+		followUsColor: '#8BAA36',
+		followUsColorHover: '#FFFFFF',
+		followUsBG: 'transparent',
+		foffowUsBGHover: '#8BAA36',
 		buttonLightBG: '#fafafa',
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
@@ -59,17 +67,25 @@ const LightTheme = {
 };
 const DarkTheme = {
 	colors: {
-		primary: '8BAA36',
+		primary: '#8BAA36',
 		primarySoft: '#EBF3D4',
+		footerBG: '#8BAA36',
+		bgModal: '#2A2C36',
 		fontColor: '#fafafa',
 		fontColorDark: '#3e4462',
 		fontColorPassive: '#E0E0E0',
 		titleColor: '#FAFAFA',
+		fontColorNavigation: '#FAFAFA',
+		fontHero: '#FAFAFA',
+		followUsColor: '#FFFFFF',
+		followUsColorHover: '#1E1F28',
+		followUsBG: '#8BAA36',
+		foffowUsBGHover: 'transparent',
 		buttonLightBG: '#fafafa',
-		buttonDarkBG: '#22252A',
+		buttonDarkBG: '#8BAA36',
 		buttonPrimaryBG: '#8BAA36',
 		darkBG: '#2a2c36',
-		lightBG: '#ECECEC',
+		lightBG: '#1E1F28',
 		BGCintoButton: 'FFFFF',
 		borderColorLight: '#f0f0f0',
 		textSecondary: 'rgba(250, 250, 250, 0.6)',
@@ -128,7 +144,6 @@ export const App = () => {
 					]}
 				/>
 			}>
-				<button type="button" onClick={themeToggler}>Switch Theme</button>
 			<Routes>
 				<Route path="/" element={<Layout themeToggler={themeToggler} />}>
 					<Route

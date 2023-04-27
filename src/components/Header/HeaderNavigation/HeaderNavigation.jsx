@@ -1,5 +1,5 @@
-import { HeaderNavigationNav, HeaderNavlink, SearchImg } from './HeaderNavigation.styled';
-import searchImg from 'images/headerImges/search.png';
+import { HeaderNavigationNav, HeaderNavlink } from './HeaderNavigation.styled';
+import { SearchIcon } from '../BurgerMenu/BurgerMenu.styled';
 
 export const HeaderNavigation = () => {
   return <HeaderNavigationNav>
@@ -9,7 +9,7 @@ export const HeaderNavigation = () => {
             <HeaderNavlink to="/favorite ">Favorites</HeaderNavlink>
             <HeaderNavlink to="/shopping-list">Shopping list</HeaderNavlink>
             <HeaderNavlink to="/search">
-              <SearchImg src={searchImg} alt='search'></SearchImg>
+              <SearchIcon id="icon-search"></SearchIcon>
             </HeaderNavlink>  
         </HeaderNavigationNav>;
 };

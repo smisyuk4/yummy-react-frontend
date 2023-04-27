@@ -123,7 +123,7 @@ export const TitleStyled = styled.h1`
 	font-weight: 700;
 	text-align: center;
 
-	color: ${({ theme }) => theme.colors.buttonDarkBG};
+	color: ${({ theme }) => theme.colors.fontHero};
 	@media screen and (min-width: 768px) {
 		font-weight: 400;
 		font-size: 72px;

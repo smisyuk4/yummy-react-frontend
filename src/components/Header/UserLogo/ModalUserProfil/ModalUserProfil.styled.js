@@ -27,6 +27,7 @@ export const ModalProfil = styled.div`
     border: 1px solid #8BAA36;
     border-radius: 18px;
     width: 330px;
+    background-color: ${({ theme }) => theme.colors.bgModal};
     text-align: center;
 
     background: #FFF;

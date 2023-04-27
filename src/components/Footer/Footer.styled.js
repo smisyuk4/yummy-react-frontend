@@ -23,7 +23,7 @@ export const FooterStyled = styled.div`
     width: 100%;
     padding-top: 28px;
     padding-bottom: 20px;
-    background-color: ${props => props.theme.colors.buttonDarkBG};
+    background-color: ${props => props.theme.colors.footerBG};
     ${flexBox};
     flex-direction: column;
     gap: 32px;

@@ -2,7 +2,10 @@ import styled from '@emotion/styled';
 import { useAuth } from 'hooks/useAuth';
 
 export const DivStyled = styled.div`
-	/* min-width: 375px; */
+	body {
+		background-color: ${props => props.theme.colors.lightBG};
+	}
+	
 	max-width: 2000px;
 	padding: ${() => {
 		const { isLoggedIn } = useAuth();

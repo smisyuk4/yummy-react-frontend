@@ -10,6 +10,7 @@ export const Modal = styled(ModalProfil)`
     font-size: 14px;
     line-height: 1.33;
     padding: 44px, 24px;
+    background-color: ${({ theme }) => theme.colors.bgModal};
     @media ${props => props.theme.media.tablet} {
         padding: 50px, 40px;
         font-size: 18px;
