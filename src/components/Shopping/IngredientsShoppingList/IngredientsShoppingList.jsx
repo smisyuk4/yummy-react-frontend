@@ -48,21 +48,24 @@ const IngredientsShoppingList = () => {
 
 	return (
 		<div>
-			{shoppingList && <DivContainer>
-				<ListBar>
-					<ItemBar>Products</ItemBar>
-					<ItemBar>Number</ItemBar>
-					<ItemBar>Remove</ItemBar>
-				</ListBar>
-			</DivContainer>}
+			{shoppingList && (
+				<DivContainer>
+					<ListBar>
+						<ItemBar>Products</ItemBar>
+						<ItemBar>Number</ItemBar>
+						<ItemBar>Remove</ItemBar>
+					</ListBar>
+				</DivContainer>
+			)}
 			<ShoppingList>
 				{shoppingList &&
 					shoppingList.map(({ _id, ttl, thb, measure }) => (
 						<ItemShoppingList key={_id}>
 							<ContainerImg>
-							<img src={thb} alt={ttl} />
+								<img src={thb} alt={ttl} />
 							</ContainerImg>
 							<TaglineP>{ttl}</TaglineP>
+
 							{/* <NavLink to="/recipe/:id">recipe{id}</NavLink> */}
 								<Measure>{measure}</Measure>
 							<CloseBtn type="button" onClick={() => onDelete(_id)}>
@@ -70,6 +73,7 @@ const IngredientsShoppingList = () => {
 									id="icon-close"
 								/>
 							</CloseBtn>		
+
 						</ItemShoppingList>
 					))}
 			</ShoppingList>

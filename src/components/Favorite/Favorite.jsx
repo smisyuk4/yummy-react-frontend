@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchFavorite } from './FetchFavorite';
+import { fetchFavorite, removeFromFavorites } from './FetchFavorite';
 
 import {
 	FavoriteArticle,
@@ -18,7 +18,7 @@ import {
 
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 
-export const Favorite = (props, { id }) => {
+export const Favorite = id => {
 	const [favoriteRecipes, setFavoriteRecipes] = useState();
 
 	useEffect(() => {
@@ -35,6 +35,11 @@ export const Favorite = (props, { id }) => {
 
 		fetch();
 	}, []);
+
+	const onDelete = async id => {
+		await removeFromFavorites(id);
+		setFavoriteRecipes(prev => prev.filter(recipe => recipe._id !== id));
+	};
 
 	console.log(favoriteRecipes);
 	return (
@@ -56,7 +61,7 @@ export const Favorite = (props, { id }) => {
 									</FavoriteRecipeTitle>
 									<FavoriteDeleteBtn
 										type="button"
-										onClick={props.onDelete}>
+										onClick={() => onDelete(_id)}>
 										<FavoriteIcon
 											id="icon-trash"
 											fill="#EBF3D4"
