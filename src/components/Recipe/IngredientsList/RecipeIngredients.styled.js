@@ -14,19 +14,21 @@ export const ListStyled = styled.ul`
 
   export const ListBar = styled.div`
   background: #8baa36;
-  border-radius: 8px;
+  margin-bottom: 24px;
   height: 40px;
-  width: 100%;
+  /* width: 100%; */
   padding: 12px 14px;
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: 24px;
+  border-radius: 8px;
+  
   @media screen and (min-width: 768px) {
+    margin-bottom: 50px;
     height: 60px;
     padding: 21px 32px;
     gap: 38px;
-    margin-bottom: 50px;
+    
   }
   @media screen and (min-width: 1440px) {
     max-width: 1240px;
@@ -120,11 +122,11 @@ export const IngMeasure = styled.p`
     min-width: 78px;
     max-width: 150px;
     font-size: 18px;
-    margin-right: 78px;
+    margin-right: 70px;
     line-height: 1.5;
   }
   @media ${props => props.theme.media.desktop} {
-    margin-right: 151px;
+    margin-right: 143px;
   }`
 
 export const ImageStyled = styled.image`
