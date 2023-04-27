@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+// import { NavLink, useParams } from 'react-router-dom';
 
 import {
 	deleteIngredientInShoppingList,
@@ -21,7 +21,7 @@ import {
 
 const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
-	const { id } = useParams();
+	// const { id } = useParams();
 
 	useEffect(() => {
 		getShoppingList()
@@ -63,7 +63,7 @@ const IngredientsShoppingList = () => {
 							<img src={thb} alt={ttl} />
 							</ContainerImg>
 							<TaglineP>{ttl}</TaglineP>
-							<NavLink to="/recipe/:id">recipe{id}</NavLink>
+							{/* <NavLink to="/recipe/:id">recipe{id}</NavLink> */}
 								<Measure>{measure}</Measure>
 							<CloseBtn type="button" onClick={() => onDelete(_id)}>
 								<CloseIcon
