@@ -8,7 +8,6 @@ export const FavoriteImgBox = styled.div`
 	width: 124px;
 	height: 124px;
 	flex: 0 0 auto;
-
 	border-radius: 8px;
 
 	@media ${props => props.theme.media.tablet} {
