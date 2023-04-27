@@ -13,7 +13,6 @@ import {
 	ArrRight,
 	SpanTitle,
 } from './Hero.styled';
-import { TeamModal } from 'components/TeamModal';
 
 export const Hero = () => {
 	return (
@@ -36,7 +35,6 @@ export const Hero = () => {
 			<InformFieldStyled />
 			<Searchbar />
 			<InformMenu />
-			<TeamModal />
 		</WrapperStyled>
 	);
 };
