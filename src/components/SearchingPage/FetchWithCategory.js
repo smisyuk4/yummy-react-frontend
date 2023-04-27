@@ -14,8 +14,10 @@ export const fetchByIngredients = async (value, { page, limit }) => {
 	return responce;
 };
 
-export const fetchByGlobalIngredients = async value => {
+export const fetchByGlobalIngredients = async (value, { page, limit }) => {
 	// console.log(value, page, limit);
-	const responce = await axios.get(`/ingredients/global?ingredient=${value}`);
+	const responce = await axios.get(
+		`/ingredients/global?ingredient=${value}&page=${page}&limit=${limit}`
+	);
 	return responce;
 };
