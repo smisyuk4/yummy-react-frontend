@@ -32,7 +32,7 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 	useEffect(() => {
 		fetchIngredients();
 	}, []);
-	
+
 	useEffect(() => {
 		if (addedIngredientsArray !== undefined) {
 			addedIngredientsArray.map(ingredient => {
