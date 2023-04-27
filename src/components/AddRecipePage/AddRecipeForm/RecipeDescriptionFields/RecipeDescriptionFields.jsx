@@ -19,6 +19,8 @@ import { Icon } from 'components/Icon';
 
 export const RecipeDescriptionFields = ({ onChange }) => {
 	const [picture, setPicture] = useState(null);
+	const [category, setCategory] = useState(null);
+	const [time, setTime] = useState(null);
 
 	const [pictureUrl, setPictureUrl] = useState('');
 	const [categoriList, setCategoriList] = useState([]);
@@ -83,6 +85,12 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 	const selectChange = prop => {
 		prop.target.size = 1;
 		prop.target.blur();
+		if (prop.target.name === 'categori') {
+			setCategory(prop.target.value);
+		}
+		if (prop.target.name === 'time') {
+			setTime(prop.target.value);
+		}
 	};
 
 	const selectBlur = prop => {
@@ -102,7 +110,11 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 			<DescrForm autoComplete="off" onChange={handleOnChange}>
 				<OverlayPicture>
 					<LabelFile>
-						<InputFile name="picture" type="file" multiple />
+						<InputFile
+							name="picture"
+							type="file"
+							multiple={false}
+						/>
 						<ThumbImege>
 							{pictureUrl ? (
 								<RecipeImg src={pictureUrl} alt="PICTURE" />
@@ -137,10 +149,11 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 						Categori
 						<InputSelct
 							name="categori"
-							as="select"
+							component="select"
 							onFocus={selectFocus}
 							onChange={selectChange}
-							onBlur={selectBlur}>
+							onBlur={selectBlur}
+							value={category}>
 							{categoriName}
 						</InputSelct>
 					</LabelSelect>
@@ -148,10 +161,11 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 						Cooking time
 						<InputSelct
 							name="time"
-							as="select"
+							component="select"
 							onFocus={selectFocus}
 							onChange={selectChange}
-							onBlur={selectBlur}>
+							onBlur={selectBlur}
+							value={time}>
 							{timeSelect}
 						</InputSelct>
 					</LabelSelect>

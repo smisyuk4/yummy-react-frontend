@@ -124,20 +124,3 @@ export const CardTitle = styled.p`
 	padding: 16px;
 	margin: 0;
 `;
-
-// export const DivPositionen = styled.div`
-// 	position: relative;
-// `;
-
-// export const ImageBG = styled.div`
-// 	width: 375px;
-// 	height: 814px;
-// 	background-size: cover;
-// 	background: url(${imageBG}) no-repeat bottom left;
-// 	position: absolute;
-// 	top: -426px;
-// 	left: -34px;
-// 	transform: rotate(90deg);
-// 	filter: blur(4.5px);
-// 	z-index: -5;
-// `;

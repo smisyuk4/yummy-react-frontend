@@ -85,12 +85,11 @@ export const InputFile = styled(Field)`
 `;
 
 export const InputSelct = styled(Field)`
-	border: none;
-	background-color: inherit;
-	z-index: 1;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 400;
+	border: solid 1px #e0e0e0;
+	background-color: ${props => props.theme.colors.lightBG};
+	z-index: 3;
+	padding-left: 10px;
+	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
 	letter-spacing: -0.02em;

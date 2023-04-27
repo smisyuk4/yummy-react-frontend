@@ -9,6 +9,7 @@ import banner2 from '../../../images/MainPageImg/img-1.png';
 import banner2T from '../../../images/MainPageImg/img-2.png';
 import banner2D from '../../../images/MainPageImg/img-3.png';
 import banner3T from '../../../images/MainPageImg/arr.png';
+import bannerbg from '../../../images/MainPageImg/bg2.png';
 
 export const WrapperStyled = styled.div`
 	position: relative;
@@ -24,7 +25,7 @@ export const WrapperStyled = styled.div`
 		max-height: 764px;
 	}
 	@media screen and (min-width: 1440px) {
-		max-height: 800px;
+		max-height: 830px;
 		margin-right: -100px;
 		margin-left: -100px;
 		margin-bottom: 100px;
@@ -33,24 +34,25 @@ export const WrapperStyled = styled.div`
 export const SectionStyled = styled.div`
 	position: relative;
 	top: -132px;
-	transform: translateX(61%) rotate(39deg);
+	transform: translateX(69%) rotate(39deg);
 	max-width: 100%;
 	height: 542px;
 	background-color: ${({ theme }) => theme.colors.primarySoft};
 
 	@media screen and (min-width: 768px) {
-		transform: translateX(63%) rotate(29deg);
-		top: -318px;
+		transform: translateX(64%) rotate(26deg);
+		top: -335px;
 		left: 49px;
 		width: 753px;
 		height: 730px;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 1440px) {
 		width: 941px;
 		height: 912px;
-		transform: translateX(99%) rotate(29deg);
-		top: -497px;
-		left: 51px;
+		transform: translateX(79%) rotate(0deg);
+		top: -470px;
+		left: -42px;
+		background: url(${bannerbg}) no-repeat top left;
 	}
 `;
 
@@ -109,7 +111,7 @@ export const DishStyled = styled.div`
 		background: url(${banner2D}) no-repeat top right;
 		height: 539px;
 		top: 125px;
-		left: -147px;
+		left: -177px;
 	}
 `;
 export const InformFieldStyled = styled.div`
@@ -154,12 +156,8 @@ export const ParagrafStyled = styled.div`
 	padding-right: 64px;
 	color: #23262a;
 	margin-top: 14px;
-	// position: relative;
-	// z-index: 4;
 	@media screen and (min-width: 768px) {
-		font-weight: 400;
 		font-size: 14px;
-		line-height: 18px;
 		width: 362px;
 		padding-left: 0;
 		padding-right: 0;
@@ -199,7 +197,6 @@ export const ArrRight = styled.div`
 	}
 	@media screen and (min-width: 1440px) {
 		top: 607px;
-    left: 1046px;
-		
+		left: 1046px;
 	}
 `;
