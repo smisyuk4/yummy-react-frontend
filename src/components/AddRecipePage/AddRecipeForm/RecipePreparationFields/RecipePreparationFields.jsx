@@ -32,7 +32,7 @@ export const RecipePreparationFields = ({ onChange }) => {
 					Recipe preparation{FieldEmptyState && <EmptyFieldNotation> *</EmptyFieldNotation>}
 				</PreparationHeading>
 				<PreparationTextArea
-					component="textarea"
+					as="textarea"
 					placeholder="Enter recipe"
 					value={preparationUneditedText}
 					onChange={onTextAreaChange}></PreparationTextArea>
