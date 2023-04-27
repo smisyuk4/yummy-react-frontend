@@ -141,7 +141,7 @@ export const SearchingPage = () => {
 		}
 	};
 
-	// console.log(totalRecipes, setpage);
+	console.log(totalRecipes, setpage);
 
 	return (
 		<DivStyled>

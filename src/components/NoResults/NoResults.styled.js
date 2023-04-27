@@ -5,12 +5,12 @@ export const Container = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
-	padding-bottom: 100px;
+	/* padding-bottom: 100px; */
 	@media ${props => props.theme.media.desktop} {
-		padding-bottom: 200px;
+		/* padding-bottom: 200px; */
 	}
 	@media ${props => props.theme.media.desktop} {
-		padding-bottom: 200px;
+		/* padding-bottom: 200px; */
 	}
 `;
 
@@ -30,7 +30,7 @@ export const NoResImg = styled.img`
 export const Text = styled.p`
 	font-weight: 500;
 	font-size: 14px;
-	line-height: 100px;
+	line-height: 14px;
 	letter-spacing: -0.02em;
 
 	color: #000000;
@@ -39,8 +39,6 @@ export const Text = styled.p`
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 24px;
-	}
-	@media ${props => props.theme.media.desktop} {
-		padding-bottom: 200px;
+		line-height: 24px;
 	}
 `;

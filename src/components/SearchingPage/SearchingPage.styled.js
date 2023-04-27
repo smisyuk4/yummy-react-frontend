@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const DivStyled = styled.div`
 	background-color: ${({ theme }) => theme.colors.buttonLightBG};
 	margin-top: 32px;
-	margin-bottom: 191px;
+	margin-bottom: 100px;
 
 	@media screen and (min-width: 768px) {
 		margin-top: 52px;
-		margin-bottom: 305px;
+		margin-bottom: 200px;
 	}
 	@media screen and (min-width: 1440px) {
 		margin-top: 84px;
