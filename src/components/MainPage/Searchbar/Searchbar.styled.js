@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 import { Field, Form } from 'formik';
 // import { NavLink } from 'react-router-dom';
 
-export const SearchStyled = styled.header`
+export const SearchStyled = styled.div`
 	position: relative;
 	top: -139px;
 	left: -22px;
 	transform: translate(7px, -7px);
 	z-index: 6;
 	@media screen and (min-width: 768px) {
-		top: -811px;
-		left: -351px;
+		top: -667px;
+		left: -355px;
 	}
 	@media screen and (min-width: 1440px) {
 		top: -895px;
@@ -26,7 +26,7 @@ export const SearchForm = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.addRecipeFormFieldsDropdownBackground};
 	border-radius: 24px 44px;
 	border: 1px solid #f0f0f0;
 	width: 295px;
@@ -57,8 +57,8 @@ export const Input = styled(Field)`
 `;
 
 export const SearchFormBtn = styled.button`
-top: 0;
-		right: 0;
+	top: 2px;
+	right: 0;
 	background-color: transparent;
 	border-radius: 24px 44px;
 	border: 1px solid green;
@@ -70,18 +70,18 @@ top: 0;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
-	color: #fafafa;
+	color: ${({ theme }) => theme.colors.fontColor};
 	background: ${({ theme }) => theme.colors.buttonDarkBG};
 	border: 1px solid #000000;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	@media screen and (min-width: 768px) {
 		width: 161px;
 		height: 59px;
+		top: 4px;
 	}
 	@media screen and (min-width: 1440px) {
 		font-size: 16px;
 		line-height: 24px;
 		height: 70px;
-		
 	}
 `;
