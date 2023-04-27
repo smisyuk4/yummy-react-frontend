@@ -16,6 +16,10 @@ import {
 } from './Hero.styled';
 
 export const Hero = () => {
+
+const handleSubmit = () =>{
+	
+}
 	return <WrapperStyled>
 			<TopImgStyled />
 		<BoxStyled>
@@ -27,7 +31,7 @@ export const Hero = () => {
 		<ArrRight/>
 		<DishStyled />
 		<InformFieldStyled />
-		<Searchbar />
+		<Searchbar onSubmit={handleSubmit}/>
 		<InformMenu />
 	</WrapperStyled>;
 };
