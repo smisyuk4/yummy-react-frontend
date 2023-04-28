@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 import { getShoppingList } from 'components/Shopping/fetchShoppingList';
 import ingredImage from 'images/recipeImg/ingredImage.jpg'
-import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper, IngMeasure, ListBar, ItemBar} from './RecipeIngredients.styled';
+import { IngredientsListSection, ListStyled, IngedientsItem, IngredientName, Wrapper, IngMeasure, ListBar, ItemBar} from './RecipeIngredients.styled';
 import { Checkbox } from './Checkbox';
 
 
@@ -44,7 +44,7 @@ export const IngredientsList = ({ ingredients }) => {
                         alt="Ingredient"
                       />
                     }
-                     <p>{ttl}</p>
+                     <IngredientName>{ttl}</IngredientName>
                   </Wrapper>
                 
                    <Wrapper>

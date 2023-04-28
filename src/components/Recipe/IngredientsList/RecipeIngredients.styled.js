@@ -31,7 +31,7 @@ export const ListStyled = styled.ul`
     
   }
   @media screen and (min-width: 1440px) {
-    max-width: 1240px;
+    /* max-width: 1240px; */
     padding: 21px 40px;
     gap: 110px;
   }
@@ -60,7 +60,7 @@ display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px 29px 14px 14px;
-  background: #EBF3D4;
+  background: ${({ theme }) => theme.colors.recipeListBackground};
   border-radius: 8px;
   @media ${props => props.theme.media.tablet} {
       padding: 21px 58px 21px 28px;
@@ -91,6 +91,9 @@ display: flex;
     }
   }
 `;
+
+export const IngredientName = styled.p`
+color: ${({ theme }) => theme.colors.recipeColor};`
 
 export const IngredientDiv = styled.div`
 max-width: 90px;
