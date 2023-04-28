@@ -20,16 +20,26 @@ export const SocialLinksTitle = styled.h2`
     font-weight: 600;
     font-size: 24px;
     line-height: 1;
+    color: ${props => props.theme.colors.fontColorDark};
 
 `
 
 export const SocialLinksList = styled(SonetLinksList)`
     padding: 0;
     justify-content: flex-start;
+    background-color: transparent;
+    padding: 5px;
+    &:hover {
+        background: ${props => props.theme.colors.primary};
+    }
     
 `
 
 export const SocialLinksIcons = styled(IconSonetLink)`
     height: 26px;
     width: 26px;
+    &:hover {
+        background: ${props => props.theme.colors.primary};
+    }
+    
 `
