@@ -45,6 +45,10 @@ export const RecipeIngredientsFields = props => {
 		}
 	}, [addedIngredientsArray]);
 
+	useEffect(() => {
+		props.onChange(addedIngredientsArray);
+	}, [addedIngredientsArray, props]);
+
 	const onIncrement = () => {
 		setIgredientsQuantity(ingredientsQuantity + 1);
 		setAddedIngredientsArray(prevState => [
@@ -76,7 +80,7 @@ export const RecipeIngredientsFields = props => {
 			ingredient => ingredient.ttl === data.ttl
 		);
 
-		console.log('requstedIngredient', requstedIngredient);
+		// console.log('requstedIngredient', requstedIngredient);
 		const updatedArray = addedIngredientsArray.map(ingredient => {
 			if (id === ingredient.id) {
 				return (ingredient = {
@@ -127,7 +131,7 @@ export const RecipeIngredientsFields = props => {
 		setAddedIngredientsArray(updatedArray);
 	};
 
-	console.log('addDataArray', addedIngredientsArray);
+	// console.log('addDataArray', addedIngredientsArray);
 	const onButtonDeleteClick = e => {
 		const id = e.currentTarget.id;
 		console.log(1, id);
@@ -140,10 +144,9 @@ export const RecipeIngredientsFields = props => {
 		setAddedIngredientsArray(reworkedArray);
 		setIgredientsQuantity(ingredientsQuantity - 1);
 	};
-	console.log(addedIngredientsArray);
+	// console.log(addedIngredientsArray);
 	return (
-		<RecipeIngredientsFieldset
-			onChange={props.onChange(addedIngredientsArray)}>
+		<RecipeIngredientsFieldset>
 			<HeadingStyledContainer>
 				<RecipeIngredientsHeading>
 					Ingredients

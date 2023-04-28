@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
 	EmptyFieldNotation,
 	PreparationFieldSet,
@@ -24,10 +24,13 @@ export const RecipePreparationFields = props => {
 		const result = e.currentTarget.value.split(/\r?\n/);
 		setPreparationEditedText(result);
 	};
+	useEffect(() => {
+		props.onChange(preparationEditedText);
+	}, [preparationEditedText, props]);
+
 	return (
 		<Formik>
-			<PreparationFieldSet
-				onChange={props.onChange(preparationEditedText)}>
+			<PreparationFieldSet>
 				<PreparationHeading>
 					Recipe preparation
 					{FieldEmptyState && (
