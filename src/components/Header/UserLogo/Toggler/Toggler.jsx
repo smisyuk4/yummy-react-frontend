@@ -6,13 +6,14 @@ export const Toggler = ({toggleTheme, darkTheme, themeToggler, closeModal}) => {
   useEffect(() => {
     document.addEventListener("keydown", onCloseModal);
     return () => document.removeEventListener("keydown", onCloseModal)
-});
-const onCloseModal = ({target, currentTarget, code}) => {
-  if(target === currentTarget || code === "Escape") {
-    console.log(code)
-    closeModal()
-  }
-};
+  });
+  
+  const onCloseModal = ({target, currentTarget, code}) => {
+    if(target === currentTarget || code === "Escape") {
+      console.log(code)
+      closeModal()
+    }
+  };
 
   const onChangeTheme = () => {
     toggleTheme()

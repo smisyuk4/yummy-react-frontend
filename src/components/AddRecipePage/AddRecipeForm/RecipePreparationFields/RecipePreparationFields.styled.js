@@ -5,7 +5,7 @@ import { Field } from 'formik';
 
 export const PreparationFieldSet = styled.fieldset`
 	border: 0;
-	z-index: 100;
+	z-index: 80;
 `;
 
 export const PreparationHeading = styled.h2`

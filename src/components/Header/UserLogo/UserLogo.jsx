@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { UserLogoDiv, UserNameP, WrapperImg, UserAvatarImg, AvatarUser, BurgerMuneBtn, BurgerMenuIcon } from './UserLogo.styled';
 import { Toggler } from './Toggler';
 import { PopupUser } from './PopupUser/PopupUser'
@@ -8,6 +8,15 @@ import { useSelector } from 'react-redux';
 export const UserLogo = ({ onOpenModal, themeToggler }) => {
  const [openPopUp, setOpenPopUp] = useState(false)
  const [darkTheme, setDarkTheme] = useState(false)
+
+ useEffect(() => {
+  const savedTheme = localStorage.getItem('theme');
+  if(savedTheme === 'LightTheme') {
+    setDarkTheme(false)
+  } else {
+    setDarkTheme(true)
+  }
+}, [darkTheme]);
 
  const onClosePopUp = () => {
   setOpenPopUp(false)

@@ -1,7 +1,17 @@
 import { TogglerBurger, TogglerOverlayBurger, TogglerBtnBurger } from './Toggler.styled';
+import { useEffect, useState } from 'react';
 
+export const TogglerBurgerMenu = ({toggleTheme, closeModal, themeToggler}) => {
+  const [darkTheme, setDarkTheme] = useState(false)
 
-export const TogglerBurgerMenu = ({toggleTheme, darkTheme, closeModal, themeToggler}) => {
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme === 'LightTheme') {
+      setDarkTheme(false)
+    } else {
+      setDarkTheme(true)
+    }
+  }, [darkTheme]);
 
   const onChangeTheme = () => {
     toggleTheme()

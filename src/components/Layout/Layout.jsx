@@ -8,7 +8,7 @@ import { Footer } from 'components/Footer';
 import { useAuth } from 'hooks/useAuth';
 import { ColorRing } from 'react-loader-spinner';
 
-export const Layout = ({ themeToggler }) => {
+export const Layout = ({ themeToggler, currentTheme }) => {
 	const { isLoggedIn } = useAuth();
 
 	if (!isLoggedIn)

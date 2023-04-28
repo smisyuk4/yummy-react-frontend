@@ -32,7 +32,7 @@ export const AddButton = styled(FormButton)`
 	border-radius: 24px 44px;
 	cursor: pointer;
 	display: inline-flex;
-	z-index: 100;
+	z-index: 80;
 	position: relative;
 	padding: 14px 64px;
 	background-color: ${props => props.theme.colors.buttonDarkBG};
