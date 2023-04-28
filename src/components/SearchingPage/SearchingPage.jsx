@@ -24,6 +24,7 @@ import { NoResults } from 'components/NoResults';
 import { ColorRing } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { PaginationControlled} from './Pagination/PaginationRounded'
 
 export const SearchingPage = () => {
 	const [type, settype] = useState('Title');
@@ -195,6 +196,7 @@ export const SearchingPage = () => {
 					})}
 				</CardList>
 			)}
+			<PaginationControlled/>
 		</DivStyled>
 	);
 };

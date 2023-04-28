@@ -4,8 +4,10 @@
   "private": true,
   "homepage": "https://smisyuk4.github.io/yummy-react-frontend/",
   "dependencies": {
-    "@emotion/styled": "^11.10.6",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
     "@fontsource/poppins": "^4.5.10",
+    "@mui/material": "^5.12.2",
     "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.4",
     "@testing-library/jest-dom": "^5.16.3",
