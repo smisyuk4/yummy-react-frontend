@@ -23,9 +23,11 @@ const togglerTheme = () => {
 
   const onCloseModal = ({target, currentTarget, code}) => {
       if(target === currentTarget || code === "Escape") {
+        console.log(code)
         closeModal()
       }
   };
+
 
   return createPortal(
     <BurgerMenuDiv onClick={onCloseModal}>
@@ -48,7 +50,7 @@ const togglerTheme = () => {
             </HeaderNavlink>  
         </BurgerNavigationNav>
       </ModalDiv>
-      <TogglerBurgerMenu toggleTheme={togglerTheme} darkTheme={darkTheme} themeToggler={themeToggler} closeModal={closeModal} />
+      <TogglerBurgerMenu toggleTheme={togglerTheme} darkTheme={darkTheme} closeModal={closeModal} themeToggler={themeToggler} />
     </BurgerMenuDiv>,
      modalRoot
      );

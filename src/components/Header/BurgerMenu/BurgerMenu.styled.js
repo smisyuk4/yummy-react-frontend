@@ -10,7 +10,7 @@ export const BurgerMenuDiv = styled.div`
     position: fixed;
     bottom: 0;
     right: 0;
-    z-index: 90;
+   z-index: 90;
     background: ${({ theme }) => theme.colors.bgBurger} url(${bgImgS}) no-repeat right bottom;
 
     @media ${props => props.theme.media.tablet} {
@@ -43,8 +43,8 @@ export const BtnCloseModal = styled.button`
 export const CloseIcon = styled(Icon)`
     width: 32px;
     height: 32px;
-    stroke: #23262A;
     background-color: transparent;
+    stroke: ${({ theme }) => theme.colors.fontColorNavigation};
     &:hover {
         stroke: ${({ theme }) => theme.colors.primary};
     }

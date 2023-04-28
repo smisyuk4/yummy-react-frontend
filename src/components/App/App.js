@@ -31,6 +31,7 @@ const LightTheme = {
 		primarySoft: '#EBF3D4',
 		footerBG: '#22252A',
 		bgModal: '#FAFAFA',
+		bgBurger: 'rgb(235,243,212)',
 		fontColor: '#fafafa',
 		fontColorDark: '#3e4462',
 		fontColorPassive: '#E0E0E0',
@@ -46,7 +47,7 @@ const LightTheme = {
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		textButtonPrimaryHover: '#22252A',
-		bgBurger: '#EBF3D4',
+
 		bgTitleCard: '#FFFFFF',
 		bgMoreBtn: '#8BAA36',
 		bgMoreBtnHover: '#1E1F28',
@@ -92,6 +93,7 @@ const DarkTheme = {
 		primarySoft: '#EBF3D4',
 		footerBG: '#8BAA36',
 		bgModal: '#2A2C36',
+		bgBurger: '#2A2C36',
 		fontColor: '#fafafa',
 		fontColorDark: '#fafafa',
 		fontColorPassive: '#E0E0E0',
@@ -107,7 +109,7 @@ const DarkTheme = {
 		buttonDarkBG: '#8BAA36',
 		buttonPrimaryBG: '#1E1F28',
 		textButtonPrimaryHover: '#8BAA36',
-		bgBurger: '#1E1F28',
+
 		bgTitleCard: '#2A2C36',
 		bgMoreBtn: '#8BAA36',
 		bgMoreBtnHover: '#8BAA36',
