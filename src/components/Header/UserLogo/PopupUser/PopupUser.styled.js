@@ -80,4 +80,5 @@ export const LogOutBtn = styled.button`
 export const EditIcon = styled(Icon)`
     width: 12px;
     height: 12px;
+    fill: ${({ theme }) => theme.colors.primary};
 `
