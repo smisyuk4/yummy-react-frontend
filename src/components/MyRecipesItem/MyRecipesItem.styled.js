@@ -9,7 +9,7 @@ export const RecipeItem = styled.li`
 	gap: 14px;
 	padding: 14px 9px;
 
-	background: #ffffff;
+	background: ${props => props.theme.colors.recipeItemBackgroundColor};
 
 	border-radius: 8px;
 
@@ -73,7 +73,7 @@ export const RecipeTitle = styled.h2`
 	line-height: 100%;
 	letter-spacing: -0.24px;
 
-	color: #3e4462;
+	color: ${props => props.theme.colors.fontColorDark};
 
 	@media ${props => props.theme.media.tablet} {
 		margin-bottom: 28px;
@@ -97,7 +97,7 @@ export const DeleteButton = styled.button`
 	align-items: center;
 	padding: 0;
 
-	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	background-color: ${props => props.theme.colors.buttonPrimaryBG};
 
 	border-radius: 4px;
 	border: none;
@@ -124,7 +124,7 @@ export const DeleteIconStyled = styled(Icon)`
 	width: 14px;
 	height: 14px;
 
-	stroke: #ffffff;
+	stroke: ${props => props.theme.colors.deleteIconStroke};
 	fill: none;
 
 	@media ${props => props.theme.media.tablet} {
@@ -151,7 +151,7 @@ export const RecipeAbout = styled.p`
 	-webkit-line-clamp: 4;
 	white-space: pre-wrap;
 
-	color: #23262a;
+	color: ${props => props.theme.colors.recipeTextColor};
 
 	@media ${props => props.theme.media.tablet} {
 		padding-right: 51px;
@@ -180,7 +180,7 @@ export const RecipeTime = styled.p`
 	line-height: 140%;
 	letter-spacing: -0.24px;
 
-	color: #3e4462;
+	color: ${props => props.theme.colors.fontColorDark};
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 14px;

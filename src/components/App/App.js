@@ -58,7 +58,7 @@ const LightTheme = {
 		recipeListBackground: '#EBF3D4',
 		recipeHero: '#22252A',
 		recipeColor: '#3E4462',
-		
+
 		placeHolderInput: '#23262A',
 		bgTitleCard: '#FFFFFF',
 		bgMoreBtn: '#8BAA36',
@@ -67,7 +67,6 @@ const LightTheme = {
 		fontColorBtnDark: '#22252A',
 		fontColorBtnDarkHover: '#FAFAFA',
 		followUsAddPacipesHover: '#22252A',
-
 
 		darkBG: '#2a2c36',
 		lightBG: '#FAFAFA',
@@ -96,6 +95,12 @@ const LightTheme = {
 		bgFavoriteItem: '#FFFFFF',
 		colorFavoriteTitle: '#3E4462',
 		textFavoriteRecipe: '#23262A',
+
+		textNoResultsColor: '#000000',
+
+		recipeItemBackgroundColor: '#ffffff',
+		recipeTextColor: '#23262a',
+		deleteIconStroke: '#fafafa',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
@@ -132,7 +137,7 @@ const DarkTheme = {
 		btnCancelText: '#23262A',
 		btnCancelHoverBG: '#ECECEC',
 
-		recipeListBackground: '#2A2C36', 
+		recipeListBackground: '#2A2C36',
 		recipeColor: '#FAFAFA',
 
 		placeHolderInput: '#FAFAFA',
@@ -172,6 +177,12 @@ const DarkTheme = {
 		bgFavoriteItem: '#2A2C36',
 		colorFavoriteTitle: '#FAFAFA',
 		textFavoriteRecipe: '#FAFAFA',
+
+		textNoResultsColor: '#FAFAFA',
+
+		recipeItemBackgroundColor: '#2A2C36',
+		recipeTextColor: 'rgba(250, 250, 250, 0.6)',
+		deleteIconStroke: '#ffffff',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
@@ -183,13 +194,13 @@ export const App = () => {
 	const [currentTheme, setCurrentTheme] = useState('LightTheme');
 	const themeToggler = () => {
 		if (currentTheme === 'LightTheme') {
-			console.log('theme')
+			console.log('theme');
 			setCurrentTheme('DarkTheme');
 			localStorage.setItem('theme', 'DarkTheme');
 			document.body.style.backgroundColor = '#1E1F28';
 		} else {
 			setCurrentTheme('LightTheme');
-			console.log('theme')
+			console.log('theme');
 			localStorage.setItem('theme', 'LightTheme');
 			document.body.style.backgroundColor = '#FAFAFA';
 		}
