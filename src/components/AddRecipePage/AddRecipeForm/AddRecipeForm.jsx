@@ -1,5 +1,3 @@
-// import { RecipeDescription } from '../RecipeDescription';
-// import { AddButton, RecipeFormDivStyled } from './AddRecipeForm.styled';
 import {
 	AddButton,
 	AddRecipeFormWrapper,
@@ -12,13 +10,16 @@ import { RecipeIngredientsFields } from './RecipeIngredientsFields';
 import { RecipePreparationFields } from './RecipePreparationFields';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
 import axios from 'axios';
+import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AddRecipeForm = () => {
 	const [title, setTitle] = useState('');
 	const [about, setAbout] = useState('');
-	const [categori, setCategori] = useState('');
+	const [categori, setCategori] = useState('Beef');
 	const [picture, setPicture] = useState(null);
-	const [time, setTime] = useState('');
+	const [time, setTime] = useState('5mins');
 	const [ingretients, setIngridients] = useState([]);
 	const [preparationEditedText, setPreparationEditedText] = useState([]);
 
@@ -50,7 +51,28 @@ export const AddRecipeForm = () => {
 				console.log('Invalid subscription type');
 		}
 	};
-	console.log('TOTAL', title, time, categori, picture, about);
+	console.log(
+		'TOTAL',
+		title,
+		time,
+		categori,
+		picture,
+		about,
+		preparationEditedText
+	);
+
+	const requestSchema = Yup.object().shape({
+		title: Yup.string().min(1).required(),
+		description: Yup.string().min(1).required(),
+		category: Yup.string().min(1).required(),
+		time: Yup.string().min(1).required(),
+		instructions: Yup.string().min(1).required(),
+		ingredients: Yup.array().required(),
+	});
+
+	const notify = message => {
+		toast.error(message, { position: 'bottom-center' });
+	};
 
 	const PostRecipe = async () => {
 		const igr = ingretients.map(el => {
@@ -65,18 +87,42 @@ export const AddRecipeForm = () => {
 			instructions: preparationEditedText.toString(),
 			ingredients: igr,
 		};
-		dataFile.set('imageURL', picture);
-		dataFile.set('body', JSON.stringify(requestBody));
-		console.log('FORM-DATA----', dataFile);
+		// try {
+		// 	const valdate = await requestSchema.validate(requestBody);
+		// 	if (!valdate) {
+		// 		return;
+		// 	}
+		// 	// dataFile.set('imageURL', picture);
+		// 	// dataFile.set('body', JSON.stringify(requestBody));
+		// } catch (err) {
+		// 	console.log('VALIDATION ERROR!!!!', err.message);
+		// }
+		// const valdate = await requestSchema.validate(requestBody);
+		// if (!valdate) {
+		// 	console.log(valdate);
+		// }
+		// dataFile.set('imageURL', picture);
+		// dataFile.set('body', JSON.stringify(requestBody));
+		// console.log('FORM-DATA----', dataFile);
 
 		try {
+			const valdate = await requestSchema.validate(requestBody);
+			if (!valdate) {
+				return;
+			}
+			dataFile.set('imageURL', picture);
+			dataFile.set('body', JSON.stringify(requestBody));
+			console.log('FORM-DATA----', dataFile);
+
 			await axios.post('/ownRecipes', dataFile, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 				},
 			});
+			window.location.assign('./my');
 		} catch (error) {
-			console.log(error);
+			console.log(error.message);
+			notify(error.message);
 		}
 	};
 
@@ -88,6 +134,7 @@ export const AddRecipeForm = () => {
 				<RecipePreparationFields onChange={preparationChange} />
 			</WrapperAllInput>
 			<AddButton onClick={PostRecipe}>Add</AddButton>
+			<ToastContainer />
 		</AddRecipeFormWrapper>
 	);
 };
