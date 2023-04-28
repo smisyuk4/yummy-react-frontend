@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Measure } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 import pick from 'images/recipeImg/pick.svg';
 
 export const IngredientsListSection = styled.section`
@@ -104,33 +105,52 @@ max-width: 90px;
     max-width: 547px;
   }`
 
-export const IngMeasure = styled.p`
+export const MeasureWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   margin-left: auto;
   padding: 4px;
   min-width: 37px;
   max-width: 47px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border-radius: 4px;
+  margin-right: 32px;
+  background-color: ${({ theme }) => theme.colors.primary};
+   @media ${props => props.theme.media.tablet} {
+   min-width: 78px;
+    max-width: 150px;
+     margin-right: 70px;
+   }
+   @media ${props => props.theme.media.desktop} {
+    margin-right: 143px;
+  }`
+
+export const IngMeasure = styled.p`
+  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  
   color: #3E4462;
   font-weight: 500;
   font-size: 10px;
   line-height: 1.5;
-  margin-right: 32px;
+  
   color: ${({ theme }) => theme.colors.fontColor};
-  background-color: ${({ theme }) => theme.colors.primary};
+  
    @media ${props => props.theme.media.tablet} {
-    min-width: 78px;
-    max-width: 150px;
+    
     font-size: 18px;
-    margin-right: 70px;
+   
     line-height: 1.5;
   }
   @media ${props => props.theme.media.desktop} {
-    margin-right: 143px;
-  }`
+    
+  };`
+
+
 
 export const ImageStyled = styled.image`
 display: block;
