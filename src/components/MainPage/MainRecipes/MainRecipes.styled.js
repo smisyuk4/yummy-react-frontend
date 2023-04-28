@@ -59,7 +59,7 @@ export const Image = styled.img`
 export const CardBox = styled.div`
 	z-index: 10;
 	position: absolute;
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.bgTitleCard};
 	border-radius: 8px;
 	width: calc(100% - 36px);
 	bottom: 26px;
@@ -77,6 +77,7 @@ export const CardTitle = styled.p`
 	line-height: 20px;
 	padding: 16px;
 	margin: 0;
+	color: ${({ theme }) => theme.colors.titleColor};
 `;
 
 export const NavBox = styled.div`
@@ -91,12 +92,11 @@ export const NavBox = styled.div`
 	@media screen and (min-width: 1440px) {
 		margin-bottom: 14px;
 	}
-
 `;
 
 export const NavToCategory = styled(NavLink)`
-	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
-	color: ${({ theme }) => theme.colors.fontColor};
+	background: ${({theme}) => theme.colors.primary};
+	color: ${({theme}) => theme.colors.buttonLightBG};
 	border-radius: 6px;
 	font-family: 'Poppins';
 	font-style: normal;
@@ -104,6 +104,9 @@ export const NavToCategory = styled(NavLink)`
 	font-size: 14px;
 	line-height: 18px;
 	padding: 10px 24px;
+	&:hover {
+    color: ${({ theme }) => theme.colors.buttonLightBGHover};
+}
 `;
 
 export const BtnBox = styled.div`

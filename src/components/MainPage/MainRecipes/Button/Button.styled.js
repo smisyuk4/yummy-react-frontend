@@ -13,6 +13,10 @@ font-weight: 400;
 font-size: 14px;
 line-height: 21px;
 border: 2px solid ${({theme}) => theme.colors.primary};
-color: ${({theme}) => theme.colors.buttonDarkBG};
-background: ${({theme}) => theme.colors.buttonLightBG};
+color: ${({theme}) => theme.colors.fontColorBtnDark};
+background: ${({theme}) => theme.colors.bgBtnTransparent};
+&:hover {
+    background: ${({theme}) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.fontColorBtnDarkHover};
+}
 `;

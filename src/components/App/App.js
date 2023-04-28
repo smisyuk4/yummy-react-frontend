@@ -42,10 +42,18 @@ const LightTheme = {
 		followUsBG: 'transparent',
 		followUsBGHover: '#8BAA36',
 		buttonLightBG: '#fafafa',
+		buttonLightBGHover: '#22252A',
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		textButtonPrimaryHover: '#22252A',
-
+		bgBurger: '#EBF3D4',
+		bgTitleCard: '#FFFFFF',
+		bgMoreBtn: '#8BAA36',
+		bgMoreBtnHover: '#1E1F28',
+		bgBtnTransparent: 'transparent',
+		fontColorBtnDark: '#22252A',
+		fontColorBtnDarkHover: '#FAFAFA',
+		
 		darkBG: '#2a2c36',
 		lightBG: '#FAFAFA',
 		BGCintoButton: 'FFFFF',
@@ -84,9 +92,18 @@ const DarkTheme = {
 		followUsBG: '#8BAA36',
 		foffowUsBGHover: 'transparent',
 		buttonLightBG: '#fafafa',
+		buttonLightBGHover: '#22252A',
 		buttonDarkBG: '#8BAA36',
 		buttonPrimaryBG: '#1E1F28',
 		textButtonPrimaryHover: '#8BAA36',
+		bgBurger: '#1E1F28',
+		bgTitleCard: '#2A2C36',
+		bgMoreBtn: '#8BAA36',
+		bgMoreBtnHover: '#8BAA36',
+		bgMoreBtnHover: '#1E1F28',
+		bgBtnTransparent: 'transparent',
+		fontColorBtnDark: '#FAFAFA',
+		fontColorBtnDarkHover: '#FAFAFA',
 
 		darkBG: '#2a2c36',
 		lightBG: '#1E1F28',
@@ -114,11 +131,13 @@ export const App = () => {
 	const [currentTheme, setCurrentTheme] = useState('LightTheme');
 	const themeToggler = () => {
 		if (currentTheme === 'LightTheme') {
+			console.log('theme')
 			setCurrentTheme('DarkTheme');
 			localStorage.setItem('theme', 'DarkTheme');
 			document.body.style.backgroundColor = '#1E1F28';
 		} else {
 			setCurrentTheme('LightTheme');
+			console.log('theme')
 			localStorage.setItem('theme', 'LightTheme');
 			document.body.style.backgroundColor = '#FAFAFA';
 		}
