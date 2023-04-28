@@ -58,15 +58,15 @@ export const RecipeingredientsListItem = ({
 			ttl: ingredientFilter,
 		}); // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ingredientFilter, item.id]);
-
 	useEffect(() => {
 		if (measure === '' || measueValue === '') {
 			setMeasureEmptyState(true);
 		} else {
 			setMeasureEmptyState(false);
 		}
+
 		getIngredientMeasure(item.id, {
-			measure: measueValue + ' ' + measure,
+			measure: measueValue.toString() + ' ' + measure,
 		}); // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [measure, measueValue, item.id]);
 

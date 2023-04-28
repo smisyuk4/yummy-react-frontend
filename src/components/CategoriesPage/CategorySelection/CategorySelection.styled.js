@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 // import imageBG from '../../../images/MainPageImg/bg-2.png';
 
 export const DivStyled = styled.div`
-	background-color: ${({ theme }) => theme.colors.buttonLightBG};
 	margin-top: 32px;
 	margin-bottom: 100px;
 
@@ -29,7 +28,7 @@ export const CategoryList = styled.ul`
 	::-webkit-scrollbar {
 		width: 72px; /* ширина для горизонтального скролла */
 		height: 4px; /* высота для горизонтального скролла */
-		background-color: ${({ theme }) => theme.colors.fontColorPassive};
+		background-color: ${({ theme }) => theme.colors.textSecondary};
 	}
 
 	/* ползунок скроллбара */
@@ -55,16 +54,16 @@ export const CategoryItem = styled.li`
 	}
 
 	.nav-link {
-		color: ${({ theme }) => theme.colors.fontColorPassive};
+		color: ${({ theme }) => theme.colors.textSecondary};
 	}
 
 	.nav-link:hover,
 	.nav-link:active {
-		color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+		color: ${({ theme }) => theme.colors.primary};
 	}
 
 	.isActive {
-		color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+		color: ${({ theme }) => theme.colors.primary};
 	}
 `;
 
@@ -93,6 +92,11 @@ export const CardItem = styled.li`
 	border-radius: 8px;
 	overflow: hidden;
 	width: 100%;
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: scale(1.03);
+	}
 
 	.card-link {
 		color: ${({ theme }) => theme.colors.fontColorDark};
@@ -113,7 +117,7 @@ export const Image = styled.img`
 export const CardBox = styled.div`
 	z-index: 10;
 	position: absolute;
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.bgModal};
 	border-radius: 8px;
 	width: calc(100% - 36px);
 	left: 18px;

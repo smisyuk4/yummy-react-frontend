@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { fetchRecipes } from './FetchRecipes';
+import { NavLink } from 'react-router-dom';
 import { Button } from './Button';
 import {
 	Section,
@@ -60,13 +61,15 @@ export const MainRecipes = () => {
 							<CardItem>
 								{oneRes
 									.slice(0, count)
-									.map(({ title, thumb }) => {
+									.map(({ title, thumb, _id }) => {
 										return (
 											<ImageBox key={uuidv4()}>
+											<NavLink to={`/recipes/${_id}`}>
 												<Image
 													src={thumb}
 													alt={title}
 												/>
+											</NavLink>
 												<CardBox>
 													<CardTitle>
 														{title}

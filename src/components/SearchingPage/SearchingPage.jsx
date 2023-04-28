@@ -114,7 +114,7 @@ export const SearchingPage = () => {
 					return;
 				});
 		}
-		//! Если запрос по Global Ingredients (ПОКА НЕ РАБОТАЕТ ЗАПРОС)
+		//! Если запрос по Global Ingredients
 		if (type === 'Global Ingredients') {
 			setisFind(true);
 			setisLoading(true);
@@ -142,6 +142,7 @@ export const SearchingPage = () => {
 	};
 
 	console.log(totalRecipes, setpage);
+	// console.log('card', cards);
 
 	return (
 		<DivStyled>
@@ -182,7 +183,7 @@ export const SearchingPage = () => {
 							<CardItem key={title}>
 								<NavLink
 									className="card-link"
-									to={`/recipe/${_id}`}
+									to={`/recipes/${_id}`}
 									replace={true}>
 									<Image src={thumb} alt={title} />
 									<CardBox>

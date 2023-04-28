@@ -12,7 +12,7 @@ import {
 } from './RecipeIngredientsFields.styled';
 import { EmptyFieldNotation } from '../RecipePreparationFields/RecipePreparationFields.styled';
 
-export const RecipeIngredientsFields = ({ onChange }) => {
+export const RecipeIngredientsFields = props => {
 	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
 	const [allIngredientsList, setAllIngredientsList] = useState([]);
 	const [addedIngredientsArray, setAddedIngredientsArray] = useState([]);
@@ -21,12 +21,12 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 	const fetchIngredients = async () => {
 		const fetchedIngredientsList = await getAllIngredients();
 
-		const reworkedList = fetchedIngredientsList.data.data.ingretients.map(
-			ingredient => {
-				return { id: ingredient._id, ttl: ingredient.ttl };
-			}
-		);
-		setAllIngredientsList(reworkedList);
+		// const reworkedList = fetchedIngredientsList.data.data.ingretients.map(
+		// 	ingredient => {
+		// 		return { id: ingredient._id, ttl: ingredient.ttl };
+		// 	}
+		// );
+		setAllIngredientsList(fetchedIngredientsList.data.data.ingretients);
 	};
 
 	useEffect(() => {
@@ -34,20 +34,28 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 	}, []);
 
 	useEffect(() => {
-		addedIngredientsArray.map(ingredient => {
-			if (ingredient.emptyFields) {
-				setAnyEmptyFieldsState(true)
-			} else {
-				setAnyEmptyFieldsState(false)
-			}
-		})
-	}, [addedIngredientsArray])
+		if (addedIngredientsArray !== undefined) {
+			addedIngredientsArray.map(ingredient => {
+				if (ingredient.emptyFields) {
+					return setAnyEmptyFieldsState(true);
+				} else {
+					return setAnyEmptyFieldsState(false);
+				}
+			});
+		}
+	}, [addedIngredientsArray]);
 
 	const onIncrement = () => {
 		setIgredientsQuantity(ingredientsQuantity + 1);
 		setAddedIngredientsArray(prevState => [
 			...prevState,
-			{ id: uuidv4(), ingredientId: '', ttl: '', measure: '', emptyFields: true},
+			{
+				id: uuidv4(),
+				ingredientId: '',
+				ttl: '',
+				measure: '',
+				emptyFields: true,
+			},
 		]);
 	};
 
@@ -67,12 +75,14 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 		const requstedIngredient = allIngredientsList.find(
 			ingredient => ingredient.ttl === data.ttl
 		);
+
+		console.log('requstedIngredient', requstedIngredient);
 		const updatedArray = addedIngredientsArray.map(ingredient => {
 			if (id === ingredient.id) {
 				return (ingredient = {
 					id: id,
 					ingredientId: requstedIngredient
-						? requstedIngredient.id
+						? requstedIngredient._id
 						: '',
 					ttl: data.ttl,
 					measure: ingredient.measure,
@@ -100,14 +110,15 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 		setAddedIngredientsArray(updatedArray);
 	};
 
-	const getEmptyFieldData = (id,data) => {
+	const getEmptyFieldData = (id, data) => {
+		console.log(data);
 		const updatedArray = addedIngredientsArray.map(ingredient => {
 			if (id === ingredient.id) {
 				return (ingredient = {
 					id: id,
 					ingredientId: ingredient.ingredientId,
 					ttl: ingredient.ttl,
-					measure: data.measure,
+					measure: ingredient.measure,
 					emptyFields: data,
 				});
 			}
@@ -129,9 +140,10 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 		setAddedIngredientsArray(reworkedArray);
 		setIgredientsQuantity(ingredientsQuantity - 1);
 	};
-
+	console.log(addedIngredientsArray);
 	return (
-		<RecipeIngredientsFieldset>
+		<RecipeIngredientsFieldset
+			onChange={props.onChange(addedIngredientsArray)}>
 			<HeadingStyledContainer>
 				<RecipeIngredientsHeading>
 					Ingredients
@@ -147,7 +159,7 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 					}></RecipeIngredientsFieldsCounter>
 			</HeadingStyledContainer>
 			{ingredientsQuantity !== 0 && (
-				<RecipeIngredientsUl onChange={onChange(addedIngredientsArray)}>
+				<RecipeIngredientsUl>
 					{addedIngredientsArray.map(item => {
 						return (
 							<RecipeingredientsListItem

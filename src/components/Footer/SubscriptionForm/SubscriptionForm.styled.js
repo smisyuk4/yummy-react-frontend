@@ -11,7 +11,6 @@ export const FormStyled = styled(Form)`
     column-gap: 8px;
 	background: transparent;
     padding: 0px;
-
 	margin-top: 32px;
 
 	@media screen and (min-width: 768px) and (max-width: 1440px) {
@@ -28,9 +27,7 @@ export const FormStyled = styled(Form)`
 		flex-direction: column;
 		column-gap: 8px;
 		background: transparent;
-		padding: 0px;
-		margin: 0px;
-
+		margin-top: 28px;
 	}
 `;
 

@@ -8,7 +8,7 @@ import { TogglerBurgerMenu } from "../UserLogo/Toggler/BurgerToggler";
 const modalRoot = document.getElementById('modal-root');
 
 
-export const BurgerMenu = ({closeModal}) => {
+export const BurgerMenu = ({closeModal, themeToggler}) => {
   const [darkTheme, setDarkTheme] = useState(false)
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const togglerTheme = () => {
             </HeaderNavlink>  
         </BurgerNavigationNav>
       </ModalDiv>
-      <TogglerBurgerMenu toggleTheme={togglerTheme} darkTheme={darkTheme}  />
+      <TogglerBurgerMenu toggleTheme={togglerTheme} darkTheme={darkTheme} closeModal={closeModal} themeToggler={themeToggler} />
     </BurgerMenuDiv>,
      modalRoot
      );
