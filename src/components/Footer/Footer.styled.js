@@ -145,3 +145,12 @@ export const FooterTeam = styled.div`
 		background: url(${bgImgDownL}) no-repeat right bottom;
 	}
 `;
+
+export const FooterTeamLink = styled.p`
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+		color: ${({ theme }) => theme.colors.primary};
+	}
+`;

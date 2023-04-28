@@ -12,13 +12,13 @@ export const Modal = ({ close, children }) => {
 	});
 
 	const closeModal = ({ target, currentTarget, code }) => {
-		if (target === currentTarget || code === 'Escape') {
+		if (target.id === 'modalClose' || code === 'Escape') {
 			close(false);
 		}
 	};
 
 	return createPortal(
-		<ModalDiv onClick={closeModal}>
+		<ModalDiv id="modalClose" onClick={closeModal}>
 			<div>{children}</div>
 		</ModalDiv>,
 		modalRoot
