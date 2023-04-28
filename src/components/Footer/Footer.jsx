@@ -11,6 +11,7 @@ import {
   FooterNavlink,
   FooterTeam,
   FooterTeamLink,
+  FooterTeamText,
 } from './Footer.styled';
 import { SubscriptionForm } from './SubscriptionForm';
 import { FooterDescription } from './FooterDescription';
@@ -54,11 +55,11 @@ export const Footer = () => {
         <FollowUs />
       </FooterStyled>
       <FooterTeam>
-        <p> &copy; 2023 All Rights Reserved.</p>
-        <p>Terms of Service</p>
+        <FooterTeamText> &copy; 2023 All Rights Reserved.</FooterTeamText>
+        <FooterTeamText>Terms of Service</FooterTeamText>
         <FooterTeamLink onClick={() => setShowModal(true)}>
-          Created by Team
-        </FooterTeamLink>
+							Created by Team
+			  </FooterTeamLink>
       </FooterTeam>
       {showModal && <TeamModal onClose={setShowModal} />}
     </WrapperFooter>

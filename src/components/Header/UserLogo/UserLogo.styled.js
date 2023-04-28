@@ -21,13 +21,15 @@ export const UserNameP = styled.p`
     font-weight: 600;
     font-size: 12px;
     line-height: 1.7;
-    text-shadow: -1px -1px 1px #000000;
     color: ${({ theme }) => theme.colors.fontColorNavigation};
+    text-shadow: ${({ theme }) => theme.colors.textShadow};
     @media ${props => props.theme.media.tablet} {
         font-size: 14px;
+        text-shadow: ${({ theme }) => theme.colors.textShadow};
     }
     @media ${props => props.theme.media.desktop} {
         font-size: 14px;
+        text-shadow: ${({ theme }) => theme.colors.textShadow};
     }
 `
 export const WrapperImg = styled.div`
