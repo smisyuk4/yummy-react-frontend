@@ -67,6 +67,7 @@ export const BurgerMuneBtn = styled.button`
     background-color: transparent;
     text-align: center;
     margin-left: 24px;
+    
     @media ${props => props.theme.media.tablet} {
         margin-left: 54px;
     }
@@ -78,8 +79,9 @@ export const BurgerMuneBtn = styled.button`
 export const BurgerMenuIcon = styled(Icon)`
     width: 28px;
     height: 28px;
-    stroke: ${props => props.theme.colors.fontColorNavigation};
+    stroke: ${props => props.theme.colors.primary};
     border: none;
+    
     &:hover {
         stroke: ${({ theme }) => theme.colors.primary};
     }

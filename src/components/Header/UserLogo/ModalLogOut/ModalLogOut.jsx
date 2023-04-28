@@ -1,7 +1,7 @@
 import {createPortal} from "react-dom";
 import { useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { DivStyledLogOut, Modal, WrapperBtns, BtnLogOut,  BtnCancel } from './ModalLogOut.styled';
+import { DivStyledLogOut, Modal, WrapperBtns, TextLogOut, BtnLogOut,  BtnCancel } from './ModalLogOut.styled';
 import { IconCross } from '../ModalUserProfil/ModalUserProfil.styled';
 import { logOut } from "redux/auth/operations";
 
@@ -27,9 +27,9 @@ export const ModalLogOut = ({isOpen, close}) => {
   if(!isOpen) return null;
 
   return createPortal(<DivStyledLogOut  onClick={closeModal}>
-    <Modal>
-        <IconCross id="icon-close" />
-        <p>Are you sure you want to log out?</p>
+    <Modal onClick={closeModal}>
+        <IconCross id="icon-close" onClick={closeModal} />
+        <TextLogOut>Are you sure you want to log out?</TextLogOut>
         <WrapperBtns>
           <BtnLogOut type='submit' onClick={() => dispatch(logOut())}>Log out</BtnLogOut>
           <BtnCancel type="submit" onClick={closeModal}>Cancel</BtnCancel>
