@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
+position: relative;
+z-index: 100;
 	& .pagination {
 		display: flex;
 		justify-content: center;
