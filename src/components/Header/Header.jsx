@@ -16,7 +16,7 @@ export const Header = ({themeToggler}) => {
   }
   
   return <HeaderStyled>
-    {modalOpen && <BurgerMenu closeModal={closeModal} />}
+    {modalOpen && <BurgerMenu closeModal={closeModal} themeToggler={themeToggler} />}
       <HeaderLogo />
     <HeaderNavigation />
     <UserLogo onOpenModal={openModal} themeToggler={themeToggler} />

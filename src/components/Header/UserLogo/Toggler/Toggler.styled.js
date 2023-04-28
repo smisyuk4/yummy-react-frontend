@@ -59,6 +59,7 @@ export const TogglerBurger = styled(WrapperToggler)`
     left: 16px;
     z-index: 1050;
     border: transparent;
+    border-radius: 50%;
     @media ${props => props.theme.media.tablet} {
         bottom: 32px;
         left: 32px;
