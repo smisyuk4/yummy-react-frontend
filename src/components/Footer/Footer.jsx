@@ -54,8 +54,7 @@ export const Footer = () => {
         <FollowUs />
       </FooterStyled>
       <FooterTeam>
-        <p> &copy; 2023 All Rights Reserved.</p>
-        <p>Terms of Service</p>
+        <p> &copy; 2023 All Rights Reserved. Terms of Service</p>
         <FooterTeamLink onClick={() => setShowModal(true)}>
           Created by Team
         </FooterTeamLink>

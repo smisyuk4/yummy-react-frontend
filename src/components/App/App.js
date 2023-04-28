@@ -192,7 +192,9 @@ const DarkTheme = {
 
 export const App = () => {
 	const [currentTheme, setCurrentTheme] = useState('LightTheme');
+
 	const themeToggler = () => {
+		
 		if (currentTheme === 'LightTheme') {
 			console.log('theme');
 			setCurrentTheme('DarkTheme');
@@ -205,6 +207,7 @@ export const App = () => {
 			document.body.style.backgroundColor = '#FAFAFA';
 		}
 	};
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
