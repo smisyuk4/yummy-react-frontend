@@ -81,6 +81,7 @@ const LightTheme = {
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
 		addRecipeFormFieldsDeleteButton: '#333333',
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
+		colorCounter: '#333333',
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#3e4462',
 
@@ -146,7 +147,9 @@ const DarkTheme = {
 		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
 		addRecipeFormFieldsDeleteButton: '#333333',
-		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
+		addRecipeFormCounterButtons: '#FAFAFA',
+		colorCounter: '#FAFAFA',
+
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#8BAA36',
 
