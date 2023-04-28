@@ -54,31 +54,6 @@ export const SigninForm = () => {
 					return (
 						<FormStyled autoComplete="off">
 							<H1Styled>Sign In</H1Styled>
-
-							<LabelStyled
-								className={
-									touched.password &&
-									(errors.password ? 'error' : 'valid')
-								}>
-								<IconStyled id="icon-lock" />
-								<InputForm
-									type="password"
-									name="password"
-									placeholder="Password"
-								/>
-								{touched.password &&
-									(errors.password ? (
-										<>
-											<ErrorMessage
-												name="password"
-												component={InputError}
-											/>
-											<IconStatusStyled id="icon-validation-error" />
-										</>
-									) : (
-										<IconStatusStyled id="icon-validation-success" />
-									))}
-							</LabelStyled>
 							<LabelStyled
 								className={
 									touched.email &&
@@ -103,6 +78,31 @@ export const SigninForm = () => {
 										<IconStatusStyled id="icon-validation-success" />
 									))}
 							</LabelStyled>
+							<LabelStyled
+								className={
+									touched.password &&
+									(errors.password ? 'error' : 'valid')
+								}>
+								<IconStyled id="icon-lock" />
+								<InputForm
+									type="password"
+									name="password"
+									placeholder="Password"
+								/>
+								{touched.password &&
+									(errors.password ? (
+										<>
+											<ErrorMessage
+												name="password"
+												component={InputError}
+											/>
+											<IconStatusStyled id="icon-validation-error" />
+										</>
+									) : (
+										<IconStatusStyled id="icon-validation-success" />
+									))}
+							</LabelStyled>
+
 							<FormButton type="submit">Sign In</FormButton>
 						</FormStyled>
 					);
