@@ -58,7 +58,7 @@ background-color: transparent;
       font-size: 16px;
     padding: 18px 44px;
     margin-bottom: 60px;
-    border: 2px solid ${({ theme }) => `${theme.colors.buttonPrimaryBG}`};
+    border: 2px solid ${({ theme }) => `${theme.colors.primary}`};
     }
      @media ${props => props.theme.media.desktop} {
      margin-bottom: 48px;};  
