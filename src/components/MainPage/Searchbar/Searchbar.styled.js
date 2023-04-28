@@ -12,6 +12,26 @@ export const SearchStyled = styled.div`
 		top: -667px;
 		left: -355px;
 	}
+	@media screen and (min-width: 818px) {
+		left: -404px;
+	}
+	@media screen and (min-width: 867px) {
+		left: -456px;
+	}
+	@media screen and (min-width: 920px) {
+		left: -510px;
+	}
+	@media screen and (min-width: 973px) {
+		left: -560px;
+	}
+	@media screen and (min-width: 1024px) {
+		top: -817px;
+		left: -607px;
+	}
+	@media screen and (min-width: 1190px) {
+		top: -817px;
+		left: -777px;
+	}
 	@media screen and (min-width: 1440px) {
 		top: -895px;
 		left: -825px;
@@ -26,8 +46,7 @@ export const SearchForm = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-	background: ${({ theme }) =>
-		theme.colors.addRecipeFormFieldsDropdownBackground};
+	background-color: ${({ theme }) => theme.colors.bgModal};
 	border-radius: 24px 44px;
 	border: 1px solid #f0f0f0;
 	width: 295px;
@@ -58,13 +77,13 @@ export const Input = styled(Field)`
 `;
 
 export const SearchFormBtn = styled.button`
-	top: 2px;
+	top: 0;
 	right: 0;
 	background-color: transparent;
 	border-radius: 24px 44px;
 	border: 1px solid green;
 	width: 113px;
-	height: 52px;
+	height: 56px;
 	position: absolute;
 	font-family: 'Poppins';
 	font-style: normal;
@@ -73,7 +92,7 @@ export const SearchFormBtn = styled.button`
 	line-height: 21px;
 	color: ${({ theme }) => theme.colors.fontColor};
 	background: ${({ theme }) => theme.colors.buttonDarkBG};
-	border: 1px solid #000000;
+
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	&:hover {
 		background: ${({ theme }) => theme.colors.buttonPrimaryBG};
@@ -81,12 +100,11 @@ export const SearchFormBtn = styled.button`
 	}
 	@media screen and (min-width: 768px) {
 		width: 161px;
-		height: 59px;
-		top: 2px;
+		height: 63px;
 	}
 	@media screen and (min-width: 1440px) {
 		font-size: 16px;
 		line-height: 24px;
-		height: 70px;
+		height: 75px;
 	}
 `;
