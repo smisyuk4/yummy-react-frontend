@@ -12,7 +12,7 @@ import {
 } from './RecipeIngredientsFields.styled';
 import { EmptyFieldNotation } from '../RecipePreparationFields/RecipePreparationFields.styled';
 
-export const RecipeIngredientsFields = ({ onChange }) => {
+export const RecipeIngredientsFields = props => {
 	const [ingredientsQuantity, setIgredientsQuantity] = useState(0);
 	const [allIngredientsList, setAllIngredientsList] = useState([]);
 	const [addedIngredientsArray, setAddedIngredientsArray] = useState([]);
@@ -81,7 +81,7 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 			if (id === ingredient.id) {
 				return (ingredient = {
 					id: id,
-					ingredientId: requstedIngredient  
+					ingredientId: requstedIngredient
 						? requstedIngredient._id
 						: '',
 					ttl: data.ttl,
@@ -142,7 +142,8 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 	};
 	console.log(addedIngredientsArray);
 	return (
-		<RecipeIngredientsFieldset>
+		<RecipeIngredientsFieldset
+			onChange={props.onChange(addedIngredientsArray)}>
 			<HeadingStyledContainer>
 				<RecipeIngredientsHeading>
 					Ingredients
@@ -158,7 +159,7 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 					}></RecipeIngredientsFieldsCounter>
 			</HeadingStyledContainer>
 			{ingredientsQuantity !== 0 && (
-				<RecipeIngredientsUl onChange={onChange(addedIngredientsArray)}>
+				<RecipeIngredientsUl>
 					{addedIngredientsArray.map(item => {
 						return (
 							<RecipeingredientsListItem
