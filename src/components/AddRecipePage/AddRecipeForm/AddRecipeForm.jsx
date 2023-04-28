@@ -17,9 +17,9 @@ import 'react-toastify/dist/ReactToastify.css';
 export const AddRecipeForm = () => {
 	const [title, setTitle] = useState('');
 	const [about, setAbout] = useState('');
-	const [categori, setCategori] = useState('Beef');
+	const [categori, setCategori] = useState('');
 	const [picture, setPicture] = useState(null);
-	const [time, setTime] = useState('5mins');
+	const [time, setTime] = useState('');
 	const [ingredients, setIngredients] = useState(null);
 	const [preparationEditedText, setPreparationEditedText] = useState(null);
 
@@ -30,7 +30,6 @@ export const AddRecipeForm = () => {
 		setPreparationEditedText(change);
 	};
 	const tesOnCanfeDescription = target => {
-		// console.log(target);
 		switch (target.name) {
 			case 'title':
 				setTitle(target.value);
@@ -51,25 +50,6 @@ export const AddRecipeForm = () => {
 				console.log('Invalid subscription type');
 		}
 	};
-	console.log(
-		'TOTAL',
-		title,
-		time,
-		categori,
-		picture,
-		about,
-		preparationEditedText,
-		ingredients
-	);
-
-	// const requestSchema = Yup.object().shape({
-	// 	title: Yup.string().min(1).required(),
-	// 	about: Yup.string().min(1).required(),
-	// 	category: Yup.string().min(1).required(),
-	// 	time: Yup.string().min(1).required(),
-	// 	instructions: Yup.array().required(),
-	// 	ingredients: Yup.array().required(),
-	// });
 
 	const notifyError = message => {
 		toast.error(message, { position: 'bottom-center', theme: 'colored' });
@@ -163,11 +143,6 @@ export const AddRecipeForm = () => {
 		}
 
 		try {
-			// const valdate = await requestSchema.validate(requestBody);
-			// if (!valdate) {
-			// 	notify('Recipe name field not filled');
-			// 	return;
-			// }
 			dataFile.set('imageURL', picture);
 			dataFile.set('body', JSON.stringify(requestBody));
 			console.log('FORM-DATA----', dataFile);
