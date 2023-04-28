@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { addIngredient, deleteIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
 import {InputCheck} from './RecipeIngredients.styled'
 
-export const Checkbox = ({ ingredient, currentShopList }) => {
+export const Checkbox = ({ ingredient, currentShopList, recipeId }) => {
   const [checked, setChecked] = useState(false);
   const [shoppingId, setShoppingId] = useState();
 
@@ -23,7 +23,7 @@ export const Checkbox = ({ ingredient, currentShopList }) => {
       console.log('id', id);
       deleteIngredientInShoppingList(shoppingId._id).then(() => setChecked(false));
     } else {
-      addIngredient({ingredientId: id, ttl, thb, measure }).then(() => setChecked(true));
+      addIngredient({ingredientId: id, ttl, thb, measure, recipeId }).then(() => setChecked(true));
     }
   };
 
