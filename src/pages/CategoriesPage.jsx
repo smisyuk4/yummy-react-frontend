@@ -1,6 +1,6 @@
 import { CategorySelection } from '../components/CategoriesPage/CategorySelection/CategorySelection';
 
-export const CategoriesPage = () => {
+const CategoriesPage = () => {
 	return (
 		<>
 			<CategorySelection />
