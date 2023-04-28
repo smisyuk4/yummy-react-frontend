@@ -62,7 +62,7 @@ export const JewelryBoxSmall = styled.div`
 	position: absolute;
 	width: 6px;
 	height: 6px;
-	background: ${({ theme }) => theme.colors.buttonDarkBG};
+	background: ${({ theme }) => theme.colors.fontHero};
 	border-radius: 3px;
 	transform: rotate(-25deg);
 	left: 248px;

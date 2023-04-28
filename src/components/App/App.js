@@ -61,6 +61,7 @@ const LightTheme = {
 		addRecipeFormFieldsDeleteButton: '#333333',
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
 		addRecipeFormCounterButtonsHover: '#8baa36',
+		searchFormBGbyTitle: '#FAFAFA',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
@@ -74,7 +75,7 @@ const DarkTheme = {
 		footerBG: '#8BAA36',
 		bgModal: '#2A2C36',
 		fontColor: '#fafafa',
-		fontColorDark: '#3e4462',
+		fontColorDark: '#fafafa',
 		fontColorPassive: '#E0E0E0',
 		titleColor: '#FAFAFA',
 		fontColorNavigation: '#FAFAFA',
@@ -103,6 +104,7 @@ const DarkTheme = {
 		addRecipeFormFieldsDeleteButton: '#333333',
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
 		addRecipeFormCounterButtonsHover: '#8baa36',
+		searchFormBGbyTitle: '#8BAA36',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
