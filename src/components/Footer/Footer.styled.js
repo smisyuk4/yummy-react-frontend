@@ -110,10 +110,10 @@ export const FooterNavlink = styled(NavLink)`
   letter-spacing: -0.02em;
   color: ${props => props.theme.colors.fontColor};
   &:hover {
-    color: #1e1f28;
+    color: ${props => props.theme.colors.buttonPrimaryBG};
   }
   &.active {
-    color: #1e1f28;
+    color: ${props => props.theme.colors.buttonPrimaryBG};
   }
 `;
 
@@ -153,4 +153,8 @@ export const FooterTeamLink = styled.p`
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }
+`;
+
+export const FooterTeamText = styled.p`
+  color: ${({ theme }) => theme.colors.colorTextTeam};
 `;

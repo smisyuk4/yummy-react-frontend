@@ -110,8 +110,7 @@ export const StyledCloseButton = styled.button`
 export const DropdownMeasureContainer = styled.div`
 	border-radius: 0 0 6px 6px;
 
-	background-color: ${p =>
-		p.theme.colors.addRecipeFormFieldsDropdownBackground};
+	background-color: transparent;
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
 
@@ -128,8 +127,7 @@ export const DropdownMeasureContainer = styled.div`
 
 export const DropdownIngredientContainer = styled.div`
 	border-radius: 0 0 6px 6px;
-	background-color: ${p =>
-		p.theme.colors.addRecipeFormFieldsDropdownBackground};
+	background-color: transparent;
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
 	height: 128px;
@@ -146,6 +144,7 @@ export const DropdownIngredientUl = styled.ul`
 	flex-direction: column;
 	gap: 4px;
 	padding: 0;
+	background-color: ${props => props.theme.colors.addRecipeDropDownBg};
 `;
 
 export const DropdownHideButton = styled.button`

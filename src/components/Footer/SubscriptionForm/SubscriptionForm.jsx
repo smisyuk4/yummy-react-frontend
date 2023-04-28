@@ -4,6 +4,8 @@ import * as Yup from 'yup';
 import { fetchUpdateSubscribe } from './subscriptionFetch';
 import { FormStyled, LabelStyled, InputForm, InputError, IconStyled, IconStatusStyled,  BtnSybscribe, ErrorSpan} from './SubscriptionForm.styled';
 import { DiscrSubscribeForm } from '../DiscrSubscribeForm';
+import { useSelector } from 'react-redux';
+
 
 const SubscribeSchema = Yup.object().shape({
 	email: Yup.string()
@@ -24,15 +26,23 @@ const toastParam = {
 };
 
 export const SubscriptionForm = () => {
-	
-		const sendSubscription = async ({ email }, { resetForm }) => {	
-			const data = await fetchUpdateSubscribe({email})
+		const userEmail = useSelector(state => state.auth.user.email)
+		const sendSubscription = async ({ email }, { resetForm }) => {
+			if(email !== userEmail) {
+				toast.error(`It's not your email, try again`, toastParam);
+			}
+			try {
+				const data = await fetchUpdateSubscribe({email})
 			if (data.status === 200) {
 				toast.success(`You are subscribed successful`, toastParam);
-			} else {
-				toast.error('Something went wrong, try again later', toastParam)
-			}
+			} 
 			resetForm();
+			}	catch(error) {
+				console.log(error)
+				if(error.response.status === 400) {
+					toast.info('You are already subscribe', toastParam)
+				}
+			}
 		}
 
 
@@ -72,7 +82,7 @@ export const SubscriptionForm = () => {
 						<IconStatusStyled id="icon-validation-success" />
 								))}
 					</LabelStyled>
-					<BtnSybscribe type="submit" disabled={!(formik.dirty && formik.isValid)} >Subcribe</BtnSybscribe>
+					<BtnSybscribe type="submit" disabled={!(formik.dirty && formik.isValid)} >Subscribe</BtnSybscribe>
 				</FormStyled>
 				)
 				}}
