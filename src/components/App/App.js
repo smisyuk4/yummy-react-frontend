@@ -53,6 +53,7 @@ const LightTheme = {
 		bgBtnTransparent: 'transparent',
 		fontColorBtnDark: '#22252A',
 		fontColorBtnDarkHover: '#FAFAFA',
+		followUsAddPacipesHover: '#22252A',
 
 		darkBG: '#2a2c36',
 		lightBG: '#FAFAFA',
@@ -61,6 +62,11 @@ const LightTheme = {
 		textSecondary: '#7E7E7E',
 		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsBackground: '#d9d9d9',
+		addRecipeFormFieldsBorder: 'none',
+		colorInput: '#000000',
+		placeHolderColor: '#000000',
+		bgColorListSelectIngredient: '#FAFAFA',
+
 		addRecipeFormFieldsTextColor: '#23262a',
 		addRecipeFormFieldsDropdownBackground: '#ffffff',
 		addRecipeFormFieldsDropdownButtonIcon: '#8BAA36',
@@ -69,7 +75,11 @@ const LightTheme = {
 		addRecipeFormFieldsDeleteButton: '#333333',
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
 		addRecipeFormCounterButtonsHover: '#8baa36',
-		searchFormBGbyTitle: '#FAFAFA',
+		searchFormBGbyTitle: '#3e4462',
+
+		bgFavoriteItem: '#FFFFFF',
+		colorFavoriteTitle: '#3E4462',
+		textFavoriteRecipe: '#23262A',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
@@ -104,6 +114,7 @@ const DarkTheme = {
 		bgBtnTransparent: 'transparent',
 		fontColorBtnDark: '#FAFAFA',
 		fontColorBtnDarkHover: '#FAFAFA',
+		followUsAddPacipesHover: '#8BAA36',
 
 		darkBG: '#2a2c36',
 		lightBG: '#1E1F28',
@@ -112,6 +123,11 @@ const DarkTheme = {
 		textSecondary: 'rgba(250, 250, 250, 0.6)',
 		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsBackground: 'transparent',
+		addRecipeFormFieldsBorder: '1px solid rgba(250, 250, 250, 0.2)',
+		colorInput: '#ffffff',
+		placeHolderColor: '#FAFAFA',
+		bgColorListSelectIngredient: '#8BAA36',
+
 		addRecipeFormFieldsTextColor: '#23262a',
 		addRecipeFormFieldsDropdownBackground: '#ffffff',
 		addRecipeFormFieldsDropdownButtonIcon: '#8BAA36',
@@ -121,6 +137,10 @@ const DarkTheme = {
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#8BAA36',
+
+		bgFavoriteItem: '#2A2C36',
+		colorFavoriteTitle: '#FAFAFA',
+		textFavoriteRecipe: '#FAFAFA',
 	},
 	media: {
 		tablet: '(min-width: 768px)',

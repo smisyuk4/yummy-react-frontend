@@ -33,7 +33,6 @@ export const CategorySelection = () => {
 			.catch(error => error);
 	}, [categoryName]);
 
-	// console.log('oneCategory', oneCategory);
 
 	if (category.length < 1 && oneCategory.length < 1)
 		return (
