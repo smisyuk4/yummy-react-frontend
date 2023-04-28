@@ -32,6 +32,7 @@ export const RecipeIngredientsHeading = styled.h2`
 	font-size: 24px;
 	font-weight: 600;
 	margin: 0 116px 0 0;
+	color: ${props => props.theme.colors.fontColorDark};
 	@media ${props => props.theme.media.tablet} {
 		margin: 0;
 	}
@@ -45,6 +46,7 @@ export const RecipeIngredientsUl = styled.ul`
 	flex-direction: column;
 	gap: 18px;
 	padding: 0;
+	background-color: ${props => props.theme.colors.bgColorListSelectIngredient};
 	@media ${props => props.theme.media.tablet} {
 		gap: 24px;
 	}

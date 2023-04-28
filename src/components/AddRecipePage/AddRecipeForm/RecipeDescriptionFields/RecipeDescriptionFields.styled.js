@@ -71,14 +71,26 @@ export const InputForm = styled(Field)`
 	font-size: 14px;
 	line-height: 21px;
 	letter-spacing: -0.02em;
-	border: none;
-	background-color: inherit;
-	color: #000000;
+	outline: none;
+	border:none;
+	background-color: transparent;
+	color: ${props => props.theme.colors.colorInput};
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
 		line-height: 24px;
 		width: 100%;
+	}
+	&:placeholder {
+		color: ${props => props.theme.colors.placeHolderColor};
+	}
+	&:focus {
+		border:none;
+		outline: none;
+	} 
+    &:hover {
+		outline: none;
+		border:none;
 	}
 `;
 
@@ -100,6 +112,7 @@ export const InputSelct = styled(Field)`
 	font-size: inherit;
 	line-height: inherit;
 	letter-spacing: -0.02em;
+	color: ${props => props.theme.colors.placeHolderColor};
 `;
 
 export const OverlayPicture = styled.div`

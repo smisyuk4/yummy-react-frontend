@@ -14,7 +14,7 @@ export const DivStyled = styled.div`
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 101;
     background: rgb(235,243,212) url(${bgImgM}) no-repeat right bottom;
 `;
 
