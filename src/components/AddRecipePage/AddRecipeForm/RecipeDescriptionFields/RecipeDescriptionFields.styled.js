@@ -11,9 +11,14 @@ export const DescrForm = styled(Form)`
 	flex-direction: column;
 	align-items: center;
 	padding: 0px 10px;
+	margin-bottom: 67px;
 	@media ${props => props.theme.media.tablet} {
 		flex-direction: row;
 		padding: 0;
+		margin-bottom: 100px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		margin-bottom: 110px;
 	}
 `;
 
@@ -52,8 +57,7 @@ export const LabelSelect = styled.label`
 	line-height: 21px;
 	letter-spacing: -0.02em;
 	border-bottom: 1px solid #e0e0e0;
-
-	color: rgba(0, 0, 1, 0.5);
+	color: #868686;
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
 		line-height: 24px;
@@ -72,7 +76,7 @@ export const InputForm = styled(Field)`
 	line-height: 21px;
 	letter-spacing: -0.02em;
 	outline: none;
-	border:none;
+	border: none;
 	background-color: transparent;
 	color: ${props => props.theme.colors.colorInput};
 
@@ -85,12 +89,12 @@ export const InputForm = styled(Field)`
 		color: ${props => props.theme.colors.placeHolderColor};
 	}
 	&:focus {
-		border:none;
+		border: none;
 		outline: none;
-	} 
-    &:hover {
+	}
+	&:hover {
 		outline: none;
-		border:none;
+		border: none;
 	}
 `;
 
