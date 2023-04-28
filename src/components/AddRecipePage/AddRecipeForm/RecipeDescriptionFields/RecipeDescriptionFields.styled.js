@@ -34,25 +34,31 @@ export const InputWrapper = styled.div`
 
 export const LabelForm = styled.label`
 	width: 100%;
-	padding-bottom: 18px;
+
 	border-bottom: 1px solid #e0e0e0;
+	height: 40px;
+	@media ${props => props.theme.media.tablet} {
+		height: 43px;
+	}
 `;
 
 export const LabelSelect = styled.label`
 	position: relative;
 	display: flex;
 	justify-content: space-between;
+	height: 40px;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
 	letter-spacing: -0.02em;
 	border-bottom: 1px solid #e0e0e0;
-	padding-bottom: 18px;
+
 	color: rgba(0, 0, 1, 0.5);
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
 		line-height: 24px;
 		width: 100%;
+		height: 43px;
 	}
 `;
 
@@ -97,7 +103,8 @@ export const InputFile = styled(Field)`
 `;
 
 export const InputSelct = styled(Field)`
-	border: solid 1px #e0e0e0;
+	border: none;
+	margin-bottom: 18px;
 	background-color: ${props => props.theme.colors.lightBG};
 	z-index: 3;
 	padding-left: 10px;
@@ -115,7 +122,7 @@ export const OverlayPicture = styled.div`
 	border-radius: 8px;
 	margin-bottom: 32px;
 	background-color: ${props => props.theme.colors.primary};
-	@media ${props => props.theme.media.desktop} {
+	@media ${props => props.theme.media.tablet} {
 		margin-bottom: 0;
 	}
 	@media ${props => props.theme.media.desktop} {
