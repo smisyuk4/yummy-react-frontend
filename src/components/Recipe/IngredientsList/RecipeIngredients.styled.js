@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Measure } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
+// import { Measure } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 import pick from 'images/recipeImg/pick.svg';
 
 export const IngredientsListSection = styled.section`
