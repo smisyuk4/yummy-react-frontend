@@ -21,12 +21,12 @@ import {
 	Total,
 	SpanNum,
 } from './IngredientsShoppingList.styled';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import defaultImage from '../../../images/recipeImg/ingredImage.jpg';
 import { ColorRing } from 'react-loader-spinner';
 
-const IngredientsShoppingList = () => {
+const IngredientsShoppingList = (props) => {
 	const [shoppingList, setShoppingList] = useState([]);
 	const [loading, setLoading] = useState(true);
 
@@ -95,9 +95,9 @@ const IngredientsShoppingList = () => {
 							<TaglineP>
 								{ttl}
 								<br />
-								{/* <NavLink to={`/recipes/${recipeId}`}>
+								<NavLink to={`/recipes/${props}`}>
 									From recipe
-								</NavLink> */}
+								</NavLink>
 							</TaglineP>
 							<Measure>{measure}</Measure>
 							<CloseBtn
