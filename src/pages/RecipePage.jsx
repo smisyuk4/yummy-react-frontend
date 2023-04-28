@@ -63,8 +63,9 @@ const RecipePage = () => {
     getIngredients();
   }, [arrayAllId, ingredientsOne]);
 
-  const { _id, title, description, time, thumb, instructions, favorites } =
+  const { _id, title, description, time, thumb, instructions, favorite } =
     recipe;
+  console.log('test', recipe)
   return (
     <>
       <RecipePageHero
@@ -72,7 +73,7 @@ const RecipePage = () => {
         description={description}
         _id={_id}
         time={time}
-        favorites={favorites}
+        favorites={favorite}
       />
       <IngredientsList ingredients={ingredients} />
       <RecipePreparation instructions={instructions} thumb={thumb} />

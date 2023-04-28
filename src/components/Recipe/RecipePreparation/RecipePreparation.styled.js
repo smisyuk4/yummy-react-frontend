@@ -24,6 +24,7 @@ margin-bottom: 40px;
 
 export const TitleStyles = styled.h2`
   font-weight: 600;
+  color: ${({ theme }) => theme.colors.recipeColor};
   font-size: 24px;
   line-height: 1;
   margin-bottom: 28px;
@@ -39,6 +40,7 @@ export const InstructionItem = styled.li`
   align-items: center;
     margin-bottom: 18px;
     font-size: 12px;
+    color: ${({ theme }) => theme.colors.recipeColor};
   line-height: 1.17;
   letter-spacing: -0.02em;
 `;

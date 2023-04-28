@@ -48,6 +48,11 @@ const LightTheme = {
 		buttonPrimaryBG: '#8BAA36',
 		textButtonPrimaryHover: '#22252A',
 
+		recipeListBackground: '#EBF3D4',
+		recipeHero: '#22252A',
+		recipeColor: '#3E4462',
+
+
 		bgTitleCard: '#FFFFFF',
 		bgMoreBtn: '#8BAA36',
 		bgMoreBtnHover: '#1E1F28',
@@ -55,6 +60,7 @@ const LightTheme = {
 		fontColorBtnDark: '#22252A',
 		fontColorBtnDarkHover: '#FAFAFA',
 		followUsAddPacipesHover: '#22252A',
+
 
 		darkBG: '#2a2c36',
 		lightBG: '#FAFAFA',
@@ -109,6 +115,10 @@ const DarkTheme = {
 		buttonDarkBG: '#8BAA36',
 		buttonPrimaryBG: '#1E1F28',
 		textButtonPrimaryHover: '#8BAA36',
+
+		recipeListBackground: '#2A2C36', 
+		recipeColor: '#FAFAFA',
+
 
 		bgTitleCard: '#2A2C36',
 		bgMoreBtn: '#8BAA36',
