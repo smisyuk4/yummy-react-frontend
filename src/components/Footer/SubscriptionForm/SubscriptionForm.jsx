@@ -82,7 +82,7 @@ export const SubscriptionForm = () => {
 						<IconStatusStyled id="icon-validation-success" />
 								))}
 					</LabelStyled>
-					<BtnSybscribe type="submit" disabled={!(formik.dirty && formik.isValid)} >Subcribe</BtnSybscribe>
+					<BtnSybscribe type="submit" disabled={!(formik.dirty && formik.isValid)} >Subscribe</BtnSybscribe>
 				</FormStyled>
 				)
 				}}

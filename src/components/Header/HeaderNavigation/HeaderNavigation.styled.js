@@ -9,13 +9,15 @@ export const HeaderNavigationNav = styled.nav`
         ${flexBox};
         flex-direction: row;
         column-gap: 30px;
+        padding-right: 350px;
     }
 `;
 
 export const HeaderNavlink = styled(NavLink)`
     font-weight: 500;
-    font-size: 24px;
-    line-height: 1;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
     letter-spacing: -0.02em;
     color: ${props => props.theme.colors.fontColorNavigation};;
    
