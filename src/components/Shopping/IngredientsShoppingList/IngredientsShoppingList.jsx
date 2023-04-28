@@ -26,10 +26,10 @@ import { NavLink } from 'react-router-dom';
 import defaultImage from '../../../images/recipeImg/ingredImage.jpg';
 import { ColorRing } from 'react-loader-spinner';
 
-const IngredientsShoppingList = (props) => {
+const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
 	const [loading, setLoading] = useState(true);
-
+	// console.error(props)
 	useEffect(() => {
 		getShoppingList()
 			.then(({ data }) => setShoppingList(data.shoppingList))
@@ -80,7 +80,7 @@ const IngredientsShoppingList = (props) => {
 			)}
 			<ShoppingList>
 				{totalPositionOfIngredients > 0 &&
-					shoppingList.map(({ _id, ttl, thb, measure }) => (
+					shoppingList.map(({ _id, ttl, thb, measure, recipeId }) => (
 						<ItemShoppingList key={_id}>
 							<ContainerImg>
 								<img
@@ -95,7 +95,7 @@ const IngredientsShoppingList = (props) => {
 							<TaglineP>
 								{ttl}
 								<br />
-								<NavLink to={`/recipes/${props}`}>
+								<NavLink to={`/recipes/${recipeId}`}>
 									From recipe
 								</NavLink>
 							</TaglineP>

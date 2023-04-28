@@ -8,15 +8,16 @@ export const Checkbox = ({ ingredient, currentShopList, recipeId }) => {
   const [shoppingId, setShoppingId] = useState();
 
   const { id, ttl, thb, measure } = ingredient;
-  // console.log(ingredient);
 
   useEffect(() => {
-    if (currentShopList.length > 0) {
-      const inShoppingList = currentShopList.find(item => item.ingredientId === id);
+
+
+    if (currentShopList.length > 0 ) {
+      const inShoppingList = currentShopList.find(item => item.ingredientId === id && item.recipeId === recipeId);
       setChecked(inShoppingList ? true : false);
       setShoppingId(inShoppingList);
     }
-  }, [currentShopList, id]);
+  }, [currentShopList, id, recipeId]);
 
   const checkboxChange = (event) => {
     if (checked) {
