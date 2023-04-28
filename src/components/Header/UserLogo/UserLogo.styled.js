@@ -21,6 +21,7 @@ export const UserNameP = styled.p`
     font-weight: 600;
     font-size: 12px;
     line-height: 1.7;
+    text-shadow: -1px -1px 1px #000000;
     color: ${({ theme }) => theme.colors.fontColorNavigation};
     @media ${props => props.theme.media.tablet} {
         font-size: 14px;
