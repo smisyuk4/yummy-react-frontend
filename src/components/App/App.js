@@ -174,7 +174,7 @@ const DarkTheme = {
 		addRecipeFormFieldsDeleteButton: '#333333',
 		addRecipeFormCounterButtons: '#FAFAFA',
 		colorCounter: '#FAFAFA',
-		textShadow: 'text-shadow: 1px -1px 2px rgba(0, 0, 0, 1),1px 2px 1px rgba(87, 43, 65, 1),2px -1px 5px rgba(120, 50, 6, 0.6);',
+		textShadow: '1px -1px 2px rgba(0, 0, 0, 1),1px 2px 1px rgba(87, 43, 65, 1),2px -1px 5px rgba(120, 50, 6, 0.6)',
 
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#8BAA36',
