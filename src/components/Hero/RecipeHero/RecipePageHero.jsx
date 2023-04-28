@@ -6,10 +6,10 @@ import { addToFavorites, removeFromFavorites } from 'components/Favorite/FetchFa
 import { HeroSection, ButtonStyled, TitleStyled, PStyled, ClockDivStyled, ClockDescriptionStyled } from './RecipePageHero.styled';
 import { Icon } from 'components/Icon';
 
-export const RecipePageHero = ({ title, description, time, _id, favorites }) => {
+export const RecipePageHero = ({ title, description, time, _id, favorite }) => {
   const user = useSelector(selectUser);
   const [isFavorite, setIsFavorite] = useState(() =>
-    favorites ? favorites.includes(user._id) : false
+    favorite ? favorite.includes(user._id) : false
   );
 
   const handleFavoriteAdd = id => {

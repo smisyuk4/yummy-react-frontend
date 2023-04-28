@@ -8,8 +8,7 @@ export const Checkbox = ({ ingredient, currentShopList }) => {
   const [shoppingId, setShoppingId] = useState();
 
   const { id, ttl, thb, measure } = ingredient;
-  console.log(ingredient);
-
+ 
   useEffect(() => {
     if (currentShopList.length > 0) {
       const inShoppingList = currentShopList.find(item => item.ingredientId === id);
@@ -20,7 +19,6 @@ export const Checkbox = ({ ingredient, currentShopList }) => {
 
   const checkboxChange = (event) => {
     if (checked) {
-      console.log('id', id);
       deleteIngredientInShoppingList(shoppingId._id).then(() => setChecked(false));
     } else {
       addIngredient({ingredientId: id, ttl, thb, measure }).then(() => setChecked(true));

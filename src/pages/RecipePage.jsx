@@ -78,7 +78,7 @@ const RecipePage = () => {
             description={description}
             _id={_id}
             time={time}
-            favorites={favorite}
+            favorite={favorite}
           />
       
           <IngredientsList ingredients={ingredients} />
