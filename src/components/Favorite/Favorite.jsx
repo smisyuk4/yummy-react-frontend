@@ -41,7 +41,6 @@ export const Favorite = id => {
 		setFavoriteRecipes(prev => prev.filter(recipe => recipe._id !== id));
 	};
 
-	console.log(favoriteRecipes);
 	return (
 		<FavoriteStyled>
 			<ReusableComponentTitleWithJewelry title="Favorites" />

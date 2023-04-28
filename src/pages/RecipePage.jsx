@@ -81,7 +81,7 @@ const RecipePage = () => {
             favorites={favorite}
           />
       
-          <IngredientsList ingredients={ingredients} />
+          <IngredientsList ingredients={ingredients} recipeId={recipeId}/>
           <RecipePreparation instructions={instructions} thumb={thumb} />
         </>
 			 
