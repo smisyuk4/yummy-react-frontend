@@ -1,14 +1,14 @@
 import styled from "@emotion/styled";
 
 export const PreparationSection = styled.section`
-  padding: 50px 16px 100px 16px;
+  padding: 50px 0px 100px 0px;
   @media (min-width: 768px) {
-    padding: 96px 32px 200px 32px;
+    padding: 96px 0px 200px 0px;
   }
   @media (min-width: 1440px) {
     display: flex;
     justify-content: space-between;
-    padding: 100px 32px 200px 32px;
+    padding: 100px 0px 200px 0px;
   }
 `;
 
@@ -64,13 +64,13 @@ justify-content: center;
 ;`
 
 export const ImgStyled = styled.img`
-object-fit: contain;
-  /* width: 100%; */
+object-fit: cover;
+  width: 100%;
   overflow: hidden;
-  /* height: 100%; */
+  height: 100%;
   display: block;
   border-radius: 8px;
    @media screen and (min-width: 768px) {
       min-width: 433px;
-      // height: 332px;
+      height: 332px; 
     }` 
