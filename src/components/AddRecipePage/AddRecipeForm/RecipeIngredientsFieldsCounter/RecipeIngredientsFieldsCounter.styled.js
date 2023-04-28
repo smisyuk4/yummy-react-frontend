@@ -41,6 +41,7 @@ export const CounterValue = styled.span`
 	font-weight: 400;
 	size: 14px;
 	line-height: 1.5;
+	color: ${props => props.theme.colors.colorCounter};
 	@media ${props => props.theme.media.tablet} {
 		size: 16px;
 	}
@@ -50,7 +51,7 @@ export const CounterValue = styled.span`
 `;
 
 export const IconPlus = styled(Icon)`
-	color: currentColor;
+	stroke: ${props => props.theme.colors.primary};
 `;
 
 export const IconMinus = styled(Icon)`

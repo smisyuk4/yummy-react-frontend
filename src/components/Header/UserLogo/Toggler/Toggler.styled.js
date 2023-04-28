@@ -59,6 +59,16 @@ export const TogglerBurger = styled(WrapperToggler)`
     left: 16px;
     z-index: 1050;
     border: transparent;
+    border-radius: 50%;
+    box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
+    
+    &.active > svg:nth-of-type(1) {
+        fill: ${({ theme }) => theme.colors.primary};
+        }
+    &.active > svg:nth-of-type(2) {
+            transform: translateX(35px);
+        }
+
     @media ${props => props.theme.media.tablet} {
         bottom: 32px;
         left: 32px;

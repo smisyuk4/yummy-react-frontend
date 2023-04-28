@@ -110,10 +110,10 @@ export const FooterNavlink = styled(NavLink)`
 	letter-spacing: -0.02em;
 	color: ${props => props.theme.colors.fontColor};
 	&:hover {
-		color: ${({ theme }) => theme.colors.primary};
+		color: #1E1F28;
 	}
 	&.active {
-		color: ${({ theme }) => theme.colors.primary};
+		color: #1E1F28;
 	}
 `;
 
@@ -143,5 +143,14 @@ export const FooterTeam = styled.div`
 		padding-top: 50px;
 		padding-bottom: 50px;
 		background: url(${bgImgDownL}) no-repeat right bottom;
+	}
+`;
+
+export const FooterTeamLink = styled.p`
+	color: inherit;
+	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+		color: ${({ theme }) => theme.colors.primary};
 	}
 `;

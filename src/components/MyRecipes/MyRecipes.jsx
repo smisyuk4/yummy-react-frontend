@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import { RecipeList } from 'components/RecipeList';
-import { RecipeListItem } from 'components/RecipeListItem';
+import { Container, TitleWrapper } from './MyRecipes.styled';
+import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
+import { MyRecipesList } from 'components/MyRecipesList';
+import { MyRecipesItem } from 'components/MyRecipesItem';
 import { NoResults } from 'components/NoResults';
-import { TitleStyled } from './Title/Title';
 import { deleteOwnRecipe, fetchOwnRecipes } from './operations';
 
-export const OwnRecipes = () => {
+export const MyRecipes = () => {
 	const [ownRecipes, setOwnRecipes] = useState();
 
 	useEffect(() => {
@@ -26,7 +27,6 @@ export const OwnRecipes = () => {
 		try {
 			await deleteOwnRecipe(id);
 			const updatedRecipesList = await fetchOwnRecipes();
-			console.log('updated', updatedRecipesList);
 			setOwnRecipes(prev => updatedRecipesList.data.recipes);
 		} catch (error) {
 			console.log(error);
@@ -34,21 +34,24 @@ export const OwnRecipes = () => {
 	}
 
 	return (
-		<div>
-			<TitleStyled title="My recipes"></TitleStyled>
+		<Container>
+			<TitleWrapper>
+				<ReusableComponentTitleWithJewelry title="My recipes"></ReusableComponentTitleWithJewelry>
+			</TitleWrapper>
+
 			{ownRecipes?.length > 0 ? (
-				<RecipeList>
+				<MyRecipesList>
 					{ownRecipes.map(recipe => (
-						<RecipeListItem
+						<MyRecipesItem
 							key={recipe._id}
 							recipe={recipe}
 							onDelete={() => deleteRecipe(recipe._id)}
 						/>
 					))}
-				</RecipeList>
+				</MyRecipesList>
 			) : (
 				<NoResults text="No recipes found" />
 			)}
-		</div>
+		</Container>
 	);
 };

@@ -31,6 +31,7 @@ const LightTheme = {
 		primarySoft: '#EBF3D4',
 		footerBG: '#22252A',
 		bgModal: '#FAFAFA',
+		bgBurger: 'rgb(235,243,212)',
 		fontColor: '#fafafa',
 		fontColorDark: '#3e4462',
 		fontColorPassive: '#E0E0E0',
@@ -42,9 +43,30 @@ const LightTheme = {
 		followUsBG: 'transparent',
 		followUsBGHover: '#8BAA36',
 		buttonLightBG: '#fafafa',
+		buttonLightBGHover: '#22252A',
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		textButtonPrimaryHover: '#22252A',
+
+		btnLogOutBg: '#8BAA36',
+		btnLogOutText: '#FAFAFA',
+		btnLogOutHoverBG: '#22252A',
+		btnCancelBg: '#D9D9D9',
+		btnCancelText: '#23262A',
+		btnCancelHoverBG: '#ECECEC',
+
+		recipeListBackground: '#EBF3D4',
+		recipeHero: '#22252A',
+		recipeColor: '#3E4462',
+
+		placeHolderInput: '#23262A',
+		bgTitleCard: '#FFFFFF',
+		bgMoreBtn: '#8BAA36',
+		bgMoreBtnHover: '#1E1F28',
+		bgBtnTransparent: 'transparent',
+		fontColorBtnDark: '#22252A',
+		fontColorBtnDarkHover: '#FAFAFA',
+		followUsAddPacipesHover: '#22252A',
 
 		darkBG: '#2a2c36',
 		lightBG: '#FAFAFA',
@@ -53,6 +75,12 @@ const LightTheme = {
 		textSecondary: '#7E7E7E',
 		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsBackground: '#d9d9d9',
+		addRecipeFormFieldsBorder: 'none',
+		colorInput: '#000000',
+		placeHolderColor: '#000000',
+		borderColor: '#23262A',
+		bgColorListSelectIngredient: '#FAFAFA',
+
 		addRecipeFormFieldsTextColor: '#23262a',
 		addRecipeFormFieldsDropdownBackground: '#ffffff',
 		addRecipeFormFieldsDropdownButtonIcon: '#8BAA36',
@@ -60,7 +88,19 @@ const LightTheme = {
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
 		addRecipeFormFieldsDeleteButton: '#333333',
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
+		colorCounter: '#333333',
 		addRecipeFormCounterButtonsHover: '#8baa36',
+		searchFormBGbyTitle: '#3e4462',
+
+		bgFavoriteItem: '#FFFFFF',
+		colorFavoriteTitle: '#3E4462',
+		textFavoriteRecipe: '#23262A',
+
+		textNoResultsColor: '#000000',
+
+		recipeItemBackgroundColor: '#ffffff',
+		recipeTextColor: '#23262a',
+		deleteIconStroke: '#fafafa',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
@@ -73,8 +113,9 @@ const DarkTheme = {
 		primarySoft: '#EBF3D4',
 		footerBG: '#8BAA36',
 		bgModal: '#2A2C36',
+		bgBurger: '#2A2C36',
 		fontColor: '#fafafa',
-		fontColorDark: '#3e4462',
+		fontColorDark: '#fafafa',
 		fontColorPassive: '#E0E0E0',
 		titleColor: '#FAFAFA',
 		fontColorNavigation: '#FAFAFA',
@@ -84,9 +125,29 @@ const DarkTheme = {
 		followUsBG: '#8BAA36',
 		foffowUsBGHover: 'transparent',
 		buttonLightBG: '#fafafa',
+		buttonLightBGHover: '#22252A',
 		buttonDarkBG: '#8BAA36',
 		buttonPrimaryBG: '#1E1F28',
 		textButtonPrimaryHover: '#8BAA36',
+
+		btnLogOutBg: '#8BAA36',
+		btnLogOutText: '#FAFAFA',
+		btnLogOutHoverBG: '#22252A',
+		btnCancelBg: '#D9D9D9',
+		btnCancelText: '#23262A',
+		btnCancelHoverBG: '#ECECEC',
+
+		recipeListBackground: '#2A2C36',
+		recipeColor: '#FAFAFA',
+
+		placeHolderInput: '#FAFAFA',
+		bgTitleCard: '#2A2C36',
+		bgMoreBtn: '#8BAA36',
+		bgMoreBtnHover: '#8BAA36',
+		bgBtnTransparent: 'transparent',
+		fontColorBtnDark: '#FAFAFA',
+		fontColorBtnDarkHover: '#FAFAFA',
+		followUsAddPacipesHover: '#8BAA36',
 
 		darkBG: '#2a2c36',
 		lightBG: '#1E1F28',
@@ -95,14 +156,33 @@ const DarkTheme = {
 		textSecondary: 'rgba(250, 250, 250, 0.6)',
 		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsBackground: 'transparent',
+		addRecipeFormFieldsBorder: '1px solid rgba(250, 250, 250, 0.2)',
+		colorInput: '#ffffff',
+		placeHolderColor: '#FAFAFA',
+		borderColor: '#FAFAFA',
+		bgColorListSelectIngredient: '#8BAA36',
+
 		addRecipeFormFieldsTextColor: '#23262a',
 		addRecipeFormFieldsDropdownBackground: '#ffffff',
 		addRecipeFormFieldsDropdownButtonIcon: '#8BAA36',
 		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
 		addRecipeFormFieldsDeleteButton: '#333333',
-		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
+		addRecipeFormCounterButtons: '#FAFAFA',
+		colorCounter: '#FAFAFA',
+
 		addRecipeFormCounterButtonsHover: '#8baa36',
+		searchFormBGbyTitle: '#8BAA36',
+
+		bgFavoriteItem: '#2A2C36',
+		colorFavoriteTitle: '#FAFAFA',
+		textFavoriteRecipe: '#FAFAFA',
+
+		textNoResultsColor: '#FAFAFA',
+
+		recipeItemBackgroundColor: '#2A2C36',
+		recipeTextColor: 'rgba(250, 250, 250, 0.6)',
+		deleteIconStroke: '#ffffff',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
@@ -114,11 +194,13 @@ export const App = () => {
 	const [currentTheme, setCurrentTheme] = useState('LightTheme');
 	const themeToggler = () => {
 		if (currentTheme === 'LightTheme') {
+			console.log('theme');
 			setCurrentTheme('DarkTheme');
 			localStorage.setItem('theme', 'DarkTheme');
 			document.body.style.backgroundColor = '#1E1F28';
 		} else {
 			setCurrentTheme('LightTheme');
+			console.log('theme');
 			localStorage.setItem('theme', 'LightTheme');
 			document.body.style.backgroundColor = '#FAFAFA';
 		}
@@ -134,7 +216,7 @@ export const App = () => {
 		} else {
 			localStorage.setItem('theme', 'LightTheme');
 		}
-	}, []);
+	});
 	useEffect(() => {
 		dispatch(syncUser());
 	}, [dispatch]);

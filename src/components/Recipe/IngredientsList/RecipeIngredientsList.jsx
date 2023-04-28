@@ -2,8 +2,8 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 // import { ListBar, DivContainer, ItemBar } from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList.styled';
 import { getShoppingList } from 'components/Shopping/fetchShoppingList';
-import ingredImage from 'images/recipeImg/ingredImage.jpg'
-import { IngredientsListSection, ListStyled, IngedientsItem, Wrapper, IngMeasure, ListBar, ItemBar} from './RecipeIngredients.styled';
+import ingredImage from 'images/recipeImg/ingredient.jpg'
+import { IngredientsListSection, ListStyled, IngedientsItem, IngredientName, Wrapper, IngMeasure, MeasureWrapper, ListBar, ItemBar} from './RecipeIngredients.styled';
 import { Checkbox } from './Checkbox';
 
 
@@ -38,17 +38,19 @@ export const IngredientsList = ({ ingredients }) => {
               return (
                 <IngedientsItem key={_id}>
                   <Wrapper>
-                    {
-                      <img
-                        src={thb ?? ingredImage}
-                        alt="Ingredient"
-                      />
-                    }
-                     <p>{ttl}</p>
+                     {thb ? (
+            <img src={thb} alt={ttl} />
+          ) : (
+            <img src={`${ingredImage}`} alt={ttl} />
+          )}
+                    
+                     <IngredientName>{ttl}</IngredientName>
                   </Wrapper>
                 
-                   <Wrapper>
-                  <IngMeasure>{measure}</IngMeasure>
+                  <Wrapper>
+                    <MeasureWrapper>
+                      <IngMeasure>{measure}</IngMeasure>
+                      </MeasureWrapper>
                     <label>
                       <Checkbox
                         type="checkbox"

@@ -1,7 +1,6 @@
 import { Formik } from 'formik';
 import {
 	DescrForm,
-	// DescriptionDiv,
 	InputFile,
 	InputForm,
 	InputSelct,
@@ -19,8 +18,8 @@ import { Icon } from 'components/Icon';
 
 export const RecipeDescriptionFields = ({ onChange }) => {
 	const [picture, setPicture] = useState(null);
-	const [category, setCategory] = useState(null);
-	const [time, setTime] = useState(null);
+	const [category, setCategory] = useState('');
+	const [time, setTime] = useState('');
 
 	const [pictureUrl, setPictureUrl] = useState('');
 	const [categoriList, setCategoriList] = useState([]);
@@ -79,7 +78,7 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 
 	const selectFocus = prop => {
 		prop.target.size = 6;
-		prop.target.style = 'position: absolute; right: 0; z-index: 10;';
+		prop.target.style = `position: absolute; right: 0; z-index: 10;`;
 	};
 
 	const selectChange = prop => {
@@ -154,6 +153,7 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 							onChange={selectChange}
 							onBlur={selectBlur}
 							value={category}>
+							<option value="">Select category</option>
 							{categoriName}
 						</InputSelct>
 					</LabelSelect>
@@ -166,6 +166,7 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 							onChange={selectChange}
 							onBlur={selectBlur}
 							value={time}>
+							<option value="">Select time</option>
 							{timeSelect}
 						</InputSelct>
 					</LabelSelect>

@@ -24,6 +24,7 @@ import { NoResults } from 'components/NoResults';
 import { ColorRing } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Pagination } from './Pagination/Pagination';
 
 export const SearchingPage = () => {
 	const [type, settype] = useState('Title');
@@ -33,8 +34,97 @@ export const SearchingPage = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [isLoading, setisLoading] = useState(false);
 	const [isFind, setisFind] = useState(true);
+<<<<<<< HEAD
 	const [searchParam, setSearchParam] = useSearchParams()
 
+=======
+	const [query, setQuery] = useState("");
+
+	let limit = windowWidth <= 1439 ? 6 : 12;
+
+	useEffect(() => {
+	if(!query) return
+
+			settotalRecipes(0);
+	
+			//! Если запрос по TITLE
+			if (type === 'Title') {
+				setisFind(true);
+				setisLoading(true);
+				fetchByTitle(query, { page, limit })
+					.then(({ data }) => {
+						if (data.data.recipes.length === 0) {
+							setisFind(false);
+							setisLoading(false);
+							setcards([]);
+							settotalRecipes(0);
+							return;
+						}
+						setisLoading(false);
+						setcards(data.data.recipes);
+						settotalRecipes(data.data.totalRecipes);
+					})
+					.catch(() => {
+						setisFind(false);
+						setisLoading(false);
+						setcards([]);
+						settotalRecipes(0);
+						return;
+					});
+			}
+			//! Если запрос по Ingredients
+			if (type === 'Ingredients') {
+				setisFind(true);
+				setisLoading(true);
+				fetchByIngredients(query, { page, limit })
+					.then(({ data }) => {
+						if (data.data.recipes.length === 0) {
+							setisFind(false);
+							setisLoading(false);
+							setcards([]);
+							settotalRecipes(0);
+							return;
+						}
+						setisLoading(false);
+						setcards(data.data.recipes);
+						settotalRecipes(data.data.totalRecipes);
+					})
+					.catch(() => {
+						setisFind(false);
+						setisLoading(false);
+						setcards([]);
+						settotalRecipes(0);
+						return;
+					});
+			}
+			//! Если запрос по Global Ingredients
+			if (type === 'Global Ingredients') {
+				setisFind(true);
+				setisLoading(true);
+				fetchByGlobalIngredients(query, { page, limit })
+					.then(({ data }) => {
+						if (data.data.recipes.length === 0) {
+							setisFind(false);
+							setisLoading(false);
+							setcards([]);
+							settotalRecipes(0);
+							return;
+						}
+						setisLoading(false);
+						setcards(data.data.recipes);
+						settotalRecipes(data.data.totalRecipes);
+					})
+					.catch(() => {
+						setisFind(false);
+						setisLoading(false);
+						setcards([]);
+						settotalRecipes(0);
+						return;
+					});
+			}
+		
+	}, [query, page, limit, type ]);
+>>>>>>> 44de6dbc57ec3e4d5a7cf1754b93dc268cae3c97
 
 	useEffect(() => {
 		settype(searchParam.get('type'))
@@ -47,7 +137,7 @@ export const SearchingPage = () => {
 	}, [searchParam]);
 
 	//! Установил сколько будет на странице (сколько качать с бэкэнда)
-	let limit = windowWidth <= 1439 ? 6 : 12;
+	
 
 	const selectFunc = () => {
 		const value = document.querySelector('select').value
@@ -55,104 +145,115 @@ export const SearchingPage = () => {
 		setSearchParam({type: value})
 	};
 
-	const changeValueFunc = value => {
-		settotalRecipes(0);
-		//! Если ничего не ввели в поиск то ...
-		if (!value) {
-			toast.error('Enter something in the search box...', {
-				position: 'top-center',
-				autoClose: 3000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: 'colored',
-			});
-		}
-		//! Если запрос по TITLE
-		if (type === 'Title') {
-			setisFind(true);
-			setisLoading(true);
-			fetchByTitle(value, { page, limit })
-				.then(({ data }) => {
-					if (data.data.recipes.length === 0) {
-						setisFind(false);
-						setisLoading(false);
-						setcards([]);
-						settotalRecipes(0);
-						return;
-					}
-					setisLoading(false);
-					setcards(data.data.recipes);
-					settotalRecipes(data.data.totalRecipes);
-				})
-				.catch(() => {
-					setisFind(false);
-					setisLoading(false);
-					setcards([]);
-					settotalRecipes(0);
-					return;
-				});
-		}
-		//! Если запрос по Ingredients
-		if (type === 'Ingredients') {
-			setisFind(true);
-			setisLoading(true);
-			fetchByIngredients(value, { page, limit })
-				.then(({ data }) => {
-					if (data.data.recipes.length === 0) {
-						setisFind(false);
-						setisLoading(false);
-						setcards([]);
-						settotalRecipes(0);
-						return;
-					}
-					setisLoading(false);
-					setcards(data.data.recipes);
-					settotalRecipes(data.data.totalRecipes);
-				})
-				.catch(() => {
-					setisFind(false);
-					setisLoading(false);
-					setcards([]);
-					settotalRecipes(0);
-					return;
-				});
-		}
-		//! Если запрос по Global Ingredients (ПОКА НЕ РАБОТАЕТ ЗАПРОС)
-		if (type === 'Global Ingredients') {
-			setisFind(true);
-			setisLoading(true);
-			fetchByGlobalIngredients(value, { page, limit })
-				.then(({ data }) => {
-					if (data.data.recipes.length === 0) {
-						setisFind(false);
-						setisLoading(false);
-						setcards([]);
-						settotalRecipes(0);
-						return;
-					}
-					setisLoading(false);
-					setcards(data.data.recipes);
-					settotalRecipes(data.data.totalRecipes);
-				})
-				.catch(() => {
-					setisFind(false);
-					setisLoading(false);
-					setcards([]);
-					settotalRecipes(0);
-					return;
-				});
-		}
-	};
+	// function changeValueFunc () {
+	// 	settotalRecipes(0);
 
-	console.log(totalRecipes, setpage);
+	// 	//! Если запрос по TITLE
+	// 	if (type === 'Title') {
+	// 		setisFind(true);
+	// 		setisLoading(true);
+	// 		fetchByTitle(query, { page, limit })
+	// 			.then(({ data }) => {
+	// 				if (data.data.recipes.length === 0) {
+	// 					setisFind(false);
+	// 					setisLoading(false);
+	// 					setcards([]);
+	// 					settotalRecipes(0);
+	// 					return;
+	// 				}
+	// 				setisLoading(false);
+	// 				setcards(data.data.recipes);
+	// 				settotalRecipes(data.data.totalRecipes);
+	// 			})
+	// 			.catch(() => {
+	// 				setisFind(false);
+	// 				setisLoading(false);
+	// 				setcards([]);
+	// 				settotalRecipes(0);
+	// 				return;
+	// 			});
+	// 	}
+	// 	//! Если запрос по Ingredients
+	// 	if (type === 'Ingredients') {
+	// 		setisFind(true);
+	// 		setisLoading(true);
+	// 		fetchByIngredients(query, { page, limit })
+	// 			.then(({ data }) => {
+	// 				if (data.data.recipes.length === 0) {
+	// 					setisFind(false);
+	// 					setisLoading(false);
+	// 					setcards([]);
+	// 					settotalRecipes(0);
+	// 					return;
+	// 				}
+	// 				setisLoading(false);
+	// 				setcards(data.data.recipes);
+	// 				settotalRecipes(data.data.totalRecipes);
+	// 			})
+	// 			.catch(() => {
+	// 				setisFind(false);
+	// 				setisLoading(false);
+	// 				setcards([]);
+	// 				settotalRecipes(0);
+	// 				return;
+	// 			});
+	// 	}
+	// 	//! Если запрос по Global Ingredients
+	// 	if (type === 'Global Ingredients') {
+	// 		setisFind(true);
+	// 		setisLoading(true);
+	// 		fetchByGlobalIngredients(query, { page, limit })
+	// 			.then(({ data }) => {
+	// 				if (data.data.recipes.length === 0) {
+	// 					setisFind(false);
+	// 					setisLoading(false);
+	// 					setcards([]);
+	// 					settotalRecipes(0);
+	// 					return;
+	// 				}
+	// 				setisLoading(false);
+	// 				setcards(data.data.recipes);
+	// 				settotalRecipes(data.data.totalRecipes);
+	// 			})
+	// 			.catch(() => {
+	// 				setisFind(false);
+	// 				setisLoading(false);
+	// 				setcards([]);
+	// 				settotalRecipes(0);
+	// 				return;
+	// 			});
+	// 	}
+	// };
+
+	const handleQuery = (value) => {
+				//! Если ничего не ввели в поиск то ...
+				if (!value) {
+					toast.error('Enter something in the search box...', {
+						position: 'top-center',
+						autoClose: 3000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+						theme: 'colored',
+					});
+					return
+				}
+		setQuery(value);
+
+
+	}
+	const handlePagination = (activePage) => {
+setpage(activePage);
+
+	}
+	// console.log('card', cards);
 
 	return (
 		<DivStyled>
 			<ReusableComponentTitleWithJewelry title="Search" />
-			<SearchingBar changeValue={changeValueFunc} />
+			<SearchingBar changeValue={handleQuery} />
 			<SearchByBox>
 				<TitleSearch>Search by:</TitleSearch>
 				<SelectStyled value={type} onChange={selectFunc}>
@@ -188,7 +289,7 @@ export const SearchingPage = () => {
 							<CardItem key={title}>
 								<NavLink
 									className="card-link"
-									to={`/recipe/${_id}`}
+									to={`/recipes/${_id}`}
 									replace={true}>
 									<Image src={thumb} alt={title} />
 									<CardBox>
@@ -200,6 +301,7 @@ export const SearchingPage = () => {
 					})}
 				</CardList>
 			)}
+			{(totalRecipes / limit) > 1 && (<Pagination pagecount={totalRecipes / limit} onChange={handlePagination}/>)}
 		</DivStyled>
 	);
 };

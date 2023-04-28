@@ -33,7 +33,7 @@ export const FavoriteItem = styled.li`
 	gap: 14px;
 	padding: 14px 9px;
 
-	background: #ffffff;
+	background: ${props => props.theme.colors.bgFavoriteItem};
 
 	border-radius: 8px;
 
@@ -94,7 +94,7 @@ export const FavoriteRecipeTitle = styled.h3`
 	font-size: 14px;
 	line-height: 100%;
 	letter-spacing: -0.24px;
-	color: #3e4462;
+	color: ${props => props.theme.colors.colorFavoriteTitle};
 
 	@media ${props => props.theme.media.tablet} {
 		margin-bottom: 28px;
@@ -147,7 +147,7 @@ export const FavoriteArticle = styled.p`
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 4;
 	white-space: pre-wrap;
-	color: #23262a;
+	color: ${props => props.theme.colors.textFavoriteRecipe};
 
 	@media ${props => props.theme.media.tablet} {
 		padding-right: 51px;
@@ -172,7 +172,7 @@ export const FavoriteTime = styled.p`
 	font-size: 10px;
 	line-height: 140%;
 	letter-spacing: -0.24px;
-	color: #3e4462;
+	color: ${props => props.theme.colors.colorFavoriteTitle};
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 14px;

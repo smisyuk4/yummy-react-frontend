@@ -30,6 +30,9 @@ export const TitleCategory = styled.h2`
 	margin-top: 0;
 	margin-bottom: 32px;
 	color: ${({ theme }) => theme.colors.titleColor};
+	&:hover {
+		color: ${({ theme }) => theme.colors.primary};
+	  }
 	@media screen and (min-width: 768px) {
 		font-size: 44px;
 		line-height: 44px;
@@ -48,18 +51,24 @@ export const ImageBox = styled.div`
 	}
 	@media screen and (min-width: 1440px) {
 		width: calc(100% / 4);
+		transition: all 0.3s ease;
+		&:hover {
+			transform: scale(1.03);
+		  }
 	}
 `;
 export const Image = styled.img`
 	object-fit: cover;
 	border-radius: 8px;
 	max-height: 100%;
+
 `;
 
 export const CardBox = styled.div`
 	z-index: 10;
 	position: absolute;
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.bgTitleCard};
+	color: ${({ theme }) => theme.colors.fontHero};
 	border-radius: 8px;
 	width: calc(100% - 36px);
 	bottom: 26px;
@@ -95,7 +104,7 @@ export const NavBox = styled.div`
 `;
 
 export const NavToCategory = styled(NavLink)`
-	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	background-color: ${({ theme }) => theme.colors.bgMoreBtn};
 	color: ${({ theme }) => theme.colors.fontColor};
 	border-radius: 6px;
 	font-family: 'Poppins';
@@ -104,11 +113,17 @@ export const NavToCategory = styled(NavLink)`
 	font-size: 14px;
 	line-height: 18px;
 	padding: 10px 24px;
+	transition: all 0.3s ease;
+		&:hover {
+			transform: scale(1.04);
+			color: ${({ theme }) => theme.colors.buttonLightBGHover};
+		  }
 `;
 
 export const BtnBox = styled.div`
 	display: flex;
 	justify-content: center;
+	
 	
 `;
 

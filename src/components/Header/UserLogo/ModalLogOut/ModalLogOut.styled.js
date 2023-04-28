@@ -20,10 +20,8 @@ export const Modal = styled(ModalProfil)`
         padding: 50px, 50px;
     }
 `
-
-export const Cross = styled.span`
-    width: 12px;
-    height: 12px;
+export const TextLogOut = styled.p`
+    color: ${({ theme }) => theme.colors.fontColorNavigation};
 `
 export const WrapperBtns = styled.div`
     width: 100%;
@@ -36,20 +34,22 @@ export const WrapperBtns = styled.div`
 `
 export const BtnLogOut = styled(BtnModalUser)`
     height: 50px;
+    background-color: ${({ theme }) => theme.colors.btnLogOutBg};
+    color: ${({ theme }) => theme.colors.btnLogOutText};
     &:hover {
-        background: #22252A;
+        background: ${({ theme }) => theme.colors.btnLogOutHoverBG};
         color: #FAFAFA;
     }
 `
 export const BtnCancel = styled(BtnModalUser)`
     height: 50px;
-    background: #D9D9D9;
-    color: #23262A;
+    background-color: ${({ theme }) => theme.colors.btnCancelBg};
+    color: ${({ theme }) => theme.colors.btnCancelText};
     border: transparent;
     &:hover {
         border: 1px solid #23262A;
         border-radius: 6px;
-        background: #ECECEC;
+        background-color: ${({ theme }) => theme.colors.btnCancelHoverBG};
 
     }
 `

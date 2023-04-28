@@ -14,7 +14,7 @@ export const DivStyled = styled.div`
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 101;
     background: rgb(235,243,212) url(${bgImgM}) no-repeat right bottom;
 `;
 
@@ -30,7 +30,6 @@ export const ModalProfil = styled.div`
     background-color: ${({ theme }) => theme.colors.bgModal};
     text-align: center;
 
-    background: #FFF;
     box-shadow: 0px 4px 48px rgba(0, 0, 0, 0.1);
     border-radius: 24px;
 `
@@ -123,9 +122,10 @@ export const Input = styled.input`
     height: 48px;
     width: inherit;
     box-sizing: border-box;
-    border: 1px solid #23262A; 
+    border: 1px solid ${({ theme }) => theme.colors.borderColor}; 
     border-radius: 6px;
     padding-left: 40px;
+    background-color: transparent;
     
 
   &::placeholder {
@@ -134,11 +134,12 @@ export const Input = styled.input`
       font-weight: 400;
       font-size: 14px;
       line-height: 21px;
-      color: #23262A;
+      color: ${({ theme }) => theme.colors.placeHolderInput};
       opacity: 0.8;
     }
     &:focus {
-		outline: 1px solid ${({ theme }) => theme.colors.fontColor};
+        color: ${({ theme }) => theme.colors.placeHolderColor};
+		outline: 1px solid ${({ theme }) => theme.colors.borderColor};
 		border-color: ${({ theme }) => theme.colors.primary};
 	} 
 `
@@ -153,12 +154,12 @@ export const IconPersonInput = styled(IconPerson)`
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    stroke: #23262A;
+    stroke: ${({ theme }) => theme.colors.placeHolderColor};
 `
 export const IconEdit = styled(Icon)`
     width: 15px;
     height: 15px;
-    fill: #23262A;
+    fill: ${({ theme }) => theme.colors.placeHolderColor};
     position: absolute;
     top: 50%;
     right: 10px;
@@ -183,16 +184,23 @@ export const BtnModalUser = styled(BtnSybscribe)`
     display: flex;
     align-items: center;
     text-align: center;
-
-    color: #FAFAFA;
+    
+    background-color: ${({ theme }) => theme.colors.btnLogOutBg};
+    color: ${({ theme }) => theme.colors.btnLogOutText};
+    &:hover {
+        background: ${({ theme }) => theme.colors.btnLogOutHoverBG};
+        color: #FAFAFA;
+    }
     @media ${props => props.theme.media.tablet} {
           width: 100%;
       }
+
 `
+
 export const IconCross = styled(Icon)`
     width: 13px;
     height: 13px;
-    stroke: #23262A;
+    stroke: ${({ theme }) => theme.colors.fontColorNavigation};;
     position: absolute;
     top: 22px;
     right: 22px;

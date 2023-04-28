@@ -1,36 +1,28 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
 
-export const DivContainer = styled.div`
-	display: block;
+export const ListBar = styled.ul`
 	background-color: ${({ theme }) => theme.colors.primary};
 	border-radius: 8px;
 	padding: 10px;
 	margin: 0 -8px 32px;
-	min-width: 359px;
 	max-width: 1240px;
-	@media ${props => props.theme.media.tablet} {
-		margin: 0 0 50px 0;
-		padding: 20px;
-	}
-	@media ${props => props.theme.media.desktop} {
-		padding: 21px 40px;
-	}
-`;
-export const ListBar = styled.ul`
+
 	display: grid;
 	grid-template-columns: 63% 22% 15%;
-	min-width: 339px;
-	max-width: 663px;
 	align-content: center;
 
 	@media ${props => props.theme.media.tablet} {
 		min-width: 664px;
 		max-width: 1159px;
+		grid-template-columns: 65% 23% 12%;
+		margin: 0 0 50px 0;
+		padding: 20px;
 	}
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
 		grid-template-columns: 74.6% 18.7% 6.7%;
+		padding: 21px 40px;
 	}
 `;
 export const ItemBar = styled.li`
@@ -39,74 +31,54 @@ export const ItemBar = styled.li`
 	line-height: 1.5;
 	letter-spacing: 0.03em;
 	color: ${({ theme }) => theme.colors.buttonLightBG};
-	/* margin-right: 24px; */
 	&:nth-of-type(2) {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	&:first-of-type {
-		/* margin-right: 167px; */
-	}
-	&:last-of-type {
-		/* margin-right: 0; */
-	}
+	
 	@media ${props => props.theme.media.tablet} {
 		font-size: 18px;
-		/* margin-right: 78px; */
-
-		&:first-of-type {
-			/* margin-right: 318px; */
-		}
-		&:last-of-type {
-			/* margin-right: 0; */
-		}
-	}
-
-	@media ${props => props.theme.media.desktop} {
-		/* margin-right: 142px; */
-
-		&:first-of-type {
-			/* margin-right: 750px; */
-		}
-		&:last-of-type {
-			/* margin-right: 0; */
-		}
 	}
 `;
-
 export const ShoppingList = styled.ul`
-	/* display: grid; */
-	min-width: 343px;
 	max-width: 703px;
-	margin-bottom: 100px;
 	justify-content: center;
+	margin-bottom: 24px;
+
+	&:last-of-type {
+		margin-bottom: 100px;
+	}
 
 	@media ${props => props.theme.media.tablet} {
 		min-width: 704px;
 		max-width: 1159px;
+		margin-bottom: 45px;
+
+		&:last-of-type {
 		margin-bottom: 200px;
+	}
 	}
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
-		margin-bottom: 195px;
 		margin-right: auto;
 		margin-left: auto;
+
+		&:last-of-type {
+		margin-bottom: 195px;
+	}
 	}
 `;
 
 export const ItemShoppingList = styled.li`
-	/* outline: 1px red solid; */
-
 	border-bottom: 1px solid ${({ theme }) => theme.colors.fontColorPassive};
 	min-height: 84px;
 
-	min-width: 343px;
 	max-width: 704px;
 	margin-bottom: 24px;
 
 	display: grid;
 	align-items: start;
-	grid-template-columns: 20.4% 45.8% 24.2% 9.6%;
+	grid-template-columns: 20.4% 42.6% 22% 15%;
 
 	&:last-of-type {
 		margin-bottom: 0;
@@ -115,13 +87,12 @@ export const ItemShoppingList = styled.li`
 		min-width: 704px;
 		max-width: 1160px;
 		min-height: 140px;
-		grid-template-columns: 15% 45% 25% 9%;
+		grid-template-columns: 15% 48% 25% 9%;
 		margin-bottom: 45px;
 	}
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
 		grid-template-columns: 9% 62.5% 24.2% 2%;
-
 	}
 `;
 export const ContainerImg = styled.div`
@@ -139,23 +110,18 @@ export const ContainerImg = styled.div`
 
 export const Image = styled.img`
 	background-size: cover;
-	/* width: 48px;
-height: 48px; */
 `;
 export const TaglineP = styled.p`
 	font-weight: 500;
 	font-size: 10px;
 	line-height: 1.2;
-
 	color: ${({ theme }) => theme.colors.fontColorDark};
-	/* margin-right: 108px; */
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
 		line-height: 1.5;
-
 	}
 
-color: #3E4462;
+	/* color: #3e4462; */
 `;
 
 export const Measure = styled.p`
@@ -166,8 +132,6 @@ export const Measure = styled.p`
 	line-height: 1.2;
 	border-radius: 5px;
 	min-width: 37px;
-
-	/* margin-right: 46px; */
 	padding: 4px;
 	text-align: center;
 	margin-right: auto;
@@ -179,7 +143,6 @@ export const Measure = styled.p`
 		padding-left: 8px;
 		font-size: 18px;
 		line-height: 1.5;
-
 	}
 `;
 
@@ -195,10 +158,23 @@ export const CloseIcon = styled(Icon)`
 	height: 14px;
 	width: 14px;
 	stroke: ${({ theme }) => theme.colors.addRecipeFormFieldsDeleteButton};
+	transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out,
+			border-color 0.3s ease-in-out;
+
+	&:hover {
+		transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out,
+			border-color 0.3s ease-in-out;
+		stroke: ${({ theme }) => theme.colors.primary};;
+	}
+	&:focus {
+		stroke: ${({ theme }) => theme.colors.primary};;
+	}
+	
 	@media ${props => props.theme.media.tablet} {
 		height: 20px;
 		width: 20px;
 	}
+	
 `;
 
 export const EmptyList = styled.p`
@@ -220,8 +196,8 @@ export const EmptyList = styled.p`
 	}
 `;
 export const ContainerEmpty = styled.div`
-position: relative;
-`
+	position: relative;
+`;
 export const ShopBag = styled(Icon)`
 	height: 50px;
 	width: 50px;
@@ -240,3 +216,19 @@ export const ShopBag = styled(Icon)`
 		width: 85px;
 	}
 `;
+
+export const Total = styled.p`
+	position: absolute;
+    bottom: 8%;
+    right: 15%;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 1.5;
+	color: ${({ theme }) => theme.colors.fontColorDark};
+	@media screen and (min-width: 768px) {
+		font-size: 18px;
+	}
+`;
+export const SpanNum = styled.span`
+margin-left: 8px;
+`

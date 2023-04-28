@@ -4,14 +4,16 @@ import { Field } from 'formik';
 
 
 export const PreparationFieldSet = styled.fieldset`
-    border: 0;
-`
+	border: 0;
+	z-index: 80;
+`;
 
 export const PreparationHeading = styled.h2`
 	margin-bottom: 24px;
 	line-height: 1;
 	font-size: 24px;
 	font-weight: 600;
+	color: ${props => props.theme.colors.fontColorDark};
 	@media ${props => props.theme.media.tablet} {
 		margin-bottom: 32px;
         margin-top: 0;
@@ -27,8 +29,10 @@ export const PreparationTextArea = styled(Field)`
 	height: 154px;
 	resize: none;
 	padding: 10px 16px;
-	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
-	border: none;
+
+	background-color: ${props => props.theme.colors.addRecipeFormFieldsBackground};
+	border: ${props => props.theme.colors.addRecipeFormFieldsBorder};
+	border-radius: 6px;
 	margin-bottom: 18px;
 	box-sizing: border-box;
 	@media ${props => props.theme.media.tablet} {
@@ -47,12 +51,12 @@ export const PreparationTextArea = styled(Field)`
 	::-webkit-input-placeholder {
 		font-size: 14px;
 		line-height: 1.5;
-		color: ${p => p.theme.colors.addRecipeFormPlaceholder};
+		color: ${props => props.theme.colors.placeHolderColor};
 	}
 	:-ms-input-placeholder {
 		font-size: 14px;
 		line-height: 1.5;
-		color: ${p => p.theme.colors.addRecipeFormPlaceholder};
+		color: ${props => props.theme.colors.placeHolderColor};
 	}
 `;
 export const EmptyFieldNotation = styled.span`

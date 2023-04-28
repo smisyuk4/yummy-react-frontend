@@ -1,10 +1,10 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchRecipes } from 'components/Recipe/FetchRecipe';
+import { fetchRecipes, fetchSomeIngredients } from 'components/Recipe/FetchRecipe';
 import { RecipePageHero } from 'components/Hero/RecipeHero/RecipePageHero';
 import { IngredientsList } from 'components/Recipe/IngredientsList/RecipeIngredientsList';
 import { RecipePreparation } from 'components/Recipe/RecipePreparation';
+import { NoResults } from 'components/NoResults';
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -12,6 +12,7 @@ const RecipePage = () => {
   const [ingredientsOne, setIngredientsOne] = useState([]);
   const [arrayAllId, setArrayAllId] = useState([]);
   const [ingredients, setIngredients] = useState([]);
+ 
 
   // get recipe
   useEffect(() => {
@@ -19,6 +20,7 @@ const RecipePage = () => {
       try {
         const recipe = await fetchRecipes(recipeId);
         if (recipe.length === 0) {
+
           return;
         }
 
@@ -30,6 +32,7 @@ const RecipePage = () => {
 
         setArrayAllId(arrayId);
       } catch (error) {
+       
         console.log(error);
       }
     }
@@ -63,28 +66,31 @@ const RecipePage = () => {
     getIngredients();
   }, [arrayAllId, ingredientsOne]);
 
-  const { _id, title, description, time, thumb, instructions, favorites } =
+  const { _id, title, description, time, thumb, instructions, favorite } =
     recipe;
+
   return (
     <>
-      <RecipePageHero
-        title={title}
-        description={description}
-        _id={_id}
-        time={time}
-        favorites={favorites}
-      />
-      <IngredientsList ingredients={ingredients} />
-      <RecipePreparation instructions={instructions} thumb={thumb} />
+      {ingredients.length > 0 ? (
+        <>
+          <RecipePageHero
+            title={title}
+            description={description}
+            _id={_id}
+            time={time}
+            favorites={favorite}
+          />
+      
+          <IngredientsList ingredients={ingredients} />
+          <RecipePreparation instructions={instructions} thumb={thumb} />
+        </>
+			 
+      ) : (
+        <NoResults text="No recipes found" />
+      )}
     </>
   );
 };
 
-axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
-
-export const fetchSomeIngredients = async data => {
-  const responce = await axios.post(`ingredients/list`, data);
-  return responce.data.data.ingretients;
-};
 
 export default RecipePage;

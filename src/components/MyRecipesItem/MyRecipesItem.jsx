@@ -9,11 +9,11 @@ import {
 	RecipeAbout,
 	RecipeTime,
 	SeeRecipeBtn,
-} from './RecipeListItem.styled';
+} from './MyRecipesItem.styled';
 
 import defaultImage from '../../images/recipeImg/default-img.png';
 
-export const RecipeListItem = props => {
+export const MyRecipesItem = props => {
 	const {
 		title,
 		time,

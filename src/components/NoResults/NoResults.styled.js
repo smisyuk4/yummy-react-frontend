@@ -5,13 +5,6 @@ export const Container = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
-	/* padding-bottom: 100px; */
-	@media ${props => props.theme.media.desktop} {
-		/* padding-bottom: 200px; */
-	}
-	@media ${props => props.theme.media.desktop} {
-		/* padding-bottom: 200px; */
-	}
 `;
 
 export const ImgWrapper = styled.div`
@@ -33,7 +26,7 @@ export const Text = styled.p`
 	line-height: 14px;
 	letter-spacing: -0.02em;
 
-	color: #000000;
+	color: ${props => props.theme.colors.textNoResultsColor};
 
 	opacity: 0.5;
 

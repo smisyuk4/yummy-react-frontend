@@ -7,14 +7,14 @@ import { Icon } from 'components/Icon';
 export const BurgerMenuDiv = styled.div`
     width: 100vw;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
    z-index: 90;
-    background: rgb(235,243,212) url(${bgImgS}) no-repeat right bottom;
+    background: ${({ theme }) => theme.colors.bgBurger} url(${bgImgS}) no-repeat right bottom;
 
     @media ${props => props.theme.media.tablet} {
-        background: rgb(235,243,212) url(${bgImgM}) no-repeat right bottom;
+        background: ${({ theme }) => theme.colors.bgBurger} url(${bgImgM}) no-repeat right bottom;
     }
     @media ${props => props.theme.media.desktop} {
         background: transparent;
@@ -43,8 +43,8 @@ export const BtnCloseModal = styled.button`
 export const CloseIcon = styled(Icon)`
     width: 32px;
     height: 32px;
-    stroke: #23262A;
     background-color: transparent;
+    stroke: ${({ theme }) => theme.colors.fontColorNavigation};
     &:hover {
         stroke: ${({ theme }) => theme.colors.primary};
     }

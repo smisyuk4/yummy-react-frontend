@@ -1,5 +1,3 @@
-// import { RecipeDescription } from '../RecipeDescription';
-// import { AddButton, RecipeFormDivStyled } from './AddRecipeForm.styled';
 import {
 	AddButton,
 	AddRecipeFormWrapper,
@@ -12,6 +10,9 @@ import { RecipeIngredientsFields } from './RecipeIngredientsFields';
 import { RecipePreparationFields } from './RecipePreparationFields';
 import { RecipeDescriptionFields } from './RecipeDescriptionFields/RecipeDescriptionFields';
 import axios from 'axios';
+import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const AddRecipeForm = () => {
 	const [title, setTitle] = useState('');
@@ -19,17 +20,16 @@ export const AddRecipeForm = () => {
 	const [categori, setCategori] = useState('');
 	const [picture, setPicture] = useState(null);
 	const [time, setTime] = useState('');
-	const [ingretients, setIngridients] = useState([]);
-	const [preparationEditedText, setPreparationEditedText] = useState([]);
+	const [ingredients, setIngredients] = useState(null);
+	const [preparationEditedText, setPreparationEditedText] = useState(null);
 
 	const ingridientsCange = ingridientsArray => {
-		setIngridients(ingridientsArray);
+		setIngredients(ingridientsArray);
 	};
 	const preparationChange = change => {
 		setPreparationEditedText(change);
 	};
 	const tesOnCanfeDescription = target => {
-		console.log(target);
 		switch (target.name) {
 			case 'title':
 				setTitle(target.value);
@@ -50,10 +50,16 @@ export const AddRecipeForm = () => {
 				console.log('Invalid subscription type');
 		}
 	};
-	console.log('TOTAL', title, time, categori, picture, about);
+
+	const notifyError = message => {
+		toast.error(message, { position: 'bottom-center', theme: 'colored' });
+	};
+	const notifySuccess = message => {
+		toast.success(message, { position: 'bottom-center', theme: 'colored' });
+	};
 
 	const PostRecipe = async () => {
-		const igr = ingretients.map(el => {
+		const igr = ingredients.map(el => {
 			return { id: el.ingredientId, measure: el.measure };
 		});
 		const dataFile = new FormData();
@@ -65,18 +71,92 @@ export const AddRecipeForm = () => {
 			instructions: preparationEditedText.toString(),
 			ingredients: igr,
 		};
-		dataFile.set('imageURL', picture);
-		dataFile.set('body', JSON.stringify(requestBody));
-		console.log('FORM-DATA----', dataFile);
 
 		try {
+			const valdate = await Yup.string()
+				.min(1)
+				.required()
+				.validate(title);
+			if (!valdate) {
+				return;
+			}
+		} catch (err) {
+			notifyError('Recipe name field is empty');
+			return;
+		}
+		try {
+			const valdate = await Yup.string()
+				.min(1)
+				.required()
+				.validate(about);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Field "about recipe" is empty');
+			return;
+		}
+		try {
+			const valdate = await Yup.string()
+				.min(1)
+				.required()
+				.validate(categori);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Recipe category not selected');
+			return;
+		}
+		try {
+			const valdate = await Yup.string().min(1).required().validate(time);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Cooking time not selected');
+			return;
+		}
+		try {
+			const valdate = await Yup.array()
+				.min(1)
+				.required()
+				.validate(ingredients);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('No ingredients have been selected');
+			return;
+		}
+		try {
+			const valdate = await Yup.array()
+				.min(1)
+				.required()
+				.validate(preparationEditedText);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Preparation process not specified');
+			return;
+		}
+
+		try {
+			dataFile.set('imageURL', picture);
+			dataFile.set('body', JSON.stringify(requestBody));
+			console.log('FORM-DATA----', dataFile);
+			notifySuccess(
+				'All data is complete. The recipe is added to your collection.'
+			);
 			await axios.post('/ownRecipes', dataFile, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 				},
 			});
+			window.location.assign('./my');
 		} catch (error) {
-			console.log(error);
+			notifyError('Sorry. Failed to add recipe to collection');
 		}
 	};
 
@@ -87,7 +167,10 @@ export const AddRecipeForm = () => {
 				<RecipeIngredientsFields onChange={ingridientsCange} />
 				<RecipePreparationFields onChange={preparationChange} />
 			</WrapperAllInput>
-			<AddButton onClick={PostRecipe}>Add</AddButton>
+			<AddButton type="submit" onClick={PostRecipe}>
+				Add
+			</AddButton>
+			<ToastContainer />
 		</AddRecipeFormWrapper>
 	);
 };

@@ -109,6 +109,30 @@ export const RegisterForm = () => {
 						</LabelStyled>
 						<LabelStyled
 							className={
+								touched.email &&
+								(errors.email ? 'error' : 'valid')
+							}>
+							<IconStyled id="icon-letter" />
+							<InputForm
+								type="email"
+								name="email"
+								placeholder="Email"
+							/>
+							{touched.email &&
+								(errors.email ? (
+									<>
+										<ErrorMessage
+											name="email"
+											component={InputError}
+										/>
+										<IconStatusStyled id="icon-validation-error" />
+									</>
+								) : (
+									<IconStatusStyled id="icon-validation-success" />
+								))}
+						</LabelStyled>
+						<LabelStyled
+							className={
 								touched.password &&
 								(errors.password ? 'error' : 'valid')
 							}>
@@ -155,30 +179,7 @@ export const RegisterForm = () => {
 									<IconStatusStyled id="icon-validation-success" />
 								))}
 						</LabelStyled>
-						<LabelStyled
-							className={
-								touched.email &&
-								(errors.email ? 'error' : 'valid')
-							}>
-							<IconStyled id="icon-letter" />
-							<InputForm
-								type="email"
-								name="email"
-								placeholder="Email"
-							/>
-							{touched.email &&
-								(errors.email ? (
-									<>
-										<ErrorMessage
-											name="email"
-											component={InputError}
-										/>
-										<IconStatusStyled id="icon-validation-error" />
-									</>
-								) : (
-									<IconStatusStyled id="icon-validation-success" />
-								))}
-						</LabelStyled>
+
 						<FormButton type="submit">Sign up</FormButton>
 					</FormStyled>
 				)}

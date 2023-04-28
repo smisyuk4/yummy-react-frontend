@@ -11,8 +11,7 @@ import {
 	ParagrafStyled,
 	BoxStyled,
 	ArrRight,
-	SpanTitle
-
+	SpanTitle,
 } from './Hero.styled';
 
 export const Hero = () => {
