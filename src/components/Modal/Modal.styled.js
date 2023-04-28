@@ -9,4 +9,6 @@ export const ModalDiv = styled.div`
 	width: 100vw;
 	height: 100vh;
 	background-color: ${({ theme }) => theme.colors.lightBG};
+	padding: 50px;
+	box-sizing: border-box;
 `;

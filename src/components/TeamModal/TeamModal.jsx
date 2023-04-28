@@ -138,10 +138,9 @@ const teamCards = teamateData.map(({ name, position, avatar, role }) => (
 	</LiStyled>
 ));
 
-export const TeamModal = () => {
-	const [showModal, setShowModal] = useState(true);
-	return !showModal ? null : (
-		<Modal close={setShowModal}>
+export const TeamModal = ({ onClose }) => {
+	return (
+		<Modal close={onClose}>
 			<DivStyled>
 				<H1Styled>Our Team</H1Styled>
 				<UlStyled>{teamCards}</UlStyled>
