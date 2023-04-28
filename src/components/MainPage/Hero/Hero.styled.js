@@ -10,6 +10,7 @@ import banner2T from '../../../images/MainPageImg/img-2.png';
 import banner2D from '../../../images/MainPageImg/img-3.png';
 import banner3T from '../../../images/MainPageImg/arr.png';
 import bannerbg from '../../../images/MainPageImg/bg2.png';
+import bannerbg1 from '../../../images/MainPageImg/bg1.png';
 
 export const WrapperStyled = styled.div`
 	position: relative;
@@ -40,11 +41,38 @@ export const SectionStyled = styled.div`
 	background-color: ${({ theme }) => theme.colors.primarySoft};
 
 	@media screen and (min-width: 768px) {
+		/* background: url(${bannerbg1}) no-repeat top left; */
 		transform: translateX(64%) rotate(26deg);
 		top: -335px;
 		left: 49px;
 		width: 753px;
 		height: 730px;
+	}
+	@media screen and (min-width: 1024px) {
+		width: 941px;
+		height: 912px;
+		transform: translateX(67%) rotate(0deg);
+		top: -384px;
+		left: -70px;
+		background: url(${bannerbg}) no-repeat top left;
+	}
+	@media screen and (min-width: 818px) {
+		transform: translateX(71%) rotate(26deg);
+	}
+	@media screen and (min-width: 867px) {
+		transform: translateX(78%) rotate(26deg);
+	}
+	@media screen and (min-width: 920px) {
+		transform: translateX(85%) rotate(26deg);
+	}
+	@media screen and (min-width: 973px) {
+		transform: translateX(93%) rotate(26deg);
+	}
+	@media screen and (min-width: 1024px) {
+		transform: translateX(67%) rotate(0deg);
+	}
+	@media screen and (min-width: 1200px) {
+		transform: translateX(82%) rotate(0deg);
 	}
 	@media screen and (min-width: 1440px) {
 		width: 941px;
@@ -102,15 +130,47 @@ export const DishStyled = styled.div`
 	z-index: 3;
 	border: none;
 	transform-origin: 57% center;
-	animation: rotateArrRight 120s linear infinite;
+	animation: rotateArrRight 150s linear infinite;
 
+	@media screen and (min-width: 456px) {
+		background: url(${banner2T}) no-repeat top right;
+		top: 280px;
+		left: 0px;
+		height: 351px;
+		transform-origin: 60% center;
+	}
+	@media screen and (min-width: 520px) {
+		background: url(${banner2T}) no-repeat top right;
+		top: 294px;
+		height: 351px;
+		transform-origin: 60% center;
+	}
+	@media screen and (min-width: 576px) {
+		background: url(${banner2T}) no-repeat top right;
+		height: 351px;
+		transform-origin: 68% center;
+	}
 	@media screen and (min-width: 768px) {
 		background: url(${banner2T}) no-repeat top right;
 		top: 222px;
 		left: 0px;
 		height: 351px;
 		transform-origin: 76% center;
-		animation: rotateArrRight 120s linear infinite;
+	}
+	@media screen and (min-width: 973px) {
+		background: url(${banner2T}) no-repeat top right;
+
+		height: 351px;
+		transform-origin: 82% center;
+	}
+	@media screen and (min-width: 1024px) {
+		top: 216px;
+		left: -100px;
+		transform-origin: 83% center;
+	}
+	@media screen and (min-width: 1190px) {
+		transform-origin: 85% center;
+		left: -138px;
 	}
 	@media screen and (min-width: 1440px) {
 		background: url(${banner2D}) no-repeat top right;
@@ -118,7 +178,6 @@ export const DishStyled = styled.div`
 		top: 125px;
 		left: -177px;
 		transform-origin: 80% center;
-		animation: rotateArrRight 120s linear infinite;
 	}
 	@keyframes rotateArrRight {
 		from {
@@ -169,7 +228,7 @@ export const ParagrafStyled = styled.div`
 	margin-top: -15px;
 	padding-left: 64px;
 	padding-right: 64px;
-	color: #23262a;
+	color: ${({ theme }) => theme.colors.fontColorNavigation};
 	margin-top: 14px;
 	@media screen and (min-width: 768px) {
 		font-size: 14px;
@@ -210,13 +269,18 @@ export const ArrRight = styled.div`
 		left: 517px;
 		z-index: 10;
 	}
+	@media screen and (min-width: 867px) {
+		top: 526px;
+		left: 622px;
+	}
+	@media screen and (min-width: 1024px) {
+		left: 765px;
+	}
+	@media screen and (min-width: 1190px) {
+		left: 919px;
+	}
 	@media screen and (min-width: 1440px) {
 		top: 589px;
 		left: 1046px;
-
-		@media screen and (min-width: 1440px) {
-			top: 589px;
-			left: 1046px;
-		}
 	}
 `;
