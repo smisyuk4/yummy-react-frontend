@@ -47,7 +47,7 @@ const LightTheme = {
 		buttonDarkBG: '#22252A',
 		buttonPrimaryBG: '#8BAA36',
 		textButtonPrimaryHover: '#22252A',
-		bgBurger: '#EBF3D4',
+
 		bgTitleCard: '#FFFFFF',
 		bgMoreBtn: '#8BAA36',
 		bgMoreBtnHover: '#1E1F28',
@@ -109,7 +109,7 @@ const DarkTheme = {
 		buttonDarkBG: '#8BAA36',
 		buttonPrimaryBG: '#1E1F28',
 		textButtonPrimaryHover: '#8BAA36',
-		bgBurger: '#1E1F28',
+
 		bgTitleCard: '#2A2C36',
 		bgMoreBtn: '#8BAA36',
 		bgMoreBtnHover: '#8BAA36',
