@@ -42,19 +42,30 @@ export const ItemBar = styled.li`
 `;
 export const ShoppingList = styled.ul`
 	max-width: 703px;
-	margin-bottom: 100px;
 	justify-content: center;
+	margin-bottom: 24px;
+
+	&:last-of-type {
+		margin-bottom: 100px;
+	}
 
 	@media ${props => props.theme.media.tablet} {
 		min-width: 704px;
 		max-width: 1159px;
+		margin-bottom: 45px;
+
+		&:last-of-type {
 		margin-bottom: 200px;
+	}
 	}
 	@media ${props => props.theme.media.desktop} {
 		min-width: 1160px;
-		margin-bottom: 195px;
 		margin-right: auto;
 		margin-left: auto;
+
+		&:last-of-type {
+		margin-bottom: 195px;
+	}
 	}
 `;
 
@@ -104,15 +115,13 @@ export const TaglineP = styled.p`
 	font-weight: 500;
 	font-size: 10px;
 	line-height: 1.2;
-
 	color: ${({ theme }) => theme.colors.fontColorDark};
-	/* margin-right: 108px; */
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
 		line-height: 1.5;
 	}
 
-	color: #3e4462;
+	/* color: #3e4462; */
 `;
 
 export const Measure = styled.p`
@@ -123,8 +132,6 @@ export const Measure = styled.p`
 	line-height: 1.2;
 	border-radius: 5px;
 	min-width: 37px;
-
-	/* margin-right: 46px; */
 	padding: 4px;
 	text-align: center;
 	margin-right: auto;
@@ -209,3 +216,19 @@ export const ShopBag = styled(Icon)`
 		width: 85px;
 	}
 `;
+
+export const Total = styled.p`
+	position: absolute;
+    bottom: 8%;
+    right: 15%;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 1.5;
+	color: ${({ theme }) => theme.colors.fontColorDark};
+	@media screen and (min-width: 768px) {
+		font-size: 18px;
+	}
+`;
+export const SpanNum = styled.span`
+margin-left: 8px;
+`
