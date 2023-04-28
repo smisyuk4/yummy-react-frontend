@@ -120,8 +120,6 @@ export const TaglineP = styled.p`
 		font-size: 16px;
 		line-height: 1.5;
 	}
-
-	/* color: #3e4462; */
 `;
 
 export const Measure = styled.p`
@@ -157,7 +155,7 @@ export const CloseBtn = styled.button`
 export const CloseIcon = styled(Icon)`
 	height: 14px;
 	width: 14px;
-	stroke: ${({ theme }) => theme.colors.addRecipeFormFieldsDeleteButton};
+	stroke: ${({ theme }) => theme.colors.fontColorDark};
 	transition: stroke 0.3s ease-in-out, color 0.3s ease-in-out,
 			border-color 0.3s ease-in-out;
 
