@@ -19,7 +19,7 @@ export const SearchingBar = ({ changeValue }) => {
 	const handleSubmit = event => {
 		event.preventDefault();
 		changeValue(searchValue);
-		setsearchValue('');
+		// setsearchValue('');
 	};
 
 	const inputChange = event => {
