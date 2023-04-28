@@ -43,7 +43,7 @@ export const ItemBar = styled.span`
 	line-height: 15px;
 	letter-spacing: 0.03em;
 	color: #fafafa;
-	&:first-child {
+	&:first-of-type{
 		margin-right: auto;
 	}
 	@media screen and (min-width: 768px) {

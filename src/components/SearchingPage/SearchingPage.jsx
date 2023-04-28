@@ -34,10 +34,10 @@ export const SearchingPage = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [isLoading, setisLoading] = useState(false);
 	const [isFind, setisFind] = useState(true);
-<<<<<<< HEAD
+// <<<<<<< HEAD
 	const [searchParam, setSearchParam] = useSearchParams()
 
-=======
+// =======
 	const [query, setQuery] = useState("");
 
 	let limit = windowWidth <= 1439 ? 6 : 12;
@@ -124,7 +124,7 @@ export const SearchingPage = () => {
 			}
 		
 	}, [query, page, limit, type ]);
->>>>>>> 44de6dbc57ec3e4d5a7cf1754b93dc268cae3c97
+// >>>>>>> 44de6dbc57ec3e4d5a7cf1754b93dc268cae3c97
 
 	useEffect(() => {
 		settype(searchParam.get('type'))

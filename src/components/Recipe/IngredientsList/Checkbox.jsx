@@ -8,7 +8,7 @@ export const Checkbox = ({ ingredient, currentShopList }) => {
   const [shoppingId, setShoppingId] = useState();
 
   const { id, ttl, thb, measure } = ingredient;
-  console.log(ingredient);
+  // console.log(ingredient);
 
   useEffect(() => {
     if (currentShopList.length > 0) {

@@ -144,12 +144,7 @@ export const RecipeIngredientsFields = props => {
 		setAddedIngredientsArray(reworkedArray);
 		setIgredientsQuantity(ingredientsQuantity - 1);
 	};
-<<<<<<< HEAD
 
-	console.log("addedIngredientsArray ", addedIngredientsArray)
-=======
-	// console.log(addedIngredientsArray);
->>>>>>> 44de6dbc57ec3e4d5a7cf1754b93dc268cae3c97
 	return (
 		<RecipeIngredientsFieldset>
 			<HeadingStyledContainer>

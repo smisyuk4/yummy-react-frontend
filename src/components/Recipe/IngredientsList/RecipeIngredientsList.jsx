@@ -9,13 +9,13 @@ import { Checkbox } from './Checkbox';
 
 export const IngredientsList = ({ ingredients }) => {
   const [shoppingList, setShoppingList] = useState([]);
-  console.log(ingredients);
+  // console.log(ingredients);
   useEffect(() => {
     
     getShoppingList()
       .then((data) => {
         setShoppingList(data.data.shoppingList)
-        console.log(data.data.shoppingList)
+        // console.log(data.data.shoppingList)
       })
   
 			.catch(error => console.error(error));
