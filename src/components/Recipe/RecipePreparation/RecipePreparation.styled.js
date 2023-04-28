@@ -37,6 +37,7 @@ export const TitleStyles = styled.h2`
 
 export const InstructionItem = styled.li`
   display: flex;
+   white-space: pre-wrap;
   align-items: center;
     margin-bottom: 18px;
     font-size: 12px;
@@ -49,10 +50,6 @@ export const ImageWrapper = styled.div`
 width: 100%;
   height: auto;
   border-radius: 8px;
-    /* display: flex;
-justify-content: center;
-    align-items: center;
-  height: 323px; */
     @media screen and (min-width: 768px) {
       width: 433px;
       height: 332px;
