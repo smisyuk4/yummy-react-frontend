@@ -25,11 +25,11 @@ export const DivStyled = styled.div`
       transform: rotate(355deg);
     }
     @media ${props => props.theme.media.desktop} {
-      width: 696px;
-      height: 1037px;
+      width: 558px;
+      height: 852px;
       background: url(${bgImgTopL}) no-repeat right bottom;
-      bottom: -510px;
-      left: -19px;
+      bottom: -320px;
+      left: -160px;
       transform: rotate(355deg);
     }
   }

@@ -131,7 +131,7 @@ export const FooterTeam = styled.div`
   color: rgba(34, 37, 42, 0.5);
 
   padding-top: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 20px;
 
   background: url(${bgImgDownS}) no-repeat right bottom;
   overflow: hidden;
@@ -141,7 +141,7 @@ export const FooterTeam = styled.div`
   }
   @media ${props => props.theme.media.desktop} {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     background: url(${bgImgDownL}) no-repeat right bottom;
   }
 `;
