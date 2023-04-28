@@ -37,13 +37,8 @@ export const HeroSection = styled.section`
       padding-right: 100px;
       margin-left: -100px; 
       height: 357px;
-  
- } 
-     `; 
+  } `; 
 
-  
-
-    
 export const ButtonStyled = styled.button`
 background-color: transparent;
  border-radius: 24px 44px;
