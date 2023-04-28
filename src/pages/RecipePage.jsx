@@ -5,6 +5,7 @@ import { fetchRecipes } from 'components/Recipe/FetchRecipe';
 import { RecipePageHero } from 'components/Hero/RecipeHero/RecipePageHero';
 import { IngredientsList } from 'components/Recipe/IngredientsList/RecipeIngredientsList';
 import { RecipePreparation } from 'components/Recipe/RecipePreparation';
+import IngredientsShoppingList from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList';
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -77,6 +78,8 @@ const RecipePage = () => {
       />
       <IngredientsList ingredients={ingredients} />
       <RecipePreparation instructions={instructions} thumb={thumb} />
+      <IngredientsShoppingList recipeId={recipe._id} /> 
+      {/* add ing sh list */}
     </>
   );
 };
