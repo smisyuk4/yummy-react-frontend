@@ -40,16 +40,19 @@ export const DivStyled = styled.div`
 		const { isLoggedIn } = useAuth();
 		return isLoggedIn ? '0 16px' : '0';
 	}};
+	min-height: calc(100vh - 82px - 569px);
 	@media (min-width: 768px) {
 		padding: ${() => {
 			const { isLoggedIn } = useAuth();
 			return isLoggedIn ? '0 32px' : '0';
 		}};
+		min-height: calc(100vh - 88px - 493px);
 	}
 	@media (min-width: 1440px) {
 		padding: ${() => {
 			const { isLoggedIn } = useAuth();
 			return isLoggedIn ? '0 100px' : '0';
 		}};
+		min-height: calc(100vh - 88px - 464px);
 	}
 `;
