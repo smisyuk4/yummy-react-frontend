@@ -12,8 +12,6 @@ import {
 	CardBox,
 	CardTitle,
 	Image,
-	// DivPositionen,
-	// ImageBG,
 } from './CategorySelection.styled';
 import { ReusableComponentTitleWithJewelry } from '../../ReusableComponentTitleWithJewelry';
 import { fetchAllCategory, fetchOneCategory } from '../FetchWithCategory';
@@ -34,6 +32,8 @@ export const CategorySelection = () => {
 			.then(({ data }) => setOneCategory(data.resultCategory))
 			.catch(error => error);
 	}, [categoryName]);
+
+	// console.log('oneCategory', oneCategory);
 
 	if (category.length < 1 && oneCategory.length < 1)
 		return (

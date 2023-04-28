@@ -23,9 +23,9 @@ export const FormStyled = styled.form`
 `;
 
 export const Input = styled.input`
-	background: ${({ theme }) => theme.colors.BGCintoButton};
+	background: ${({ theme }) => theme.colors.lightBG};
 	border-radius: 24px 44px;
-	border: 1px solid #6161613d;
+	border: 1px solid ${({ theme }) => theme.colors.borderColorLight};
 	width: 260px;
 	height: 52px;
 	padding-left: 32px;
@@ -56,7 +56,7 @@ export const SearchFormBtn = styled.button`
 	background-color: transparent;
 	border-radius: 24px 44px;
 	color: ${({ theme }) => theme.colors.buttonLightBG};
-	background: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	background: ${({ theme }) => theme.colors.primary};
 	border: 1px solid white;
 	width: 113px;
 	height: 56px;
@@ -69,6 +69,11 @@ export const SearchFormBtn = styled.button`
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
+
+	&:hover,
+	&:active {
+		background: #1e1f28;
+	}
 
 	@media screen and (min-width: 768px) {
 		width: 161px;

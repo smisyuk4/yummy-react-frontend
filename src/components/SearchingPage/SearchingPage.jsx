@@ -114,7 +114,7 @@ export const SearchingPage = () => {
 					return;
 				});
 		}
-		//! Если запрос по Global Ingredients (ПОКА НЕ РАБОТАЕТ ЗАПРОС)
+		//! Если запрос по Global Ingredients
 		if (type === 'Global Ingredients') {
 			setisFind(true);
 			setisLoading(true);
@@ -142,6 +142,7 @@ export const SearchingPage = () => {
 	};
 
 	console.log(totalRecipes, setpage);
+	// console.log('card', cards);
 
 	return (
 		<DivStyled>
