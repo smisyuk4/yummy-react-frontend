@@ -1,4 +1,4 @@
-//! Если запрос по Global Ingredients (ПОКА НЕ РАБОТАЕТ ЗАПРОС)
+//! Если запрос по Global Ingredients
 
 //! Если запрос по Ingredients
 
