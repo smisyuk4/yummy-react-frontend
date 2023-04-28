@@ -1,30 +1,26 @@
-import { useEffect } from "react";
-import {createPortal} from "react-dom";
+import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { ModalDiv } from './Modal.styled';
-
 
 const modalRoot = document.getElementById('modal-root');
 
-export const Modal = ({close, children}) => {
+export const Modal = ({ close, children }) => {
+	useEffect(() => {
+		document.addEventListener('keydown', closeModal);
 
-  useEffect(() => {
-    document.addEventListener("keydown", closeModal);
-    
-    return () => document.removeEventListener("keydown", closeModal)
-}, );
+		return () => document.removeEventListener('keydown', closeModal);
+	});
 
-  const closeModal = ({target, currentTarget, code}) => {
-      if(target === currentTarget || code === "Escape") {
-          close()
-      }
-  };
+	const closeModal = ({ target, currentTarget, code }) => {
+		if (target === currentTarget || code === 'Escape') {
+			close(false);
+		}
+	};
 
-  return createPortal(
-      <ModalDiv onClick={closeModal}>
-        <div>
-          {children}
-        </div>
-      </ModalDiv>,
-      modalRoot
-  );
+	return createPortal(
+		<ModalDiv onClick={closeModal}>
+			<div>{children}</div>
+		</ModalDiv>,
+		modalRoot
+	);
 };

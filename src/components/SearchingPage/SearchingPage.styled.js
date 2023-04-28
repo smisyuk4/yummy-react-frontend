@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
-	background-color: ${({ theme }) => theme.colors.buttonLightBG};
+	/* background-color: ${({ theme }) => theme.colors.buttonLightBG}; */
 	margin-top: 32px;
 	margin-bottom: 100px;
 
@@ -43,7 +43,7 @@ export const TitleSearch = styled.p`
 	line-height: 16px;
 	letter-spacing: -0.24px;
 	margin: 0;
-	color: #001833;
+	color: ${({ theme }) => theme.colors.titleColor};
 
 	@media screen and (min-width: 768px) {
 		font-size: 14px;
@@ -60,7 +60,8 @@ export const SelectStyled = styled.select`
 	height: 34px;
 	margin-left: 15px;
 	padding-left: 14px;
-	background: #7575751f;
+	color: ${({ theme }) => theme.colors.titleColor};
+	background: ${({ theme }) => theme.colors.addRecipeFormFieldsBackground};
 	border-radius: 6px;
 	/* убираем стандартную стрелку */
 	/* appearance: none;
@@ -77,7 +78,8 @@ export const OptionStyled = styled.option`
 	font-size: 12px;
 	line-height: 18px;
 	letter-spacing: -0.02em;
-	color: #000000;
+	color: ${({ theme }) => theme.colors.titleColor};
+	background: ${({ theme }) => theme.colors.searchFormBGbyTitle};
 	opacity: 0.5;
 	@media screen and (min-width: 768px) {
 		font-size: 14px;
@@ -109,6 +111,11 @@ export const CardItem = styled.li`
 	border-radius: 8px;
 	overflow: hidden;
 	width: 100%;
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: scale(1.03);
+	}
 
 	.card-link {
 		color: ${({ theme }) => theme.colors.fontColorDark};
@@ -129,7 +136,7 @@ export const Image = styled.img`
 export const CardBox = styled.div`
 	z-index: 10;
 	position: absolute;
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.bgModal};
 	border-radius: 8px;
 	width: calc(100% - 36px);
 	left: 18px;

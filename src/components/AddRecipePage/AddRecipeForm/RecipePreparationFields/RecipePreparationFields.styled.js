@@ -4,8 +4,9 @@ import { Field } from 'formik';
 
 
 export const PreparationFieldSet = styled.fieldset`
-    border: 0;
-`
+	border: 0;
+	z-index: 100;
+`;
 
 export const PreparationHeading = styled.h2`
 	margin-bottom: 24px;
@@ -27,6 +28,7 @@ export const PreparationTextArea = styled(Field)`
 	height: 154px;
 	resize: none;
 	padding: 10px 16px;
+
 	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
 	border: none;
 	margin-bottom: 18px;
