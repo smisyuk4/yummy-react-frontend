@@ -8,7 +8,6 @@ import {
 	PStyled,
 } from './TeamModal.styled';
 import { Modal } from 'components/Modal';
-import { useState } from 'react';
 import avatar1 from '../../images/team/photo_2023-04-26_18-11-24.jpg';
 import avatar2 from '../../images/team/photo_2023-04-26_18-11-19.jpg';
 import avatar3 from '../../images/team/photo_2023-04-26_18-10-22.jpg';
