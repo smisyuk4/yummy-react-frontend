@@ -8,7 +8,7 @@ import {
 } from './RecipePreparationFields.styled';
 import { Formik } from 'formik';
 
-export const RecipePreparationFields = ({ onChange }) => {
+export const RecipePreparationFields = props => {
 	// форму створив до того як читав ТЗ, треба думати, виправляти
 	const [preparationUneditedText, setPreparationUneditedText] = useState('');
 	const [preparationEditedText, setPreparationEditedText] = useState([]);
@@ -23,15 +23,19 @@ export const RecipePreparationFields = ({ onChange }) => {
 		setPreparationUneditedText([e.currentTarget.value]);
 		const result = e.currentTarget.value.split(/\r?\n/);
 		setPreparationEditedText(result);
-		onChange(preparationEditedText);
 	};
 	return (
 		<Formik>
-			<PreparationFieldSet>
+			<PreparationFieldSet
+				onChange={props.onChange(preparationEditedText)}>
 				<PreparationHeading>
-					Recipe preparation{FieldEmptyState && <EmptyFieldNotation> *</EmptyFieldNotation>}
+					Recipe preparation
+					{FieldEmptyState && (
+						<EmptyFieldNotation> *</EmptyFieldNotation>
+					)}
 				</PreparationHeading>
 				<PreparationTextArea
+					name="preparation"
 					as="textarea"
 					placeholder="Enter recipe"
 					value={preparationUneditedText}
