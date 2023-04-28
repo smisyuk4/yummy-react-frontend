@@ -23,7 +23,7 @@ export const Footer = () => {
         </WrapperDiscr>
       
         <FooterNav>
-          <FooterNavlink to="/ingredients">Ingredients</FooterNavlink>
+          <FooterNavlink to="/search?type=Ingredients">Ingredients</FooterNavlink>
           <FooterNavlink to="/add">Add recipes</FooterNavlink>
           <FooterNavlink to="/my">My recipes</FooterNavlink>
           <FooterNavlink to="/favorite ">Favorites</FooterNavlink>

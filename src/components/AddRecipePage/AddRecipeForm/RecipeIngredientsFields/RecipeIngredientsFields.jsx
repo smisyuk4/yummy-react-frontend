@@ -130,6 +130,7 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 		setIgredientsQuantity(ingredientsQuantity - 1);
 	};
 
+	console.log("addedIngredientsArray ", addedIngredientsArray)
 	return (
 		<RecipeIngredientsFieldset>
 			<HeadingStyledContainer>
@@ -160,7 +161,9 @@ export const RecipeIngredientsFields = ({ onChange }) => {
 								getIngredientMeasure={getIngredientMeasure}
 								getEmptyFieldData={
 									getEmptyFieldData
-								}></RecipeingredientsListItem>
+								}>
+									
+								</RecipeingredientsListItem>
 						);
 					})}
 				</RecipeIngredientsUl>

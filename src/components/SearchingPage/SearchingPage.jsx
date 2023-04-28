@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import {
 	DivStyled,
 	SearchByBox,
@@ -33,20 +33,26 @@ export const SearchingPage = () => {
 	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 	const [isLoading, setisLoading] = useState(false);
 	const [isFind, setisFind] = useState(true);
+	const [searchParam, setSearchParam] = useSearchParams()
+
 
 	useEffect(() => {
+		settype(searchParam.get('type'))
+
 		function handleResize() {
 			setWindowWidth(window.innerWidth);
 		}
 		window.addEventListener('resize', handleResize);
 		return () => window.removeEventListener('resize', handleResize);
-	}, []);
+	}, [searchParam]);
 
 	//! Установил сколько будет на странице (сколько качать с бэкэнда)
 	let limit = windowWidth <= 1439 ? 6 : 12;
 
 	const selectFunc = () => {
-		settype(document.querySelector('select').value);
+		const value = document.querySelector('select').value
+		settype(value);
+		setSearchParam({type: value})
 	};
 
 	const changeValueFunc = value => {
@@ -149,7 +155,7 @@ export const SearchingPage = () => {
 			<SearchingBar changeValue={changeValueFunc} />
 			<SearchByBox>
 				<TitleSearch>Search by:</TitleSearch>
-				<SelectStyled onChange={selectFunc}>
+				<SelectStyled value={type} onChange={selectFunc}>
 					<OptionStyled value="Title">Title</OptionStyled>
 					<OptionStyled value="Ingredients">Ingredients</OptionStyled>
 					<OptionStyled value="Global Ingredients">
