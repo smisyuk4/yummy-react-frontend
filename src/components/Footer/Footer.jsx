@@ -58,10 +58,8 @@ export const Footer = () => {
         <FooterTeamText> &copy; 2023 All Rights Reserved.</FooterTeamText>
         <FooterTeamText>Terms of Service</FooterTeamText>
         <FooterTeamLink onClick={() => setShowModal(true)}>
-			<FooterTeamText>
-				Created by Team
-			</FooterTeamText>
-        </FooterTeamLink>
+							Created by Team
+			  </FooterTeamLink>
       </FooterTeam>
       {showModal && <TeamModal onClose={setShowModal} />}
     </WrapperFooter>
