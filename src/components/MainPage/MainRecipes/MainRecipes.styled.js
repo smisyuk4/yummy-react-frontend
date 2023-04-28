@@ -67,7 +67,8 @@ export const Image = styled.img`
 export const CardBox = styled.div`
 	z-index: 10;
 	position: absolute;
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.bgTitleCard};
+	color: ${({ theme }) => theme.colors.fontHero};
 	border-radius: 8px;
 	width: calc(100% - 36px);
 	bottom: 26px;
@@ -103,7 +104,7 @@ export const NavBox = styled.div`
 `;
 
 export const NavToCategory = styled(NavLink)`
-	background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
+	background-color: ${({ theme }) => theme.colors.bgMoreBtn};
 	color: ${({ theme }) => theme.colors.fontColor};
 	border-radius: 6px;
 	font-family: 'Poppins';
@@ -115,6 +116,7 @@ export const NavToCategory = styled(NavLink)`
 	transition: all 0.3s ease;
 		&:hover {
 			transform: scale(1.04);
+			color: ${({ theme }) => theme.colors.buttonLightBGHover};
 		  }
 `;
 

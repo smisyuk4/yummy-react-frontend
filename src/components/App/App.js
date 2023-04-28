@@ -53,7 +53,7 @@ const LightTheme = {
 		bgBtnTransparent: 'transparent',
 		fontColorBtnDark: '#22252A',
 		fontColorBtnDarkHover: '#FAFAFA',
-		
+
 		darkBG: '#2a2c36',
 		lightBG: '#FAFAFA',
 		BGCintoButton: 'FFFFF',
@@ -101,7 +101,6 @@ const DarkTheme = {
 		bgTitleCard: '#2A2C36',
 		bgMoreBtn: '#8BAA36',
 		bgMoreBtnHover: '#8BAA36',
-		bgMoreBtnHover: '#1E1F28',
 		bgBtnTransparent: 'transparent',
 		fontColorBtnDark: '#FAFAFA',
 		fontColorBtnDarkHover: '#FAFAFA',
