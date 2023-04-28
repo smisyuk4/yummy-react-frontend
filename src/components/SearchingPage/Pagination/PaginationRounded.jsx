@@ -18,21 +18,31 @@
 // //     </Box>
 // //   );
 // // }
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import { useState } from 'react';
+import ReactPaginate from 'react-paginate';
+import { DivStyled } from './Pagination.styled';
 
-export function PaginationControlled() {
-  const [page, setPage] = React.useState(1);
-  const handleChange = (event, value) => {
-    setPage(value);
-  };
+export const PaginationControlled = () => {
+	const [page, setPage] = useState(1);
+	const handleChange = (event, page) => {
+		setPage(page);
+	};
 
-  return (
-    <Stack spacing={2}>
-      <Typography>Page: {page}</Typography>
-      <Pagination count={10} page={page} onChange={handleChange} />
-    </Stack>
-  );
-}
+	return (
+		<DivStyled>
+			<ReactPaginate
+				previousLabel={'<'}
+				nextLabel={'>'}
+				breakLabel={'...'}
+				page={page}
+				breakClassName={'break-me'}
+				pageCount={6}
+				marginPagesDisplayed={2}
+				pageRangeDisplayed={5}
+				onPageChange={handleChange}
+				containerClassName={'pagination'}
+				activeClassName={'active'}
+			/>
+		</DivStyled>
+	);
+};
