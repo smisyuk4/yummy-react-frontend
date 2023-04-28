@@ -54,6 +54,7 @@ export const RecipeImg = styled.img`
 export const RecipeWrapper = styled.div`
 	position: relative;
 	height: 124px;
+	width: 100%;
 
 	@media ${props => props.theme.media.tablet} {
 		height: 232px;

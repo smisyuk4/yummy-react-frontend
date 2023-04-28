@@ -1,9 +1,9 @@
-import { OwnRecipes } from 'components/OwnRecipes/OwnRecipes';
+import { MyRecipes } from 'components/MyRecipes';
 
 const MyRecipesPage = () => {
 	return (
 		<>
-			<OwnRecipes></OwnRecipes>
+			<MyRecipes></MyRecipes>
 		</>
 	);
 };
