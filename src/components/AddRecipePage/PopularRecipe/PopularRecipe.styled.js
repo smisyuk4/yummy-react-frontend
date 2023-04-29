@@ -2,6 +2,13 @@ import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
   position: relative;
+
+  & p {
+    padding: 5px;
+    border-radius: 10px;
+    color: ${({theme}) => theme.colors.titleColor};
+    background-color: ${({theme}) => theme.colors.lightBG};
+  }
 `;
 
 export const UlStyled = styled.ul`
@@ -12,7 +19,7 @@ export const UlStyled = styled.ul`
   gap: 24px;
   margin-bottom: 100px;
 
-  @media ${props => props.theme.media.tablet} {
+  @media ${({theme}) => theme.media.tablet} {
     margin-bottom: 200px;
 
     & a {
@@ -20,7 +27,7 @@ export const UlStyled = styled.ul`
     }
   }
 
-  @media ${props => props.theme.media.desktop} {
+  @media ${({theme}) => theme.media.desktop} {
     max-width: 319px;
     flex-direction: column;
 
