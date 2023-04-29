@@ -149,7 +149,7 @@ export const ThumbImege = styled.div`
 export const RecipeImg = styled.img`
 	height: 100%;
 	width: 100%;
-	object-fit: contain;
+	object-fit: cover;
 	object-position: center;
 `;
 
@@ -208,7 +208,7 @@ export const SelectItem = styled.li`
 	}
 	&:focus {
 		color: ${p => p.theme.colors.addRecipeFormFieldsDropdownListHover};
-
+	}
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
 		line-height: 24px;
