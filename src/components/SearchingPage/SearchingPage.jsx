@@ -41,7 +41,6 @@ export const SearchingPage = () => {
 
 	useEffect(() => {
 		if (!query) return;
-		settotalRecipes(0);
 
 		//! Если запрос по TITLE
 		if (type === 'Title') {
