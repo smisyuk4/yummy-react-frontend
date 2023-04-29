@@ -44,7 +44,7 @@ export const LightTheme = {
 
 		darkBG: '#2a2c36',
 		lightBG: '#FAFAFA',
-		BGCintoButton: 'FFFFF',
+		BGCintoButton: '#FFFFF',
 		borderColorLight: '#f0f0f0',
 		textSecondary: '#7E7E7E',
 		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
@@ -139,7 +139,7 @@ export const DarkTheme = {
 
 		darkBG: '#2a2c36',
 		lightBG: '#1E1F28',
-		BGCintoButton: 'FFFFF',
+		BGCintoButton: '#FFFFF',
 		borderColorLight: '#f0f0f0',
 		textSecondary: 'rgba(250, 250, 250, 0.6)',
 		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',

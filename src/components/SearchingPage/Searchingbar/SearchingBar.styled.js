@@ -23,7 +23,7 @@ export const FormStyled = styled.form`
 `;
 
 export const Input = styled.input`
-	background: ${({ theme }) => theme.colors.lightBG};
+	background: ${({ theme }) => theme.colors.bgTitleCard};
 	border-radius: 24px 44px;
 	border: 1px solid ${({ theme }) => theme.colors.borderColorLight};
 	width: 260px;

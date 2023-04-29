@@ -46,7 +46,7 @@ export const SearchForm = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-	background-color: ${({ theme }) => theme.colors.bgModal};
+	background-color: ${({ theme }) => theme.colors.bgTitleCard};
 	border-radius: 24px 44px;
 	border: 1px solid #f0f0f0;
 	width: 295px;
