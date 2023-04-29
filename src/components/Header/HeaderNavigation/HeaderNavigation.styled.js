@@ -9,7 +9,7 @@ export const HeaderNavigationNav = styled.nav`
         ${flexBox};
         flex-direction: row;
         column-gap: 30px;
-        padding-right: 350px;
+        padding-right: 100px;
     }
 `;
 

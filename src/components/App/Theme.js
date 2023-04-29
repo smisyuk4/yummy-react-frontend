@@ -66,6 +66,7 @@ export const LightTheme = {
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
 		colorCounter: '#333333',
 		textShadow: 'none',
+		fontColorNameUser: '#22252A', 
 
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#3e4462',
@@ -97,7 +98,7 @@ export const DarkTheme = {
 		fontColorDark: '#fafafa',
 		fontColorPassive: '#E0E0E0',
 		titleColor: '#FAFAFA',
-		fontColorNavigation: '#FAFAFA',
+		fontColorNavigation: '#808080',
 		fontHero: '#FAFAFA',
 		followUsColor: '#FFFFFF',
 		followUsColorHover: '#1E1F28',
@@ -152,7 +153,7 @@ export const DarkTheme = {
 		addRecipeFormFieldsDeleteButton: '#333333',
 		addRecipeFormCounterButtons: '#FAFAFA',
 		colorCounter: '#FAFAFA',
-		textShadow: '1px -1px 2px rgba(0, 0, 0, 1),1px 2px 1px rgba(87, 43, 65, 1),2px -1px 5px rgba(120, 50, 6, 0.6)',
+		fontColorNameUser: '#808080', 
 
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#8BAA36',
