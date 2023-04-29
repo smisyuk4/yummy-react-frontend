@@ -1,7 +1,7 @@
 import {
-  AddButton,
-  AddRecipeFormWrapper,
-  WrapperAllInput,
+	AddButton,
+	AddRecipeFormWrapper,
+	WrapperAllInput,
 } from './AddRecipeForm.styled';
 
 import { useState } from 'react';
@@ -23,16 +23,16 @@ const toastifyOption = {
 	draggable: true,
 	progress: undefined,
 	theme: 'colored',
-}
+};
 
 export const AddRecipeForm = () => {
-  const [title, setTitle] = useState('');
-  const [about, setAbout] = useState('');
-  const [categori, setCategori] = useState('');
-  const [picture, setPicture] = useState(null);
-  const [time, setTime] = useState('');
-  const [ingredients, setIngredients] = useState(null);
-  const [preparationEditedText, setPreparationEditedText] = useState(null);
+	const [title, setTitle] = useState('');
+	const [about, setAbout] = useState('');
+	const [categori, setCategori] = useState('');
+	const [picture, setPicture] = useState(null);
+	const [time, setTime] = useState('');
+	const [ingredients, setIngredients] = useState(null);
+	const [preparationEditedText, setPreparationEditedText] = useState(null);
 
 	const ingridientsCange = ingridientsArray => {
 		setIngredients(ingridientsArray);
@@ -60,103 +60,119 @@ export const AddRecipeForm = () => {
 		}
 	};
 
-  const notifyError = message => {
-    toast.error(message, toastifyOption );
-  };
-  const notifySuccess = message => {
-    toast.success(message, toastifyOption);
-  };
+	const notifyError = message => {
+		toast.error(message, toastifyOption);
+	};
+	const notifySuccess = message => {
+		toast.success(message, toastifyOption);
+	};
 
-  const PostRecipe = async () => {
-    const igr = ingredients.map(el => {
-      return { id: el.ingredientId, measure: el.measure };
-    });
-    const dataFile = new FormData();
-	
-    const requestBody = {
-      title: title,
-      description: about,
-      category: categori,
-      time: time,
-      instructions: preparationEditedText.toString(),
-      ingredients: igr,
-    };
+	const PostRecipe = async () => {
+		const igr = ingredients.map(el => {
+			return { id: el.ingredientId, measure: el.measure };
+		});
+		const dataFile = new FormData();
 
-    try {
-      const valdate = await Yup.string().min(1).required().validate(title);
-      if (!valdate) {
-        return;
-      }
-    } catch (err) {
-      notifyError('Recipe name field is empty', toastifyOption);
-      return;
-    }
-    try {
-      const valdate = await Yup.string().min(1).required().validate(about);
-      if (!valdate) {
-        return;
-      }
-    } catch {
-      notifyError('Field "about recipe" is empty', toastifyOption);
-      return;
-    }
-    try {
-      const valdate = await Yup.string().min(1).required().validate(categori);
-      if (!valdate) {
-        return;
-      }
-    } catch {
-      notifyError('Recipe category not selected', toastifyOption);
-      return;
-    }
-    try {
-      const valdate = await Yup.string().min(1).required().validate(time);
-      if (!valdate) {
-        return;
-      }
-    } catch {
-      notifyError('Cooking time not selected', toastifyOption);
-      return;
-    }
-    try {
-      const valdate = await Yup.array().min(1).required().validate(ingredients);
-      if (!valdate) {
-        return;
-      }
-    } catch {
-      notifyError('No ingredients have been selected', toastifyOption);
-      return;
-    }
-    try {
-      const valdate = await Yup.array()
-        .min(1)
-        .required()
-        .validate(preparationEditedText);
-      if (!valdate) {
-        return;
-      }
-    } catch {
-      notifyError('Preparation process not specified', toastifyOption);
-      return;
-    }
+		const requestBody = {
+			title: title,
+			description: about,
+			category: categori,
+			time: time,
+			instructions: preparationEditedText.toString(),
+			ingredients: igr,
+		};
 
-    try {
-      dataFile.set('imageURL', picture);
-      dataFile.set('body', JSON.stringify(requestBody));
-      console.log('FORM-DATA----', dataFile);
-      notifySuccess(
-        'All data is complete. The recipe is added to your collection.', toastifyOption
-      );
-      await axios.post('/ownRecipes', dataFile, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      window.location.assign('./my');
-    } catch (error) {
-      notifyError('Sorry. Failed to add recipe to collection', toastifyOption);
-    }
-  };
+		try {
+			const valdate = await Yup.string()
+				.min(1)
+				.required()
+				.validate(title);
+			if (!valdate) {
+				return;
+			}
+		} catch (err) {
+			notifyError('Recipe title field is empty', toastifyOption);
+			return;
+		}
+		try {
+			const valdate = await Yup.string()
+				.min(1)
+				.required()
+				.validate(about);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Field "about recipe" is empty', toastifyOption);
+			return;
+		}
+		try {
+			const valdate = await Yup.string()
+				.min(1)
+				.required()
+				.validate(categori);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Recipe category not selected', toastifyOption);
+			return;
+		}
+		try {
+			const valdate = await Yup.string().min(1).required().validate(time);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Cooking time not selected', toastifyOption);
+			return;
+		}
+		try {
+			const valdate = await Yup.array()
+				.min(1)
+				.required()
+				.validate(ingredients);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('No ingredients have been selected', toastifyOption);
+			return;
+		}
+		try {
+			const valdate = await Yup.array()
+				.min(1)
+				.required()
+				.validate(preparationEditedText);
+			if (!valdate) {
+				return;
+			}
+		} catch {
+			notifyError('Preparation process not specified', toastifyOption);
+			return;
+		}
+
+		try {
+			dataFile.set('imageURL', picture);
+			dataFile.set('body', JSON.stringify(requestBody));
+			console.log('FORM-DATA----', dataFile);
+			notifySuccess(
+				'All data is complete. The recipe is added to your collection.',
+				toastifyOption
+			);
+			await axios.post('/ownRecipes', dataFile, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			});
+			window.location.assign('./my');
+		} catch (error) {
+			notifyError(
+				'Sorry. Failed to add recipe to collection',
+				toastifyOption
+			);
+		}
+	};
 
 	return (
 		<AddRecipeFormWrapper>

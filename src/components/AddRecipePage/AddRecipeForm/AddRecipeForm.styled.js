@@ -24,7 +24,7 @@ export const AddButton = styled(FormButton)`
 		background-color: ${({ theme }) => theme.colors.buttonPrimaryBG};
 		color: ${({ theme }) => theme.colors.buttonLightBG};
 		border: 1px solid #8baa36;
-		padding: 13px 63px;
+		padding: 12.56px 62.56px;
 	}
 	@media ${props => props.theme.media.tablet} {
 	}
