@@ -12,7 +12,7 @@ export const Pagination = ({ pagecount, onChange, page }) => {
 				previousLabel={'<'}
 				nextLabel={'>'}
 				breakLabel={'...'}
-				page={page}
+				initialPage={page - 1}
 				breakClassName={'break-me'}
 				pageCount={pagecount}
 				marginPagesDisplayed={2}
