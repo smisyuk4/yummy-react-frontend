@@ -6,16 +6,12 @@ export const DivStyled = styled.div`
 	border-radius: 26px;
 	background-color: #fafafa;
 	display: inline-flex;
-	margin-top: 20px;
-	/* width: 275px; */
-
 	z-index: 100;
+
 	& .pagination {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		/* margin: 20px 0; */
-
 		padding: 0 10px;
 	}
 	& .pagination li {
@@ -23,11 +19,6 @@ export const DivStyled = styled.div`
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		/* width: 27px;
-		height: 27px; */
-		font-family: 'Poppins';
-		font-style: normal;
-		font-weight: 500;
 		font-size: 12px;
 		line-height: 18px;
 	}
@@ -39,13 +30,14 @@ export const DivStyled = styled.div`
 		cursor: pointer;
 		padding: 8px 15px;
 		border-radius: 50%;
+		
 	}
 	& .pagination li a:hover {
-		color: #fff;
-		background-color: #000;
+		color: #22252A ;
+		background-color: #ebf3d4;
 	}
 	& .pagination li.active a {
-		color: red;
+		color: #656565; ;
 		background-color: #ebf3d4;
 		width: 27px;
 		height: 27px;
@@ -54,9 +46,11 @@ export const DivStyled = styled.div`
 
 	& li.previous {
 		margin-right: 10px;
+		color: #656565;
 	}
 	& li.next {
 		margin-left: 10px;
+		color: #656565;
 	}
 	& li.disabled {
 		pointer-events: none;

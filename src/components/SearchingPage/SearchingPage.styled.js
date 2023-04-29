@@ -151,3 +151,13 @@ export const CardTitle = styled.p`
 export const DivNoResultsStyle = styled.div`
 	margin-top: 50px;
 `;
+
+export const BoxPagination = styled.div`
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+	
+	@media screen and (min-width: 768px) {
+		margin-top: 50px;	
+	}
+`;

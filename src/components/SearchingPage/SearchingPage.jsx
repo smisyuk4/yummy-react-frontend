@@ -12,6 +12,7 @@ import {
 	CardBox,
 	CardTitle,
 	DivNoResultsStyle,
+	BoxPagination
 } from './SearchingPage.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 import { SearchingBar } from './Searchingbar';
@@ -218,13 +219,13 @@ export const SearchingPage = () => {
 					})}
 				</CardList>
 			)}
-			{totalRecipes / limit > 1 && (
+			<BoxPagination>{totalRecipes / limit > 1 && (
 				<Pagination
 					pagecount={Math.ceil(totalRecipes / limit)}
 					onChange={handlePagination}
 					page={page}
 				/>
-			)}
+			)}</BoxPagination>
 		</DivStyled>
 	);
 };
