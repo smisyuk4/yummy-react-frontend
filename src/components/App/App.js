@@ -157,6 +157,16 @@ export const App = () => {
                 />
               }
             />
+
+            {/* test */}
+              <Route
+              path="ownRecipes/:ownRecipesId"
+              element={
+                <PrivateRoute redirectTo="/login" component={<RecipePage />} />
+              }
+            />
+              {/* test */}
+              
             <Route
               path="search"
               element={
