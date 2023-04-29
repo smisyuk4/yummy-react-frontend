@@ -59,4 +59,5 @@ code {
   min-height: 100vh;
   max-width: 1440px;
   justify-content: space-between;
+  overflow-x: clip;
 }
