@@ -7,9 +7,10 @@ export const StyledIngredientInput = styled(Field)`
 	font-size: 14px;
 	font-style: normal;
 	line-height: 1.5;
-	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
-	color: ${p => p.theme.colors.addRecipeFormFieldsTextColor};
-	border: none;
+	background-color: ${props => props.theme.colors.addRecipeFormFieldsBackground};
+	color: ${props => props.theme.colors.addRecipeFormFieldsTextColor};
+	border: ${props => props.theme.colors.borderIngredientInput};
+
 	outline: none;
 	padding: 16px;
 	box-sizing: border-box;
@@ -29,9 +30,11 @@ export const StyledMeasureValueInput = styled(Field)`
 	font-size: 14px;
 	font-style: normal;
 	line-height: 1.5;
-	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
-	color: ${p => p.theme.colors.addRecipeFormFieldsTextColor};
-	border: none;
+	background-color: ${props => props.theme.colors.addRecipeFormFieldsBackground};
+	color: ${props => props.theme.colors.addRecipeFormFieldsTextColor};
+	border: ${props => props.theme.colors.borderIngredientInput};
+	border-right: none;
+
 	outline: none;
 	padding: 16px 0 16px 12px;
 	border-radius: 6px 0 0 6px;
@@ -51,9 +54,11 @@ export const StyledMeasureInput = styled(Field)`
 	font-size: 14px;
 	font-style: normal;
 	line-height: 1.5;
-	background-color: ${p => p.theme.colors.addRecipeFormFieldsBackground};
-	color: ${p => p.theme.colors.addRecipeFormFieldsTextColor};
-	border: none;
+	background-color: ${props => props.theme.colors.addRecipeFormFieldsBackground};
+	color: ${props => props.theme.colors.addRecipeFormFieldsTextColor};
+	border: ${props => props.theme.colors.borderIngredientInput};
+	border-left: none;
+
 	outline: none;
 	padding: 16px 0px 16px 0;
 	border-radius: 0 6px 6px 0;
@@ -110,7 +115,7 @@ export const StyledCloseButton = styled.button`
 export const DropdownMeasureContainer = styled.div`
 	border-radius: 0 0 6px 6px;
 
-	background-color: transparent;
+	background-color: ${props => props.theme.colors.addRecipeBGHelpList};
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
 
@@ -183,13 +188,17 @@ export const DropdownButtonIcon = styled(Icon)`
 `;
 
 export const ListItemDeleteIcon = styled(Icon)`
-	stroke: ${p => p.theme.colors.addRecipeFormFieldsDeleteButton};
+	stroke: ${props => props.theme.colors.addRecipeFormFieldsDeleteButton};
+	&:hover {
+		stroke: ${props => props.theme.colors.addRecipeFormFieldsDeleteButtonHover};
+	}
 `;
 
 export const IngredientsListItem = styled.li`
 	position: relative;
 	display: flex;
 	align-items: center;
+	background-color: transparent;
 `;
 
 export const EmptyFieldNotation = styled.span`

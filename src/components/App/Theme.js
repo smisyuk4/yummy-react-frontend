@@ -47,22 +47,30 @@ export const LightTheme = {
 		BGCintoButton: 'FFFFF',
 		borderColorLight: '#f0f0f0',
 		textSecondary: '#7E7E7E',
-		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
+		borderIngredientInput: 'none',
 		addRecipeFormFieldsBackground: '#d9d9d9',
+		addRecipeBGHelpList: 'transparent',
+
+		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
+		
 		addRecipeFormFieldsBorder: 'none',
 		colorInput: '#000000',
 		placeHolderColor: '#000000',
 		borderColor: '#23262A',
-		bgColorListSelectIngredient: '#FAFAFA',
 
-		addRecipeFormFieldsTextColor: '#23262a',
+		addRecipeFormFieldsTextColor: '#000000',
+
 		addRecipeFormFieldsDropdownBackground: '#ffffff',
 		addRecipeFormFieldsDropdownButtonIcon: '#8BAA36',
 		addRecipeDropDownBg: '#FFFFFF',
+		addRecipeTextAreaColor: '#000000',
 
 		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
 		addRecipeFormFieldsDeleteButton: '#333333',
+		addRecipeFormFieldsDeleteButtonHover: '#8BAA36',
+
+
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
 		colorCounter: '#333333',
 		textShadow: 'none',
@@ -134,26 +142,32 @@ export const DarkTheme = {
 		BGCintoButton: 'FFFFF',
 		borderColorLight: '#f0f0f0',
 		textSecondary: 'rgba(250, 250, 250, 0.6)',
-		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
+		borderIngredientInput: '1px solid rgba(250, 250, 250, 0.2)',
 		addRecipeFormFieldsBackground: 'transparent',
+		addRecipeBGHelpList: '#8BAA36',
+
+		addRecipeFormPlaceholder: 'rgba(0, 0, 0, 0.5)',
+		
 		addRecipeFormFieldsBorder: '1px solid rgba(250, 250, 250, 0.2)',
 		colorInput: '#ffffff',
 		placeHolderColor: '#FAFAFA',
 		borderColor: '#FAFAFA',
 		bgColorListSelectIngredient: '#8BAA36',
+		addRecipeFormFieldsTextColor: '#ffffff',
+		addRecipeFormFieldsDeleteButton: '#8BAA36',
+		addRecipeFormFieldsDeleteButtonHover: '#ffffff',
 
-		addRecipeFormFieldsTextColor: '#23262a',
+
 		addRecipeFormFieldsDropdownBackground: '#ffffff',
 		addRecipeFormFieldsDropdownButtonIcon: '#ffffff',
 		addRecipeDropDownBg: '#8BAA36',
-
+		addRecipeTextAreaColor: '#ffffff',
 		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
-		addRecipeFormFieldsDeleteButton: '#333333',
+		
 		addRecipeFormCounterButtons: '#FAFAFA',
 		colorCounter: '#FAFAFA',
-		textShadow: '1px -1px 2px rgba(0, 0, 0, 1),1px 2px 1px rgba(87, 43, 65, 1),2px -1px 5px rgba(120, 50, 6, 0.6)',
-
+		
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#8BAA36',
 
