@@ -34,33 +34,31 @@ export const AddRecipeForm = () => {
   const [ingredients, setIngredients] = useState(null);
   const [preparationEditedText, setPreparationEditedText] = useState(null);
 
-  const ingridientsCange = ingridientsArray => {
-    setIngredients(ingridientsArray);
-  };
-  const preparationChange = change => {
-    setPreparationEditedText(change);
-  };
-  const tesOnCanfeDescription = target => {
-    switch (target.name) {
-      case 'title':
-        setTitle(target.value);
-        break;
-      case 'about':
-        setAbout(target.value);
-        break;
-      case 'picture':
-        setPicture(target.files[0]);
-        break;
-      case 'categori':
-        setCategori(target.value);
-        break;
-      case 'time':
-        setTime(target.value);
-        break;
-      default:
-        console.log('Invalid subscription type');
-    }
-  };
+	const ingridientsCange = ingridientsArray => {
+		setIngredients(ingridientsArray);
+	};
+	const preparationChange = change => {
+		setPreparationEditedText(change);
+	};
+
+	const selectCategory = value => setCategori(value);
+	const selectTime = value => setTime(value);
+
+	const tesOnCanfeDescription = target => {
+		switch (target.name) {
+			case 'title':
+				setTitle(target.value);
+				break;
+			case 'about':
+				setAbout(target.value);
+				break;
+			case 'picture':
+				setPicture(target.files[0]);
+				break;
+			default:
+				console.log('Invalid subscription type');
+		}
+	};
 
   const notifyError = message => {
     toast.error(message, toastifyOption );
@@ -160,17 +158,21 @@ export const AddRecipeForm = () => {
     }
   };
 
-  return (
-    <AddRecipeFormWrapper>
-      <WrapperAllInput>
-        <RecipeDescriptionFields onChange={tesOnCanfeDescription} />
-        <RecipeIngredientsFields onChange={ingridientsCange} />
-        <RecipePreparationFields onChange={preparationChange} />
-      </WrapperAllInput>
-      <AddButton type="submit" onClick={PostRecipe}>
-        Add
-      </AddButton>
-      <ToastContainer />
-    </AddRecipeFormWrapper>
-  );
+	return (
+		<AddRecipeFormWrapper>
+			<WrapperAllInput>
+				<RecipeDescriptionFields
+					onChange={tesOnCanfeDescription}
+					selectCategory={selectCategory}
+					selectTime={selectTime}
+				/>
+				<RecipeIngredientsFields onChange={ingridientsCange} />
+				<RecipePreparationFields onChange={preparationChange} />
+			</WrapperAllInput>
+			<AddButton type="submit" onClick={PostRecipe}>
+				Add
+			</AddButton>
+			<ToastContainer />
+		</AddRecipeFormWrapper>
+	);
 };
