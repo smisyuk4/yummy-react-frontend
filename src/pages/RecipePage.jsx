@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ColorRing } from 'react-loader-spinner';
 import {
   fetchRecipes,
   fetchSomeIngredients,
@@ -77,42 +78,41 @@ const RecipePage = () => {
           return;
         }
 
-        checkFavoriteCollection(recipes.data.data.recipes);
+        const favorite = recipes.data.data.recipes.find(
+          ({ _id }) => _id === recipeId
+        );
+
+        setIsFavoriteBase(prev => (favorite === undefined ? false : true));
       } catch (error) {
         console.log(error);
       }
     }
     getRecipesFavorite();
-  }, []);
+  }, [recipeId]);
 
-  const checkFavoriteCollection = favoriteArr => {
-    const favorite = favoriteArr.find(({ _id }) => _id === recipeId);
-
-    setIsFavoriteBase(prev => (favorite === undefined ? false : true));
-  };
-
-  const { _id, title, description, time, thumb, instructions, favorite } =
-    recipe;
+  const { _id, title, description, time, thumb, instructions } = recipe;
 
   return (
     <>
-      {ingredients.length > 0 ? (
+      {ingredients.length === 0 ? (
+        <ColorRing
+          visible={true}
+          ariaLabel="blocks-loading"
+          wrapperClass="blocks-wrapper"
+          colors={['#2a2c36', '#f43e60', '#FFBC00', '#89BC24', '#B8444A']}
+        />
+      ) : (
         <>
           <RecipePageHero
             title={title}
             description={description}
             _id={_id}
             time={time}
-            // favorites={favorite}
             isFavoriteBase={isFavoriteBase}
           />
-
           <IngredientsList ingredients={ingredients} recipeId={recipeId} />
           <RecipePreparation instructions={instructions} thumb={thumb} />
         </>
-      ) : (
-        // <NoResults text="No recipes found" />
-        <></>
       )}
     </>
   );

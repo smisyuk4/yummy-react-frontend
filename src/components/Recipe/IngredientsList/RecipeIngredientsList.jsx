@@ -18,12 +18,11 @@ import { Checkbox } from './Checkbox';
 
 export const IngredientsList = ({ ingredients, recipeId }) => {
   const [shoppingList, setShoppingList] = useState([]);
-  // console.log(ingredients);
+
   useEffect(() => {
     getShoppingList()
       .then(data => {
         setShoppingList(data.data.shoppingList);
-        // console.log(data.data.shoppingList)
       })
 
       .catch(error => console.error(error));
@@ -31,13 +30,12 @@ export const IngredientsList = ({ ingredients, recipeId }) => {
 
   return (
     <IngredientsListSection>
-      {/* <DivContainer> */}
       <ListBar>
         <ItemBar>Ingredients</ItemBar>
         <ItemBar>Number</ItemBar>
         <ItemBar>Add to list</ItemBar>
       </ListBar>
-      {/* </DivContainer> */}
+
       <>
         <ListStyled>
           {ingredients.length > 0 &&

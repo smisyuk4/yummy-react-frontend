@@ -8,7 +8,7 @@ import {
   HeroSection,
   ButtonStyled,
   TitleStyled,
-  PStyled,
+  EllipsisStyled,
   ClockDivStyled,
   ClockDescriptionStyled,
 } from './RecipePageHero.styled';
@@ -19,10 +19,8 @@ export const RecipePageHero = ({
   description,
   time,
   _id,
-  // favorites,
   isFavoriteBase,
 }) => {
-  // const user = useSelector(selectUser);
   const [isFavorite, setIsFavorite] = useState(isFavoriteBase);
 
   const handleFavoriteAdd = id => {
@@ -41,11 +39,10 @@ export const RecipePageHero = ({
       .catch(err => console.log(err.message));
   };
 
-  console.log('isFavoriteBase ', isFavoriteBase);
   return (
     <HeroSection>
       <TitleStyled>{title}</TitleStyled>
-      <PStyled>{description}</PStyled>
+      <EllipsisStyled text={description} length={120} />
 
       {isFavorite ? (
         <ButtonStyled onClick={() => handleFavoriteRemove(_id)}>
