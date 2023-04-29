@@ -7,6 +7,9 @@ export const DivStyled = styled.div`
 	background-color: #fafafa;
 	display: inline-flex;
 	z-index: 100;
+	/* width: 275px; */
+	justify-content: space-around;
+	align-items: center;
 
 	& .pagination {
 		display: flex;
@@ -28,19 +31,18 @@ export const DivStyled = styled.div`
 		align-items: center;
 		text-decoration: none;
 		cursor: pointer;
-		padding: 8px 15px;
+		padding: 8px 16px;
 		border-radius: 50%;
-		
 	}
 	& .pagination li a:hover {
-		color: #22252A ;
+		color: #22252a;
 		background-color: #ebf3d4;
 	}
 	& .pagination li.active a {
-		color: #656565; ;
+		color: #656565;
 		background-color: #ebf3d4;
-		width: 27px;
-		height: 27px;
+		/* width: 27px;
+		height: 27px; */
 		border-radius: 50%;
 	}
 
