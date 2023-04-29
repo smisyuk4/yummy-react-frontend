@@ -13,7 +13,6 @@ import {
   CardTitle,
   DivNoResultsStyle,
   BoxPagination,
-  WraperSelect,
 } from './SearchingPage.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 import { SearchingBar } from './Searchingbar';
