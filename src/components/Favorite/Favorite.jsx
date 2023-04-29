@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import { fetchFavorite, removeFromFavorites } from './FetchFavorite';
+import { NoResults } from 'components/NoResults';
 
 import {
   FavoriteArticle,
@@ -42,18 +43,28 @@ export const Favorite = id => {
     setFavoriteRecipes(prev => prev.filter(recipe => recipe._id !== id));
   };
 
+  if (!favoriteRecipes) {
+    return (
+      <FavoriteStyled>
+        <ReusableComponentTitleWithJewelry title="Favorites" />
+
+        <ColorRing
+          visible={true}
+          ariaLabel="blocks-loading"
+          wrapperClass="blocks-wrapper"
+          colors={['#2a2c36', '#f43e60', '#FFBC00', '#89BC24', '#B8444A']}
+        />
+      </FavoriteStyled>
+    );
+  }
+
   return (
     <FavoriteStyled>
       <ReusableComponentTitleWithJewelry title="Favorites" />
 
       <FavoriteList>
-        {!favoriteRecipes ? (
-          <ColorRing
-            visible={true}
-            ariaLabel="blocks-loading"
-            wrapperClass="blocks-wrapper"
-            colors={['#2a2c36', '#f43e60', '#FFBC00', '#89BC24', '#B8444A']}
-          />
+        {favoriteRecipes?.length === 0 ? (
+          <NoResults text="Recipes not found" />
         ) : (
           <>
             {favoriteRecipes?.map(
