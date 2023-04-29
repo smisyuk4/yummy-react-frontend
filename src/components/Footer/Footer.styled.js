@@ -150,6 +150,7 @@ export const FooterTeamLink = styled.p`
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.colorTextTeam};
   &:hover {
     color: ${({ theme }) => theme.colors.primary};
   }

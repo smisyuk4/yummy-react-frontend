@@ -51,6 +51,7 @@ export const LightTheme = {
 		addRecipeFormFieldsBackground: '#d9d9d9',
 		addRecipeFormFieldsBorder: 'none',
 		colorInput: '#000000',
+
 		placeHolderColor: '#000000',
 		borderColor: '#23262A',
 		bgColorListSelectIngredient: '#FAFAFA',
@@ -63,6 +64,7 @@ export const LightTheme = {
 		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
 		addRecipeFormFieldsDeleteButton: '#333333',
+		addRecipeFormFieldsDelBtnHover: '#000000',
 		addRecipeFormCounterButtons: 'rgba(51, 51, 51, 0.3)',
 		colorCounter: '#333333',
 		textShadow: 'none',
@@ -139,6 +141,7 @@ export const DarkTheme = {
 		addRecipeFormFieldsBackground: 'transparent',
 		addRecipeFormFieldsBorder: '1px solid rgba(250, 250, 250, 0.2)',
 		colorInput: '#ffffff',
+
 		placeHolderColor: '#FAFAFA',
 		borderColor: '#FAFAFA',
 		bgColorListSelectIngredient: '#8BAA36',
@@ -150,7 +153,9 @@ export const DarkTheme = {
 
 		addRecipeFormFieldsDropdownListPosition: 'rgba(0, 0, 0, 0.5)',
 		addRecipeFormFieldsDropdownListHover: '#8BAA36',
-		addRecipeFormFieldsDeleteButton: '#333333',
+		addRecipeFormFieldsDeleteButton: '#8BAA36',
+		addRecipeFormFieldsDelBtnHover: '#ffffff',
+
 		addRecipeFormCounterButtons: '#FAFAFA',
 		colorCounter: '#FAFAFA',
 		fontColorNameUser: '#808080', 
