@@ -70,15 +70,29 @@ export const MyRecipes = () => {
       ) : (
         <>
           <MyRecipesList>
-            {ownRecipes
-              .slice((page - 1) * limit, (page - 1) * limit + limit)
-              .map(recipe => (
-                <MyRecipesItem
-                  key={recipe._id}
-                  recipe={recipe}
-                  onDelete={() => deleteRecipe(recipe._id)}
-                />
-              ))}
+            {ownRecipes.length <= limit ? (
+              <>
+                {ownRecipes.map(recipe => (
+                  <MyRecipesItem
+                    key={recipe._id}
+                    recipe={recipe}
+                    onDelete={() => deleteRecipe(recipe._id)}
+                  />
+                ))}
+              </>
+            ) : (
+              <>
+                {ownRecipes
+                  .slice((page - 1) * limit, (page - 1) * limit + limit)
+                  .map(recipe => (
+                    <MyRecipesItem
+                      key={recipe._id}
+                      recipe={recipe}
+                      onDelete={() => deleteRecipe(recipe._id)}
+                    />
+                  ))}
+              </>
+            )}
           </MyRecipesList>
 
           {ownRecipes.length / limit > 1 && (
