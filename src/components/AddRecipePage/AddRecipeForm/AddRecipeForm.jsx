@@ -29,6 +29,10 @@ export const AddRecipeForm = () => {
 	const preparationChange = change => {
 		setPreparationEditedText(change);
 	};
+
+	const selectCategory = value => setCategori(value);
+	const selectTime = value => setTime(value);
+
 	const tesOnCanfeDescription = target => {
 		switch (target.name) {
 			case 'title':
@@ -39,12 +43,6 @@ export const AddRecipeForm = () => {
 				break;
 			case 'picture':
 				setPicture(target.files[0]);
-				break;
-			case 'categori':
-				setCategori(target.value);
-				break;
-			case 'time':
-				setTime(target.value);
 				break;
 			default:
 				console.log('Invalid subscription type');
@@ -163,7 +161,11 @@ export const AddRecipeForm = () => {
 	return (
 		<AddRecipeFormWrapper>
 			<WrapperAllInput>
-				<RecipeDescriptionFields onChange={tesOnCanfeDescription} />
+				<RecipeDescriptionFields
+					onChange={tesOnCanfeDescription}
+					selectCategory={selectCategory}
+					selectTime={selectTime}
+				/>
 				<RecipeIngredientsFields onChange={ingridientsCange} />
 				<RecipePreparationFields onChange={preparationChange} />
 			</WrapperAllInput>

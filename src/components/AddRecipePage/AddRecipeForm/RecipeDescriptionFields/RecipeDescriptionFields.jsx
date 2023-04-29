@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import {
 	DescrForm,
+	DropdownContainer,
 	InputFile,
 	InputForm,
 	InputSelct,
@@ -8,27 +9,45 @@ import {
 	LabelFile,
 	LabelForm,
 	LabelSelect,
+	OptionsUl,
 	OverlayPicture,
+	OverlaySelectIcon,
 	RecipeImg,
+	SelectIcon,
+	SelectItem,
+	Test,
 	ThumbImege,
 } from './RecipeDescriptionFields.styled';
 import { useEffect, useState } from 'react';
 import { fetchAllCategory } from 'components/CategoriesPage/FetchWithCategory';
 import { Icon } from 'components/Icon';
+import { v4 as uuidv4 } from 'uuid';
 
-export const RecipeDescriptionFields = ({ onChange }) => {
+export const RecipeDescriptionFields = ({
+	onChange,
+	selectCategory,
+	selectTime,
+}) => {
 	const [picture, setPicture] = useState(null);
 	const [category, setCategory] = useState('');
 	const [time, setTime] = useState('');
 
 	const [pictureUrl, setPictureUrl] = useState('');
 	const [categoriList, setCategoriList] = useState([]);
-
+	const [categoriHelpListState, setCategoriHelpListState] = useState(false);
+	const [timeHelpListState, setTimeHelpListState] = useState(false);
 	useEffect(() => {
 		fetchAllCategory()
 			.then(({ data }) => setCategoriList(data.data.resultCategory))
 			.catch(error => error);
 	}, []);
+
+	useEffect(() => {
+		selectCategory(category);
+	}, [category, selectCategory]);
+	useEffect(() => {
+		selectTime(time);
+	}, [time, selectTime]);
 
 	useEffect(() => {
 		if (picture) {
@@ -48,19 +67,14 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 		if (name === 'picture') {
 			setPicture(event.target.files[0]);
 		}
-		// switch (name) {
-		// 	case 'picture':
-		// 		setPicture(event.target.files[0]);
-		// 		break;
-		// 	default:
-		// 		console.log('Invalid subscription type');
-		// }
 	};
 	const categoriName = categoriList.map(categ => {
 		return (
-			<option key={categ} value={categ}>
-				{categ}
-			</option>
+			<SelectItem key={uuidv4()}>
+				<option key={categ} value={categ}>
+					{categ}
+				</option>
+			</SelectItem>
 		);
 	});
 
@@ -70,35 +84,38 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 	}
 	const timeSelect = timeList.map(categ => {
 		return (
-			<option key={categ} value={categ}>
-				{categ} min
-			</option>
+			<SelectItem key={uuidv4()}>
+				<option key={categ} value={categ}>
+					{categ} min
+				</option>
+			</SelectItem>
 		);
 	});
 
-	const selectFocus = prop => {
-		prop.target.size = 6;
-		prop.target.style = `position: absolute; right: 0; z-index: 10;`;
+	const openCategori = e => {
+		if (!categoriHelpListState) {
+			setCategoriHelpListState(true);
+			return;
+		}
+		setCategoriHelpListState(false);
 	};
 
-	const selectChange = prop => {
-		prop.target.size = 1;
-		prop.target.blur();
-		if (prop.target.name === 'categori') {
-			setCategory(prop.target.value);
+	const openTime = e => {
+		if (!timeHelpListState) {
+			setTimeHelpListState(true);
+			return;
 		}
-		if (prop.target.name === 'time') {
-			setTime(prop.target.value);
-		}
+		setTimeHelpListState(false);
 	};
 
-	const selectBlur = prop => {
-		prop.target.size = 1;
-		prop.target.style = 'position: relative; z-index: 1;';
+	const clickDropCategori = ev => {
+		setCategory(ev.target.innerHTML);
+	};
+	const clickDropTime = ev => {
+		setTime(ev.target.innerHTML);
 	};
 
 	return (
-		// <DescriptionDiv>
 		<Formik
 			initialValues={{
 				title: '',
@@ -146,33 +163,52 @@ export const RecipeDescriptionFields = ({ onChange }) => {
 					</LabelForm>
 					<LabelSelect>
 						Categori
-						<InputSelct
-							name="categori"
-							component="select"
-							onFocus={selectFocus}
-							onChange={selectChange}
-							onBlur={selectBlur}
-							value={category}>
-							<option value="">Select category</option>
-							{categoriName}
-						</InputSelct>
+						<Test>
+							<InputSelct
+								readOnly
+								type="text"
+								placeholder="Select category"
+								name="categori"
+								onClick={openCategori}
+								value={category}></InputSelct>
+							<OverlaySelectIcon>
+								<SelectIcon
+									id="icon-arrow-down"
+									width={20}
+									height={20}></SelectIcon>
+							</OverlaySelectIcon>
+							{categoriHelpListState && (
+								<DropdownContainer onClick={clickDropCategori}>
+									<OptionsUl>{categoriName}</OptionsUl>
+								</DropdownContainer>
+							)}
+						</Test>
 					</LabelSelect>
 					<LabelSelect>
 						Cooking time
-						<InputSelct
-							name="time"
-							component="select"
-							onFocus={selectFocus}
-							onChange={selectChange}
-							onBlur={selectBlur}
-							value={time}>
-							<option value="">Select time</option>
-							{timeSelect}
-						</InputSelct>
+						<Test>
+							<InputSelct
+								readOnly
+								type="text"
+								placeholder="Select time"
+								name="time"
+								onClick={openTime}
+								value={time}></InputSelct>
+							<OverlaySelectIcon>
+								<SelectIcon
+									id="icon-arrow-down"
+									width={20}
+									height={20}></SelectIcon>
+							</OverlaySelectIcon>
+							{timeHelpListState && (
+								<DropdownContainer onClick={clickDropTime}>
+									<OptionsUl>{timeSelect}</OptionsUl>
+								</DropdownContainer>
+							)}
+						</Test>
 					</LabelSelect>
 				</InputWrapper>
 			</DescrForm>
 		</Formik>
-		// </DescriptionDiv>
 	);
 };
