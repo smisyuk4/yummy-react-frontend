@@ -11,15 +11,11 @@ export const SonetLinksList = styled.ul`
     ${flexBox};
     padding: 15px 28px;
     border-radius: 6px;
-    background: ${({ theme }) => theme.colors.followUsBG};
+    /* background: ${({ theme }) => theme.colors.followUsBG}; */
     gap: 16px;
-    &:hover {
+    /* &:hover {
         background: ${({ theme }) => theme.colors.followUsBGHover};
-    }
-    &:hover svg {
-        fill: ${({ theme }) => theme.colors.followUsColorHover};       
-    }
-
+    } */
     & > a {
         padding: 0;
         margin: 0;

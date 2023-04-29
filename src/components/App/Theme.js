@@ -70,6 +70,7 @@ export const LightTheme = {
 		textShadow: 'none',
 		fontColorNameUser: '#22252A', 
 
+		followUsHoverAddRecipePage: '#000000',
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#3e4462',
 
@@ -160,6 +161,7 @@ export const DarkTheme = {
 		colorCounter: '#FAFAFA',
 		fontColorNameUser: '#808080', 
 
+		followUsHoverAddRecipePage: '#8BAA36',
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#8BAA36',
 
