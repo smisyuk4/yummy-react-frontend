@@ -9,26 +9,26 @@ import {
 	RecipeAbout,
 	RecipeTime,
 	SeeRecipeBtn,
+	ImgRecipeIcon,
 } from './MyRecipesItem.styled';
 
-import defaultImage from '../../images/recipeImg/default-img.png';
 
 export const MyRecipesItem = props => {
 	const {
 		title,
 		time,
 		description,
-		imageURL = defaultImage,
+		imageURL,
 		_id,
 	} = props.recipe;
 
-	let image = '';
-	imageURL.includes('default') ? (image = defaultImage) : (image = imageURL);
+	const isImgDefault = imageURL.includes('default')
 
 	return (
 		<RecipeItem>
 			<RecipeImgWrapper>
-				<RecipeImg src={image} alt={title} />
+				{!isImgDefault && <RecipeImg src={imageURL} alt={title} />}
+				{isImgDefault && <ImgRecipeIcon id='icon-add-photo-recipe'/> }
 			</RecipeImgWrapper>
 			<RecipeWrapper>
 				<RecipeTitle>{title}</RecipeTitle>
