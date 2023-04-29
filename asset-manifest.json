@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/yummy-react-frontend/static/css/main.353e4b34.css",
-    "main.js": "/yummy-react-frontend/static/js/main.9331de8c.js",
+    "main.js": "/yummy-react-frontend/static/js/main.68bb3be8.js",
     "static/js/759.8edb7eeb.chunk.js": "/yummy-react-frontend/static/js/759.8edb7eeb.chunk.js",
     "static/js/702.eff8d8ca.chunk.js": "/yummy-react-frontend/static/js/702.eff8d8ca.chunk.js",
     "static/js/663.174f656e.chunk.js": "/yummy-react-frontend/static/js/663.174f656e.chunk.js",
@@ -9,10 +9,10 @@
     "static/js/542.322c59b1.chunk.js": "/yummy-react-frontend/static/js/542.322c59b1.chunk.js",
     "static/js/36.0bf9c978.chunk.js": "/yummy-react-frontend/static/js/36.0bf9c978.chunk.js",
     "static/js/935.3bcd0571.chunk.js": "/yummy-react-frontend/static/js/935.3bcd0571.chunk.js",
-    "static/js/684.87e5e3f2.chunk.js": "/yummy-react-frontend/static/js/684.87e5e3f2.chunk.js",
+    "static/js/684.40bd3ad8.chunk.js": "/yummy-react-frontend/static/js/684.40bd3ad8.chunk.js",
     "static/js/958.f9bccc2c.chunk.js": "/yummy-react-frontend/static/js/958.f9bccc2c.chunk.js",
     "static/js/650.588b51c8.chunk.js": "/yummy-react-frontend/static/js/650.588b51c8.chunk.js",
-    "static/js/86.e2fe6f23.chunk.js": "/yummy-react-frontend/static/js/86.e2fe6f23.chunk.js",
+    "static/js/86.f84f3f00.chunk.js": "/yummy-react-frontend/static/js/86.f84f3f00.chunk.js",
     "static/js/982.1d111eb1.chunk.js": "/yummy-react-frontend/static/js/982.1d111eb1.chunk.js",
     "static/js/739.cf0b608c.chunk.js": "/yummy-react-frontend/static/js/739.cf0b608c.chunk.js",
     "static/js/595.ac628894.chunk.js": "/yummy-react-frontend/static/js/595.ac628894.chunk.js",
@@ -76,7 +76,7 @@
     "index.html": "/yummy-react-frontend/index.html",
     "static/media/pick.svg": "/yummy-react-frontend/static/media/pick.daf39ef5ede2bfe5733dc766de3147d9.svg",
     "main.353e4b34.css.map": "/yummy-react-frontend/static/css/main.353e4b34.css.map",
-    "main.9331de8c.js.map": "/yummy-react-frontend/static/js/main.9331de8c.js.map",
+    "main.68bb3be8.js.map": "/yummy-react-frontend/static/js/main.68bb3be8.js.map",
     "759.8edb7eeb.chunk.js.map": "/yummy-react-frontend/static/js/759.8edb7eeb.chunk.js.map",
     "702.eff8d8ca.chunk.js.map": "/yummy-react-frontend/static/js/702.eff8d8ca.chunk.js.map",
     "663.174f656e.chunk.js.map": "/yummy-react-frontend/static/js/663.174f656e.chunk.js.map",
@@ -84,10 +84,10 @@
     "542.322c59b1.chunk.js.map": "/yummy-react-frontend/static/js/542.322c59b1.chunk.js.map",
     "36.0bf9c978.chunk.js.map": "/yummy-react-frontend/static/js/36.0bf9c978.chunk.js.map",
     "935.3bcd0571.chunk.js.map": "/yummy-react-frontend/static/js/935.3bcd0571.chunk.js.map",
-    "684.87e5e3f2.chunk.js.map": "/yummy-react-frontend/static/js/684.87e5e3f2.chunk.js.map",
+    "684.40bd3ad8.chunk.js.map": "/yummy-react-frontend/static/js/684.40bd3ad8.chunk.js.map",
     "958.f9bccc2c.chunk.js.map": "/yummy-react-frontend/static/js/958.f9bccc2c.chunk.js.map",
     "650.588b51c8.chunk.js.map": "/yummy-react-frontend/static/js/650.588b51c8.chunk.js.map",
-    "86.e2fe6f23.chunk.js.map": "/yummy-react-frontend/static/js/86.e2fe6f23.chunk.js.map",
+    "86.f84f3f00.chunk.js.map": "/yummy-react-frontend/static/js/86.f84f3f00.chunk.js.map",
     "982.1d111eb1.chunk.js.map": "/yummy-react-frontend/static/js/982.1d111eb1.chunk.js.map",
     "739.cf0b608c.chunk.js.map": "/yummy-react-frontend/static/js/739.cf0b608c.chunk.js.map",
     "595.ac628894.chunk.js.map": "/yummy-react-frontend/static/js/595.ac628894.chunk.js.map",
@@ -101,6 +101,6 @@
   },
   "entrypoints": [
     "static/css/main.353e4b34.css",
-    "static/js/main.9331de8c.js"
+    "static/js/main.68bb3be8.js"
   ]
 }
