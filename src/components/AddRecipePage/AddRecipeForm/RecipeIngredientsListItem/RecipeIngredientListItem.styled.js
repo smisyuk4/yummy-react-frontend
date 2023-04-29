@@ -184,11 +184,14 @@ export const DropdownListPosition = styled.button`
 `;
 
 export const DropdownButtonIcon = styled(Icon)`
+	cursor: pointer;
 	stroke: ${p => p.theme.colors.addRecipeFormFieldsDropdownButtonIcon};
 `;
 
 export const ListItemDeleteIcon = styled(Icon)`
 	stroke: ${props => props.theme.colors.addRecipeFormFieldsDeleteButton};
+	cursor: pointer;
+
 	&:hover {
 		stroke: ${props => props.theme.colors.addRecipeFormFieldsDelBtnHover};
 	}
@@ -207,6 +210,7 @@ export const EmptyFieldNotation = styled.span`
 	position: absolute;
 	top: 14px;
 	right: 35px;
+	
 	@media ${props => props.theme.media.tablet} {
 		top: 14px;
 		right: 140px;
