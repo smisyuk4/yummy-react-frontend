@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import {
-	
-	// deleteAllShoppingList,
+	deleteAllShoppingList,
 	deleteIngredientInShoppingList,
 	getShoppingList,
 } from '../fetchShoppingList';
@@ -23,6 +22,7 @@ import {
 	Total,
 	SpanNum,
 	ClearBtn,
+	ContainerSh,
 } from './IngredientsShoppingList.styled';
 import { NavLink } from 'react-router-dom';
 
@@ -32,7 +32,7 @@ import { ColorRing } from 'react-loader-spinner';
 const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
 	const [loading, setLoading] = useState(true);
-	
+
 	useEffect(() => {
 		getShoppingList()
 			.then(({ data }) => setShoppingList(data.shoppingList))
@@ -48,76 +48,76 @@ const IngredientsShoppingList = () => {
 	};
 	const totalPositionOfIngredients = shoppingList.length;
 
-	// const deleteAllIngredients = async () => {
-	// 	await deleteAllShoppingList();
-	// 	setShoppingList([]);
-	// };
-	
-
-	// const groupedShoppingList = shoppingList.reduce((acc, curr) => {
-	// 	if (!acc[curr.ingredientId]) {
-	// 		acc[curr.ingredientId] = { ...curr, measures: [curr.measure] };
-	// 	} else {
-	// 		acc[curr.ingredientId].measures.push(curr.measure);
-	// 	}
-	// 	return acc;
-	// }, {});
-
-	// const groupedShoppingListArray = Object.values(groupedShoppingList);
+	const deleteAllIngredients = async () => {
+		await deleteAllShoppingList();
+		setShoppingList([]);
+	};
 
 	if (loading) {
-		return (<ColorRing
-		visible={true}
-		ariaLabel="blocks-loading"
-		wrapperClass="blocks-wrapper"
-		colors={['#2a2c36', '#04711a', '#4ebb46', '#8cc293', '#cfd8d4']}
-	/>);
-	  }
+		return (
+			<ColorRing
+				visible={true}
+				ariaLabel="blocks-loading"
+				wrapperClass="blocks-wrapper"
+				colors={['#2a2c36', '#04711a', '#4ebb46', '#8cc293', '#cfd8d4']}
+			/>
+		);
+	}
 
 	return (
 		<div>
-			{totalPositionOfIngredients > 0 && (
-				<ListBar>
-					<ItemBar>Products</ItemBar>
-					<ItemBar>Number</ItemBar>
-					<ItemBar>Remove</ItemBar>
-				</ListBar>
-			)}
-			<ShoppingList>
-				{totalPositionOfIngredients > 0 &&
-					shoppingList.map(({ _id, ttl, thb, measure, recipeId }) => (
-						<ItemShoppingList key={_id}>
-							<ContainerImg>
-								<img
-									src={thb}
-									alt={ttl}
-									onError={e => {
-										e.target.onerror = null;
-										e.target.src = defaultImage;
-									}}
-								/>
-							</ContainerImg>
-							<TaglineP>
-								{ttl}
-								<br />
-								<NavLink to={`/recipes/${recipeId}`}>
-									From recipe
-								</NavLink>
-							</TaglineP>
-							<Measure>{measure}</Measure>
-							<CloseBtn
-								type="button"
-								onClick={() => onDelete(_id)}>
-								<CloseIcon id="icon-close" />
-							</CloseBtn>
-						</ItemShoppingList>
-					
-					))}
-			</ShoppingList>
-				<ClearBtn>Clear All</ClearBtn>
-			{totalPositionOfIngredients > 0 && <Total>
-				Total position: <SpanNum>{totalPositionOfIngredients}</SpanNum>
-			</Total>}
+			<ContainerSh>
+				{totalPositionOfIngredients > 0 && (
+					<ListBar>
+						<ItemBar>Products</ItemBar>
+						<ItemBar>Number</ItemBar>
+						<ItemBar>Remove</ItemBar>
+					</ListBar>
+				)}
+				<ShoppingList>
+					{totalPositionOfIngredients > 0 &&
+						shoppingList.map(
+							({ _id, ttl, thb, measure, recipeId }) => (
+								<ItemShoppingList key={_id}>
+									<ContainerImg>
+										<img
+											src={thb}
+											alt={ttl}
+											onError={e => {
+												e.target.onerror = null;
+												e.target.src = defaultImage;
+											}}
+										/>
+									</ContainerImg>
+									<TaglineP>
+										{ttl}
+										<br />
+										<NavLink to={`/recipes/${recipeId}`}>
+											From recipe
+										</NavLink>
+									</TaglineP>
+									<Measure>{measure}</Measure>
+									<CloseBtn
+										type="button"
+										onClick={() => onDelete(_id)}>
+										<CloseIcon id="icon-close" />
+									</CloseBtn>
+								</ItemShoppingList>
+							)
+						)}
+				</ShoppingList>
+				{totalPositionOfIngredients > 0 && (
+					<ClearBtn onClick={() => deleteAllIngredients()}>
+						Clear All
+					</ClearBtn>
+				)}
+				{totalPositionOfIngredients > 0 && (
+					<Total>
+						Total position:{' '}
+						<SpanNum>{totalPositionOfIngredients}</SpanNum>
+					</Total>
+				)}
+			</ContainerSh>
 			{totalPositionOfIngredients === 0 && (
 				<ContainerEmpty>
 					<ShopBag id="icon-cart" />

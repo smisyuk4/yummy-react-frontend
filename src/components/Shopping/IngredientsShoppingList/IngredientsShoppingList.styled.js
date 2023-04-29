@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 import { ButtonStyled } from 'components/Hero/RecipeHero/RecipePageHero.styled';
 import { Icon } from 'components/Icon';
 
+export const ContainerSh = styled.div`
+position: relative;`
+
 export const ListBar = styled.ul`
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 8px;
@@ -42,7 +45,7 @@ export const ItemBar = styled.li`
   }
 `;
 export const ShoppingList = styled.ul`
-  position: relative;
+  /* position: relative; */
   z-index: 10;
   max-width: 703px;
   justify-content: center;
@@ -230,20 +233,20 @@ export const ShopBag = styled(Icon)`
 
 export const Total = styled.p`
   position: absolute;
-  bottom: 15%;
-  right: 15%;
+  bottom: -4vh;
+  right: 5vw;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.fontColorDark};
   @media screen and (min-width: 768px) {
     font-size: 18px;
-	bottom: 20%;
-	right: 10%;
+	bottom: -6vh;
+	
   }
   @media screen and (min-width: 1440px) {
-	bottom: 18%;
-	right: 15%;
+	bottom: -5vh;
+	right: 5vw;
   }
 `;
 export const SpanNum = styled.span`
@@ -252,27 +255,29 @@ export const SpanNum = styled.span`
 
 export const ClearBtn = styled(ButtonStyled)`
 position: absolute;
-bottom: 7%;
-right: 20%;
+bottom: -10vh;
+right: 8vw;
 margin-bottom: 0;
+margin-top: 10px;
 
 color: ${({ theme }) => theme.colors.fontColor};
 font-weight: 600;
 font-size: 12px;
 background-color: ${({ theme }) => theme.colors.primary};
 &:hover {
-	background-color: #EBF3D4;
-    color:  #8BAA36;
+	background-color: ${({ theme }) => theme.colors.primarySoft};
+    color:  ${({ theme }) => theme.colors.primary};
   }
   &:focus {
-	background-color: #EBF3D4;
-    color:  #8BAA36;
+	background-color: ${({ theme }) => theme.colors.primarySoft};;
+    color:  ${({ theme }) => theme.colors.primary};
   }
   @media screen and (min-width: 768px) {
-	bottom: 3%;
-	right: 10%;
+	bottom: -30vh;
+	right: 5vw;
   }
   @media screen and (min-width: 1440px) {
-	right: 14%;
+	bottom: -20vh;
+	right: 5vw;
   }
 `
