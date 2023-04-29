@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
-export const DivStyled = styled.div``;
+export const DivStyled = styled.div`
+  position: relative;
+`;
 
 export const UlStyled = styled.ul`
   box-sizing: border-box;
