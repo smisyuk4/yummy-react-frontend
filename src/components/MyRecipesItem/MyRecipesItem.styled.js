@@ -13,6 +13,7 @@ export const RecipeItem = styled.li`
 
 	border-radius: 8px;
 
+
 	@media ${props => props.theme.media.tablet} {
 		gap: 24px;
 		padding: 28px 24px;
@@ -193,20 +194,38 @@ export const SeeRecipeBtn = styled(NavLinkStyled)`
 	right: 0;
 	bottom: 0;
 	margin: 0;
-
 	padding: 6px 14px;
 
 	font-weight: 400;
 	font-size: 10px;
 	line-height: 100%;
+	
+	background-color: #8BAA36;
+	color: #fafafa;
+	border-color: #8BAA36;
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 14px;
 		padding: 12px 32px;
+		background-color: #8BAA36;
+		color: #fafafa;
+		border-color: #8BAA36;
+
 	}
 
 	@media ${props => props.theme.media.desktop} {
 		padding: 18px 44px;
 		font-size: 16px;
+		background-color: #8BAA36;
+		color: #fafafa;
+		border-color: #8BAA36;
 	}
+
+	&:hover {
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+		border-color 0.3s ease-in-out;
+		background-color: #22252A;
+		border-color: #22252A;
+	}
+
 `;

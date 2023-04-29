@@ -60,10 +60,7 @@ export const FavoriteImg = styled.img`
 export const FavoriteIcon = styled(Icon)`
 	width: 14px;
 	height: 14px;
-
-	stroke: ${({ theme }) => theme.colors.buttonDarkBG};
-	fill: none;
-
+	stroke: ${({ theme }) => theme.colors.strokeTrashIcon};
 	@media ${props => props.theme.media.tablet} {
 		width: 22px;
 		height: 22px;
@@ -72,6 +69,9 @@ export const FavoriteIcon = styled(Icon)`
 	@media ${props => props.theme.media.desktop} {
 		width: 24px;
 		height: 24px;
+	}
+	&:hover {
+		stroke: #FFFFFF;
 	}
 `;
 
@@ -116,7 +116,7 @@ export const FavoriteDeleteBtn = styled.button`
 	justify-content: center;
 	align-items: center;
 	padding: 0;
-	background-color: #ebf3d4;
+	background: ${({ theme }) => theme.colors.bgTrashIcon};
 	border-radius: 4px;
 	border: none;
 	cursor: pointer;
