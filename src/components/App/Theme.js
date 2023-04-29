@@ -74,6 +74,9 @@ export const LightTheme = {
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#3e4462',
 
+		bgTrashIcon: '#EBF3D4',
+		strokeTrashIcon: '#22252A',
+
 		bgFavoriteItem: '#FFFFFF',
 		colorFavoriteTitle: '#3E4462',
 		textFavoriteRecipe: '#23262A',
@@ -82,6 +85,7 @@ export const LightTheme = {
 
 		recipeItemBackgroundColor: '#ffffff',
 		recipeTextColor: '#23262a',
+		myRecipesTextColor: 'rgba(250, 250, 250, 0.6)',
 		deleteIconStroke: '#fafafa',
 	},
 	media: {
@@ -165,6 +169,9 @@ export const DarkTheme = {
 		addRecipeFormCounterButtonsHover: '#8baa36',
 		searchFormBGbyTitle: '#8BAA36',
 
+		bgTrashIcon: '#1E1F28',
+		strokeTrashIcon: '#FAFAFA',
+		
 		bgFavoriteItem: '#2A2C36',
 		colorFavoriteTitle: '#FAFAFA',
 		textFavoriteRecipe: '#FAFAFA',

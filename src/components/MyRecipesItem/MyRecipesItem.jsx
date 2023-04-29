@@ -36,7 +36,7 @@ export const MyRecipesItem = props => {
 					<DeleteIconStyled id="icon-trash" />
 				</DeleteButton>
 				<RecipeAbout>{description}</RecipeAbout>
-				<RecipeTime>{time}</RecipeTime>
+				<RecipeTime>{time} min</RecipeTime>
 				<SeeRecipeBtn to={`/recipes/${_id}`}>See recipes</SeeRecipeBtn>
 			</RecipeWrapper>
 		</RecipeItem>
