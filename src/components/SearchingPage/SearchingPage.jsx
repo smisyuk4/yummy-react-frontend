@@ -13,6 +13,7 @@ import {
   CardTitle,
   DivNoResultsStyle,
   BoxPagination,
+  WraperSelect,
 } from './SearchingPage.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 import { SearchingBar } from './Searchingbar';
@@ -171,11 +172,13 @@ export const SearchingPage = () => {
       <SearchingBar changeValue={handleQuery} />
       <SearchByBox>
         <TitleSearch>Search by:</TitleSearch>
+        
         <SelectStyled value={type} onChange={selectFunc}>
           <OptionStyled value="Title">Title</OptionStyled>
           <OptionStyled value="Ingredients">Ingredients</OptionStyled>
           <OptionStyled value="Global">Global Ingredients</OptionStyled>
         </SelectStyled>
+           
       </SearchByBox>
       {isLoading === true ? (
         <ColorRing
