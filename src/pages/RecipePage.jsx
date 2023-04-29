@@ -4,7 +4,7 @@ import { fetchRecipes, fetchSomeIngredients } from 'components/Recipe/FetchRecip
 import { RecipePageHero } from 'components/Hero/RecipeHero/RecipePageHero';
 import { IngredientsList } from 'components/Recipe/IngredientsList/RecipeIngredientsList';
 import { RecipePreparation } from 'components/Recipe/RecipePreparation';
-import { NoResults } from 'components/NoResults';
+// import { NoResults } from 'components/NoResults';
 
 const RecipePage = () => {
   const { recipeId } = useParams();
@@ -86,7 +86,8 @@ const RecipePage = () => {
         </>
 			 
       ) : (
-        <NoResults text="No recipes found" />
+        // <NoResults text="No recipes found" />
+          <></>
       )}
     </>
   );
