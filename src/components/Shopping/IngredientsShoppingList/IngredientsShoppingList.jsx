@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import {
+	
+	// deleteAllShoppingList,
 	deleteIngredientInShoppingList,
 	getShoppingList,
 } from '../fetchShoppingList';
@@ -20,6 +22,7 @@ import {
 	ContainerEmpty,
 	Total,
 	SpanNum,
+	ClearBtn,
 } from './IngredientsShoppingList.styled';
 import { NavLink } from 'react-router-dom';
 
@@ -29,7 +32,7 @@ import { ColorRing } from 'react-loader-spinner';
 const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
 	const [loading, setLoading] = useState(true);
-	// console.error(props)
+	
 	useEffect(() => {
 		getShoppingList()
 			.then(({ data }) => setShoppingList(data.shoppingList))
@@ -45,9 +48,11 @@ const IngredientsShoppingList = () => {
 	};
 	const totalPositionOfIngredients = shoppingList.length;
 
-	// const deleteAllIngredients = () => {
+	// const deleteAllIngredients = async () => {
+	// 	await deleteAllShoppingList();
 	// 	setShoppingList([]);
 	// };
+	
 
 	// const groupedShoppingList = shoppingList.reduce((acc, curr) => {
 	// 	if (!acc[curr.ingredientId]) {
@@ -105,11 +110,11 @@ const IngredientsShoppingList = () => {
 								onClick={() => onDelete(_id)}>
 								<CloseIcon id="icon-close" />
 							</CloseBtn>
-							{/* <button onClick={deleteAllIngredients}>Delete All Ingredients</button> */}
 						</ItemShoppingList>
 					
 					))}
 			</ShoppingList>
+				<ClearBtn>Clear All</ClearBtn>
 			{totalPositionOfIngredients > 0 && <Total>
 				Total position: <SpanNum>{totalPositionOfIngredients}</SpanNum>
 			</Total>}
