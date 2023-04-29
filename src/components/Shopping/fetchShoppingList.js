@@ -16,3 +16,8 @@ export const deleteIngredientInShoppingList = async ingredientId => {
     const response = await axios.delete(`/ingredients/shopping-list/${ingredientId}`); 
     return response.data;
 }
+
+export const deleteAllShoppingList = async () => {
+    const response = await axios.delete('ingredients/shopping-list');
+    return response.data;
+}

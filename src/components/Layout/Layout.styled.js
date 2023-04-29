@@ -16,6 +16,7 @@ export const DivStyled = styled.div`
     bottom: -219px;
     left: 0;
     transform: rotate(350deg);
+    z-index: -1;
     @media ${props => props.theme.media.tablet} {
       width: 500px;
       height: 710px;

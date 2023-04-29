@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { ButtonStyled } from 'components/Hero/RecipeHero/RecipePageHero.styled';
 import { Icon } from 'components/Icon';
 
 export const ListBar = styled.ul`
@@ -229,7 +230,7 @@ export const ShopBag = styled(Icon)`
 
 export const Total = styled.p`
   position: absolute;
-  bottom: 8%;
+  bottom: 15%;
   right: 15%;
   font-weight: 600;
   font-size: 14px;
@@ -237,8 +238,41 @@ export const Total = styled.p`
   color: ${({ theme }) => theme.colors.fontColorDark};
   @media screen and (min-width: 768px) {
     font-size: 18px;
+	bottom: 20%;
+	right: 10%;
+  }
+  @media screen and (min-width: 1440px) {
+	bottom: 18%;
+	right: 15%;
   }
 `;
 export const SpanNum = styled.span`
   margin-left: 8px;
 `;
+
+export const ClearBtn = styled(ButtonStyled)`
+position: absolute;
+bottom: 7%;
+right: 20%;
+margin-bottom: 0;
+
+color: ${({ theme }) => theme.colors.fontColor};
+font-weight: 600;
+font-size: 12px;
+background-color: ${({ theme }) => theme.colors.primary};
+&:hover {
+	background-color: #EBF3D4;
+    color:  #8BAA36;
+  }
+  &:focus {
+	background-color: #EBF3D4;
+    color:  #8BAA36;
+  }
+  @media screen and (min-width: 768px) {
+	bottom: 3%;
+	right: 10%;
+  }
+  @media screen and (min-width: 1440px) {
+	right: 14%;
+  }
+`
