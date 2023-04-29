@@ -57,9 +57,9 @@ export const SearchFormBtn = styled.button`
 	border-radius: 24px 44px;
 	color: ${({ theme }) => theme.colors.buttonLightBG};
 	background: ${({ theme }) => theme.colors.primary};
-	border: 1px solid white;
+	border: none;
 	width: 113px;
-	height: 56px;
+	height: 100%;
 
 	position: absolute;
 	right: 0px;

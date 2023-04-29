@@ -71,7 +71,7 @@ export const MyRecipes = () => {
         <>
           <MyRecipesList>
             {ownRecipes
-              ?.slice((page - 1) * limit, (page - 1) * limit + limit)
+              .slice((page - 1) * limit, (page - 1) * limit + limit)
               .map(recipe => (
                 <MyRecipesItem
                   key={recipe._id}
