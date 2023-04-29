@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+import { ColorRing } from 'react-loader-spinner';
 import { Container, TitleWrapper } from './MyRecipes.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 import { MyRecipesList } from 'components/MyRecipesList';
@@ -42,17 +42,36 @@ export const MyRecipes = () => {
       behavior: 'smooth',
     });
   };
+
+  if (!ownRecipes) {
+    return (
+      <Container>
+        <TitleWrapper>
+          <ReusableComponentTitleWithJewelry title="My recipes"></ReusableComponentTitleWithJewelry>
+        </TitleWrapper>
+        <ColorRing
+          visible={true}
+          ariaLabel="blocks-loading"
+          wrapperClass="blocks-wrapper"
+          colors={['#2a2c36', '#f43e30', '#FcBC00', '#29BC24', '#a8444A']}
+        />
+      </Container>
+    );
+  }
+
   return (
     <Container>
       <TitleWrapper>
         <ReusableComponentTitleWithJewelry title="My recipes"></ReusableComponentTitleWithJewelry>
       </TitleWrapper>
 
-      {ownRecipes?.length > 0 ? (
+      {ownRecipes?.length === 0 ? (
+        <NoResults text="Recipes not found" />
+      ) : (
         <>
           <MyRecipesList>
             {ownRecipes
-              .slice((page - 1) * limit, (page - 1) * limit + limit)
+              ?.slice((page - 1) * limit, (page - 1) * limit + limit)
               .map(recipe => (
                 <MyRecipesItem
                   key={recipe._id}
@@ -61,6 +80,7 @@ export const MyRecipes = () => {
                 />
               ))}
           </MyRecipesList>
+
           {ownRecipes.length / limit > 1 && (
             <Pagination
               pagecount={Math.ceil(ownRecipes.length / limit)}
@@ -69,8 +89,6 @@ export const MyRecipes = () => {
             />
           )}
         </>
-      ) : (
-        <NoResults text="No recipes found" />
       )}
     </Container>
   );
