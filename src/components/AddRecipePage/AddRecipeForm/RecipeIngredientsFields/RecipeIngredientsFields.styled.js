@@ -46,7 +46,7 @@ export const RecipeIngredientsUl = styled.ul`
 	flex-direction: column;
 	gap: 18px;
 	padding: 0;
-	background-color: ${props => props.theme.colors.bgColorListSelectIngredient};
+	background-color: transparent;
 	@media ${props => props.theme.media.tablet} {
 		gap: 24px;
 	}

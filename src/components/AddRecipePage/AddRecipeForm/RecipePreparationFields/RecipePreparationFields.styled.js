@@ -35,6 +35,7 @@ export const PreparationTextArea = styled(Field)`
 	border-radius: 6px;
 	margin-bottom: 18px;
 	box-sizing: border-box;
+	color: ${props => props.theme.colors.addRecipeTextAreaColor};
 	@media ${props => props.theme.media.tablet} {
 		width: 343px;
 		height: 154px;
