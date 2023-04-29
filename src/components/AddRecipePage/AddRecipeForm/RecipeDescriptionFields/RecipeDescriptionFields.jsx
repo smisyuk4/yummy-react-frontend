@@ -56,9 +56,9 @@ export const RecipeDescriptionFields = ({
 		}
 	}, [picture]);
 
-	const handleSubmit = async ({ title, about, categori }, { resetForm }) => {
-		resetForm();
-	};
+  const handleSubmit = async ({ title, about, categori }, { resetForm }) => {
+    resetForm();
+  };
 
 	const handleOnChange = event => {
 		const name = event.target.name;

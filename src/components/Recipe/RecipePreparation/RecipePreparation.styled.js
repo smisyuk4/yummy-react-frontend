@@ -44,6 +44,9 @@ export const InstructionItem = styled.li`
     color: ${({ theme }) => theme.colors.recipeColor};
   line-height: 1.17;
   letter-spacing: -0.02em;
+  @media ${props => props.theme.media.tablet} {
+    font-size: 14px;
+  }
 `;
 
 export const ImageWrapper = styled.div`

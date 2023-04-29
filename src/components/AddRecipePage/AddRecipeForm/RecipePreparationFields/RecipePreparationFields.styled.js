@@ -30,11 +30,13 @@ export const PreparationTextArea = styled(Field)`
 	resize: none;
 	padding: 10px 16px;
 
+	outline: none;
 	background-color: ${props => props.theme.colors.addRecipeFormFieldsBackground};
 	border: ${props => props.theme.colors.addRecipeFormFieldsBorder};
 	border-radius: 6px;
 	margin-bottom: 18px;
 	box-sizing: border-box;
+	color: ${props => props.theme.colors.colorInput};
 	@media ${props => props.theme.media.tablet} {
 		width: 343px;
 		height: 154px;

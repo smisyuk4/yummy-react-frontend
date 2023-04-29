@@ -265,22 +265,22 @@ export const ArrRight = styled.div`
 		width: 176px;
 		height: 94px;
 		position: absolute;
-		top: 502px;
+		top: 530px;
 		left: 517px;
 		z-index: 10;
 	}
 	@media screen and (min-width: 867px) {
-		top: 526px;
-		left: 622px;
+		top: 548px;
+        left: 610px;
 	}
 	@media screen and (min-width: 1024px) {
-		left: 765px;
+		left: 738px;
 	}
 	@media screen and (min-width: 1190px) {
 		left: 919px;
 	}
 	@media screen and (min-width: 1440px) {
-		top: 589px;
+		top: 620px;
 		left: 1046px;
 	}
 `;
