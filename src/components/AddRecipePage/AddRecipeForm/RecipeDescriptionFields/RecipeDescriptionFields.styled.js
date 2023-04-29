@@ -3,103 +3,103 @@ import { Icon } from 'components/Icon';
 import { Form, Field } from 'formik';
 
 export const DescrForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px 10px;
-  margin-bottom: 67px;
-  @media ${props => props.theme.media.tablet} {
-    flex-direction: row;
-    padding: 0;
-    margin-bottom: 100px;
-  }
-  @media ${props => props.theme.media.desktop} {
-    margin-bottom: 110px;
-  }
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px 10px;
+	margin-bottom: 67px;
+	@media ${props => props.theme.media.tablet} {
+		flex-direction: row;
+		padding: 0;
+		margin-bottom: 100px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		margin-bottom: 110px;
+	}
 `;
 
 export const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 343px;
-  gap: 24px;
-  @media ${props => props.theme.media.tablet} {
-    width: 393px;
-    margin-left: 32px;
-    gap: 32px;
-  }
-  @media ${props => props.theme.media.desktop} {
-    margin-left: 50px;
-  }
+	display: flex;
+	flex-direction: column;
+	width: 343px;
+	gap: 24px;
+	@media ${props => props.theme.media.tablet} {
+		width: 393px;
+		margin-left: 32px;
+		gap: 32px;
+	}
+	@media ${props => props.theme.media.desktop} {
+		margin-left: 50px;
+	}
 `;
 
 export const LabelForm = styled.label`
-  width: 100%;
+	width: 100%;
 
-  border-bottom: 1px solid #e0e0e0;
-  height: 40px;
-  @media ${props => props.theme.media.tablet} {
-    height: 43px;
-  }
+	border-bottom: 1px solid #e0e0e0;
+	height: 40px;
+	@media ${props => props.theme.media.tablet} {
+		height: 43px;
+	}
 `;
 
 export const LabelSelect = styled.label`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  border-bottom: 1px solid #e0e0e0;
-  color: #868686;
-  @media ${props => props.theme.media.tablet} {
-    font-size: 16px;
-    line-height: 24px;
-    width: 100%;
-    height: 43px;
-  }
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 40px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	letter-spacing: -0.02em;
+	border-bottom: 1px solid #e0e0e0;
+	color: #868686;
+	@media ${props => props.theme.media.tablet} {
+		font-size: 16px;
+		line-height: 24px;
+		width: 100%;
+		height: 43px;
+	}
 `;
 
 export const InputForm = styled(Field)`
-  width: 100%;
+	width: 100%;
 
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: -0.02em;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  color: ${props => props.theme.colors.colorInput};
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	letter-spacing: -0.02em;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	color: ${props => props.theme.colors.colorInput};
 
-  @media ${props => props.theme.media.tablet} {
-    font-size: 16px;
-    line-height: 24px;
-    width: 100%;
-  }
-  &:placeholder {
-    color: ${props => props.theme.colors.placeHolderColor};
-  }
-  &:focus {
-    border: none;
-    outline: none;
-  }
-  &:hover {
-    outline: none;
-    border: none;
-  }
+	@media ${props => props.theme.media.tablet} {
+		font-size: 16px;
+		line-height: 24px;
+		width: 100%;
+	}
+	&:placeholder {
+		color: ${props => props.theme.colors.placeHolderColor};
+	}
+	&:focus {
+		border: none;
+		outline: none;
+	}
+	&:hover {
+		outline: none;
+		border: none;
+	}
 `;
 
 export const LabelFile = styled.label``;
 
 export const InputFile = styled(Field)`
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
 `;
 
 export const InputSelct = styled(Field)`
@@ -119,38 +119,38 @@ export const InputSelct = styled(Field)`
 `;
 
 export const OverlayPicture = styled.div`
-  position: relative;
-  width: 279px;
-  height: 268px;
-  border-radius: 8px;
-  margin-bottom: 32px;
-  background-color: ${props => props.theme.colors.primary};
-  @media ${props => props.theme.media.tablet} {
-    margin-bottom: 0;
-  }
-  @media ${props => props.theme.media.desktop} {
-    width: 357px;
-    height: 344px;
-  }
+	position: relative;
+	width: 279px;
+	height: 268px;
+	border-radius: 8px;
+	margin-bottom: 32px;
+	background-color: ${props => props.theme.colors.primary};
+	@media ${props => props.theme.media.tablet} {
+		margin-bottom: 0;
+	}
+	@media ${props => props.theme.media.desktop} {
+		width: 357px;
+		height: 344px;
+	}
 `;
 export const ThumbImege = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  border-radius: 8px;
-  top: 0;
-  left: 0;
-  cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	border-radius: 8px;
+	top: 0;
+	left: 0;
+	cursor: pointer;
 `;
 
 export const RecipeImg = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  object-position: center;
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	object-position: center;
 `;
 
 export const Test = styled.div`
@@ -204,10 +204,10 @@ export const SelectItem = styled.li`
 	line-height: 21px;
 	letter-spacing: -0.02em;
 	&:hover {
-		color: ${p => p.theme.colors.addRecipeFormFieldsDeleteButton};
+		color: ${p => p.theme.colors.addRecipeFormFieldsDropdownListHover};
 	}
 	&:focus {
-		color: ${p => p.theme.colors.addRecipeFormFieldsDeleteButton};
+		color: ${p => p.theme.colors.addRecipeFormFieldsDropdownListHover};
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
