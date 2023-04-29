@@ -47,10 +47,10 @@ const RegisterSchema = Yup.object().shape({
 		.required(),
 	email: Yup.string()
 		.min(6)
-		.max(64)
+		.max(86)
 		.matches(
 			emailRegex,
-			'The local part of the mail can contain capital and small Latin letters (A-Z, a-z), numbers (from 0 to 9) and special symbols !#$%^&*_-=*/?+ but no more than 64 characters'
+			'The local part of the mail can contain capital and small Latin letters (A-Z, a-z), numbers (from 0 to 9) and special symbols !#$%^&*_-=*/?+ but no more than 64 characters in local part and 86 characters in total(max 4 character in domain).'
 		)
 		.email()
 		.required(),
