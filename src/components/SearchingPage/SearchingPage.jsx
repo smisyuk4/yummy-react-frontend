@@ -26,6 +26,17 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Pagination } from './Pagination/Pagination';
 
+const toastifyOption = {
+	position: 'top-right',
+	autoClose: 2000,
+	hideProgressBar: false,
+	closeOnClick: true,
+	pauseOnHover: true,
+	draggable: true,
+	progress: undefined,
+	theme: 'colored',
+}
+
 export const SearchingPage = () => {
 	const [type, settype] = useState('Title');
 	const [cards, setcards] = useState([]);
@@ -144,16 +155,7 @@ export const SearchingPage = () => {
 	const handleQuery = value => {
 		//! Если ничего не ввели в поиск то ...
 		if (!value) {
-			toast.error('Enter something in the search box...', {
-				position: 'top-center',
-				autoClose: 3000,
-				hideProgressBar: false,
-				closeOnClick: true,
-				pauseOnHover: true,
-				draggable: true,
-				progress: undefined,
-				theme: 'colored',
-			});
+			toast.error('Enter something in the search box...', toastifyOption);
 			return;
 		}
 		setQuery(value);
