@@ -31,7 +31,7 @@ export const LightTheme = {
 		recipeListBackground: '#EBF3D4',
 		recipeHero: '#22252A',
 		recipeColor: '#3E4462',
-
+		
 		placeHolderInput: '#23262A',
 		bgTitleCard: '#FFFFFF',
 		bgMoreBtn: '#8BAA36',
