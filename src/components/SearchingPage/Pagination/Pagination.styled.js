@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 
 export const DivStyled = styled.div`
 	position: relative;
-	height: 51px;
 	box-shadow: 0px 4px 4px rgba(135, 135, 135, 0.2);
 	border-radius: 26px;
 	background-color: #fafafa;
 	display: inline-flex;
+	margin-top: 20px;
 	/* width: 275px; */
 
 	z-index: 100;
@@ -15,8 +15,8 @@ export const DivStyled = styled.div`
 		justify-content: center;
 		align-items: center;
 		/* margin: 20px 0; */
-		margin: 0 auto;
-		padding: 0 28px;
+
+		padding: 0 10px;
 	}
 	& .pagination li {
 		list-style: none;
@@ -25,7 +25,6 @@ export const DivStyled = styled.div`
 		align-items: center;
 		/* width: 27px;
 		height: 27px; */
-		margin: 0 9px;
 		font-family: 'Poppins';
 		font-style: normal;
 		font-weight: 500;
@@ -38,6 +37,8 @@ export const DivStyled = styled.div`
 		align-items: center;
 		text-decoration: none;
 		cursor: pointer;
+		padding: 8px 15px;
+		border-radius: 50%;
 	}
 	& .pagination li a:hover {
 		color: #fff;

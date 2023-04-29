@@ -87,6 +87,9 @@ export const PStyled = styled.p`
   margin-bottom: 30px;
   font-size: 12px;
   line-height: 1.33;
+  @media ${props => props.theme.media.tablet} {
+      font-size: 18px;
+    };
   `;
 
   export const ClockDivStyled = styled.div`
