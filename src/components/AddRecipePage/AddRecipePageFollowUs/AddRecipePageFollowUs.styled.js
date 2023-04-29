@@ -29,17 +29,13 @@ export const SocialLinksList = styled(SonetLinksList)`
     justify-content: flex-start;
     background-color: transparent;
     padding: 5px;
-    &:hover {
-        background: ${props => props.theme.colors.primary};
-    }
-    
 `
 
 export const SocialLinksIcons = styled(IconSonetLink)`
     height: 26px;
     width: 26px;
     &:hover {
-        background: ${props => props.theme.colors.primary};
+        fill: ${props => props.theme.colors.followUsHoverAddRecipePage};
     }
     
 `
