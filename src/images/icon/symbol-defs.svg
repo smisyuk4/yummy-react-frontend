@@ -75,7 +75,7 @@
 
         <!-- change color - stroke and fill-->
         <symbol id="icon-add-photo-recipe" viewBox="0 0 32 32">
-            <path stroke-width="0.5" stroke-miterlimit="4" stroke-linecap="round"
+            <path stroke-width="0.5" fill="none" stroke-miterlimit="4" stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M28.191 11.429v-4.581c0-0.807-0.32-1.58-0.889-2.152s-1.342-0.893-2.149-0.896l-4.581-0.014M28.191 20.571v4.571c0 0.808-0.321 1.583-0.893 2.155s-1.347 0.893-2.155 0.893h-4.571M11.429 3.787l-4.581 0.015c-0.807 0.002-1.58 0.325-2.149 0.896s-0.889 1.345-0.889 2.152v4.579M11.429 28.19h-4.571c-0.808 0-1.583-0.321-2.155-0.893s-0.893-1.347-0.893-2.155v-4.571">
             </path>

@@ -134,6 +134,7 @@ export const RecipeDescriptionFields = ({
               ) : (
                 <Icon
                   id="icon-add-photo-recipe"
+                  stroke="#fafafa"
                   fill="#fafafa"
                   width={64}
                   height={64}
