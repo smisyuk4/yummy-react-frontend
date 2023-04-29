@@ -144,6 +144,7 @@ export const BtnSybscribe = styled.button`
   line-height: 1.14;
   transition: color 0.3s ease-in-out;
   border: transparent;
+  cursor: pointer;
 
   &:hover {
     border: transparent;
