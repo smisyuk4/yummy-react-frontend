@@ -31,13 +31,11 @@ export const App = () => {
 
   const themeToggler = () => {
     if (currentTheme === 'LightTheme') {
-      console.log('theme');
       setCurrentTheme('DarkTheme');
       localStorage.setItem('theme', 'DarkTheme');
       document.body.style.backgroundColor = '#1E1F28';
     } else {
       setCurrentTheme('LightTheme');
-      console.log('theme');
       localStorage.setItem('theme', 'LightTheme');
       document.body.style.backgroundColor = '#FAFAFA';
     }
