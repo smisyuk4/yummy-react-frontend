@@ -13,7 +13,6 @@ import {
 	RecipeAbout,
 	RecipeTime,
 	SeeRecipeBtn,
-	ImgRecipeIcon,
 } from './MyRecipesItem.styled';
 
 export const MyRecipesItem = props => {
@@ -30,7 +29,12 @@ export const MyRecipesItem = props => {
 		<RecipeItem>
 			<RecipeImgWrapper>
 				{!isImgDefault && <RecipeImg src={imageURL} alt={title} />}
-				{isImgDefault && <ImgRecipeIcon id="icon-add-photo-recipe" />}
+				{isImgDefault && (
+					<RecipeImg
+						src={require('../../images/recipeImg/default-img.png')}
+						alt={title}
+					/>
+				)}
 			</RecipeImgWrapper>
 			<RecipeWrapper>
 				<RecipeTitle>{title}</RecipeTitle>
