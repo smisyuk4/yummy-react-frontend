@@ -43,7 +43,7 @@ export const UserLogo = ({ onOpenModal, themeToggler }) => {
     <UserLogoDiv>
       <WrapperImg onClick={togglePopUp}>
         {isGravatar && <AvatarUser id="icon-person" />}
-        {!isGravatar && <UserAvatarImg src={user.avatarURL} />}
+        {!isGravatar && <UserAvatarImg src={user.avatarURL} alt="User avatar" />}
       </WrapperImg>
       <UserNameP onClick={togglePopUp}>{user.name}</UserNameP>
       <BurgerMuneBtn onClick={onOpenModal} themeToggler={themeToggler}>
