@@ -230,15 +230,21 @@ export const SeeRecipeBtn = styled(NavLinkStyled)`
   }
 `;
 
-export const ImgRecipeIcon = styled(Icon)``;
-
 export const LinkStyled = styled(NavLink)`
   text-decoration: none;
   color: ${props => props.theme.colors.fontColorDark};
   margin-top: 15px;
   display: inline-block;
-  font-size: 14px;
+  font-size: 8px;
   &:hover {
     text-decoration: underline;
+  }
+
+  @media ${props => props.theme.media.tablet} {
+    font-size: 10px;
+  }
+
+  @media ${props => props.theme.media.desktop} {
+    font-size: 14px;
   }
 `;

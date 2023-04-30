@@ -53,7 +53,7 @@ export const MyRecipesItem = props => {
         </DeleteButton>
         <RecipeAbout>{description}</RecipeAbout>
         <RecipeTime>{time} min</RecipeTime>
-        <SeeRecipeBtn to={`/recipes/${_id}`}>See recipes</SeeRecipeBtn>
+        <SeeRecipeBtn to={`/recipes/${_id}`}>See recipe</SeeRecipeBtn>
         <LinkStyled to={`/categories/${category}`}>
           Category: {category}
         </LinkStyled>
