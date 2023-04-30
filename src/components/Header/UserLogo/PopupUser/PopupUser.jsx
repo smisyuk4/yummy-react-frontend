@@ -7,10 +7,12 @@ export const PopupUser = ({openPopUp, closePopUp, close}) => {
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [isLogOutModal, setIsLogOutModal] = useState(false)
 
-  const onCloseModal = () => {
+  const onCloseModal = (e) => {
+    e.stopPropagation();
     setIsOpenModal(false)
   }
-  const onCloseLogOutModal = () => {
+  const onCloseLogOutModal = (e) => {
+    e.stopPropagation();
     setIsLogOutModal(false)
   }
 

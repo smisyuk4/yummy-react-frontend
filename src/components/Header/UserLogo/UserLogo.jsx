@@ -25,10 +25,12 @@ export const UserLogo = ({ onOpenModal, themeToggler }) => {
     }
   }, [darkTheme]);
 
-  const onClosePopUp = () => {
+  const onClosePopUp = (e) => {
+    e.stopPropagation();
     setOpenPopUp(false);
   };
-  const togglePopUp = () => {
+  const togglePopUp = (e) => {
+    e.stopPropagation();
     openPopUp ? setOpenPopUp(false) : setOpenPopUp(true)
   }
   const togglerTheme = () => {
