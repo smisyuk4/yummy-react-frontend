@@ -209,7 +209,7 @@ export const App = () => {
 							}
 						/>
 						<Route
-							path="not-found"
+							path="*"
 							element={
 								<PrivateRoute
 									redirectTo="/login"
