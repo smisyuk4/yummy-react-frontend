@@ -1,4 +1,4 @@
-import { WrapperToggler, TogglerOverlay, TogglerBtn } from './Toggler.styled';
+import { WrapperToggler, TogglerOverlay } from './Toggler.styled';
 
 export const Toggler = ({ toggleTheme, darkTheme, themeToggler }) => {
   const onChangeTheme = () => {
@@ -7,12 +7,10 @@ export const Toggler = ({ toggleTheme, darkTheme, themeToggler }) => {
   };
   return (
     <WrapperToggler
-      type="button"
       className={darkTheme ? 'active' : null}
       onClick={onChangeTheme}
     >
-      <TogglerOverlay id="icon-switch-body" />
-      <TogglerBtn id="icon-switch-button" />
+      <TogglerOverlay />
     </WrapperToggler>
   );
 };
