@@ -94,6 +94,7 @@ export const RecipeDescriptionFields = ({
 	});
 
 	const openCategori = e => {
+		setTimeHelpListState(false);
 		if (!categoriHelpListState) {
 			setCategoriHelpListState(true);
 			return;
@@ -102,6 +103,7 @@ export const RecipeDescriptionFields = ({
 	};
 
 	const openTime = e => {
+		setCategoriHelpListState(false);
 		if (!timeHelpListState) {
 			setTimeHelpListState(true);
 			return;
@@ -113,16 +115,21 @@ export const RecipeDescriptionFields = ({
 		if (ev.target.tagName === 'DIV') {
 			return;
 		}
-		setCategory(ev.target.textContent);
-		console.log(ev.target);
+		setCategory(ev.target.value);
 	};
 	const clickDropTime = ev => {
 		if (ev.target.tagName === 'DIV') {
 			return;
 		}
-		setTime(ev.target.innerHTML);
+		setTime(ev.target.value);
 	};
 
+	const blurTime = e => {
+		setTimeHelpListState(false);
+	};
+	const blurCategory = e => {
+		setCategoriHelpListState(false);
+	};
 	return (
 		<Formik
 			initialValues={{
@@ -187,7 +194,9 @@ export const RecipeDescriptionFields = ({
 									height={20}></SelectIcon>
 							</OverlaySelectIcon>
 							{categoriHelpListState && (
-								<DropdownContainer onClick={clickDropCategori}>
+								<DropdownContainer
+									onBlur={blurCategory}
+									onClick={clickDropCategori}>
 									<OptionsUl>{categoriName}</OptionsUl>
 								</DropdownContainer>
 							)}
@@ -210,7 +219,9 @@ export const RecipeDescriptionFields = ({
 									height={20}></SelectIcon>
 							</OverlaySelectIcon>
 							{timeHelpListState && (
-								<DropdownContainer onClick={clickDropTime}>
+								<DropdownContainer
+									onClick={clickDropTime}
+									onBlur={blurTime}>
 									<OptionsUl>{timeSelect}</OptionsUl>
 								</DropdownContainer>
 							)}
