@@ -116,37 +116,43 @@ export const StyledCloseButton = styled.button`
 `;
 
 export const DropdownMeasureContainer = styled.div`
-	border-radius: 0 0 6px 6px;
+	border-radius: 6px;
 
 	background-color: ${props =>
 		props.theme.colors.bgColorListSelectIngredient};
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
 
-	height: 128px;
+	height: 147px;
 	width: 100%;
 
 	overflow: scroll;
 	overflow-x: hidden;
 	z-index: 100;
 
-	padding: 16px 35px;
+	padding: 8px 35px;
 	box-sizing: border-box;
+	@media ${props => props.theme.media.tablet} {
+		height: 160px;
+	}
 `;
 
 export const DropdownIngredientContainer = styled.div`
-	border-radius: 0 0 6px 6px;
+	border-radius: 6px;
 	background-color: ${props =>
 		props.theme.colors.bgColorListSelectIngredient};
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
-	height: 128px;
+	height: 147px;
 	width: 100%;
 	overflow: scroll;
 	overflow-x: hidden; /* Hide horizontal scrollbar */
 	z-index: 100;
 	padding: 8px 18px;
 	box-sizing: border-box;
+	@media ${props => props.theme.media.tablet} {
+		height: 160px;
+	}
 `;
 
 export const DropdownIngredientUl = styled.ul`
