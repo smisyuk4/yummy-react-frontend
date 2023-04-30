@@ -71,9 +71,8 @@ export const RecipeingredientsListItem = ({
 	}, [measure, measueValue, item.id]);
 
 	useEffect(() => {
-		getEmptyFieldData(item.id, (measureEmptyState || ingredientEmptyState)); // eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [measureEmptyState, ingredientEmptyState, item.id])
-
+		getEmptyFieldData(item.id, measureEmptyState || ingredientEmptyState); // eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [measureEmptyState, ingredientEmptyState, item.id]);
 
 	const openIngredientHelpList = e => {
 		setIngredientHelpListState(true);
