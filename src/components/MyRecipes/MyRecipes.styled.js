@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { flexBox } from 'styles/mixins';
 
 export const Container = styled.div`
 	padding: 29px 0 100px 0;
@@ -12,7 +13,16 @@ export const Container = styled.div`
 
 export const TitleWrapper = styled.div`
 	margin-bottom: 50px;
-	@media screen and (min-width: 768px) {
+	@media ${props => props.theme.media.tablet} {
 		margin-bottom: 100px;
+	}
+`;
+
+export const PaginationWrapper = styled.div`
+	${flexBox};
+	margin-top: 40px;
+
+	@media ${props => props.theme.media.tablet} {
+		margin-top: 50px;
 	}
 `;
