@@ -87,6 +87,8 @@ export const LightTheme = {
 		recipeTextColor: '#23262a',
 		myRecipesTextColor: 'rgba(250, 250, 250, 0.6)',
 		deleteIconStroke: '#fafafa',
+		paginationBG: 'rgba(135, 135, 135, 0.2)',
+		paginationBGActive: '#EBF3D4',
 	},
 	media: {
 		tablet: '(min-width: 768px)',
@@ -171,7 +173,7 @@ export const DarkTheme = {
 
 		bgTrashIcon: '#1E1F28',
 		strokeTrashIcon: '#FAFAFA',
-		
+
 		bgFavoriteItem: '#2A2C36',
 		colorFavoriteTitle: '#FAFAFA',
 		textFavoriteRecipe: '#FAFAFA',
@@ -181,6 +183,8 @@ export const DarkTheme = {
 		recipeItemBackgroundColor: '#2A2C36',
 		recipeTextColor: 'rgba(250, 250, 250, 0.6)',
 		deleteIconStroke: '#ffffff',
+		paginationBG: 'rgba(31, 30, 30, 0.2)',
+		paginationBGActive: '#8BAA36',
 	},
 	media: {
 		tablet: '(min-width: 768px)',

@@ -156,8 +156,8 @@ export const BoxPagination = styled.div`
 	display: flex;
 	justify-content: center;
 	margin-top: 40px;
-	
+
 	@media screen and (min-width: 768px) {
-		margin-top: 50px;	
+		margin-top: 50px;
 	}
 `;
