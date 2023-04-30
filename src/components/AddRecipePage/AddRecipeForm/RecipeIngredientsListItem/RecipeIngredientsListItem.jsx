@@ -36,7 +36,7 @@ export const RecipeingredientsListItem = ({
 		useState(false);
 	const [measureHelpListState, setMeasureHelpListState] = useState(false);
 	const [measure, setMeasure] = useState('');
-	const [measueValue, setMeasureValue] = useState('');
+	const [measureValue, setMeasureValue] = useState('');
 	const [measureEmptyState, setMeasureEmptyState] = useState(true);
 	const [ingredientEmptyState, setIngredientEmptyState] = useState(true);
 
@@ -59,16 +59,16 @@ export const RecipeingredientsListItem = ({
 		}); // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [ingredientFilter, item.id]);
 	useEffect(() => {
-		if (measure === '' || measueValue === '') {
+		if (measure === '' || measureValue === '') {
 			setMeasureEmptyState(true);
 		} else {
 			setMeasureEmptyState(false);
 		}
 
 		getIngredientMeasure(item.id, {
-			measure: measueValue.toString() + ' ' + measure,
+			measure: measureValue.toString() + ' ' + measure,
 		}); // eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [measure, measueValue, item.id]);
+	}, [measure, measureValue, item.id]);
 
 	useEffect(() => {
 		getEmptyFieldData(item.id, measureEmptyState || ingredientEmptyState); // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -96,14 +96,25 @@ export const RecipeingredientsListItem = ({
 	};
 
 	const onMeasureValueChange = e => {
+		const stringifiedValue = e.currentTarget.value.toString();
+		let normalizedValue = ''
+		if (stringifiedValue.length > 1 &&
+			stringifiedValue[0] === '0' &&
+			stringifiedValue[1] !== '.'
+		) {
+			normalizedValue = stringifiedValue.replace(/^0+/, '');
+		} else {
+			normalizedValue = stringifiedValue;
+		}
 		openMeasureHelpList(e);
-		setMeasureValue(e.currentTarget.value);
+		setMeasureValue(normalizedValue);
 	};
 	const onMeasureChange = e => {
 		openMeasureHelpList(e);
 		setMeasure(e.currentTarget.value);
+		
 	};
-
+	console.log(measureValue);
 	const onIngredientsHelpListSelect = e => {
 		setIngredientHelpListState(false);
 		setIngredientFilter(e.currentTarget.textContent);
@@ -162,11 +173,12 @@ export const RecipeingredientsListItem = ({
 				<StyledMeasureLabel htmlFor="measure">
 					<StyledMeasureValueInput
 						name="measureValue"
+						onKeyDown={evt => ['e', 'E', '+', '-',','].includes(evt.key) && evt.preventDefault()}
 						onChange={onMeasureValueChange}
 						type="number"
 						min="0"
 						max="999"
-						value={measueValue}
+						value={measureValue}
 						autoComplete="false"></StyledMeasureValueInput>
 					<StyledMeasureInput
 						name="measure"
