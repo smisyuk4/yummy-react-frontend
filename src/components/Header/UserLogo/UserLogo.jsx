@@ -28,7 +28,9 @@ export const UserLogo = ({ onOpenModal, themeToggler }) => {
   const onClosePopUp = () => {
     setOpenPopUp(false);
   };
-
+  const togglePopUp = () => {
+    openPopUp ? setOpenPopUp(false) : setOpenPopUp(true)
+  }
   const togglerTheme = () => {
     darkTheme ? setDarkTheme(false) : setDarkTheme(true);
   };
@@ -39,11 +41,11 @@ export const UserLogo = ({ onOpenModal, themeToggler }) => {
 
   return (
     <UserLogoDiv>
-      <WrapperImg onClick={() => setOpenPopUp(true)}>
+      <WrapperImg onClick={togglePopUp}>
         {isGravatar && <AvatarUser id="icon-person" />}
         {!isGravatar && <UserAvatarImg src={user.avatarURL} />}
       </WrapperImg>
-      <UserNameP onClick={() => setOpenPopUp(true)}>{user.name}</UserNameP>
+      <UserNameP onClick={togglePopUp}>{user.name}</UserNameP>
       <BurgerMuneBtn onClick={onOpenModal} themeToggler={themeToggler}>
         <BurgerMenuIcon id="icon-burger" />
       </BurgerMuneBtn>
