@@ -9,22 +9,20 @@ export const DivStyledLogOut = styled(DivStyled)`
 export const Modal = styled(ModalProfil)`
     box-sizing: border-box;
     width: 330px;
-    height: 179px;
     font-size: 14px;
     line-height: 1.33;
-    padding: 44px, 24px;
+    padding: 44px 24px;
     background-color: ${({ theme }) => theme.colors.bgModal};
     @media ${props => props.theme.media.tablet} {
-        padding: 50px, 40px;
+        box-sizing: border-box;
+        padding: 50px 40px;
         font-size: 18px;
         line-height: 1.33;
         width: 480px;
-        height: 215px;
     }
     @media ${props => props.theme.media.desktop} {
         width: 500px;
-        height: 215px;
-        padding: 50px, 50px;
+        padding: 50px 50px;
     }
 `
 export const TextLogOut = styled.p`
@@ -40,18 +38,22 @@ export const WrapperBtns = styled.div`
     }
 `
 export const BtnLogOut = styled(BtnModalUser)`
-    width: 169px;
     height: 50px;
+    padding: 14px 18px;
     background-color: ${({ theme }) => theme.colors.btnLogOutBg};
     color: ${({ theme }) => theme.colors.btnLogOutText};
     &:hover {
         background: ${({ theme }) => theme.colors.btnLogOutHoverBG};
         color: #FAFAFA;
     }
+    @media ${props => props.theme.media.tablet} {
+        padding: 18px 39px;
+    }
+
 `
 export const BtnCancel = styled(BtnModalUser)`
-    width: 169px;
     height: 50px;
+    padding: 14px 18px;
     background-color: ${({ theme }) => theme.colors.btnCancelBg};
     color: ${({ theme }) => theme.colors.btnCancelText};
     border: transparent;
@@ -59,6 +61,8 @@ export const BtnCancel = styled(BtnModalUser)`
         border: 1px solid #23262A;
         border-radius: 6px;
         background-color: ${({ theme }) => theme.colors.btnCancelHoverBG};
-
+    }
+    @media ${props => props.theme.media.tablet} {
+        padding: 18px 39px;
     }
 `
