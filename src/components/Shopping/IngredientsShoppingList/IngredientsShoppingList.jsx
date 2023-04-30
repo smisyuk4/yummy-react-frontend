@@ -32,6 +32,8 @@ import { ColorRing } from 'react-loader-spinner';
 const IngredientsShoppingList = () => {
 	const [shoppingList, setShoppingList] = useState([]);
 	const [loading, setLoading] = useState(true);
+	const [inDelete, setInDelete] = useState([]);
+	const [deleteAll, setDeleteAll] = useState(false);
 
 	useEffect(() => {
 		getShoppingList()
@@ -41,16 +43,22 @@ const IngredientsShoppingList = () => {
 	}, []);
 
 	const onDelete = async ingredientId => {
+		setInDelete(prevState => [...prevState, ingredientId]);
 		await deleteIngredientInShoppingList(ingredientId);
 		setShoppingList(prevState =>
 			prevState.filter(ingredient => ingredient._id !== ingredientId)
+		);
+		setInDelete(prevState =>
+			prevState.filter(ingredient => ingredient !== ingredientId)
 		);
 	};
 	const totalPositionOfIngredients = shoppingList.length;
 
 	const deleteAllIngredients = async () => {
+		setDeleteAll(true);
 		await deleteAllShoppingList();
 		setShoppingList([]);
+		setDeleteAll(false);
 	};
 
 	if (loading) {
@@ -100,7 +108,23 @@ const IngredientsShoppingList = () => {
 									<CloseBtn
 										type="button"
 										onClick={() => onDelete(_id)}>
-										<CloseIcon id="icon-close" />
+										{inDelete.includes(_id) ? (
+											<ColorRing
+												visible={true}
+												ariaLabel="blocks-loading"
+												height={20}
+												width={20}
+												colors={[
+													'#2a2c36',
+													'#04711a',
+													'#4ebb46',
+													'#8cc293',
+													'#cfd8d4',
+												]}
+											/>
+										) : (
+											<CloseIcon id="icon-close" />
+										)}
 									</CloseBtn>
 								</ItemShoppingList>
 							)
@@ -108,7 +132,23 @@ const IngredientsShoppingList = () => {
 				</ShoppingList>
 				{totalPositionOfIngredients > 0 && (
 					<ClearBtn onClick={() => deleteAllIngredients()}>
-						Clear All
+						{deleteAll ? (
+							<ColorRing
+								visible={true}
+								ariaLabel="blocks-loading"
+								height={20}
+								width={80}
+								colors={[
+									'#2a2c36',
+									'#04711a',
+									'#4ebb46',
+									'#8cc293',
+									'#cfd8d4',
+								]}
+							/>
+						) : (
+							'Clear list'
+						)}
 					</ClearBtn>
 				)}
 				{totalPositionOfIngredients > 0 && (

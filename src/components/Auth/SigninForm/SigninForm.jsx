@@ -7,7 +7,7 @@ import {
 	IconStyled,
 	IconStatusStyled,
 	NavLinkStyled,
-	DivStyled,
+	DivStyledLogin,
 } from 'components/Auth/AuthForm.styled';
 import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -44,7 +44,7 @@ export const SigninForm = () => {
 		resetForm();
 	};
 	return (
-		<DivStyled>
+		<DivStyledLogin>
 			<Formik
 				initialValues={{ name: '', password: '', email: '' }}
 				onSubmit={sendSignin}
@@ -109,6 +109,6 @@ export const SigninForm = () => {
 				}}
 			</Formik>
 			<NavLinkStyled to="/register">Registration</NavLinkStyled>
-		</DivStyled>
+		</DivStyledLogin>
 	);
 };
