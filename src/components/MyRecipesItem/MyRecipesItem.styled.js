@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
 import { NavLinkStyled } from 'components/ButtonNav/ButtonNav.styled';
-import { flexBox } from 'styles/mixins';
 
 export const RecipeItem = styled.li`
 	display: flex;
@@ -28,8 +27,8 @@ export const RecipeItem = styled.li`
 export const RecipeImgWrapper = styled.div`
 	width: 124px;
 	height: 124px;
-	${flexBox};
-	background-color: #d9d9d9;
+	flex: 0 0 auto;
+
 	border-radius: 8px;
 
 	@media ${props => props.theme.media.tablet} {
@@ -228,8 +227,4 @@ export const SeeRecipeBtn = styled(NavLinkStyled)`
 		background-color: #22252a;
 		border-color: #22252a;
 	}
-`;
-export const ImgRecipeIcon = styled(Icon)`
-	stroke: #c4c4c4;
-	fill: transparent;
 `;
