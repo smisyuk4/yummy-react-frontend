@@ -149,7 +149,7 @@ export const ThumbImege = styled.div`
 export const RecipeImg = styled.img`
 	height: 100%;
 	width: 100%;
-	object-fit: contain;
+	object-fit: cover;
 	object-position: center;
 `;
 
@@ -161,26 +161,26 @@ export const Test = styled.div`
 `;
 
 export const DropdownContainer = styled.div`
-	border-radius: 0 0 6px 6px;
-	background-color: transparent;
+	border-radius: 6px;
 	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.03);
 	position: absolute;
 	top: 35px;
 	right: 0;
-	height: 162px;
+	height: 166px;
 	overflow: scroll;
 	overflow-x: hidden; /* Hide horizontal scrollbar */
 	z-index: 10;
-	padding: 8px 14px;
+	padding: 8px 0;
 	box-sizing: border-box;
 	font-size: inherit;
 	line-height: inherit;
 	letter-spacing: -0.02em;
 	cursor: pointer;
+	scroll-padding-top: 6px;
 	color: ${props => props.theme.colors.placeHolderColor};
 	background-color: ${({ theme }) => theme.colors.addRecipeDropDownBg};
 	@media ${props => props.theme.media.tablet} {
-		padding: 8px 18px;
+		height: 184px;
 	}
 `;
 
@@ -208,10 +208,18 @@ export const SelectItem = styled.li`
 	}
 	&:focus {
 		color: ${p => p.theme.colors.addRecipeFormFieldsDropdownListHover};
-
+	}
 	@media ${props => props.theme.media.tablet} {
 		font-size: 16px;
 		line-height: 24px;
-		width: 100%;
-		height: 43px;
-	}`;
+	}
+`;
+
+export const SelectOption = styled.option`
+	padding-left: 14px;
+	padding-right: 14px;
+	@media ${props => props.theme.media.tablet} {
+		padding-left: 18px;
+		padding-right: 18px;
+	}
+`;

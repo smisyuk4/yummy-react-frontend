@@ -15,6 +15,7 @@ import {
 	RecipeImg,
 	SelectIcon,
 	SelectItem,
+	SelectOption,
 	Test,
 	ThumbImege,
 } from './RecipeDescriptionFields.styled';
@@ -56,9 +57,9 @@ export const RecipeDescriptionFields = ({
 		}
 	}, [picture]);
 
-  const handleSubmit = async ({ title, about, categori }, { resetForm }) => {
-    resetForm();
-  };
+	const handleSubmit = async ({ title, about, categori }, { resetForm }) => {
+		resetForm();
+	};
 
 	const handleOnChange = event => {
 		const name = event.target.name;
@@ -71,9 +72,9 @@ export const RecipeDescriptionFields = ({
 	const categoriName = categoriList.map(categ => {
 		return (
 			<SelectItem key={uuidv4()}>
-				<option key={categ} value={categ}>
+				<SelectOption key={categ} value={categ}>
 					{categ}
-				</option>
+				</SelectOption>
 			</SelectItem>
 		);
 	});
@@ -85,9 +86,9 @@ export const RecipeDescriptionFields = ({
 	const timeSelect = timeList.map(categ => {
 		return (
 			<SelectItem key={uuidv4()}>
-				<option key={categ} value={categ}>
+				<SelectOption key={categ} value={categ}>
 					{categ} min
-				</option>
+				</SelectOption>
 			</SelectItem>
 		);
 	});
@@ -109,9 +110,16 @@ export const RecipeDescriptionFields = ({
 	};
 
 	const clickDropCategori = ev => {
-		setCategory(ev.target.innerHTML);
+		if (ev.target.tagName === 'DIV') {
+			return;
+		}
+		setCategory(ev.target.textContent);
+		console.log(ev.target);
 	};
 	const clickDropTime = ev => {
+		if (ev.target.tagName === 'DIV') {
+			return;
+		}
 		setTime(ev.target.innerHTML);
 	};
 
@@ -137,6 +145,7 @@ export const RecipeDescriptionFields = ({
 							) : (
 								<Icon
 									id="icon-add-photo-recipe"
+									stroke="#fafafa"
 									fill="#fafafa"
 									width={64}
 									height={64}
@@ -162,7 +171,7 @@ export const RecipeDescriptionFields = ({
 						/>
 					</LabelForm>
 					<LabelSelect>
-						Categori
+						Category
 						<Test>
 							<InputSelct
 								readOnly

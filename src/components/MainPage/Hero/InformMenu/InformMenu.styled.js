@@ -62,6 +62,12 @@ export const BtnWrapperStyled = styled(NavLink)`
 	justify-content: flex-end;
 	cursor: pointer;
 	color: ${({ theme }) => theme.colors.fontColorNavigation};
+	&:hover svg {
+		stroke: ${({ theme }) => theme.colors.primary};
+	}
+	&:hover p {
+		color: ${({ theme }) => theme.colors.primary};
+	}
 `;
 
 export const BtnTextStyled = styled.p`

@@ -198,6 +198,7 @@ export const TitleStyled = styled.h1`
 	font-size: 60px;
 	font-weight: 700;
 	text-align: center;
+	--animate-duration: 1.2s;
 
 	color: ${({ theme }) => theme.colors.fontHero};
 	@media screen and (min-width: 768px) {

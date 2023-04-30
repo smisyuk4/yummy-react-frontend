@@ -155,7 +155,6 @@ export const AddRecipeForm = () => {
 		try {
 			dataFile.set('imageURL', picture);
 			dataFile.set('body', JSON.stringify(requestBody));
-			console.log('FORM-DATA----', dataFile);
 			notifySuccess(
 				'All data is complete. The recipe is added to your collection.',
 				toastifyOption

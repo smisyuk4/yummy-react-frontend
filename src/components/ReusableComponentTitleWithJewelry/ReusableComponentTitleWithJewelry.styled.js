@@ -7,6 +7,7 @@ export const TitleStyled = styled.h2`
 	letter-spacing: -0.02em;
 	margin: 0;
 	color: ${({ theme }) => theme.colors.titleColor};
+	--animate-duration: 1s;
 	@media screen and (min-width: 768px) {
 		font-size: 32px;
 		line-height: 32px;

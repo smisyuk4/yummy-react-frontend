@@ -23,7 +23,6 @@ const togglerTheme = () => {
 
   const onCloseModal = ({target, currentTarget, code}) => {
       if(target === currentTarget || code === "Escape") {
-        console.log(code)
         closeModal()
       }
   };

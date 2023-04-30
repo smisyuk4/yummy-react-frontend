@@ -170,6 +170,17 @@ export const App = () => {
 								/>
 							}
 						/>
+						{/* test */}
+						<Route
+							path="ownRecipes/:ownRecipesId"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<RecipePage />}
+								/>
+							}
+						/>
+						{/* test */}
 						<Route
 							path="search"
 							element={
@@ -194,15 +205,6 @@ export const App = () => {
 								<PrivateRoute
 									redirectTo="/login"
 									component={<ShoppingListPage />}
-								/>
-							}
-						/>
-						<Route
-							path="not-found"
-							element={
-								<PrivateRoute
-									redirectTo="/login"
-									component={<NotFoundPage />}
 								/>
 							}
 						/>

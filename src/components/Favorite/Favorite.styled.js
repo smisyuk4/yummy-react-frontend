@@ -2,7 +2,17 @@ import styled from '@emotion/styled';
 import { NavLinkStyled } from 'components/ButtonNav/ButtonNav.styled';
 import { Icon } from 'components/Icon';
 
-export const FavoriteStyled = styled.div``;
+export const FavoriteStyled = styled.div`
+	margin-top: 32px;
+	margin-bottom: 100px;
+
+	@media screen and (min-width: 768px) {
+		margin-top: 52px;
+		margin-bottom: 200px;
+	}
+	@media screen and (min-width: 1440px) {
+		margin-top: 84px;
+}`;
 
 export const FavoriteImgBox = styled.div`
 	width: 124px;

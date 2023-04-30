@@ -79,7 +79,7 @@ export const OptionStyled = styled.option`
 	line-height: 18px;
 	letter-spacing: -0.02em;
 	color: ${({ theme }) => theme.colors.titleColor};
-	background: ${({ theme }) => theme.colors.searchFormBGbyTitle};
+	background: ${({ theme }) => theme.colors.bgColorListSelectIngredient};
 	opacity: 0.5;
 	@media screen and (min-width: 768px) {
 		font-size: 14px;

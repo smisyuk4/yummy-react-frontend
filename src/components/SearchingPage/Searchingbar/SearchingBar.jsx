@@ -12,9 +12,11 @@ export const SearchingBar = ({ changeValue }) => {
   const { query } = useParams();
   useEffect(() => {
     if (query) {
+      changeValue(query)
       setsearchValue(query);
+
     }
-  }, [query]);
+  }, [query, changeValue]);
 
   const handleSubmit = event => {
     event.preventDefault();

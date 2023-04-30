@@ -107,7 +107,6 @@ export const RecipeIngredientsFields = props => {
   };
 
   const getEmptyFieldData = (id, data) => {
-    console.log(data);
     const updatedArray = addedIngredientsArray.map(ingredient => {
       if (id === ingredient.id) {
         return (ingredient = {
@@ -125,7 +124,6 @@ export const RecipeIngredientsFields = props => {
 
   const onButtonDeleteClick = e => {
     const id = e.currentTarget.id;
-    console.log(1, id);
 
     const reworkedArray = addedIngredientsArray.filter(
       element => element.id !== id
