@@ -166,7 +166,7 @@ export const DropdownContainer = styled.div`
 	position: absolute;
 	top: 35px;
 	right: 0;
-	height: 166px;
+	height: 176px;
 	overflow: scroll;
 	overflow-x: hidden; /* Hide horizontal scrollbar */
 	z-index: 10;
@@ -180,7 +180,7 @@ export const DropdownContainer = styled.div`
 	color: ${props => props.theme.colors.placeHolderColor};
 	background-color: ${({ theme }) => theme.colors.addRecipeDropDownBg};
 	@media ${props => props.theme.media.tablet} {
-		height: 184px;
+		height: 196px;
 	}
 `;
 
@@ -216,10 +216,8 @@ export const SelectItem = styled.li`
 `;
 
 export const SelectOption = styled.option`
-	padding-left: 14px;
-	padding-right: 14px;
+	padding: 3px 14px;
 	@media ${props => props.theme.media.tablet} {
-		padding-left: 18px;
-		padding-right: 18px;
+		padding: 3px 18px;
 	}
 `;

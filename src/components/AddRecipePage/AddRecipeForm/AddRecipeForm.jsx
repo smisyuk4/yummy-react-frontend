@@ -184,7 +184,10 @@ export const AddRecipeForm = () => {
 				<RecipeIngredientsFields onChange={ingridientsCange} />
 				<RecipePreparationFields onChange={preparationChange} />
 			</WrapperAllInput>
-			<AddButton type="submit" onClick={PostRecipe}>
+			<AddButton
+				type="submit"
+				aria-label="Add a new recipe to the collection and go to it"
+				onClick={PostRecipe}>
 				Add
 			</AddButton>
 			<ToastContainer />
