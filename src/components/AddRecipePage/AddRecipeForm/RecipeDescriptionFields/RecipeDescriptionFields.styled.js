@@ -216,10 +216,8 @@ export const SelectItem = styled.li`
 `;
 
 export const SelectOption = styled.option`
-	padding-left: 14px;
-	padding-right: 14px;
+	padding: 2px 14px;
 	@media ${props => props.theme.media.tablet} {
-		padding-left: 18px;
-		padding-right: 18px;
+		padding: 2px 18px;
 	}
 `;
