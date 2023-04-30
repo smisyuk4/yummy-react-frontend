@@ -11,6 +11,14 @@ export const DivStyled = styled.div`
 	}
 `;
 
+export const DivStyledLogin = styled.div`
+	@media screen and (min-width: 1440px) {
+		position: absolute;
+		top: 152px;
+		right: 180px;
+	}
+`;
+
 export const H1Styled = styled.h1`
 	margin: 0;
 	margin-bottom: 20px;
@@ -122,6 +130,9 @@ export const NavLinkStyled = styled(NavLink)`
 	display: block;
 	font-size: 14px;
 	line-height: 21px;
+	&:hover {
+		text-decoration: underline;
+	}
 	@media screen and (min-width: 768px) {
 		font-size: 16px;
 		line-height: 24px;

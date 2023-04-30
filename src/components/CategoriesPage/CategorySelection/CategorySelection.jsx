@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
 import { NavLink } from 'react-router-dom';
-
+// import { Pagination } from 'components/SearchingPage/Pagination';
 import {
 	DivStyled,
 	CategoryList,
@@ -19,6 +19,7 @@ import { fetchAllCategory, fetchOneCategory } from '../FetchWithCategory';
 export const CategorySelection = () => {
 	const [category, setCategory] = useState([]);
 	const [oneCategory, setOneCategory] = useState([]);
+	const [loading, setLoading] = useState(false);
 	const { categoryName } = useParams();
 
 	useEffect(() => {
@@ -28,11 +29,12 @@ export const CategorySelection = () => {
 	}, []);
 
 	useEffect(() => {
+		setLoading(true);
 		fetchOneCategory(categoryName)
 			.then(({ data }) => setOneCategory(data.resultCategory))
-			.catch(error => error);
+			.catch(error => error)
+			.finally(() => setLoading(false));
 	}, [categoryName]);
-
 
 	if (category.length < 1 && oneCategory.length < 1)
 		return (
@@ -64,6 +66,20 @@ export const CategorySelection = () => {
 				})}
 			</CategoryList>
 			<CardList>
+				{loading && (
+					<ColorRing
+						visible={true}
+						ariaLabel="blocks-loading"
+						wrapperClass="blocks-wrapper"
+						colors={[
+							'#2a2c36',
+							'#f43e60',
+							'#FFBC00',
+							'#89BC24',
+							'#B8444A',
+						]}
+					/>
+				)}
 				{oneCategory.map(({ _id, title, thumb }) => {
 					return (
 						<CardItem key={title}>

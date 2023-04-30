@@ -1,3 +1,8 @@
+
+import { NavLink } from 'react-router-dom';
+import { ColorRing } from 'react-loader-spinner';
+import { useState } from 'react';
+
 import {
 	DeleteIconStyled,
 	RecipeItem,
@@ -9,37 +14,58 @@ import {
 	RecipeAbout,
 	RecipeTime,
 	SeeRecipeBtn,
+	ImgRecipeIcon,
 } from './MyRecipesItem.styled';
 
 export const MyRecipesItem = props => {
+	const [loading, setLoading] = useState(false);
 	const { title, time, description, imageURL, _id } = props.recipe;
 
 	const isImgDefault = imageURL.includes('default');
+	const deleteRecipe = () => {
+		setLoading(true);
+		props.onDelete();
+	};
+
 
 	return (
 		<RecipeItem>
 			<RecipeImgWrapper>
 				{!isImgDefault && <RecipeImg src={imageURL} alt={title} />}
-				{isImgDefault && (
-					<RecipeImg
-						src={require('../../images/recipeImg/default-img.png')}
-						alt={title}
-					/>
-				)}
+				{isImgDefault && <ImgRecipeIcon id="icon-add-photo-recipe" />}
 			</RecipeImgWrapper>
 			<RecipeWrapper>
 				<RecipeTitle>{title}</RecipeTitle>
-				<DeleteButton type="button" onClick={props.onDelete}>
-					<DeleteIconStyled id="icon-trash" />
+				<DeleteButton type="button" onClick={deleteRecipe}>
+					{loading ? (
+						<ColorRing
+							visible={true}
+							ariaLabel="blocks-loading"
+							height="40px"
+							width="40px"
+							colors={[
+								'#2a2c36',
+								'#92f6f4',
+								'#FcBC00',
+								'#7c94dd',
+								'#31e04c',
+							]}
+						/>
+					) : (
+						<DeleteIconStyled id="icon-trash" />
+					)}
+
 				</DeleteButton>
 				<RecipeAbout>{description}</RecipeAbout>
 				<RecipeTime>{time} min</RecipeTime>
 				<SeeRecipeBtn to={`/ownRecipes/${_id}`}>
-					See recipe
+
+					See recipes
 				</SeeRecipeBtn>
-				{/* <NavLink to={`/ownRecipes/644d986eebbcf2efddd8bf2e`}>
+				<NavLink to={`/ownRecipes/644d986eebbcf2efddd8bf2e`}>
 					cat
-				</NavLink> */}
+				</NavLink>
+
 			</RecipeWrapper>
 		</RecipeItem>
 	);

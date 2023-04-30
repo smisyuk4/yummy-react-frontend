@@ -80,7 +80,9 @@ export const IconStyled = styled(Icon)`
 	border-radius: 12px;
 	padding: 13px;
 	stroke: ${props => props.theme.colors.fontColor};
+	margin-bottom: 28px;
 	@media (min-width: 768px) {
+		margin-bottom: 44px;
 		width: 68px;
 		height: 68px;
 	}

@@ -228,3 +228,5 @@ export const SeeRecipeBtn = styled(NavLinkStyled)`
 		border-color: #22252a;
 	}
 `;
+
+export const ImgRecipeIcon = styled(Icon)``;
