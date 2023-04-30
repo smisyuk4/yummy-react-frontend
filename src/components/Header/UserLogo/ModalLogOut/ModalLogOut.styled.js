@@ -7,6 +7,9 @@ export const DivStyledLogOut = styled(DivStyled)`
     background: rgb(235,243,212) url(${bgImgM}) no-repeat right bottom;
 `;
 export const Modal = styled(ModalProfil)`
+    box-sizing: border-box;
+    width: 330px;
+    height: 179px;
     font-size: 14px;
     line-height: 1.33;
     padding: 44px, 24px;
@@ -15,8 +18,12 @@ export const Modal = styled(ModalProfil)`
         padding: 50px, 40px;
         font-size: 18px;
         line-height: 1.33;
+        width: 480px;
+        height: 215px;
     }
     @media ${props => props.theme.media.desktop} {
+        width: 500px;
+        height: 215px;
         padding: 50px, 50px;
     }
 `
@@ -33,6 +40,7 @@ export const WrapperBtns = styled.div`
     }
 `
 export const BtnLogOut = styled(BtnModalUser)`
+    width: 169px;
     height: 50px;
     background-color: ${({ theme }) => theme.colors.btnLogOutBg};
     color: ${({ theme }) => theme.colors.btnLogOutText};
@@ -42,6 +50,7 @@ export const BtnLogOut = styled(BtnModalUser)`
     }
 `
 export const BtnCancel = styled(BtnModalUser)`
+    width: 169px;
     height: 50px;
     background-color: ${({ theme }) => theme.colors.btnCancelBg};
     color: ${({ theme }) => theme.colors.btnCancelText};
