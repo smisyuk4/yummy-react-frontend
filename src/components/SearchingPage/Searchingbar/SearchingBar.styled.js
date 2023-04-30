@@ -31,7 +31,7 @@ export const Input = styled.input`
 	padding-left: 32px;
 	font-weight: 400;
 	font-size: 12px;
-	line-height: 18px;
+	line-height: 1.5;
 	color: ${({ theme }) => theme.colors.fontColorDark};
 	&:focus {
 		border-color: #61616170;
@@ -42,18 +42,16 @@ export const Input = styled.input`
 		width: 327px;
 		height: 54px;
 		font-size: 14px;
-		line-height: 21px;
 	}
 	@media screen and (min-width: 1440px) {
 		width: 475px;
 		height: 68px;
 		font-size: 16px;
-		line-height: 24px;
 	}
 `;
 
 export const SearchFormBtn = styled.button`
-	background-color: transparent;
+	/* background-color: transparent; */
 	border-radius: 24px 44px;
 	color: ${({ theme }) => theme.colors.buttonLightBG};
 	background: ${({ theme }) => theme.colors.primary};
@@ -62,13 +60,11 @@ export const SearchFormBtn = styled.button`
 	height: 100%;
 
 	position: absolute;
-	right: 0px;
+	right: -4px;
 	top: 0px;
 	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 400;
 	font-size: 14px;
-	line-height: 21px;
+	line-height: 1.5;
 
 	&:hover,
 	&:active {
@@ -77,11 +73,11 @@ export const SearchFormBtn = styled.button`
 
 	@media screen and (min-width: 768px) {
 		width: 161px;
-		height: 60px;
+		/* height: 60px; */
 		font-size: 16px;
-		line-height: 24px;
+		
 	}
-	@media screen and (min-width: 1440px) {
-		height: 70px;
-	}
+	/* @media screen and (min-width: 1440px) {
+	
+	} */
 `;
