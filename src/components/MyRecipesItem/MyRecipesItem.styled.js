@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
 import { NavLinkStyled } from 'components/ButtonNav/ButtonNav.styled';
+import { NavLink } from 'react-router-dom';
 
 export const RecipeItem = styled.li`
 	display: flex;
@@ -230,3 +231,14 @@ export const SeeRecipeBtn = styled(NavLinkStyled)`
 `;
 
 export const ImgRecipeIcon = styled(Icon)``;
+
+export const LinkStyled = styled(NavLink)`
+	text-decoration: none;
+	color: ${props => props.theme.colors.fontColorDark};
+	margin-top: 15px;
+	display: inline-block;
+	font-size: 14px;
+	&:hover {
+		text-decoration: underline;
+	}
+`;
