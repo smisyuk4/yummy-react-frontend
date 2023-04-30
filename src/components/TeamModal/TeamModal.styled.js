@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Icon } from 'components/Icon';
 
 export const DivStyled = styled.div`
 	padding: 1rem;
@@ -9,8 +10,17 @@ export const DivStyled = styled.div`
 `;
 
 export const H1Styled = styled.h1`
+display: flex;
+flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 	text-align: center;
 	padding: 10px;
+	@media(min-width: 425px) {
+		flex-wrap: nowrap;
+	}
+
+	
 `;
 
 export const H2Styled = styled.h2`
@@ -91,3 +101,37 @@ export const PStyled = styled.p`
 	transform: translateY(100%);
 	transition: transform 0.3s ease-in-out;
 `;
+
+export const TeamSvg = styled(Icon)`
+width: 80px;
+height: 80px;
+transform: translateX(0);
+  transition-property: transform;
+  transition-duration: 2000ms;
+	transition-timing-function: cubic-bezier(0.39, 1.03, 0.82, 0.08);
+&:hover {
+  transform: translateX(100vw);
+}
+@media(min-width: 425px) {
+	margin-bottom: 10px;
+	}
+`
+export const Slogan = styled.p`
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 10px;
+	margin-top: -20px;
+	font-size: 12px;
+	box-sizing: border-box;
+	color: ${({ theme }) => theme.colors.titleColor};
+	background-color: ${({ theme }) => `${theme.colors.lightBG}A6`};
+	@media (min-width: 425px) {
+		margin-top: -35px;
+	}
+
+	@media ${props => props.theme.media.tablet} {
+		font-size: 16px;
+		margin-bottom: 20px;
+		margin-top: -40px;
+	}
+`

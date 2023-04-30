@@ -57,7 +57,7 @@ export const Footer = () => {
       <FooterTeam>
         <FooterTeamText> &copy; 2023 All Rights Reserved. Terms of Service</FooterTeamText>
         <FooterTeamLink onClick={() => setShowModal(true)}>
-							Created by Team
+							Created by Turbo Team
 			  </FooterTeamLink>
       </FooterTeam>
       {showModal && <TeamModal onClose={setShowModal} />}

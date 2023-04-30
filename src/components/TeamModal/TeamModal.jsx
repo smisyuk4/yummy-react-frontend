@@ -6,6 +6,8 @@ import {
 	H2Styled,
 	H3Styled,
 	PStyled,
+	TeamSvg,
+	Slogan,
 } from './TeamModal.styled';
 import { Modal } from 'components/Modal';
 import avatar1 from '../../images/team/photo_2023-04-26_18-11-24.jpg';
@@ -141,7 +143,10 @@ export const TeamModal = ({ onClose }) => {
 	return (
 		<Modal close={onClose}>
 			<DivStyled>
-				<H1Styled>Our Team</H1Styled>
+				<H1Styled>
+				<TeamSvg id="icon-turbo-team" />
+					Turbo Team</H1Styled>
+				<Slogan>Making dreams come true</Slogan>
 				<UlStyled>{teamCards}</UlStyled>
 			</DivStyled>
 		</Modal>
