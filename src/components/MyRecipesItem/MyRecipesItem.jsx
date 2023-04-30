@@ -12,7 +12,6 @@ import {
 	RecipeAbout,
 	RecipeTime,
 	SeeRecipeBtn,
-	ImgRecipeIcon,
 	LinkStyled,
 } from './MyRecipesItem.styled';
 
