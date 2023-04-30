@@ -92,10 +92,24 @@ export const CardItem = styled.li`
 	border-radius: 8px;
 	overflow: hidden;
 	width: 100%;
-	transition: all 0.3s ease;
 
 	&:hover {
-		transform: scale(1.03);
+		box-shadow: 0px 0px 9px 6px #8baa36;
+		-webkit-box-shadow: 0px 0px 9px 6px #8baa36;
+		-moz-box-shadow: 0px 0px 9px 6px #8baa36;
+		animation: 2s ease-in-out 0.5s infinite alternate rotateY;
+	}
+	@keyframes rotateY {
+		0% {
+			transform: perspective(800px) rotateY(0deg);
+		}
+		50% {
+			transform: perspective(800px) rotateY(-15deg);
+		}
+
+		100% {
+			transform: perspective(800px) rotateY(15deg);
+		}
 	}
 
 	.card-link {
