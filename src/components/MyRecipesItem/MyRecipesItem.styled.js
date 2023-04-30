@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { Icon } from 'components/Icon';
 import { NavLinkStyled } from 'components/ButtonNav/ButtonNav.styled';
-import { flexBox } from 'styles/mixins';
-
 
 export const RecipeItem = styled.li`
 	display: flex;
@@ -14,7 +12,6 @@ export const RecipeItem = styled.li`
 	background: ${props => props.theme.colors.recipeItemBackgroundColor};
 
 	border-radius: 8px;
-
 
 	@media ${props => props.theme.media.tablet} {
 		gap: 24px;
@@ -30,8 +27,8 @@ export const RecipeItem = styled.li`
 export const RecipeImgWrapper = styled.div`
 	width: 124px;
 	height: 124px;
-	${flexBox};
-	background-color: #D9D9D9;
+	flex: 0 0 auto;
+
 	border-radius: 8px;
 
 	@media ${props => props.theme.media.tablet} {
@@ -201,37 +198,33 @@ export const SeeRecipeBtn = styled(NavLinkStyled)`
 	font-weight: 400;
 	font-size: 10px;
 	line-height: 100%;
-	
-	background-color: #8BAA36;
+
+	background-color: #8baa36;
 	color: #fafafa;
-	border-color: #8BAA36;
+	border-color: #8baa36;
 
 	@media ${props => props.theme.media.tablet} {
 		font-size: 14px;
+		margin: 0;
 		padding: 12px 32px;
-		background-color: #8BAA36;
+		background-color: #8baa36;
 		color: #fafafa;
-		border-color: #8BAA36;
-
+		border-color: #8baa36;
 	}
 
 	@media ${props => props.theme.media.desktop} {
+		margin: 0;
 		padding: 18px 44px;
 		font-size: 16px;
-		background-color: #8BAA36;
+		background-color: #8baa36;
 		color: #fafafa;
-		border-color: #8BAA36;
+		border-color: #8baa36;
 	}
 
 	&:hover {
 		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
-		border-color 0.3s ease-in-out;
-		background-color: #22252A;
-		border-color: #22252A;
+			border-color 0.3s ease-in-out;
+		background-color: #22252a;
+		border-color: #22252a;
 	}
-
 `;
-export const ImgRecipeIcon = styled(Icon)`
-	stroke: #C4C4C4;
-	fill: transparent;
-`

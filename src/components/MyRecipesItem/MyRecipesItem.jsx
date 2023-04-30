@@ -1,6 +1,8 @@
+
 import { NavLink } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
 import { useState } from 'react';
+
 import {
 	DeleteIconStyled,
 	RecipeItem,
@@ -24,6 +26,8 @@ export const MyRecipesItem = props => {
 		setLoading(true);
 		props.onDelete();
 	};
+
+
 	return (
 		<RecipeItem>
 			<RecipeImgWrapper>
@@ -50,15 +54,18 @@ export const MyRecipesItem = props => {
 					) : (
 						<DeleteIconStyled id="icon-trash" />
 					)}
+
 				</DeleteButton>
 				<RecipeAbout>{description}</RecipeAbout>
 				<RecipeTime>{time} min</RecipeTime>
 				<SeeRecipeBtn to={`/ownRecipes/${_id}`}>
+
 					See recipes
 				</SeeRecipeBtn>
 				<NavLink to={`/ownRecipes/644d986eebbcf2efddd8bf2e`}>
 					cat
 				</NavLink>
+
 			</RecipeWrapper>
 		</RecipeItem>
 	);

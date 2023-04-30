@@ -78,16 +78,13 @@ export const Input = styled(Field)`
 
 export const SearchFormBtn = styled.button`
 	top: 0;
-	right: 0;
+	right: -1px;
 	background-color: transparent;
 	border-radius: 24px 44px;
-	border: 1px solid green;
 	width: 113px;
-	height: 56px;
+	border: none;
+  height: 100%;
 	position: absolute;
-	font-family: 'Poppins';
-	font-style: normal;
-	font-weight: 400;
 	font-size: 14px;
 	line-height: 21px;
 	color: ${({ theme }) => theme.colors.fontColor};
@@ -100,11 +97,11 @@ export const SearchFormBtn = styled.button`
 	}
 	@media screen and (min-width: 768px) {
 		width: 161px;
-		height: 63px;
+		
 	}
 	@media screen and (min-width: 1440px) {
 		font-size: 16px;
 		line-height: 24px;
-		height: 75px;
+	
 	}
 `;

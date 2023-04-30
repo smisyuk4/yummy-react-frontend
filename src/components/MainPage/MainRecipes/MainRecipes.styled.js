@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-// import banner from '../../../images/MainPageImg/bgf.png';
+
 
 export const Section = styled.section`
-margin-bottom: 146px;
+	margin-bottom: 146px;
 	@media screen and (min-width: 1440px) {
 		margin-bottom: 164px;
 	}
@@ -32,7 +32,7 @@ export const TitleCategory = styled.h2`
 	color: ${({ theme }) => theme.colors.titleColor};
 	&:hover {
 		color: ${({ theme }) => theme.colors.primary};
-	  }
+	}
 	@media screen and (min-width: 768px) {
 		font-size: 44px;
 		line-height: 44px;
@@ -42,26 +42,35 @@ export const TitleCategory = styled.h2`
 		margin-bottom: 50px;
 	}
 `;
-
+// #8BAA36
 export const ImageBox = styled.div`
 	display: flex;
 	justify-content: center;
-	@media screen and (min-width: 768px) {
-		width: calc(100% / 2);
+	border-radius: 8px;
+	overflow: hidden;
+	&:hover {
+		box-shadow: 0px 0px 9px 6px #8baa36;
+		-webkit-box-shadow: 0px 0px 9px 6px #8baa36;
+		-moz-box-shadow: 0px 0px 9px 6px #8baa36;
+		animation: 2s ease-in-out 0.5s infinite alternate rotateY;
 	}
-	@media screen and (min-width: 1440px) {
-		width: calc(100% / 4);
-		transition: all 0.3s ease;
-		&:hover {
-			transform: scale(1.03);
-		  }
+	@keyframes rotateY {
+		0% {
+			transform: perspective(800px) rotateY(0deg);
+		}
+		50% {
+			transform: perspective(800px) rotateY(-15deg);
+		}
+
+		100% {
+			transform: perspective(800px) rotateY(15deg);
+		}
 	}
 `;
 export const Image = styled.img`
 	object-fit: cover;
-	border-radius: 8px;
-	max-height: 100%;
 
+	max-height: 100%;
 `;
 
 export const CardBox = styled.div`
@@ -100,7 +109,6 @@ export const NavBox = styled.div`
 	@media screen and (min-width: 1440px) {
 		margin-bottom: 14px;
 	}
-
 `;
 
 export const NavToCategory = styled(NavLink)`
@@ -114,16 +122,13 @@ export const NavToCategory = styled(NavLink)`
 	line-height: 18px;
 	padding: 10px 24px;
 	transition: all 0.3s ease;
-		&:hover {
-			transform: scale(1.04);
-			color: ${({ theme }) => theme.colors.buttonLightBGHover};
-		  }
+	&:hover {
+		transform: scale(1.04);
+		color: ${({ theme }) => theme.colors.buttonLightBGHover};
+	}
 `;
 
 export const BtnBox = styled.div`
 	display: flex;
 	justify-content: center;
-	
-	
 `;
-

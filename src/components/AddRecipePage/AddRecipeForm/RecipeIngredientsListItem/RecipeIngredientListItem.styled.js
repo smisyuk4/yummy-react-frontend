@@ -128,7 +128,7 @@ export const DropdownMeasureContainer = styled.div`
 
 	overflow: scroll;
 	overflow-x: hidden;
-	z-index: 100;
+	z-index: 81;
 
 	padding: 8px 35px;
 	box-sizing: border-box;
@@ -147,7 +147,7 @@ export const DropdownIngredientContainer = styled.div`
 	width: 100%;
 	overflow: scroll;
 	overflow-x: hidden; /* Hide horizontal scrollbar */
-	z-index: 100;
+	z-index: 81;
 	padding: 8px 18px;
 	box-sizing: border-box;
 	@media ${props => props.theme.media.tablet} {
@@ -219,15 +219,11 @@ export const EmptyFieldNotation = styled.span`
 	font-size: 36px;
 	color: red;
 	position: absolute;
-	top: 14px;
-	right: 35px;
+	top: 12px;
+	left: 300px;
 
 	@media ${props => props.theme.media.tablet} {
-		top: 14px;
-		right: 140px;
-	}
-	@media ${props => props.theme.media.desktop} {
-		top: 14px;
-		right: 60px;
+		top: 15px;
+		left: 540px;
 	}
 `;
