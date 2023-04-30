@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { ColorRing } from 'react-loader-spinner';
 import { useState } from 'react';
 
@@ -13,6 +12,8 @@ import {
 	RecipeAbout,
 	RecipeTime,
 	SeeRecipeBtn,
+	ImgRecipeIcon,
+	LinkStyled,
 } from './MyRecipesItem.styled';
 
 export const MyRecipesItem = props => {
@@ -60,7 +61,9 @@ export const MyRecipesItem = props => {
 				<RecipeAbout>{description}</RecipeAbout>
 				<RecipeTime>{time} min</RecipeTime>
 				<SeeRecipeBtn to={`/recipes/${_id}`}>See recipes</SeeRecipeBtn>
-				<NavLink to={`/categories/${category}`}>cat</NavLink>
+				<LinkStyled to={`/categories/${category}`}>
+					Category: {category}
+				</LinkStyled>
 			</RecipeWrapper>
 		</RecipeItem>
 	);
