@@ -12,7 +12,8 @@ export const FavoriteStyled = styled.div`
 	}
 	@media screen and (min-width: 1440px) {
 		margin-top: 84px;
-}`;
+	}
+`;
 
 export const FavoriteImgBox = styled.div`
 	width: 124px;
@@ -42,11 +43,12 @@ export const FavoriteItem = styled.li`
 	align-items: flex-start;
 	gap: 14px;
 	padding: 14px 9px;
-
 	background: ${props => props.theme.colors.bgFavoriteItem};
-
 	border-radius: 8px;
 
+	&:not(:last-child) {
+		margin-bottom: 18px;
+	}
 	@media ${props => props.theme.media.tablet} {
 		gap: 24px;
 		padding: 28px 24px;
@@ -81,7 +83,7 @@ export const FavoriteIcon = styled(Icon)`
 		height: 24px;
 	}
 	&:hover {
-		stroke: #FFFFFF;
+		stroke: #ffffff;
 	}
 `;
 
@@ -104,6 +106,12 @@ export const FavoriteRecipeTitle = styled.h3`
 	font-size: 14px;
 	line-height: 100%;
 	letter-spacing: -0.24px;
+
+	display: block;
+	width: 80%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	color: ${props => props.theme.colors.colorFavoriteTitle};
 
 	@media ${props => props.theme.media.tablet} {
