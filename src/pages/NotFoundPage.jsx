@@ -1,11 +1,9 @@
-// import { SearchingPage } from 'components/SearchingPage';
-import { NotFound } from 'components/404NotFound/NotFound';
+import { ErrorNotFound } from 'components/ErrorNotFound';
 
 export const NotFoundPage = () => {
 	return (
 		<>
-			<NotFound />
-			<p>asafa</p>
+			<ErrorNotFound />
 		</>
 	);
 };
