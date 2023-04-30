@@ -208,6 +208,15 @@ export const App = () => {
 								/>
 							}
 						/>
+						<Route
+							path="not-found"
+							element={
+								<PrivateRoute
+									redirectTo="/login"
+									component={<NotFoundPage />}
+								/>
+							}
+						/>
 					</Route>
 				</Routes>
 			</Suspense>
