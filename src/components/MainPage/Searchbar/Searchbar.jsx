@@ -1,7 +1,11 @@
 import { Formik } from 'formik';
-import { SearchStyled, SearchForm, SearchFormBtn, Input } from "./Searchbar.styled"
+import {
+  SearchStyled,
+  SearchForm,
+  SearchFormBtn,
+  Input,
+} from './Searchbar.styled';
 import { NavLink } from 'react-router-dom';
-// import { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const toastifyOption = {
@@ -16,38 +20,33 @@ const toastifyOption = {
 };
 
 export const Searchbar = ({ onSubmit }) => {
-
-  const validateValue = (value) => {
-
+  const validateValue = value => {
     if (!value.trim()) {
       toast.error('Enter something in the search box...', toastifyOption);
-      return "This field is required";
+      return 'This field is required';
     }
-  }
-  
+  };
 
-    return (
-        <SearchStyled>
-          <Formik initialValues={{ search: '' }}>
-            {formik => {
-              const { values } = formik;
-              return (
-                <SearchForm>
-                  <Input
-                    name="search"
-                    type="text"
-                    autoComplete="off"
-                    autoFocus
-                   />
-                 <NavLink to={!values.search.trim() ? '' : `/search/${values.search}`} onClick={() => validateValue(values.search)}>
-                    <SearchFormBtn type="submit">
-                      <span>Search</span>
-                    </SearchFormBtn>
-                  </NavLink>
-                </SearchForm>
-              );
-            }}
-          </Formik>
-        </SearchStyled>
-      );
-    };
+  return (
+    <SearchStyled>
+      <Formik initialValues={{ search: '' }}>
+        {formik => {
+          const { values } = formik;
+          return (
+            <SearchForm>
+              <Input name="search" type="text" autoComplete="off" autoFocus />
+              <NavLink
+                to={!values.search.trim() ? '' : `/search/${values.search}`}
+                onClick={() => validateValue(values.search)}
+              >
+                <SearchFormBtn type="submit">
+                  <span>Search</span>
+                </SearchFormBtn>
+              </NavLink>
+            </SearchForm>
+          );
+        }}
+      </Formik>
+    </SearchStyled>
+  );
+};

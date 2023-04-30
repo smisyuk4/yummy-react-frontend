@@ -39,7 +39,6 @@ export const CounterButton = styled.div`
 `;
 
 export const CounterValue = styled.span`
-  font-weight: 400;
   size: 14px;
   line-height: 1.5;
   color: ${props => props.theme.colors.colorCounter};

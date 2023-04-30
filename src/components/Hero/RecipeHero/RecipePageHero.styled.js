@@ -73,7 +73,7 @@ export const TitleStyled = styled.h1`
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 18px;
-  font-family: 'Poppins';
+
   color: ${({ theme }) => `${theme.colors.primary}`};
   font-weight: 600;
   font-size: 24px;

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 
-
 export const WrapperToggler = styled.div`
   display: none;
 
@@ -11,7 +10,7 @@ export const WrapperToggler = styled.div`
     position: relative;
     border: transparent;
     border-radius: 50px;
-    background: #EFEFEF;
+    background: #efefef;
     box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -29,7 +28,7 @@ export const WrapperToggler = styled.div`
 
 export const TogglerOverlay = styled.button`
   display: none;
-  
+
   @media ${props => props.theme.media.desktop} {
     display: block;
     width: 21px;
@@ -37,9 +36,9 @@ export const TogglerOverlay = styled.button`
     border-radius: 50%;
     background-color: red;
     border: transparent;
-    background: linear-gradient(180deg, #FFFFFF 0%, #E8EAEA 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #e8eaea 100%);
     transition: transform 0.5s ease-in;
-}
+  }
 `;
 
 // toggle btn for burger
@@ -51,7 +50,7 @@ export const TogglerBurger = styled.div`
   left: 16px;
   z-index: 1050;
   border-radius: 50px;
-  background: #EFEFEF;
+  background: #efefef;
   box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -75,7 +74,7 @@ export const TogglerOverlayBurger = styled.button`
   height: 21px;
   border-radius: 50%;
   border: transparent;
-  background: linear-gradient(180deg, #FFFFFF 0%, #E8EAEA 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #e8eaea 100%);
   transition: transform 0.5s ease-in;
 
   @media ${props => props.theme.media.desktop} {

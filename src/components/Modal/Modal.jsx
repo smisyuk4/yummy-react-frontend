@@ -5,22 +5,22 @@ import { ModalDiv } from './Modal.styled';
 const modalRoot = document.getElementById('modal-root');
 
 export const Modal = ({ close, children }) => {
-	useEffect(() => {
-		document.addEventListener('keydown', closeModal);
+  useEffect(() => {
+    document.addEventListener('keydown', closeModal);
 
-		return () => document.removeEventListener('keydown', closeModal);
-	});
+    return () => document.removeEventListener('keydown', closeModal);
+  });
 
-	const closeModal = ({ target, currentTarget, code }) => {
-		if (target.id === 'modalClose' || code === 'Escape') {
-			close(false);
-		}
-	};
+  const closeModal = ({ target, code }) => {
+    if (target.id === 'modalClose' || code === 'Escape') {
+      close(false);
+    }
+  };
 
-	return createPortal(
-		<ModalDiv id="modalClose" onClick={closeModal}>
-			<div>{children}</div>
-		</ModalDiv>,
-		modalRoot
-	);
+  return createPortal(
+    <ModalDiv id="modalClose" onClick={closeModal}>
+      <div>{children}</div>
+    </ModalDiv>,
+    modalRoot
+  );
 };

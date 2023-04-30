@@ -114,7 +114,7 @@ export const RecipeingredientsListItem = ({
 		setMeasure(e.currentTarget.value);
 		
 	};
-	console.log(measureValue);
+
 	const onIngredientsHelpListSelect = e => {
 		setIngredientHelpListState(false);
 		setIngredientFilter(e.currentTarget.textContent);

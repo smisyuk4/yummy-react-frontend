@@ -1,11 +1,12 @@
-
-import MainPageTitle from "components/Shopping/MainPageTitle/MainPageTitle";
-import IngredientsShoppingList from "components/Shopping/IngredientsShoppingList/IngredientsShoppingList";
+import MainPageTitle from 'components/Shopping/MainPageTitle/MainPageTitle';
+import IngredientsShoppingList from 'components/Shopping/IngredientsShoppingList/IngredientsShoppingList';
 const ShoppingListPage = () => {
-	return <>
-		<MainPageTitle/>
-		<IngredientsShoppingList/>
-	</>
+  return (
+    <>
+      <MainPageTitle />
+      <IngredientsShoppingList />
+    </>
+  );
 };
 
 export default ShoppingListPage;

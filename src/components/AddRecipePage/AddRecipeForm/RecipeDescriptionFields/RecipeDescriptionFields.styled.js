@@ -65,7 +65,7 @@ export const LabelSelect = styled.label`
 export const InputForm = styled(Field)`
 	width: 100%;
 
-	font-family: 'Poppins';
+	
 	font-style: normal;
 	font-weight: 400;
 	font-size: 14px;

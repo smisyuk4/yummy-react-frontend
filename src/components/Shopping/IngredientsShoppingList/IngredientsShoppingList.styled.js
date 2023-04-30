@@ -3,7 +3,8 @@ import { ButtonStyled } from 'components/Hero/RecipeHero/RecipePageHero.styled';
 import { Icon } from 'components/Icon';
 
 export const ContainerSh = styled.div`
-position: relative;`
+  position: relative;
+`;
 
 export const ListBar = styled.ul`
   background-color: ${({ theme }) => theme.colors.primary};
@@ -241,12 +242,11 @@ export const Total = styled.p`
   color: ${({ theme }) => theme.colors.fontColorDark};
   @media screen and (min-width: 768px) {
     font-size: 18px;
-	bottom: -6vh;
-	
+    bottom: -6vh;
   }
   @media screen and (min-width: 1440px) {
-	bottom: -5vh;
-	right: 5vw;
+    bottom: -5vh;
+    right: 5vw;
   }
 `;
 export const SpanNum = styled.span`
@@ -254,30 +254,30 @@ export const SpanNum = styled.span`
 `;
 
 export const ClearBtn = styled(ButtonStyled)`
-position: absolute;
-bottom: -10vh;
-right: 8vw;
-margin-bottom: 0;
-margin-top: 10px;
+  position: absolute;
+  bottom: -10vh;
+  right: 8vw;
+  margin-bottom: 0;
+  margin-top: 10px;
 
-color: ${({ theme }) => theme.colors.fontColor};
-font-weight: 600;
-font-size: 12px;
-background-color: ${({ theme }) => theme.colors.primary};
-&:hover {
-	background-color: ${({ theme }) => theme.colors.primarySoft};
-    color:  ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.fontColor};
+  font-weight: 600;
+  font-size: 12px;
+  background-color: ${({ theme }) => theme.colors.primary};
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.primarySoft};
+    color: ${({ theme }) => theme.colors.primary};
   }
   &:focus {
-	background-color: ${({ theme }) => theme.colors.primarySoft};;
-    color:  ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.primarySoft};
+    color: ${({ theme }) => theme.colors.primary};
   }
   @media screen and (min-width: 768px) {
-	bottom: -30vh;
-	right: 5vw;
+    bottom: -30vh;
+    right: 5vw;
   }
   @media screen and (min-width: 1440px) {
-	bottom: -20vh;
-	right: 5vw;
+    bottom: -20vh;
+    right: 5vw;
   }
-`
+`;

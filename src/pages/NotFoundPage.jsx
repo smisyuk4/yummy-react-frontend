@@ -1,11 +1,11 @@
 import { ErrorNotFound } from 'components/ErrorNotFound';
 
 export const NotFoundPage = () => {
-	return (
-		<>
-			<ErrorNotFound />
-		</>
-	);
+  return (
+    <>
+      <ErrorNotFound />
+    </>
+  );
 };
 
 export default NotFoundPage;

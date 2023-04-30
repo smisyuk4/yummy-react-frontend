@@ -6,4 +6,4 @@ const PrivateRoute = ({ component: Component, redirectTo = '/' }) => {
   return !isLoggedIn ? <Navigate to={redirectTo} /> : Component;
 };
 
-export default PrivateRoute
+export default PrivateRoute;
