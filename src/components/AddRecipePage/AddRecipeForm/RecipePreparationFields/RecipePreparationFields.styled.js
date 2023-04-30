@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 import { Field } from 'formik';
 
-
-
 export const PreparationFieldSet = styled.fieldset`
 	border: 0;
 	z-index: 80;
@@ -16,11 +14,11 @@ export const PreparationHeading = styled.h2`
 	color: ${props => props.theme.colors.fontColorDark};
 	@media ${props => props.theme.media.tablet} {
 		margin-bottom: 32px;
-        margin-top: 0;
+		margin-top: 0;
 	}
 	@media ${props => props.theme.media.desktop} {
 		margin-bottom: 32px;
-        margin-top: 0;
+		margin-top: 0;
 	}
 `;
 
@@ -31,7 +29,8 @@ export const PreparationTextArea = styled(Field)`
 	padding: 10px 16px;
 
 	outline: none;
-	background-color: ${props => props.theme.colors.addRecipeFormFieldsBackground};
+	background-color: ${props =>
+		props.theme.colors.addRecipeFormFieldsBackground};
 	border: ${props => props.theme.colors.addRecipeFormFieldsBorder};
 	border-radius: 6px;
 	margin-bottom: 18px;
@@ -64,4 +63,5 @@ export const PreparationTextArea = styled(Field)`
 export const EmptyFieldNotation = styled.span`
 	font-size: 24px;
 	color: red;
-	`
+	position: absolute;
+`;
