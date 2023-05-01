@@ -130,6 +130,12 @@ export const AddRecipeForm = () => {
 		try {
 			const valdate = await Yup.array()
 				.min(1)
+				.of(
+					Yup.object().shape({
+						ingredientId: Yup.string().required(),
+						measure: Yup.string().required(),
+					})
+				)
 				.required()
 				.validate(ingredients);
 			if (!valdate) {
