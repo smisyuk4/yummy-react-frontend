@@ -5,7 +5,7 @@ export const ModalDiv = styled.div`
 	top: 0;
 	left: 0;
 	overflow: auto;
-	z-index: 100;
+	z-index: 200;
 	width: 100vw;
 	height: 100vh;
 	background-color: ${({ theme }) => theme.colors.lightBG};
