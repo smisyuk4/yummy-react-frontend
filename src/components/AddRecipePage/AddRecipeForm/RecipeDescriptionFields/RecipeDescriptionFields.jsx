@@ -168,6 +168,7 @@ export const RecipeDescriptionFields = ({
 							name="title"
 							type="text"
 							placeholder="Enter item title"
+							maxLength="33"
 						/>
 					</LabelForm>
 					<LabelForm>
@@ -175,6 +176,7 @@ export const RecipeDescriptionFields = ({
 							name="about"
 							type="text"
 							placeholder="Enter about recipe"
+							maxLength="55"
 						/>
 					</LabelForm>
 					<LabelSelect>
@@ -211,7 +213,9 @@ export const RecipeDescriptionFields = ({
 								placeholder="Select time"
 								name="time"
 								onClick={openTime}
-								value={time}></InputSelct>
+								value={
+									time === '' ? time : `${time} min`
+								}></InputSelct>
 							<OverlaySelectIcon>
 								<SelectIcon
 									id="icon-arrow-down"
