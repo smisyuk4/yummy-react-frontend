@@ -97,8 +97,9 @@ export const RecipeingredientsListItem = ({
 
 	const onMeasureValueChange = e => {
 		const stringifiedValue = e.currentTarget.value.toString();
-		let normalizedValue = ''
-		if (stringifiedValue.length > 1 &&
+		let normalizedValue = '';
+		if (
+			stringifiedValue.length > 1 &&
 			stringifiedValue[0] === '0' &&
 			stringifiedValue[1] !== '.'
 		) {
@@ -112,7 +113,6 @@ export const RecipeingredientsListItem = ({
 	const onMeasureChange = e => {
 		openMeasureHelpList(e);
 		setMeasure(e.currentTarget.value);
-		
 	};
 
 	const onIngredientsHelpListSelect = e => {
@@ -123,6 +123,12 @@ export const RecipeingredientsListItem = ({
 	const onMeasureHelpListSelect = e => {
 		setMeasureHelpListState(false);
 		setMeasure(e.currentTarget.textContent);
+	};
+
+	const limitLength = e => {
+		if (e.target.value.length > 3) {
+			e.target.value = e.target.value.slice(0, 3);
+		}
 	};
 	return (
 		<Formik>
@@ -173,11 +179,16 @@ export const RecipeingredientsListItem = ({
 				<StyledMeasureLabel htmlFor="measure">
 					<StyledMeasureValueInput
 						name="measureValue"
-						onKeyDown={evt => ['e', 'E', '+', '-',','].includes(evt.key) && evt.preventDefault()}
+						onKeyDown={evt =>
+							['e', 'E', '+', '-', ',', /[a - zA - Z]/].includes(
+								evt.key
+							) && evt.preventDefault()
+						}
 						onChange={onMeasureValueChange}
 						type="number"
 						min="0"
 						max="999"
+						onInput={limitLength}
 						value={measureValue}
 						autoComplete="false"></StyledMeasureValueInput>
 					<StyledMeasureInput
