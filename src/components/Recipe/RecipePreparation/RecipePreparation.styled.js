@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const PreparationSection = styled.section`
   padding: 50px 0px 100px 0px;
@@ -13,14 +13,15 @@ export const PreparationSection = styled.section`
 `;
 
 export const TextDiv = styled.div`
-margin-bottom: 40px;
+  margin-bottom: 40px;
   @media ${props => props.theme.media.tablet} {
     margin-bottom: 53px;
   }
   @media ${props => props.theme.media.desktop} {
     min-width: 757px;
     margin-bottom: 0;
-  }`
+  }
+`;
 
 export const TitleStyles = styled.h2`
   font-weight: 600;
@@ -31,17 +32,19 @@ export const TitleStyles = styled.h2`
   @media ${props => props.theme.media.tablet} {
     letter-spacing: -0.24px;
   }
- @media ${props => props.theme.media.desktop} {
+  @media ${props => props.theme.media.desktop} {
   }
 `;
 
 export const InstructionItem = styled.li`
   display: flex;
+
    /* white-space: pre-wrap; */
   align-items: flex-start;
     margin-bottom: 18px;
     font-size: 12px;
     color: ${({ theme }) => theme.colors.recipeColor};
+
   line-height: 1.17;
   letter-spacing: -0.02em;
   @media ${props => props.theme.media.tablet} {
@@ -72,27 +75,28 @@ flex-grow: 0;
 `;
 
 export const ImageWrapper = styled.div`
-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
-    @media screen and (min-width: 768px) {
-      width: 433px;
-      height: 332px;
-    }
-    @media screen and (min-width: 1440px)  {
+  @media screen and (min-width: 768px) {
+    width: 433px;
+    height: 332px;
+  }
+  @media screen and (min-width: 1440px) {
     margin-left: 50px;
     min-width: 433px;
   }
-;`
+`;
 
 export const ImgStyled = styled.img`
-object-fit: cover;
+  object-fit: cover;
   width: 100%;
   overflow: hidden;
   height: 100%;
   display: block;
   border-radius: 8px;
-   @media screen and (min-width: 768px) {
-      min-width: 433px;
-      height: 332px; 
-    }` 
+  @media screen and (min-width: 768px) {
+    min-width: 433px;
+    height: 332px;
+  }
+`;

@@ -1,8 +1,4 @@
-import {
-	AddButton,
-	AddRecipeFormWrapper,
-	WrapperAllInput,
-} from './AddRecipeForm.styled';
+import { AddButton, WrapperAllInput } from './AddRecipeForm.styled';
 
 import { useState } from 'react';
 
@@ -130,6 +126,12 @@ export const AddRecipeForm = () => {
 		try {
 			const valdate = await Yup.array()
 				.min(1)
+				.of(
+					Yup.object().shape({
+						ingredientId: Yup.string().required(),
+						measure: Yup.string().required(),
+					})
+				)
 				.required()
 				.validate(ingredients);
 			if (!valdate) {
@@ -174,7 +176,7 @@ export const AddRecipeForm = () => {
 	};
 
 	return (
-		<AddRecipeFormWrapper>
+		<div>
 			<WrapperAllInput>
 				<RecipeDescriptionFields
 					onChange={tesOnCanfeDescription}
@@ -184,10 +186,13 @@ export const AddRecipeForm = () => {
 				<RecipeIngredientsFields onChange={ingridientsCange} />
 				<RecipePreparationFields onChange={preparationChange} />
 			</WrapperAllInput>
-			<AddButton type="submit" onClick={PostRecipe}>
+			<AddButton
+				type="submit"
+				aria-label="Add a new recipe to the collection and go to it"
+				onClick={PostRecipe}>
 				Add
 			</AddButton>
 			<ToastContainer />
-		</AddRecipeFormWrapper>
+		</div>
 	);
 };

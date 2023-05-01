@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import EllipsisText from "react-ellipsis-text";
+import EllipsisText from 'react-ellipsis-text';
 
 export const NavLinkStyled = styled(Link)`
   display: flex;

@@ -9,77 +9,67 @@ import { useAuth } from 'hooks/useAuth';
 import { ColorRing } from 'react-loader-spinner';
 
 export const Layout = ({ themeToggler, currentTheme }) => {
-	const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth();
 
-	if (!isLoggedIn)
-		return (
-			<>
-				<ToastContainer
-					position="top-right"
-					autoClose={2000}
-					hideProgressBar={false}
-					newestOnTop={false}
-					closeOnClick
-					rtl={false}
-					pauseOnFocusLoss
-					draggable
-					pauseOnHover
-					theme="colored"
-				/>
-				<Suspense
-					fallback={
-						<ColorRing
-							visible={true}
-							ariaLabel="blocks-loading"
-							wrapperClass="blocks-wrapper"
-							colors={[
-								'#2a2c36',
-								'#f47e60',
-								'#f8b26a',
-								'#8BAA36',
-								'#EBF3D4',
-							]}
-						/>
-					}>
-					<Outlet />
-				</Suspense>
-			</>
-		);
-	return (
-		<>
-			<Header themeToggler={themeToggler} />
-			<DivStyled>
-				<ToastContainer
-					position="top-right"
-					autoClose={2000}
-					hideProgressBar={false}
-					newestOnTop={false}
-					closeOnClick
-					rtl={false}
-					pauseOnFocusLoss
-					draggable
-					pauseOnHover
-					theme="colored"
-				/>
-				<Suspense
-					fallback={
-						<ColorRing
-							visible={true}
-							ariaLabel="blocks-loading"
-							wrapperClass="blocks-wrapper"
-							colors={[
-								'#2a2c36',
-								'#f47e60',
-								'#f8b26a',
-								'#8BAA36',
-								'#EBF3D4',
-							]}
-						/>
-					}>
-					<Outlet />
-				</Suspense>
-			</DivStyled>
-			<Footer />
-		</>
-	);
+  if (!isLoggedIn)
+    return (
+      <>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+        <Suspense
+          fallback={
+            <ColorRing
+              visible={true}
+              ariaLabel="blocks-loading"
+              wrapperClass="blocks-wrapper"
+              colors={['#2a2c36', '#f47e60', '#f8b26a', '#8BAA36', '#EBF3D4']}
+            />
+          }
+        >
+          <Outlet />
+        </Suspense>
+      </>
+    );
+  return (
+    <>
+      <Header themeToggler={themeToggler} />
+      <DivStyled>
+        <ToastContainer
+          position="top-right"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+        <Suspense
+          fallback={
+            <ColorRing
+              visible={true}
+              ariaLabel="blocks-loading"
+              wrapperClass="blocks-wrapper"
+              colors={['#2a2c36', '#f47e60', '#f8b26a', '#8BAA36', '#EBF3D4']}
+            />
+          }
+        >
+          <Outlet />
+        </Suspense>
+      </DivStyled>
+      <Footer />
+    </>
+  );
 };

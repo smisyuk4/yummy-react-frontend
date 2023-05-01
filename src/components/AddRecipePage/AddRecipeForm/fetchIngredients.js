@@ -1,8 +1,6 @@
-import axios from "axios";
-axios.defaults.baseURL = 'https://yummy-rest-api.onrender.com/';
-
+import axios from 'axios';
 
 export const getAllIngredients = async () => {
-	const responce = await axios.get(`ingredients/list`);
-	return responce;
+  const responce = await axios.get(`ingredients/list`);
+  return responce;
 };

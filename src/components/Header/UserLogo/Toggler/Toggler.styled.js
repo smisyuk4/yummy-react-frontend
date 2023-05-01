@@ -1,107 +1,82 @@
 import styled from '@emotion/styled';
-import { Icon } from 'components/Icon';
 
-export const WrapperToggler = styled.button`
+export const WrapperToggler = styled.div`
   display: none;
-        cursor: pointer;
+
   @media ${props => props.theme.media.desktop} {
-    display: block;
+    width: 61px;
+    height: 27px;
     margin-left: 50px;
     position: relative;
     border: transparent;
-    border-radius: 50%;
-  }
-  &.active > svg:nth-of-type(1) {
-    fill: ${({ theme }) => theme.colors.primary};
-  }
-  &.active > svg:nth-of-type(2) {
-    transform: translateX(35px);
-  }
-`;
-
-export const TogglerOverlay = styled(Icon)`
-  display: none;
-  @media ${props => props.theme.media.desktop} {
-    display: block;
-    width: 62px;
-    height: 27px;
-    fill: #ffffff;
+    border-radius: 50px;
     background: #efefef;
     box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
-    border-radius: 50px;
-    border: transparent;
-
-    &:hover {
-      fill: #ebf3d4;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 3px;
+  }
+  &.active {
+    background-color: ${({ theme }) => theme.colors.primary};
+    padding: 3px 3px 3px auto;
+  }
+  &.active > button {
+    transform: translateX(36px);
   }
 `;
-export const TogglerBtn = styled(Icon)`
+
+export const TogglerOverlay = styled.button`
   display: none;
+
   @media ${props => props.theme.media.desktop} {
     display: block;
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    transition: transform 0.5s ease-in;
-    width: 25px;
-    height: 25px;
+    width: 21px;
+    height: 21px;
     border-radius: 50%;
+    background-color: red;
+    border: transparent;
     background: linear-gradient(180deg, #ffffff 0%, #e8eaea 100%);
-    fill: #ffffff;
+    transition: transform 0.5s ease-in;
   }
 `;
+
 // toggle btn for burger
-export const TogglerBurger = styled(WrapperToggler)`
-  display: block;
+export const TogglerBurger = styled.div`
+  width: 61px;
+  height: 27px;
   position: absolute;
   bottom: 18px;
   left: 16px;
   z-index: 1050;
-  border: transparent;
-  border-radius: 50%;
+  border-radius: 50px;
+  background: #efefef;
   box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 3px;
 
-  &.active > svg:nth-of-type(1) {
-    fill: ${({ theme }) => theme.colors.primary};
+  &.active {
+    background-color: ${({ theme }) => theme.colors.primary};
+    padding: 3px 3px 3px auto;
   }
-  &.active > svg:nth-of-type(2) {
-    transform: translateX(35px);
+  &.active > button {
+    transform: translateX(36px);
   }
-
   @media ${props => props.theme.media.tablet} {
     bottom: 32px;
     left: 32px;
   }
 `;
-export const TogglerOverlayBurger = styled(TogglerOverlay)`
-  display: block;
-  width: 62px;
-  height: 27px;
-  fill: #ffffff;
-  background: #efefef;
-  box-shadow: inset 0px 6px 8px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
-  border: transparent;
-
-  &:hover {
-    fill: #ebf3d4;
-  }
-  @media ${props => props.theme.media.desktop} {
-    display: none;
-  }
-`;
-export const TogglerBtnBurger = styled(Icon)`
-  display: block;
-  position: absolute;
-  top: 2px;
-  left: 3px;
-  transition: transform 0.5s ease-in;
-  width: 25px;
-  height: 25px;
-  background: linear-gradient(180deg, #ffffff 0%, #e8eaea 100%);
+export const TogglerOverlayBurger = styled.button`
+  width: 21px;
+  height: 21px;
   border-radius: 50%;
-  fill: #ffffff;
+  border: transparent;
+  background: linear-gradient(180deg, #ffffff 0%, #e8eaea 100%);
+  transition: transform 0.5s ease-in;
+
   @media ${props => props.theme.media.desktop} {
     display: none;
   }

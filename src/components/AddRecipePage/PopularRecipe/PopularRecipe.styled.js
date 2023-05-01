@@ -6,8 +6,8 @@ export const DivStyled = styled.div`
   & p {
     padding: 5px;
     border-radius: 10px;
-    color: ${({theme}) => theme.colors.titleColor};
-    background-color: ${({theme}) => theme.colors.lightBG};
+    color: ${({ theme }) => theme.colors.titleColor};
+    background-color: ${({ theme }) => theme.colors.lightBG};
   }
 `;
 
@@ -19,7 +19,7 @@ export const UlStyled = styled.ul`
   gap: 24px;
   margin-bottom: 100px;
 
-  @media ${({theme}) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.tablet} {
     margin-bottom: 200px;
 
     & a {
@@ -27,7 +27,7 @@ export const UlStyled = styled.ul`
     }
   }
 
-  @media ${({theme}) => theme.media.desktop} {
+  @media ${({ theme }) => theme.media.desktop} {
     max-width: 319px;
     flex-direction: column;
 

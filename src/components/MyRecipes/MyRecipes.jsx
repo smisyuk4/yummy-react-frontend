@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
-import { Container, TitleWrapper } from './MyRecipes.styled';
+import { Container, TitleWrapper, PaginationWrapper } from './MyRecipes.styled';
 import { ReusableComponentTitleWithJewelry } from 'components/ReusableComponentTitleWithJewelry';
 import { MyRecipesList } from 'components/MyRecipesList';
 import { MyRecipesItem } from 'components/MyRecipesItem';
 import { NoResults } from 'components/NoResults';
-import { deleteOwnRecipe, fetchOwnRecipes } from './operations';
 import { Pagination } from 'components/SearchingPage/Pagination';
+import { deleteOwnRecipe, fetchOwnRecipes } from './operations';
 
 export const MyRecipes = () => {
   const [ownRecipes, setOwnRecipes] = useState();
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
   const limit = 4;
 
   useEffect(() => {
@@ -96,11 +96,13 @@ export const MyRecipes = () => {
           </MyRecipesList>
 
           {ownRecipes.length / limit > 1 && (
-            <Pagination
-              pagecount={Math.ceil(ownRecipes.length / limit)}
-              onChange={handlePagination}
-              page={page}
-            />
+            <PaginationWrapper>
+              <Pagination
+                pagecount={Math.ceil(ownRecipes.length / limit)}
+                onChange={handlePagination}
+                page={page}
+              />
+            </PaginationWrapper>
           )}
         </>
       )}

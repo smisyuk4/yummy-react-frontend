@@ -12,9 +12,8 @@ export const SearchingBar = ({ changeValue }) => {
   const { query } = useParams();
   useEffect(() => {
     if (query) {
-      changeValue(query)
+      changeValue(query);
       setsearchValue(query);
-
     }
   }, [query, changeValue]);
 

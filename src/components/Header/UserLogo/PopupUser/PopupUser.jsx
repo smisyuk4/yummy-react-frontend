@@ -1,22 +1,27 @@
-import { OverlayDiv, WrapperEdit, EditText, LogOutBtn, EditIcon } from './PopupUser.styled';
+import {
+  OverlayDiv,
+  WrapperEdit,
+  EditText,
+  LogOutBtn,
+  EditIcon,
+} from './PopupUser.styled';
 import { useState } from 'react';
 import { ModalUserProfil } from '../ModalUserProfil';
 import { ModalLogOut } from '../ModalLogOut';
 
-export const PopupUser = ({openPopUp, closePopUp, close}) => {
-  const [isOpenModal, setIsOpenModal] = useState(false)
-  const [isLogOutModal, setIsLogOutModal] = useState(false)
+export const PopupUser = ({ openPopUp, closePopUp, close }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [isLogOutModal, setIsLogOutModal] = useState(false);
 
   const onCloseModal = () => {
-    setIsOpenModal(false)
-  }
+    setIsOpenModal(false);
+  };
   const onCloseLogOutModal = () => {
-    setIsLogOutModal(false)
-  }
+    setIsLogOutModal(false);
+  };
 
-  return <OverlayDiv onClick={closePopUp} className={
-    (openPopUp ? 'open' : 'close')
- }>
+  return (
+    <OverlayDiv onClick={closePopUp} className={openPopUp ? 'open' : 'close'}>
       <WrapperEdit onClick={() => setIsOpenModal(true)}>
         <EditText>Edit profile</EditText>
         <EditIcon id="icon-edit" />
@@ -24,5 +29,6 @@ export const PopupUser = ({openPopUp, closePopUp, close}) => {
       <LogOutBtn onClick={() => setIsLogOutModal(true)}>Log out</LogOutBtn>
       <ModalUserProfil isOpen={isOpenModal} close={onCloseModal} />
       <ModalLogOut isOpen={isLogOutModal} close={onCloseLogOutModal} />
-  </OverlayDiv>
+    </OverlayDiv>
+  );
 };

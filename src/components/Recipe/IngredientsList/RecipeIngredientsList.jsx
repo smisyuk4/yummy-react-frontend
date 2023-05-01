@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { getShoppingList, addIngredient, deleteIngredientInShoppingList } from 'components/Shopping/fetchShoppingList';
+import { ColorRing } from 'react-loader-spinner';
+import {
+  getShoppingList,
+  addIngredient,
+  deleteIngredientInShoppingList,
+} from 'components/Shopping/fetchShoppingList';
 import ingredImage from 'images/recipeImg/ingredient.jpg';
 import {
   IngredientsListSection,
@@ -12,11 +17,13 @@ import {
   MeasureWrapper,
   ListBar,
   ItemBar,
-  InputCheck
+  InputCheck,
 } from './RecipeIngredients.styled';
 
 export const IngredientsList = ({ ingredients, recipeId }) => {
   const [shoppingList, setShoppingList] = useState([]);
+  const [isLoading, setIsLoading] = useState([]);
+
   useEffect(() => {
     getShoppingList()
       .then(data => {
@@ -26,7 +33,7 @@ export const IngredientsList = ({ ingredients, recipeId }) => {
       .catch(error => console.error(error));
   }, []);
 
-  const addToShopingList = (ingridient) => {
+  const addToShopingList = (ingridient, id) => {
     const { thb, _id: ingredientId, measure, ttl } = ingridient;
 
     const newShoppingListItem = {
@@ -36,37 +43,47 @@ export const IngredientsList = ({ ingredients, recipeId }) => {
       measure,
       recipeId,
     };
-
+    setIsLoading(prev => [...prev, id]);
     addIngredient(newShoppingListItem)
-      .then((response) => {
+      .then(response => {
         setShoppingList(response.data.updatedShoppingList);
       })
-      .catch(error => console.error(error));
+      .catch(error => console.error(error))
+      .finally(() => {
+        setIsLoading(prev => prev.filter(item => item !== id));
+      });
   };
 
-  const removeFromShopingList = (shoppingListItem) => {
+  const removeFromShopingList = (shoppingListItem, id) => {
+    setIsLoading(prev => [...prev, id]);
     deleteIngredientInShoppingList(shoppingListItem._id)
       .then(response => {
         setShoppingList(response.newUser.shoppingList);
       })
-      .catch(error => console.error(error));
+      .catch(error => console.error(error))
+      .finally(() => {
+        setIsLoading(prev => prev.filter(item => item !== id));
+      });
   };
 
   return (
     <IngredientsListSection>
-      
       <ListBar>
         <ItemBar>Ingredients</ItemBar>
         <ItemBar>Number</ItemBar>
         <ItemBar>Add to list</ItemBar>
       </ListBar>
-    
+
       <>
         <ListStyled>
           {ingredients.length > 0 &&
-            ingredients.map((ingridient) => {
+            ingredients.map(ingridient => {
               const { thb, _id, measure, ttl } = ingridient;
-              const shoppingListItem = shoppingList.find(item => item.ingredientId === ingridient.id && item.recipeId === recipeId);
+              const shoppingListItem = shoppingList.find(
+                item =>
+                  item.ingredientId === ingridient.id &&
+                  item.recipeId === recipeId
+              );
               const isIngridientInShoppingList = shoppingListItem != null;
 
               return (
@@ -86,12 +103,32 @@ export const IngredientsList = ({ ingredients, recipeId }) => {
                       <IngMeasure>{measure}</IngMeasure>
                     </MeasureWrapper>
                     <label>
-                      <InputCheck
-                        id={_id}
-                        type="checkbox"
-                        checked={isIngridientInShoppingList}
-                        onChange={() =>isIngridientInShoppingList ? removeFromShopingList(shoppingListItem) : addToShopingList(ingridient)}
-                      />
+                      {isLoading.indexOf(_id) > -1 ? (
+                        <ColorRing
+                          visible={true}
+                          ariaLabel="blocks-loading"
+                          width="38px"
+                          height="38px"
+                          colors={[
+                            '#2a2c36',
+                            '#f47e60',
+                            '#f8b26a',
+                            '#8BAA36',
+                            '#EBF3D4',
+                          ]}
+                        />
+                      ) : (
+                        <InputCheck
+                          id={_id}
+                          type="checkbox"
+                          checked={isIngridientInShoppingList}
+                          onChange={() =>
+                            isIngridientInShoppingList
+                              ? removeFromShopingList(shoppingListItem, _id)
+                              : addToShopingList(ingridient, _id)
+                          }
+                        />
+                      )}
                     </label>
                   </Wrapper>
                 </IngedientsItem>
