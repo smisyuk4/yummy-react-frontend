@@ -118,6 +118,11 @@ const authSlice = createSlice({
 				state.isLoggedIn = false;
 				state.token = null;
 				state.user = initialState.user;
+			})
+			.addCase(logOut.rejected, (state, action) => {
+				state.isLoggedIn = false;
+				state.token = null;
+				state.user = initialState.user;
 			});
 	},
 });
