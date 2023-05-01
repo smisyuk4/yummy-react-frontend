@@ -37,8 +37,8 @@ export const TitleStyles = styled.h2`
 
 export const InstructionItem = styled.li`
   display: flex;
-   white-space: pre-wrap;
-  align-items: center;
+   /* white-space: pre-wrap; */
+  align-items: flex-start;
     margin-bottom: 18px;
     font-size: 12px;
     color: ${({ theme }) => theme.colors.recipeColor};
@@ -46,6 +46,28 @@ export const InstructionItem = styled.li`
   letter-spacing: -0.02em;
   @media ${props => props.theme.media.tablet} {
     font-size: 14px;
+  }
+  & div{
+width: 21px;
+height: 21px;
+border-radius: 100px;
+/* padding: 2px 7px 1px; */
+gap: 10px;
+width: 21px;
+font-weight: 600;
+font-size: 12px;
+line-height: 18px;
+background: ${({ theme }) => theme.colors.primary};
+color: #FFFFFF;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+isolation: isolate;
+margin-right: 14px;
+flex: none;
+order: 0;
+flex-grow: 0;
   }
 `;
 
