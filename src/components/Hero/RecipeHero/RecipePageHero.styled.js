@@ -1,8 +1,11 @@
 import styled from '@emotion/styled';
 import EllipsisText from 'react-ellipsis-text';
-import heroDesk1 from 'images/recipeImg/heroDeck1.png';
-import heroMob1 from 'images/recipeImg/flat-Mob-1-lay-assortment-vegetables.png';
-import heroTab1 from 'images/recipeImg/flat-Tab-1-lay-assortment-vegetables.png';
+import heroDesk1 from 'images/recipeImg/flat-lay-assortment-vegetables-Desk-1x.jpg';
+import heroDesk2 from 'images/recipeImg/flat-lay-assortment-vegetables-Desk-2x.jpg'
+import heroMob1 from 'images/recipeImg/flat-lay-assortment-vegetables-Mob-1x.jpg';
+import heroMob2 from 'images/recipeImg/flat-lay-assortment-vegetables-Mob-2x.jpg'
+import heroTab1 from 'images/recipeImg/flat-lay-assortment-vegetables-Tab-1x.jpg';
+import heroTab2 from 'images/recipeImg/flat-lay-assortment-vegetables-Tab-2x.jpg'
 
 export const HeroSection = styled.section`
   background: url(${heroMob1});
@@ -17,6 +20,11 @@ export const HeroSection = styled.section`
   margin-top: -82px;
   height: 353px;
   text-align: center;
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${heroMob2});
+  }
 
   @media ${props => props.theme.media.tablet} {
     background: url(${heroTab1});
@@ -29,6 +37,11 @@ export const HeroSection = styled.section`
     margin-right: -32px;
     background-repeat: no-repeat;
     background-size: cover;
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${heroTab2});
+  }
   }
   @media ${props => props.theme.media.desktop} {
     background-image: url(${heroDesk1});
@@ -38,6 +51,11 @@ export const HeroSection = styled.section`
     margin-left: -100px;
     margin-right: -100px;
     height: 357px;
+    @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(${heroDesk2});
+  }
   }
 `;
 
