@@ -5,7 +5,10 @@ Food and proper nutrition App.
 This app will help you if you don't know what to cook, if you want to start eating right or go on a diet.
 With it, you can plan the purchase of the right foods for dinner or breakfast and save your favorite recipes to your personal profile.
 
-## Tools
+## Шmportant
+`We had less than 2 weeks to write the project from 0 and test it.`
+`First, we as a whole team wrote the backend on the node, connected the mongo database, and only then started creating the frontend`
+- [task](https://docs.google.com/spreadsheets/d/1wcL0ID5fzz8yMTEmFqxwNIj5AfmG15RcNWapinvGfUU/edit?usp=sharing)
 - [design](https://www.figma.com/file/rj6kSC63HyaVsHXqMtt3Cv/So-Yummy?type=design&node-id=3-8600&t=kF39AsAYsYp5tmQg-0)
 - [rest-api-github](https://github.com/smisyuk4/yummy-rest-api)
 - [rest-api-swagger](https://yummy-rest-api.onrender.com/api-docs/)
@@ -41,7 +44,7 @@ With it, you can plan the purchase of the right foods for dinner or breakfast an
 -   Easy to use
 
 ## Fullstack developers
--   [Sergij Misyuk](https://github.com/smisyuk4)
+-   [Sergii Misyuk](https://github.com/smisyuk4)
 -   [Volodymyr Pobedynskyj](https://github.com/Pobedynskyj)
 -   [Olexii Andriushchenko](https://github.com/OlexiiA)
 -   [Oksana Polyakova](https://github.com/Dreamer2201)
