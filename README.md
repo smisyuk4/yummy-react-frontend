@@ -5,7 +5,7 @@ Food and proper nutrition App.
 This app will help you if you don't know what to cook, if you want to start eating right or go on a diet.
 With it, you can plan the purchase of the right foods for dinner or breakfast and save your favorite recipes to your personal profile.
 
-## Шmportant
+## Important
 `We had less than 2 weeks to write the project from 0 and test it.`
 `First, we as a whole team wrote the backend on the node, connected the mongo database, and only then started creating the frontend`
 - [task](https://docs.google.com/spreadsheets/d/1wcL0ID5fzz8yMTEmFqxwNIj5AfmG15RcNWapinvGfUU/edit?usp=sharing)
