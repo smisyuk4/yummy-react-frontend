@@ -1,113 +1,61 @@
-# React homework template
+# SoYammy App
+Food and proper nutrition App.
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project idea
+This app will help you if you don't know what to cook, if you want to start eating right or go on a diet.
+With it, you can plan the purchase of the right foods for dinner or breakfast and save your favorite recipes to your personal profile.
 
-## Создание репозитория по шаблону
+## Tools
+- [design](https://www.figma.com/file/rj6kSC63HyaVsHXqMtt3Cv/So-Yummy?type=design&node-id=3-8600&t=kF39AsAYsYp5tmQg-0)
+- [rest-api-github](https://github.com/smisyuk4/yummy-rest-api)
+- [rest-api-swagger](https://yummy-rest-api.onrender.com/api-docs/)
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+## Usage
+- `React, redux, persist, router-dom, lazy, emotion/styled, formik, prop-types, loader, paginate, toastify...`
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+## Roadmap
+-   Registration/LogIn/Logout
+-   Categories: Beef, Breakfast, Chicken, Dessert, Goat, Lamb, Miscellaneous, Pasta, Pork, Seafood, Side, Starter, Vegan, Vegetarian.
+-   Add recipes
+-   My recipes
+-   Favorites
+-   Shopping list
+-   Search recipes
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+### Description of use
+-   In the Categories section, we can select the category of recipes we are looking for
+-   In the Add Recipe section, you can share your favorite recipe by adding a title, description, ingredients, and even a photo. Other users will see your recipe and can add it to their favorites.
+-   In the My Recipes section, you will store all the recipes you have added to the app and can recall them at any time.
+-   When you find different recipes in the app, you can add them to the Favorites section. At any time you can view the recipes you have saved and cook them.
+-   You can add products to your shopping list when planning dinner and looking at recipes. Now when you buy groceries for dinner, you won't forget to buy everything you need.
+-   If you know which recipe you want to find, you can write its name in the search field.
+-   For full functionality and convenience, we recommend that you be registered in the application.
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+## Features
+-   Light/dark mode toggle
+-   Fullscreen mode
+-   Cross platform
+-   Animations
+-   Database of recipes
+-   Flexible search
+-   Easy to use
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+## Fullstack developers
+-   [Sergij Misyuk](https://github.com/smisyuk4)
+-   [Volodymyr Pobedynskyj](https://github.com/Pobedynskyj)
+-   [Olexii Andriushchenko](https://github.com/OlexiiA)
+-   [Oksana Polyakova](https://github.com/Dreamer2201)
+-   [Vitalii Volianyk](https://github.com/Vitalii-Volianyk)
+-   [Andrey Asmolovskiy](https://github.com/AsmolovskiyAndrey)
+-   [Yurii Zahrai](https://github.com/yuriizahrai)
+-   [Margharita Okhten](https://github.com/MOkhten)
+-   [Oleksii Litvinenko](https://github.com/Piligrim41m)
+-   [Iryna Rybka](https://github.com/IrynaRybka)
+-   [Mylymuk Oksana](https://github.com/mylymukkk)
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
-
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
-
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
-
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
-
-## Подготовка к работе
-
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
-
-## Деплой
-
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+## Manual tests
+-   [Viktoriia Levchenko](https://www.linkedin.com/in/viktoriia-levchenko-olex/)
+-   [Iryna Mykhailyshyn](https://www.linkedin.com/in/irynamykhajlyshyn/)
+-   [Olena Makarenko](https://www.linkedin.com/in/olena-makarenko/)
+-   [Roman Budziak](https://www.linkedin.com/in/roman-budziak/)
+-   [Yuliia Kapshiienko](https://www.linkedin.com/in/yuliia-kapshiienko/)
